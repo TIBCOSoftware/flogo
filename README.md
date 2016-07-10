@@ -22,10 +22,10 @@ It's easy to get started with Project Flogo:
 * To install just the Flogo CLI and runtime, go to https://github.com/TIBCOSoftware/flogo-cli
 
 ## Roadmap
-Refer to [Flogo Statement of Direction](roadmap.md) for an overview of investment themes and srategic dircetion of the project. You can also monitor [milestones](https://github.com/TIBCOSoftware/flogo/milestones) to see what's coming up. 
+Refer to [Flogo Statement of Direction](sod.md) for an overview of the strategic dircetion of the project. You can also monitor [milestones](https://github.com/TIBCOSoftware/flogo/milestones) to see what's coming up. 
 
 ## Contributing 
-TBD
+CLSA - TBD
 
 
 
