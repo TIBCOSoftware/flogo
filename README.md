@@ -20,6 +20,7 @@ Project Flogo consists of the following sub-projects available as separate repos
 It's easy to get started with Project Flogo:
 * To install Flogo Web UI (that includes the runtime), go to https://github.com/TIBCOSoftware/flogo-web
 * To install just the Flogo CLI and runtime, go to https://github.com/TIBCOSoftware/flogo-cli
+* Visit the docs in this repository to get started adding your first activity
 
 ## Roadmap
 Refer to [Flogo Statement of Direction](sod.md) for an overview of the strategic dircetion of the project. You can also monitor [milestones](https://github.com/TIBCOSoftware/flogo/milestones) to see what's coming up. 
