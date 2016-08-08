@@ -13,7 +13,7 @@ Project Flogo consists of the following sub-projects available as separate repos
 * [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli): A command line tool to build flogo apps 
 * [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib): A library to build Flogo extensions
 * [flogo-services](https://github.com/TIBCOSoftware/flogo-services): Backing services required by Flogo 
-* [flogo-web](https://github.com/TIBCOSoftware/flogo-web) : Web UI to build IoT Integration flows and Flogo apps
+* [flogo-web](https://github.com/TIBCOSoftware/flogo-web) : Web UI to build IoT Integration flows and Flogo apps. Switch to  [0.2-alpha1](https://github.com/TIBCOSoftware/flogo-web/tree/0.2alpha1) branch for an improved install experience
 * [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) : Flogo Extensions available out of the box
 
 ## Getting Started
