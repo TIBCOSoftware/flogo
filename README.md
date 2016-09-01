@@ -2,6 +2,8 @@
 
 Project Flogo is an Open Source Framework for IoT Edge Apps & Integration. 
 
+![Flogo icon](flynn.png)
+
 Highlights include:
 * Ultra-light process engine - 20x-50x lighter than Java or NodeRed
 * Extensible & reusable by design to build your own apps, frameworks & platforms 
