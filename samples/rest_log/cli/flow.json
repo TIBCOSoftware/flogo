@@ -1,0 +1,38 @@
+{
+    "attributes": [],
+    "model": "tibco-simple",
+    "name": "flow",
+    "rootTask": {
+        "activityType": "",
+        "id": 1,
+        "links": [],
+        "name": "root",
+        "tasks": [
+            {
+                "activityType": "tibco-log",
+                "attributes": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Recevied rest request"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "id": 2,
+                "name": "Log Activity",
+                "type": 1
+            }
+        ],
+        "type": 1
+    },
+    "type": 1
+}

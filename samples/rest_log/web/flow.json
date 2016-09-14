@@ -1,0 +1,247 @@
+{
+    "$table": "flows",
+    "description": "Flow sample",
+    "items": {
+        "Mg": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Activity",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": "Recevied rest request"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "Mg",
+            "installed": true,
+            "name": "Log Activity",
+            "title": "Log Activity",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "RmxvZ286OlRyaWdnZXI6OjE0NzM4OTQxNzEwNjM": {
+            "__props": {
+                "outputs": [
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ]
+            },
+            "__schema": {
+                "description": "Simple REST Trigger",
+                "endpoint": {
+                    "settings": [
+                        {
+                            "allowed": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "PATCH",
+                                "DELETE"
+                            ],
+                            "name": "method",
+                            "required": true,
+                            "type": "string"
+                        },
+                        {
+                            "name": "path",
+                            "required": true,
+                            "type": "string"
+                        },
+                        {
+                            "name": "autoIdReply",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "useReplyHandler",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/rest",
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "settings": [
+                    {
+                        "name": "port",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "title": "REST Trigger",
+                "version": "0.0.1"
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Trigger",
+            "endpoint": {
+                "settings": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string",
+                        "value": "GET"
+                    },
+                    {
+                        "name": "path",
+                        "required": true,
+                        "type": "string",
+                        "value": "/go"
+                    },
+                    {
+                        "name": "autoIdReply",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "useReplyHandler",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ]
+            },
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/rest",
+            "id": "RmxvZ286OlRyaWdnZXI6OjE0NzM4OTQxNzEwNjM",
+            "installed": true,
+            "name": "REST Trigger",
+            "outputs": [
+                {
+                    "name": "pathParams",
+                    "type": 6,
+                    "value": null
+                },
+                {
+                    "name": "queryParams",
+                    "type": 6,
+                    "value": null
+                },
+                {
+                    "name": "content",
+                    "type": 4,
+                    "value": null
+                }
+            ],
+            "settings": [
+                {
+                    "name": "port",
+                    "required": true,
+                    "type": "integer",
+                    "value": "9999"
+                }
+            ],
+            "title": "REST Trigger",
+            "triggerType": "tibco-rest",
+            "type": 0,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
+        }
+    },
+    "name": "flow",
+    "paths": {
+        "nodes": {
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzM4OTQxNjcwNDc6OjgxODAwLjgzNQ": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzM4OTQxNzEwNjk6Ojg1ODIyLjgzMDAwMDAwMDAy"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzM4OTQxNjcwNDc6OjgxODAwLjgzNQ",
+                "parents": [],
+                "taskID": "RmxvZ286OlRyaWdnZXI6OjE0NzM4OTQxNzEwNjM",
+                "type": 3
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzM4OTQxNzEwNjk6Ojg1ODIyLjgzMDAwMDAwMDAy": {
+                "children": [],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzM4OTQxNzEwNjk6Ojg1ODIyLjgzMDAwMDAwMDAy",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzM4OTQxNjcwNDc6OjgxODAwLjgzNQ"
+                ],
+                "taskID": "Mg",
+                "type": 5
+            }
+        },
+        "root": {
+            "is": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzM4OTQxNjcwNDc6OjgxODAwLjgzNQ"
+        }
+    }
+}
