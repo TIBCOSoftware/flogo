@@ -1,3 +1,131 @@
 {
-  "sample-flow":"please replace with real one"
+    "attributes": [],
+    "model": "tibco-simple",
+    "name": "AWS IOT Sample",
+    "explicitReply":true,
+    "rootTask": {
+        "activityType": "",
+        "id": 1,
+        "links": [
+            {
+                "from": 2,
+                "id": 1,
+                "to": 3,
+                "type": 0
+            },
+            {
+                "from": 3,
+                "id": 2,
+                "to": 4,
+                "type": 0
+            },
+            {
+                "from": 4,
+                "id": 3,
+                "to": 5,
+                "type": 0
+            }
+        ],
+        "name": "root",
+        "tasks": [
+            {
+                "activityType": "tibco-log",
+                "attributes": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Received Rest request and starting trigger"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "id": 2,
+                "name": "Start processing",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-awsiot",
+                "attributes": [
+                    {
+                        "name": "thingName",
+                        "type": "string",
+                        "value": "flogo_test"
+                    },
+                    {
+                        "name": "awsEndpoint",
+                        "type": "string",
+                        "value": "a1njsonnibpa75.iot.us-east-1.amazonaws.com"
+                    },
+                    {
+                        "name": "desired",
+                        "type": "params",
+                        "value": {
+                            "switch": "on"
+                        }
+                    },
+                    {
+                        "name": "reported",
+                        "type": "params",
+                        "value": {
+                            "switch": "off"
+                        }
+                    }
+                ],
+                "id": 3,
+                "name": "Update",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-log",
+                "attributes": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Set Report to off and desired to on"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "id": 4,
+                "name": "LogStatus",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-reply",
+                "attributes": [
+                    {
+                        "name": "code",
+                        "type": "integer",
+                        "value": "200"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "value": "AWS IOT update successfully"
+                    }
+                ],
+                "id": 5,
+                "name": "Done",
+                "type": 1
+            }
+        ],
+        "type": 1
+    },
+    "type": 1
 }
