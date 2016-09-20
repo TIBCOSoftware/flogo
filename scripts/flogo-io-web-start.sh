@@ -43,11 +43,12 @@ EOF
 }
 
 getLatestRelease() {
+    set -x
     owner=${1:-"${GITHUB_OWNER}"}
     repo=${2:-"${GITHUB_REPO}"}
     github_url="https://api.github.com/repos/${owner}/${repo}/releases/latest"
-    tag_name=$(curl -s "${github_url}" | jq -r '.tag_name')
-    if [ -n "${tag_name}" ]; then 
+    tag_name=$(curl -s "${github_url}" | jq -r '.tag_name' )
+    if [[ -z "${tag_name}" || "${tag_name}" == "null" ]]; then 
         cat >&2 <<-'EOF'
         Error: "Latest" release not found at https://github.com/TIBCOSoftware/flogo-web/releases
 EOF
