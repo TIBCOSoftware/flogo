@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 #
 # This script is meant for quick & easy install via:
 #   'curl -sSL https://github.com/TIBCOSoftware/flogo-web/releases/download/${GITHUB_TAG}/start-flogo-web.txt | sh'
@@ -12,28 +11,58 @@ command_exists() {
        	command -v "$@" > /dev/null 2>&1
 }
 export DOCKER_REGISTRY=localhost:5000/
-export BUILD_RELEASE_TAG=latest
-export GITHUB_TAG=##GITHUB_TAG##
-compose_url="https://github.com/TIBCOSoftware/flogo-web/releases/download/${GITHUB_TAG}/docker-compose.yml"
 
-download_compose_file() {
-   
-    if [ ! -f ${script_root}/docker-compose.yml ]; then 
-         if command_exists curl ; then
-            curl -sSO ${compose_url}
-        elif command_exists wget; then
-            wget -qO- --no-check-certificate ${compose_url}
-        fi
+
+checkDependencies() {
+    if ! command_exists docker-compose ; then 
+        echo "docker-compose not found" 
+        sleep 5 
+        exit 1 
+    fi
+    if command_exists curl ; then
+       echo "Found curl ..."
+    elif command_exists wget; then
+        echo "Found wget ..."
     else 
-        echo "Found docker-compose.yml"
+        echo " curl or wget not found" 
+        sleep 5 
+        exit 1
+    fi
+}
+
+getLatestRelease() {
+    owner=${1:-"${GITHUB_OWNER}"}
+    repo=${2:-"${GITHUB_REPO}"}
+    github_url="https://api.github.com/repos/${owner}/${repo}/releases/latest"
+    tag_name=$(curl -s ${github_url} | jq -r '.tag_name')
+    if [ -n "${tag_name}" ]; then 
+        >&2 echo "Latest release not found"
+        exit 1
+    fi
+    asset_urls=$(curl -s ${github_url} | jq -r '.assets[] | .browser_download_url' | grep "compose")
+    for i in ${asset_urls}; do
+    echo "Downloading ... ${i}"
+    download_file ${i}
+    done
+}
+
+
+download_file() {
+    local file_url="${1}"
+    if command_exists curl ; then
+        curl -fsSLO ${file_url}
+    elif command_exists wget; then
+        wget --no-check-certificate -q -N -O ${file_url##*/}  ${file_url}
     fi
 }
 
 run_command() {
-    download_compose_file
-    if command_exists docker-compose && [ -f ${script_root}/docker-compose.yml ]; then
-        docker-compose -f ${script_root}/docker-compose.yml up
-        docker-compose rm -f
+    checkDependencies
+    getLatestRelease "TIBCOSoftware" "flogo"
+    chmod +x ${script_root}/docker-compose-start.sh
+    if command_exists docker-compose && [ -r ${script_root}/docker-compose.yml ] && [ -x ${script_root}/docker-compose-start.sh ]; then
+        echo docker-compose -f ${script_root}/docker-compose.yml up
+        echo docker-compose rm -f
     fi
 }
 run_command
