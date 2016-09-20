@@ -43,7 +43,6 @@ EOF
 }
 
 getLatestRelease() {
-    set -x
     owner=${1:-"${GITHUB_OWNER}"}
     repo=${2:-"${GITHUB_REPO}"}
     github_url="https://api.github.com/repos/${owner}/${repo}/releases/latest"
