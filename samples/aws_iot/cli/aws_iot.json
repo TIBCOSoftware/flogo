@@ -1,8 +1,8 @@
 {
     "attributes": [],
+    "explicitReply": true,
     "model": "tibco-simple",
     "name": "AWS IOT Sample",
-    "explicitReply":true,
     "rootTask": {
         "activityType": "",
         "id": 1,
