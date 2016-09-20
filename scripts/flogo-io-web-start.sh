@@ -1,5 +1,6 @@
 #!/bin/sh
-#
+# This script has at most 2 dependencies 
+#       jq and curl   OR   jq and wget
 # This script is meant for quick & easy install via:
 #   'curl -sSL https://github.com/TIBCOSoftware/flogo-web/releases/download/${GITHUB_TAG}/start-flogo-web.txt | sh'
 # or:
@@ -15,8 +16,17 @@ export DOCKER_REGISTRY=localhost:5000/
 
 checkDependencies() {
     if ! command_exists docker-compose ; then 
-        echo "docker-compose not found" 
-        sleep 5 
+        cat >&2 <<-'EOF'
+        Error: this installer needs "docker-compose"
+        We are unable to find "docker-compose" to make this happen.
+        EOF
+        exit 1 
+    fi
+    if ! command_exists jq ; then 
+        cat >&2 <<-'EOF'
+        Error: this installer needs "jq"
+        We are unable to find "jq" to make this happen.
+        EOF
         exit 1 
     fi
     if command_exists curl ; then
@@ -24,9 +34,11 @@ checkDependencies() {
     elif command_exists wget; then
         echo "Found wget ..."
     else 
-        echo " curl or wget not found" 
-        sleep 5 
-        exit 1
+        cat >&2 <<-'EOF'
+        Error: this installer needs "curl" or "wget"
+        We are unable to find either "curl" or "wget" available to make this happen.
+        EOF
+        exit 1 
     fi
 }
 
@@ -36,8 +48,9 @@ getLatestRelease() {
     github_url="https://api.github.com/repos/${owner}/${repo}/releases/latest"
     tag_name=$(curl -s ${github_url} | jq -r '.tag_name')
     if [ -n "${tag_name}" ]; then 
-        >&2 echo "Latest release not found"
-        exit 1
+        cat >&2 <<-'EOF'
+        Error: "Latest" release not found at https://github.com/TIBCOSoftware/flogo-web/releases
+        EOF
     fi
     asset_urls=$(curl -s ${github_url} | jq -r '.assets[] | .browser_download_url' | grep "compose")
     for i in ${asset_urls}; do
@@ -65,4 +78,6 @@ run_command() {
         echo docker-compose rm -f
     fi
 }
+# wrapped up in a function so that we have some protection against only getting
+# half the file during "curl | sh"
 run_command
