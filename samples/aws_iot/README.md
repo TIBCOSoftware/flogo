@@ -67,11 +67,11 @@ flogo build
       "endpoints": [
         {
           "actionType": "flow",
-          "actionURI": "embedded://myflow",
+          "actionURI": "embedded://flow",
           "settings": {
             "autoIdReply": "true",
-            "method": "GET",
-            "path": "/flow",
+            "method": "PUT",
+            "path": "/awsiot/status",
             "useReplyHandler": "true"
           }
         }
@@ -88,6 +88,13 @@ flogo build
   cd bin
 	./aws_iot
 ```
+* Send a PUT request to trigger with update aws-iot device shadow reported content.
+    For example:
+    ```
+        URL: http://localhost:9999/awsiot/status
+        
+        Body: {"switch":"on"} 
+    ```
 
 
 For more details about Rest Trigger configuration go [here](https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/rest#example-configurations)
