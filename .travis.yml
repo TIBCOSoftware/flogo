@@ -31,7 +31,7 @@ after_script:
   - "[ -f \"${HOME}/.netrc\" ] && rm -f ${HOME}/.netrc"
 deploy:
   provider: releases
-  api_key: "${GITHUB_OAUTH_TOKEN}"
+  api_key: "${GITHUB_USER_TOKEN}"
   file: "${TRAVIS_BUILD_DIR}/flogo-cicd/submodules/flogo/docker-compose.yml"
   file: "${TRAVIS_BUILD_DIR}/flogo-cicd/submodules/flogo/docker-compose-start.sh"
   file: "${TRAVIS_BUILD_DIR}/flogo-cicd/submodules/flogo/flogo-io-web-start.sh"
