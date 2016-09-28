@@ -1,9 +1,5 @@
 # flogo
-Flogo hello world sample
-
-![Flogo icon](flynn.png)
-
-**Flogo** is process-flow engine written in Go. It was designed from the ground up to be robust enough for cloud applications and at the same time sufficiently lean for IOT devices.
+Simple flow to count the number and print hello word
 
 ##Get start with samples
 

@@ -1,9 +1,7 @@
 # flogo
 Flogo AWS Iot sample
 
-![Flogo icon](flynn.png)
-
-**Flogo** is process-flow engine written in Go. It was designed from the ground up to be robust enough for cloud applications and at the same time sufficiently lean for IOT devices.
+Use AWS-IOT sample to update AWS-IoT shodow
 
 ##Get start with samples
 
@@ -18,7 +16,6 @@ Flogo AWS Iot sample
 │   │   ├── device.pem.crt
 │   │   ├── device.pem.key
 ```
-
 * Download AWS IoT Certificate and Private file
 * Replace AWS Iot Certificate to root-CA.pem.crt and device.pem.crt
 * Replace AWS Iot Private key to device.pem.key
@@ -32,13 +29,15 @@ Please keep name same with root-CA.pem.crt, device.pem.crt and device.pem.key)
 * Open Flogo web ui, eg:http://localhost:3010
 * Click Import a flow at right top of the page
 * Select aws_iot.json under web folder
+* Change the AWS-IOT(Update) acitivity's thingName and awsEndpoint field 
 * Now we can play on web ui.
 
 
 ### Run from Flogo command line
 
-* Please following flogo command line [Getting Started](https://github.com/TIBCOSoftware/flogo-cli#getting-started) guide.
-* Using flow [aws_iot.json](https://github.com/TIBCOSoftware/flogo/blob/master/samples/aws_iot/cli/aws_iot.json) that under cli folder.
+* Please following flogo command line [Getting Started](https://github.com/TIBCOSoftware/flogo-cli#getting-started) guide
+* Using flow [aws_iot.json](https://github.com/TIBCOSoftware/flogo/blob/master/samples/aws_iot/cli/aws_iot.json) that under cli folder
+* Change the things name and awsEndpoint in flow to your AWS IOT related
 * Run command
 
 ```bash
