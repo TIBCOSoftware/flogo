@@ -66,7 +66,7 @@ flogo build
       "endpoints": [
         {
           "actionType": "flow",
-          "actionURI": "embedded://flow",
+          "actionURI": "embedded://aws_iot",
           "settings": {
             "autoIdReply": "true",
             "method": "PUT",

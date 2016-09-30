@@ -39,7 +39,7 @@ Simple flow to count the number and print hello word
       "endpoints": [
         {
           "actionType": "flow",
-          "actionURI": "embedded://flow",
+          "actionURI": "embedded://helloWorld",
           "settings": {
             "hours": "",
             "repeating": "true",
