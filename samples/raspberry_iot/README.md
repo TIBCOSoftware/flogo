@@ -18,7 +18,7 @@ The sample show how to use Flogo to control Raspberry PI GPIO
 	
 * Open Flogo web ui, eg:http://localhost:3010
 * Click Import a flow at right top of the page
-* Select raspberry_pi.json under web folder
+* Select raspberry_iot.json under web folder
 * Add raspberrypi and raspberry pi ip to your host file.
 ```
   10.97.170.106 raspberrypi
@@ -28,7 +28,7 @@ The sample show how to use Flogo to control Raspberry PI GPIO
 ### Run from Flogo command line
 
 * Please following flogo command line [Getting Started](https://github.com/TIBCOSoftware/flogo-cli#getting-started) guide
-* Using flow [raspberry_pi.json](https://github.com/TIBCOSoftware/flogo/blob/master/samples/raspberry_pi/cli/raspberry_pi.json) that under cli folder
+* Using flow [raspberry_iot.json](https://github.com/TIBCOSoftware/flogo/blob/master/samples/raspberry_iot/cli/raspberry_iot.json) that under cli folder
 * Add raspberrypi and raspberry pi ip to your host file.
 ```
   10.97.170.106 raspberrypi
@@ -36,19 +36,19 @@ The sample show how to use Flogo to control Raspberry PI GPIO
 * Run command
 
 ```bash
-flogo create raspberry_pi
-cd raspberry_pi
+flogo create raspberry_iot
+cd raspberry_iot
 flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/awsiot
 flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/log
 flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/reply
 flogo add trigger github.com/TIBCOSoftware/flogo-contrib/trigger/rest
 
-flogo add flow raspberry_pi.json
+flogo add flow raspberry_iot.json
 flogo build
 
 ```
 	
-* Configure Rest Trigger or copy below content into raspberry_pi/bin/trigger.json
+* Configure Rest Trigger or copy below content into raspberry_iot/bin/trigger.json
 
 ```json
 {
@@ -61,7 +61,7 @@ flogo build
       "endpoints": [
         {
           "actionType": "flow",
-          "actionURI": "embedded://flow",
+          "actionURI": "embedded://raspberry_iot",
           "settings": {
             "autoIdReply": "true",
             "method": "POST",
@@ -79,7 +79,7 @@ flogo build
 * Start Flogo Engine 
 ```bash
   cd bin
-	./raspberry_pi
+	./raspberry_iot
 ```
 * Send a POST request to trigger with light id(0 or 1)
     For example:
