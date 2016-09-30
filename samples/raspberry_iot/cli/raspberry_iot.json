@@ -1,3 +1,234 @@
 {
-  "sample-flow":"please replace with real one"
+    "attributes": [],
+    "explicitReply": true,
+    "model": "tibco-simple",
+    "name": "Control home lights",
+    "rootTask": {
+        "activityType": "",
+        "id": 1,
+        "links": [
+            {
+                "from": 2,
+                "id": 1,
+                "to": 3,
+                "type": 0
+            },
+            {
+                "from": 3,
+                "id": 2,
+                "to": 4,
+                "type": 1,
+                "value": "${A3.result}==0"
+            },
+            {
+                "from": 4,
+                "id": 3,
+                "to": 5,
+                "type": 0
+            },
+            {
+                "from": 5,
+                "id": 4,
+                "to": 16,
+                "type": 0
+            },
+            {
+                "from": 3,
+                "id": 5,
+                "to": 26,
+                "type": 1,
+                "value": "${A3.result}==1"
+            },
+            {
+                "from": 26,
+                "id": 6,
+                "to": 27,
+                "type": 0
+            },
+            {
+                "from": 27,
+                "id": 7,
+                "to": 28,
+                "type": 0
+            }
+        ],
+        "name": "root",
+        "tasks": [
+            {
+                "activityType": "tibco-log",
+                "attributes": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Received request."
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "id": 2,
+                "name": "Received",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-rest",
+                "attributes": [
+                    {
+                        "name": "method",
+                        "type": "string",
+                        "value": "GET"
+                    },
+                    {
+                        "name": "uri",
+                        "type": "string",
+                        "value": "http://raspberrypi:8000/GPIO/23/value"
+                    }
+                ],
+                "id": 3,
+                "name": "GetStatus",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-log",
+                "attributes": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Update status since it's different with expected"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "id": 4,
+                "inputMappings": [
+                    {
+                        "mapTo": "message",
+                        "type": 1,
+                        "value": "{A3.result}"
+                    }
+                ],
+                "name": "Log0On",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-rest",
+                "attributes": [
+                    {
+                        "name": "method",
+                        "type": "string",
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "type": "string",
+                        "value": "http://raspberrypi:8000/GPIO/23/value/1"
+                    }
+                ],
+                "id": 5,
+                "name": "Light0ToON",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-reply",
+                "attributes": [
+                    {
+                        "name": "code",
+                        "type": "integer",
+                        "value": "200"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "value": "Update light 0 to On"
+                    }
+                ],
+                "id": 16,
+                "name": "Reply To Trigger (2)",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-log",
+                "attributes": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": "Update status since it's different with expected"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "id": 26,
+                "inputMappings": [
+                    {
+                        "mapTo": "message",
+                        "type": 1,
+                        "value": "{A3.result}"
+                    }
+                ],
+                "name": "Log0off",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-rest",
+                "attributes": [
+                    {
+                        "name": "method",
+                        "type": "string",
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "type": "string",
+                        "value": "http://raspberrypi:8000/GPIO/23/value/0"
+                    }
+                ],
+                "id": 27,
+                "name": "light0off",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-reply",
+                "attributes": [
+                    {
+                        "name": "code",
+                        "type": "integer",
+                        "value": "200"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "value": "Update light 0 to Off"
+                    }
+                ],
+                "id": 28,
+                "name": "Reply To Trigger (8)",
+                "type": 1
+            }
+        ],
+        "type": 1
+    },
+    "type": 1
 }

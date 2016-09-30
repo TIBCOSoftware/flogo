@@ -1,3 +1,2116 @@
 {
-  "sample-flow":"please replace with real one"
+    "$table": "flows",
+    "description": "A  simple flow using Raspberry PI GPIO to control home lights",
+    "errorHandler": {
+        "items": {},
+        "paths": {
+            "nodes": {},
+            "root": {}
+        }
+    },
+    "items": {
+        "MTA": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Message",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "MTA",
+            "installed": true,
+            "name": "Log Light3",
+            "title": "Log Message",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "MTE": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "/GPIO/2/value/1"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "MTE",
+            "installed": true,
+            "name": "Update Light3",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "MTI": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "GET"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "/GPIO/3/value"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "MTI",
+            "installed": true,
+            "name": "Get4Status",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "MTM": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Message",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "MTM",
+            "installed": true,
+            "name": "Log Light4",
+            "title": "Log Message",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "MTQ": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "/GPIO/3/value/1"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "MTQ",
+            "installed": true,
+            "name": "UpdateLight4",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "MTY": {
+            "__schema": {
+                "description": "Simple Reply Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any"
+                    }
+                ],
+                "name": "tibco-reply",
+                "outputs": [],
+                "title": "Reply To Trigger",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-reply",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": 1,
+                        "value": "200"
+                    },
+                    {
+                        "name": "data",
+                        "type": 7,
+                        "value": "Update light 0 to On"
+                    }
+                ],
+                "outputs": []
+            },
+            "author": "Anonymous",
+            "description": "Simple Reply Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+            "id": "MTY",
+            "installed": true,
+            "name": "Reply To Trigger (2)",
+            "title": "Reply To Trigger",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/reply"
+        },
+        "MTg": {
+            "__schema": {
+                "description": "Simple Reply Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any"
+                    }
+                ],
+                "name": "tibco-reply",
+                "outputs": [],
+                "title": "Reply To Trigger",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-reply",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": 1,
+                        "value": 0
+                    },
+                    {
+                        "name": "data",
+                        "type": 7,
+                        "value": null
+                    }
+                ],
+                "outputs": []
+            },
+            "author": "Anonymous",
+            "description": "Simple Reply Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+            "id": "MTg",
+            "installed": true,
+            "name": "Reply To Trigger (4)",
+            "title": "Reply To Trigger",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/reply"
+        },
+        "MTk": {
+            "__schema": {
+                "description": "Simple Reply Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any"
+                    }
+                ],
+                "name": "tibco-reply",
+                "outputs": [],
+                "title": "Reply To Trigger",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-reply",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": 1,
+                        "value": 0
+                    },
+                    {
+                        "name": "data",
+                        "type": 7,
+                        "value": null
+                    }
+                ],
+                "outputs": []
+            },
+            "author": "Anonymous",
+            "description": "Simple Reply Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+            "id": "MTk",
+            "installed": true,
+            "name": "Reply To Trigger (5)",
+            "title": "Reply To Trigger",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/reply"
+        },
+        "Mg": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Message",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": "Received request."
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "Mg",
+            "installed": true,
+            "name": "Received",
+            "title": "Log Message",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "MjM": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Message",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "MjM",
+            "inputMappings": [
+                {
+                    "mapTo": "message",
+                    "type": 1,
+                    "value": "{A6.result}"
+                }
+            ],
+            "installed": true,
+            "name": "Log1On",
+            "title": "Log Message",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "MjQ": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "http://10.97.170.106:8000/GPIO/24/value/1"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "MjQ",
+            "installed": true,
+            "name": "Light1ToOn",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "MjU": {
+            "__schema": {
+                "description": "Simple Reply Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any"
+                    }
+                ],
+                "name": "tibco-reply",
+                "outputs": [],
+                "title": "Reply To Trigger",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-reply",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": 1,
+                        "value": "200"
+                    },
+                    {
+                        "name": "data",
+                        "type": 7,
+                        "value": "Update light 1 to On"
+                    }
+                ],
+                "outputs": []
+            },
+            "author": "Anonymous",
+            "description": "Simple Reply Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+            "id": "MjU",
+            "installed": true,
+            "name": "Reply To Trigger (7)",
+            "title": "Reply To Trigger",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/reply"
+        },
+        "MjY": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Message",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": "Update status since it's different with expected"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "MjY",
+            "inputMappings": [
+                {
+                    "mapTo": "message",
+                    "type": 1,
+                    "value": "{A3.result}"
+                }
+            ],
+            "installed": true,
+            "name": "Log0off",
+            "title": "Log Message",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "Mjc": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "http://raspberrypi:8000/GPIO/23/value/0"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "Mjc",
+            "installed": true,
+            "name": "light0off",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "Mjg": {
+            "__schema": {
+                "description": "Simple Reply Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any"
+                    }
+                ],
+                "name": "tibco-reply",
+                "outputs": [],
+                "title": "Reply To Trigger",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-reply",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": 1,
+                        "value": "200"
+                    },
+                    {
+                        "name": "data",
+                        "type": 7,
+                        "value": "Update light 0 to Off"
+                    }
+                ],
+                "outputs": []
+            },
+            "author": "Anonymous",
+            "description": "Simple Reply Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+            "id": "Mjg",
+            "installed": true,
+            "name": "Reply To Trigger (8)",
+            "title": "Reply To Trigger",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/reply"
+        },
+        "Mjk": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Message",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": "Log Light 1 status is on"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "Mjk",
+            "inputMappings": [
+                {
+                    "mapTo": "message",
+                    "type": 1,
+                    "value": "{A6.result}"
+                }
+            ],
+            "installed": true,
+            "name": "Log1off",
+            "title": "Log Message",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "Mw": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "GET"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "http://raspberrypi:8000/GPIO/23/value"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "Mw",
+            "installed": true,
+            "name": "GetStatus",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "MzA": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "http://10.97.170.106:8000/GPIO/24/value/1"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "MzA",
+            "installed": true,
+            "name": "Light1off",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "MzE": {
+            "__schema": {
+                "description": "Simple Reply Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "data",
+                        "type": "any"
+                    }
+                ],
+                "name": "tibco-reply",
+                "outputs": [],
+                "title": "Reply To Trigger",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-reply",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "code",
+                        "required": true,
+                        "type": 1,
+                        "value": "200"
+                    },
+                    {
+                        "name": "data",
+                        "type": 7,
+                        "value": "Update light 0 to Off"
+                    }
+                ],
+                "outputs": []
+            },
+            "author": "Anonymous",
+            "description": "Simple Reply Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+            "id": "MzE",
+            "installed": true,
+            "name": "Reply To Trigger (9)",
+            "title": "Reply To Trigger",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/reply"
+        },
+        "NA": {
+            "__schema": {
+                "description": "Simple Log Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ],
+                "name": "tibco-log",
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": "string"
+                    }
+                ],
+                "title": "Log Message",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-log",
+            "attributes": {
+                "inputs": [
+                    {
+                        "name": "message",
+                        "type": 0,
+                        "value": "Update status since it's different with expected"
+                    },
+                    {
+                        "name": "flowInfo",
+                        "type": 3,
+                        "value": "true"
+                    },
+                    {
+                        "name": "addToFlow",
+                        "type": 3,
+                        "value": "true"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "message",
+                        "type": 0
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple Log Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+            "id": "NA",
+            "inputMappings": [
+                {
+                    "mapTo": "message",
+                    "type": 1,
+                    "value": "{A3.result}"
+                }
+            ],
+            "installed": true,
+            "name": "Log0On",
+            "title": "Log Message",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "file:///Users/xli/git/TIBCOSoftware/flogo-cicd/submodules/flogo-web/submodules/flogo-contrib/activity/log"
+        },
+        "NQ": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "POST"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "http://raspberrypi:8000/GPIO/23/value/1"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "NQ",
+            "installed": true,
+            "name": "Light0ToON",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "Ng": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "GET"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "http://10.97.170.106:8000/GPIO/1/value"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "Ng",
+            "installed": true,
+            "name": "GetStatus1",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "OQ": {
+            "__schema": {
+                "description": "Simple REST Activity",
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": "object"
+                    }
+                ],
+                "title": "Invoke REST Service",
+                "version": "0.0.1"
+            },
+            "activityType": "tibco-rest",
+            "attributes": {
+                "inputs": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": 0,
+                        "value": "GET"
+                    },
+                    {
+                        "name": "uri",
+                        "required": true,
+                        "type": 0,
+                        "value": "/GPIO/2/value"
+                    },
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "result",
+                        "type": 4
+                    }
+                ]
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Activity",
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/rest",
+            "id": "OQ",
+            "installed": true,
+            "name": "Get3Status",
+            "title": "Invoke REST Service",
+            "type": 1,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/rest"
+        },
+        "RmxvZ286OkJyYW5jaDo6MTQ3NDY1MTU0NTQyMg": {
+            "condition": "${A3.result}==0",
+            "id": "RmxvZ286OkJyYW5jaDo6MTQ3NDY1MTU0NTQyMg",
+            "type": 2
+        },
+        "RmxvZ286OkJyYW5jaDo6MTQ3NTAwODY4NTExOA": {
+            "condition": "true",
+            "id": "RmxvZ286OkJyYW5jaDo6MTQ3NTAwODY4NTExOA",
+            "type": 2
+        },
+        "RmxvZ286OkJyYW5jaDo6MTQ3NTAwODc5NjIxMw": {
+            "condition": "${A6.result}==0",
+            "id": "RmxvZ286OkJyYW5jaDo6MTQ3NTAwODc5NjIxMw",
+            "type": 2
+        },
+        "RmxvZ286OkJyYW5jaDo6MTQ3NTE5NjQyNDQyMw": {
+            "condition": "${A3.result}==1",
+            "id": "RmxvZ286OkJyYW5jaDo6MTQ3NTE5NjQyNDQyMw",
+            "type": 2
+        },
+        "RmxvZ286OkJyYW5jaDo6MTQ3NTE5Njc4NzU4NQ": {
+            "condition": "${A6.result}==0",
+            "id": "RmxvZ286OkJyYW5jaDo6MTQ3NTE5Njc4NzU4NQ",
+            "type": 2
+        },
+        "RmxvZ286OlRyaWdnZXI6OjE0NzQ2NTExMzYxMDc": {
+            "__props": {
+                "errors": [],
+                "outputs": [
+                    {
+                        "name": "pathParams",
+                        "type": 6,
+                        "value": ""
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": 6,
+                        "value": null
+                    },
+                    {
+                        "name": "content",
+                        "type": 4,
+                        "value": null
+                    }
+                ]
+            },
+            "__schema": {
+                "description": "Simple REST Trigger",
+                "endpoint": {
+                    "settings": [
+                        {
+                            "allowed": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "PATCH",
+                                "DELETE"
+                            ],
+                            "name": "method",
+                            "required": true,
+                            "type": "string"
+                        },
+                        {
+                            "name": "path",
+                            "required": true,
+                            "type": "string"
+                        },
+                        {
+                            "name": "autoIdReply",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "useReplyHandler",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/rest",
+                "name": "tibco-rest",
+                "outputs": [
+                    {
+                        "name": "pathParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "queryParams",
+                        "type": "params"
+                    },
+                    {
+                        "name": "content",
+                        "type": "object"
+                    }
+                ],
+                "settings": [
+                    {
+                        "name": "port",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "title": "Receive HTTP Message",
+                "version": "0.0.1"
+            },
+            "__status": {
+                "hasRun": true,
+                "isRunning": false
+            },
+            "author": "Anonymous",
+            "description": "Simple REST Trigger",
+            "endpoint": {
+                "settings": [
+                    {
+                        "allowed": [
+                            "GET",
+                            "POST",
+                            "PUT",
+                            "PATCH",
+                            "DELETE"
+                        ],
+                        "name": "method",
+                        "required": true,
+                        "type": "string",
+                        "value": "POST"
+                    },
+                    {
+                        "name": "path",
+                        "required": true,
+                        "type": "string",
+                        "value": "/lights/status"
+                    },
+                    {
+                        "name": "autoIdReply",
+                        "type": "boolean",
+                        "value": "true"
+                    },
+                    {
+                        "name": "useReplyHandler",
+                        "type": "boolean",
+                        "value": "true"
+                    }
+                ]
+            },
+            "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/rest",
+            "id": "RmxvZ286OlRyaWdnZXI6OjE0NzQ2NTExMzYxMDc",
+            "installed": true,
+            "name": "Receive",
+            "outputs": [
+                {
+                    "name": "pathParams",
+                    "type": 6,
+                    "value": ""
+                },
+                {
+                    "name": "queryParams",
+                    "type": 6,
+                    "value": null
+                },
+                {
+                    "name": "content",
+                    "type": 4,
+                    "value": null
+                }
+            ],
+            "settings": [
+                {
+                    "name": "port",
+                    "required": true,
+                    "type": "integer",
+                    "value": "9999"
+                }
+            ],
+            "title": "Receive HTTP Message",
+            "triggerType": "tibco-rest",
+            "type": 0,
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
+        }
+    },
+    "name": "Control home lights",
+    "paths": {
+        "nodes": {
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjI6OjMxMDIzNDEuNzA1": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjM6OjMxMDIzNDMuMDIwMDAwMDAwNQ"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjI6OjMxMDIzNDEuNzA1",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTEzNzMyNDE6OjI5MzAxNTUuMzAwMDAwMDAwMw"
+                ],
+                "taskID": "RmxvZ286OkJyYW5jaDo6MTQ3NDY1MTU0NTQyMg",
+                "type": 6
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjM6OjMxMDIzNDMuMDIwMDAwMDAwNQ": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NjA1MDI6OjMxMTc0MjIuMzA1"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjM6OjMxMDIzNDMuMDIwMDAwMDAwNQ",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjI6OjMxMDIzNDEuNzA1"
+                ],
+                "taskID": "NA",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NjA1MDI6OjMxMTc0MjIuMzA1": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1OTM2NjE6OjMxNTA1ODIuMjI1"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NjA1MDI6OjMxMTc0MjIuMzA1",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjM6OjMxMDIzNDMuMDIwMDAwMDAwNQ"
+                ],
+                "taskID": "NQ",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1OTM2NjE6OjMxNTA1ODIuMjI1": {
+                "children": [],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1OTM2NjE6OjMxNTA1ODIuMjI1",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NjA1MDI6OjMxMTc0MjIuMzA1"
+                ],
+                "taskID": "MTY",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMTAxNTg6OjI2NjcwNjQuMDQ": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMzYxMTE6OjI2OTMwMTguMjY1"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMTAxNTg6OjI2NjcwNjQuMDQ",
+                "parents": [],
+                "taskID": "RmxvZ286OlRyaWdnZXI6OjE0NzQ2NTExMzYxMDc",
+                "type": 3
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMzYxMTE6OjI2OTMwMTguMjY1": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTEzNzMyNDE6OjI5MzAxNTUuMzAwMDAwMDAwMw"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMzYxMTE6OjI2OTMwMTguMjY1",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMTAxNTg6OjI2NjcwNjQuMDQ"
+                ],
+                "taskID": "Mg",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTEzNzMyNDE6OjI5MzAxNTUuMzAwMDAwMDAwMw": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTE1NDU0MjI6OjMxMDIzNDEuNzA1",
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0MjQ0MjQ6OjYzMzEwNC45MQ"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTEzNzMyNDE6OjI5MzAxNTUuMzAwMDAwMDAwMw",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMzYxMTE6OjI2OTMwMTguMjY1"
+                ],
+                "taskID": "Mw",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0MjQ0MjQ6OjYzMzEwNC45MQ": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NTMzNjQ6OjY2MjA0Ni4xNTU"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0MjQ0MjQ6OjYzMzEwNC45MQ",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTEzNzMyNDE6OjI5MzAxNTUuMzAwMDAwMDAwMw"
+                ],
+                "taskID": "RmxvZ286OkJyYW5jaDo6MTQ3NTE5NjQyNDQyMw",
+                "type": 6
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NTMzNjQ6OjY2MjA0Ni4xNTU": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NjAyMzI6OjY2ODkxNC4xMDAwMDAwMDAx"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NTMzNjQ6OjY2MjA0Ni4xNTU",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0MjQ0MjQ6OjYzMzEwNC45MQ"
+                ],
+                "taskID": "MjY",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NjAyMzI6OjY2ODkxNC4xMDAwMDAwMDAx": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NzE3OTA6OjY4MDQ3Mi45OTUwMDAwMDAx"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NjAyMzI6OjY2ODkxNC4xMDAwMDAwMDAx",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NTMzNjQ6OjY2MjA0Ni4xNTU"
+                ],
+                "taskID": "Mjc",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NzE3OTA6OjY4MDQ3Mi45OTUwMDAwMDAx": {
+                "children": [],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NzE3OTA6OjY4MDQ3Mi45OTUwMDAwMDAx",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzUxOTY0NjAyMzI6OjY2ODkxNC4xMDAwMDAwMDAx"
+                ],
+                "taskID": "Mjg",
+                "type": 5
+            }
+        },
+        "root": {
+            "is": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzQ2NTExMTAxNTg6OjI2NjcwNjQuMDQ"
+        }
+    }
 }
