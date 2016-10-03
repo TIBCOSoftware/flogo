@@ -2,7 +2,7 @@
     "attributes": [],
     "explicitReply": true,
     "model": "tibco-simple",
-    "name": "Control home lights",
+    "name": "Control home light",
     "rootTask": {
         "activityType": "",
         "id": 1,
@@ -29,26 +29,26 @@
             {
                 "from": 5,
                 "id": 4,
-                "to": 16,
+                "to": 6,
                 "type": 0
             },
             {
                 "from": 3,
                 "id": 5,
-                "to": 26,
+                "to": 7,
                 "type": 1,
                 "value": "${A3.result}==1"
             },
             {
-                "from": 26,
+                "from": 7,
                 "id": 6,
-                "to": 27,
+                "to": 8,
                 "type": 0
             },
             {
-                "from": 27,
+                "from": 8,
                 "id": 7,
-                "to": 28,
+                "to": 9,
                 "type": 0
             }
         ],
@@ -88,7 +88,7 @@
                     {
                         "name": "uri",
                         "type": "string",
-                        "value": "http://raspberrypi:8000/GPIO/23/value"
+                        "value": "http://10.97.170.106:8000/GPIO/23/value"
                     }
                 ],
                 "id": 3,
@@ -101,7 +101,7 @@
                     {
                         "name": "message",
                         "type": "string",
-                        "value": "Update status since it's different with expected"
+                        "value": ""
                     },
                     {
                         "name": "flowInfo",
@@ -122,7 +122,7 @@
                         "value": "{A3.result}"
                     }
                 ],
-                "name": "Log0On",
+                "name": "SetToOnLog",
                 "type": 1
             },
             {
@@ -136,11 +136,11 @@
                     {
                         "name": "uri",
                         "type": "string",
-                        "value": "http://raspberrypi:8000/GPIO/23/value/1"
+                        "value": "http://10.97.170.106:8000/GPIO/23/value/1"
                     }
                 ],
                 "id": 5,
-                "name": "Light0ToON",
+                "name": "SetToOn",
                 "type": 1
             },
             {
@@ -154,11 +154,11 @@
                     {
                         "name": "data",
                         "type": "any",
-                        "value": "Update light 0 to On"
+                        "value": "Update light to 1 successfully"
                     }
                 ],
-                "id": 16,
-                "name": "Reply To Trigger (2)",
+                "id": 6,
+                "name": "Reply To Trigger",
                 "type": 1
             },
             {
@@ -167,7 +167,7 @@
                     {
                         "name": "message",
                         "type": "string",
-                        "value": "Update status since it's different with expected"
+                        "value": ""
                     },
                     {
                         "name": "flowInfo",
@@ -180,7 +180,7 @@
                         "value": "true"
                     }
                 ],
-                "id": 26,
+                "id": 7,
                 "inputMappings": [
                     {
                         "mapTo": "message",
@@ -188,7 +188,7 @@
                         "value": "{A3.result}"
                     }
                 ],
-                "name": "Log0off",
+                "name": "SetToOffLog",
                 "type": 1
             },
             {
@@ -202,11 +202,11 @@
                     {
                         "name": "uri",
                         "type": "string",
-                        "value": "http://raspberrypi:8000/GPIO/23/value/0"
+                        "value": "http://10.97.170.106:8000/GPIO/23/value/0"
                     }
                 ],
-                "id": 27,
-                "name": "light0off",
+                "id": 8,
+                "name": "SetToOff",
                 "type": 1
             },
             {
@@ -220,11 +220,11 @@
                     {
                         "name": "data",
                         "type": "any",
-                        "value": "Update light 0 to Off"
+                        "value": "Update light to 1 successfully"
                     }
                 ],
-                "id": 28,
-                "name": "Reply To Trigger (8)",
+                "id": 9,
+                "name": "Reply To Trigger (2)",
                 "type": 1
             }
         ],
