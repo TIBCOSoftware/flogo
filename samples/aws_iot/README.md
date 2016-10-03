@@ -1,7 +1,7 @@
 # flogo
 Flogo AWS Iot sample
 
-Use AWS-IOT sample to update AWS-IoT shodow
+Use AWS-IOT sample to update AWS-IoT Shadow
 
 ##Get start with samples
 

@@ -1,6 +1,6 @@
 {
     "$table": "flows",
-    "description": "Add a sample for AWS IOT",
+    "description": "A sample flow to update AWS IOT Shadow",
     "items": {
         "Mg": {
             "__schema": {
