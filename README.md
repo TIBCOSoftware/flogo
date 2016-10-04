@@ -2,7 +2,6 @@
 
 Project Flogo is an Open Source Framework for IoT Edge Apps & Integration. 
 
-![Flogo icon](flynn.png)
 
 Highlights include:
 * Ultra-light process engine - 20x-50x lighter than Java or NodeRed
@@ -35,4 +34,5 @@ Refer to [Flogo Statement of Direction](sod.md) for an overview of the strategic
 ## Contributing 
 Contact flogo-oss@tibco.com to learn about contributing to the project. 
 
-
+## License 
+flogo is licensed under the  TIBCO Samples Internal End User License. See TIBCO Samples Internal End User License.txt for license text.
