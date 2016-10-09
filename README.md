@@ -22,7 +22,7 @@ Project Flogo consists of the following sub-projects available as separate repos
 
 In other words, currently it is for developers, by developers. 
 
-As Project Flogo develops and matures, we are considering adding more intgeration tooling and developing zero-code experiences and services for end users based on Project Flogo. If you are an end user or a traditional zero-code integration app developer, we would recommend to check out the videos and sign up for updates on the project to see when it's ready for you to get started.  
+As Project Flogo develops and matures, we are considering adding more integration tooling and developing zero-code experiences and services for end users based on Project Flogo. If you are an end user or a traditional zero-code integration app developer, we would recommend to check out the videos and sign up for updates on the project to see when it's ready for you to get started.  
 
 If you are an Extensions or IoT Solutions developer, read on because it's easy to get started with Project Flogo:
 * To install just the Flogo CLI and runtime, go to https://github.com/TIBCOSoftware/flogo-cli & follow instructions in the README
@@ -35,4 +35,6 @@ Refer to [Flogo Statement of Direction](sod.md) for an overview of the strategic
 Contact flogo-oss@tibco.com to learn about contributing to the project. 
 
 ## License 
-flogo is licensed under the  TIBCO Samples Internal End User License. See TIBCO Samples Internal End User License.txt for license text.
+The top level flogo repo, consisting of flow samples & documentation, is licensed under the [TIBCO Samples Internal End User License](http://www.tibco.com/assets/bltaa3b690244486fc9/tibco-samples-with-redistribution-eula.pdf). See TIBCO Samples Internal End User License.txt for license text. 
+
+Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib), [flgo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) & [flogo-services](https://github.com/TIBCOSoftware/flogo-services) repos are licensed under a BSD-style license. Refer to [flogo-cli license](https://github.com/TIBCOSoftware/flogo-cli/blob/master/TIBCO%20LICENSE.txt) for license text. 
