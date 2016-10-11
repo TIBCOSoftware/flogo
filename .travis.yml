@@ -34,7 +34,7 @@ deploy:
   api_key: "${GITHUB_USER_TOKEN}"
   file: "${TRAVIS_BUILD_DIR}/flogo-cicd/submodules/flogo/docker-compose.yml"
   file: "${TRAVIS_BUILD_DIR}/flogo-cicd/submodules/flogo/docker-compose-start.sh"
-  file: "${TRAVIS_BUILD_DIR}/flogo-cicd/submodules/flogo/flogo-io-web-start.sh"
+  file: "${TRAVIS_BUILD_DIR}/flogo-cicd/submodules/flogo/start-flogo-web.sh"
   skip_cleanup: true
   on:
     tags: true
