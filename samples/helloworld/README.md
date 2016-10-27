@@ -14,7 +14,7 @@ Simple flow to count the number and print hello word
 ### Run from Flogo command line
 
 * Please following flogo command line [Getting Started](https://github.com/TIBCOSoftware/flogo-cli#getting-started) guide.
-* Using flow [helloWorld.json](https://github.com/TIBCOSoftware/flogo/blob/master/samples/helloworld/cli/helloworld.json) that under cli folder.
+* Using flow [helloWorld.json](https://github.com/TIBCOSoftware/flogo/blob/master/samples/helloworld/cli/helloWorld.json) that under cli folder.
 * Run command
 
 
@@ -23,7 +23,7 @@ Simple flow to count the number and print hello word
 	cd helloworld
 
 	flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/log
-	flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/app
+	flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/counter
 	flogo add trigger github.com/TIBCOSoftware/flogo-contrib/trigger/timer
 	flogo add flow helloWorld.json
 	flogo build
