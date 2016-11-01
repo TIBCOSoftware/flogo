@@ -6,8 +6,8 @@ Simple flow to count the number and print hello word
 ### Import to Web UI
 	
 * Open Flogo web ui, eg:http://localhost:3010
-* Click Import a flow at right top of the page
-* Select helloworld.json under web folder
+* Click Import a flow
+* Select helloWorld.json under web folder
 * Now we can play on web ui.
 
 

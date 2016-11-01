@@ -19,7 +19,7 @@ Use AWS-IOT sample to update AWS-IoT Shadow
 * Download AWS IoT Certificate and Private file
 * Replace AWS Iot Certificate to root-CA.pem.crt and device.pem.crt
 * Replace AWS Iot Private key to device.pem.key
-* Copy things folder to where you start flogo, copy to where you run docker-compose-start.sh for user flow.
+* Mount things folde into flogo-web container when you start flogo:  docker run -it -p 3010:3010  -p 5984:5984 -v ${thingsFolderPath}:/tmp/flogo-web/build/server/test-engine/bin/things flogo/flogo-web
 
 Please keep name same with root-CA.pem.crt, device.pem.crt and device.pem.key)
 
