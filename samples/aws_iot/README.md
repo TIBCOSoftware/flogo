@@ -19,14 +19,17 @@ Use AWS-IOT sample to update AWS-IoT Shadow
 * Download AWS IoT Certificate and Private file
 * Replace AWS Iot Certificate to root-CA.pem.crt and device.pem.crt
 * Replace AWS Iot Private key to device.pem.key
-* Mount things folde into flogo-web container when you start flogo:  docker run -it -p 3010:3010  -p 5984:5984 -v ${thingsFolderPath}:/tmp/flogo-web/build/server/test-engine/bin/things flogo/flogo-web
+* Mount things folde into flogo-web container when you start flogo: 
+```bash
+ docker run -it -p 3303:3303 -v ${thingsFolderPath}:/tmp/flogo-web/build/server/test-engine/bin/things flogo/flogo-web
+```
 
 Please keep name same with root-CA.pem.crt, device.pem.crt and device.pem.key)
 
 
 ### Import to Web UI
 	
-* Open Flogo web ui, eg:http://localhost:3010
+* Open Flogo web ui, eg:http://localhost:3303
 * Click Import a flow at right top of the page
 * Select aws_iot.json under web folder
 * Change the AWS-IOT(Update) acitivity's thingName and awsEndpoint field 
@@ -47,7 +50,7 @@ flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/awsiot
 flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/log
 flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/reply
 flogo add trigger github.com/TIBCOSoftware/flogo-contrib/trigger/rest
-
+#Make sure aws_iot.json file under current location
 flogo add flow aws_iot.json
 flogo build
 
