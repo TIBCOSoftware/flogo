@@ -5,9 +5,9 @@ Simple flow to count the number and print hello word
 
 ### Import to Web UI
 	
-* Open Flogo web ui, eg:http://localhost:3010
-* Click Import a flow at right top of the page
-* Select helloworld.json under web folder
+* Open Flogo web ui, eg:http://localhost:3303
+* Click Import a flow
+* Select helloWorld.json under web folder
 * Now we can play on web ui.
 
 
@@ -25,6 +25,7 @@ Simple flow to count the number and print hello word
 	flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/log
 	flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/counter
 	flogo add trigger github.com/TIBCOSoftware/flogo-contrib/trigger/timer
+  #Make sure helloWorld.json file under current location
 	flogo add flow helloWorld.json
 	flogo build
 ```
