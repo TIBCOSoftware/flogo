@@ -11,7 +11,7 @@ The sample show how to use Flogo to control Raspberry PI GPIO
 
 ### Import to Web UI
 	
-* Open Flogo web ui, eg:http://localhost:3010
+* Open Flogo web ui, eg:http://localhost:3303
 * Click Import a flow
 * Select raspberry_iot.json under web folder
 * Now you can play Flogo on web ui.

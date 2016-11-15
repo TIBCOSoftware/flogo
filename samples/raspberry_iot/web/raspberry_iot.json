@@ -1,5 +1,7 @@
 {
     "$table": "flows",
+    "_id": "flows:flogoweb-admin:2016-11-15T21:12:26.666Z",
+    "_rev": "47-8635b0c40a9d93dd22e6628e933df75a",
     "description": "A simple flow using Raspberry PI GPIO to control home light",
     "errorHandler": {
         "items": {},
@@ -196,6 +198,7 @@
                     {
                         "name": "pinNumber",
                         "required": true,
+                        "type": 1,
                         "value": "23"
                     },
                     {
@@ -318,6 +321,7 @@
                     {
                         "name": "pinNumber",
                         "required": true,
+                        "type": 1,
                         "value": "23"
                     },
                     {
@@ -513,6 +517,7 @@
                     {
                         "name": "pinNumber",
                         "required": true,
+                        "type": 1,
                         "value": "23"
                     },
                     {
@@ -754,6 +759,7 @@
                     {
                         "name": "pinNumber",
                         "required": true,
+                        "type": 1,
                         "value": "23"
                     },
                     {
@@ -801,19 +807,18 @@
             "type": 1,
             "version": "0.0.1"
         },
-        "RmxvZ286OkJyYW5jaDo6MTQ3OTE1ODM5NTk5MA": {
+        "RmxvZ286OkJyYW5jaDo6MTQ3OTI0NDQyNjYzNA": {
             "condition": "${A4.result}==0",
-            "id": "RmxvZ286OkJyYW5jaDo6MTQ3OTE1ODM5NTk5MA",
+            "id": "RmxvZ286OkJyYW5jaDo6MTQ3OTI0NDQyNjYzNA",
             "type": 2
         },
-        "RmxvZ286OkJyYW5jaDo6MTQ3OTE1ODM5ODMyOA": {
+        "RmxvZ286OkJyYW5jaDo6MTQ3OTI0NDQyODU4MQ": {
             "condition": "${A4.result}==1",
-            "id": "RmxvZ286OkJyYW5jaDo6MTQ3OTE1ODM5ODMyOA",
+            "id": "RmxvZ286OkJyYW5jaDo6MTQ3OTI0NDQyODU4MQ",
             "type": 2
         },
-        "RmxvZ286OlRyaWdnZXI6OjE0NzkxNTgyNjc1NDQ": {
+        "RmxvZ286OlRyaWdnZXI6OjE0NzkyNDQzNTIyNDA": {
             "__props": {
-                "errors": [],
                 "outputs": [
                     {
                         "name": "pathParams",
@@ -889,10 +894,6 @@
                 "title": "Receive HTTP Message",
                 "version": "0.0.1"
             },
-            "__status": {
-                "hasRun": false,
-                "isRunning": false
-            },
             "description": "Simple REST Trigger",
             "endpoint": {
                 "settings": [
@@ -928,7 +929,7 @@
                 ]
             },
             "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/rest",
-            "id": "RmxvZ286OlRyaWdnZXI6OjE0NzkxNTgyNjc1NDQ",
+            "id": "RmxvZ286OlRyaWdnZXI6OjE0NzkyNDQzNTIyNDA",
             "installed": true,
             "name": "Receive HTTP Message",
             "outputs": [
@@ -962,139 +963,139 @@
             "version": "0.0.1"
         }
     },
-    "name": "Control home light2",
+    "name": "Control home light",
     "paths": {
         "nodes": {
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MDgyNTI6Ojc2MTExMy44ODAwMDAwMDAx": {
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2MzU6OjEwMDEyNi44NA": {
                 "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTE0MDc6Ojc2NDI2OS45NzUwMDAwMDAx"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2Mzc6OjEwMDEyOC41ODAwMDAwMDAwMg"
                 ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MDgyNTI6Ojc2MTExMy44ODAwMDAwMDAx",
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2MzU6OjEwMDEyNi44NA",
                 "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTI6Ojc0ODg1NC4zNDAwMDAwMDAx"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzODYxODE6OjU5NjcxLjM0MDAwMDAwMDAx"
                 ],
-                "taskID": "Ng",
-                "type": 5
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTE0MDc6Ojc2NDI2OS45NzUwMDAwMDAx": {
-                "children": [],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTE0MDc6Ojc2NDI2OS45NzUwMDAwMDAx",
-                "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MDgyNTI6Ojc2MTExMy44ODAwMDAwMDAx"
-                ],
-                "taskID": "Nw",
-                "type": 5
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTc4ODY6Ojc3MDc0OC43OTAwMDAwMDAy": {
-                "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTk2ODM6Ojc3MjU0NS4zMDU"
-                ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTc4ODY6Ojc3MDc0OC43OTAwMDAwMDAy",
-                "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMzE6Ojc1MTE5Mi44MjUwMDAwMDAx"
-                ],
-                "taskID": "OQ",
-                "type": 5
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTk2ODM6Ojc3MjU0NS4zMDU": {
-                "children": [],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTk2ODM6Ojc3MjU0NS4zMDU",
-                "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTc4ODY6Ojc3MDc0OC43OTAwMDAwMDAy"
-                ],
-                "taskID": "MTA",
-                "type": 5
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjQ3ODk6OjYxNzY0Ny4wNA": {
-                "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjc1NTA6OjYyMDQwOC4wMTAwMDAwMDAx"
-                ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjQ3ODk6OjYxNzY0Ny4wNA",
-                "parents": [],
-                "taskID": "RmxvZ286OlRyaWdnZXI6OjE0NzkxNTgyNjc1NDQ",
-                "type": 3
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjc1NTA6OjYyMDQwOC4wMTAwMDAwMDAx": {
-                "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNDYyNzU6OjY5OTEzNS41MjU"
-                ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjc1NTA6OjYyMDQwOC4wMTAwMDAwMDAx",
-                "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjQ3ODk6OjYxNzY0Ny4wNA"
-                ],
-                "taskID": "Mg",
-                "type": 5
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNDYyNzU6OjY5OTEzNS41MjU": {
-                "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNzQ3NjU6OjcyNzYyNi4xMzAwMDAwMDAx"
-                ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNDYyNzU6OjY5OTEzNS41MjU",
-                "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjc1NTA6OjYyMDQwOC4wMTAwMDAwMDAx"
-                ],
-                "taskID": "Mw",
-                "type": 5
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNzQ3NjU6OjcyNzYyNi4xMzAwMDAwMDAx": {
-                "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTE6Ojc0ODg1My4wOTAwMDAwMDAx",
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMjg6Ojc1MTE5MC4yNjAwMDAwMDAx"
-                ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNzQ3NjU6OjcyNzYyNi4xMzAwMDAwMDAx",
-                "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNDYyNzU6OjY5OTEzNS41MjU"
-                ],
-                "taskID": "NA",
-                "type": 5
-            },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTE6Ojc0ODg1My4wOTAwMDAwMDAx": {
-                "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTI6Ojc0ODg1NC4zNDAwMDAwMDAx"
-                ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTE6Ojc0ODg1My4wOTAwMDAwMDAx",
-                "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNzQ3NjU6OjcyNzYyNi4xMzAwMDAwMDAx"
-                ],
-                "taskID": "RmxvZ286OkJyYW5jaDo6MTQ3OTE1ODM5NTk5MA",
+                "taskID": "RmxvZ286OkJyYW5jaDo6MTQ3OTI0NDQyNjYzNA",
                 "type": 6
             },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTI6Ojc0ODg1NC4zNDAwMDAwMDAx": {
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2Mzc6OjEwMDEyOC41ODAwMDAwMDAwMg": {
                 "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MDgyNTI6Ojc2MTExMy44ODAwMDAwMDAx"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MzMwODg6OjEwNjU3OS45MzAwMDAwMDAwMQ"
                 ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTI6Ojc0ODg1NC4zNDAwMDAwMDAx",
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2Mzc6OjEwMDEyOC41ODAwMDAwMDAwMg",
                 "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTU5OTE6Ojc0ODg1My4wOTAwMDAwMDAx"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2MzU6OjEwMDEyNi44NA"
                 ],
                 "taskID": "NQ",
                 "type": 5
             },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMjg6Ojc1MTE5MC4yNjAwMDAwMDAx": {
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODI6OjEwMjA3My4xNDU": {
                 "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMzE6Ojc1MTE5Mi44MjUwMDAwMDAx"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODM6OjEwMjA3NC45NDAwMDAwMDAwMg"
                 ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMjg6Ojc1MTE5MC4yNjAwMDAwMDAx",
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODI6OjEwMjA3My4xNDU",
                 "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzNzQ3NjU6OjcyNzYyNi4xMzAwMDAwMDAx"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzODYxODE6OjU5NjcxLjM0MDAwMDAwMDAx"
                 ],
-                "taskID": "RmxvZ286OkJyYW5jaDo6MTQ3OTE1ODM5ODMyOA",
+                "taskID": "RmxvZ286OkJyYW5jaDo6MTQ3OTI0NDQyODU4MQ",
                 "type": 6
             },
-            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMzE6Ojc1MTE5Mi44MjUwMDAwMDAx": {
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODM6OjEwMjA3NC45NDAwMDAwMDAwMg": {
                 "children": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTg0MTc4ODY6Ojc3MDc0OC43OTAwMDAwMDAy"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0ODY0MTg6OjE1OTkxMS4zODUwMDAwMDAwNA"
                 ],
-                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMzE6Ojc1MTE5Mi44MjUwMDAwMDAx",
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODM6OjEwMjA3NC45NDAwMDAwMDAwMg",
                 "parents": [
-                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgzOTgzMjg6Ojc1MTE5MC4yNjAwMDAwMDAx"
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODI6OjEwMjA3My4xNDU"
                 ],
                 "taskID": "OA",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MzMwODg6OjEwNjU3OS45MzAwMDAwMDAwMQ": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0NTA2ODM6OjEyNDE3NC43OTAwMDAwMDAwMg"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MzMwODg6OjEwNjU3OS45MzAwMDAwMDAwMQ",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2Mzc6OjEwMDEyOC41ODAwMDAwMDAwMg"
+                ],
+                "taskID": "Ng",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0NTA2ODM6OjEyNDE3NC43OTAwMDAwMDAwMg": {
+                "children": [],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0NTA2ODM6OjEyNDE3NC43OTAwMDAwMDAwMg",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MzMwODg6OjEwNjU3OS45MzAwMDAwMDAwMQ"
+                ],
+                "taskID": "Nw",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0ODY0MTg6OjE1OTkxMS4zODUwMDAwMDAwNA": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0OTgwMjI6OjE3MTUxNS4wNTUwMDAwMDAwMg"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0ODY0MTg6OjE1OTkxMS4zODUwMDAwMDAwNA",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODM6OjEwMjA3NC45NDAwMDAwMDAwMg"
+                ],
+                "taskID": "OQ",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0OTgwMjI6OjE3MTUxNS4wNTUwMDAwMDAwMg": {
+                "children": [],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0OTgwMjI6OjE3MTUxNS4wNTUwMDAwMDAwMg",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0ODY0MTg6OjE1OTkxMS4zODUwMDAwMDAwNA"
+                ],
+                "taskID": "MTA",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTAwNjM6OjIzNTUyLjc2NQ": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTIyNDY6OjI1NzM1LjU2NTAwMDAwMDAwMg"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTAwNjM6OjIzNTUyLjc2NQ",
+                "parents": [],
+                "taskID": "RmxvZ286OlRyaWdnZXI6OjE0NzkyNDQzNTIyNDA",
+                "type": 3
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTIyNDY6OjI1NzM1LjU2NTAwMDAwMDAwMg": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNjkyMjk6OjQyNzE5LjM"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTIyNDY6OjI1NzM1LjU2NTAwMDAwMDAwMg",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTAwNjM6OjIzNTUyLjc2NQ"
+                ],
+                "taskID": "Mg",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNjkyMjk6OjQyNzE5LjM": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzODYxODE6OjU5NjcxLjM0MDAwMDAwMDAx"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNjkyMjk6OjQyNzE5LjM",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTIyNDY6OjI1NzM1LjU2NTAwMDAwMDAwMg"
+                ],
+                "taskID": "Mw",
+                "type": 5
+            },
+            "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzODYxODE6OjU5NjcxLjM0MDAwMDAwMDAx": {
+                "children": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0MjY2MzU6OjEwMDEyNi44NA",
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQ0Mjg1ODI6OjEwMjA3My4xNDU"
+                ],
+                "id": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzODYxODE6OjU5NjcxLjM0MDAwMDAwMDAx",
+                "parents": [
+                    "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNjkyMjk6OjQyNzE5LjM"
+                ],
+                "taskID": "NA",
                 "type": 5
             }
         },
         "root": {
-            "is": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkxNTgyNjQ3ODk6OjYxNzY0Ny4wNA"
+            "is": "RmxvZ29GbG93RGlhZ3JhbU5vZGU6OjE0NzkyNDQzNTAwNjM6OjIzNTUyLjc2NQ"
         }
     }
 }

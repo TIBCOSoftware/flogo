@@ -93,7 +93,7 @@
                     },
                     {
                         "name": "pinNumber",
-                        "type": "string",
+                        "type": "integer",
                         "value": "23"
                     },
                     {
@@ -126,7 +126,7 @@
                     },
                     {
                         "name": "pinNumber",
-                        "type": "string",
+                        "type": "integer",
                         "value": "23"
                     },
                     {
@@ -189,7 +189,7 @@
                     },
                     {
                         "name": "pinNumber",
-                        "type": "string",
+                        "type": "integer",
                         "value": "23"
                     },
                     {
@@ -270,7 +270,7 @@
                     },
                     {
                         "name": "pinNumber",
-                        "type": "string",
+                        "type": "integer",
                         "value": "23"
                     },
                     {
