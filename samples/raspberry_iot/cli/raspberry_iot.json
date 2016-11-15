@@ -17,14 +17,14 @@
                 "from": 3,
                 "id": 2,
                 "to": 4,
-                "type": 1,
-                "value": "${A3.result}==0"
+                "type": 0
             },
             {
                 "from": 4,
                 "id": 3,
                 "to": 5,
-                "type": 0
+                "type": 1,
+                "value": "${A4.result}==0"
             },
             {
                 "from": 5,
@@ -33,22 +33,28 @@
                 "type": 0
             },
             {
-                "from": 3,
+                "from": 6,
                 "id": 5,
                 "to": 7,
-                "type": 1,
-                "value": "${A3.result}==1"
+                "type": 0
             },
             {
-                "from": 7,
+                "from": 4,
                 "id": 6,
                 "to": 8,
-                "type": 0
+                "type": 1,
+                "value": "${A4.result}==1"
             },
             {
                 "from": 8,
                 "id": 7,
                 "to": 9,
+                "type": 0
+            },
+            {
+                "from": 9,
+                "id": 8,
+                "to": 10,
                 "type": 0
             }
         ],
@@ -78,20 +84,68 @@
                 "type": 1
             },
             {
-                "activityType": "tibco-rest",
+                "activityType": "tibco-gpio",
                 "attributes": [
                     {
                         "name": "method",
                         "type": "string",
-                        "value": "GET"
+                        "value": "Direction"
                     },
                     {
-                        "name": "uri",
+                        "name": "pinNumber",
                         "type": "string",
-                        "value": "http://10.97.170.106:8000/GPIO/23/value"
+                        "value": "23"
+                    },
+                    {
+                        "name": "direction",
+                        "type": "string",
+                        "value": "Output"
+                    },
+                    {
+                        "name": "state",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "Pull",
+                        "type": "string",
+                        "value": ""
                     }
                 ],
                 "id": 3,
+                "name": "SetToOutput",
+                "type": 1
+            },
+            {
+                "activityType": "tibco-gpio",
+                "attributes": [
+                    {
+                        "name": "method",
+                        "type": "string",
+                        "value": "Read State"
+                    },
+                    {
+                        "name": "pinNumber",
+                        "type": "string",
+                        "value": "23"
+                    },
+                    {
+                        "name": "direction",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "state",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "Pull",
+                        "type": "string",
+                        "value": ""
+                    }
+                ],
+                "id": 4,
                 "name": "GetStatus",
                 "type": 1
             },
@@ -114,32 +168,47 @@
                         "value": "true"
                     }
                 ],
-                "id": 4,
+                "id": 5,
                 "inputMappings": [
                     {
                         "mapTo": "message",
                         "type": 1,
-                        "value": "{A3.result}"
+                        "value": "{A4.result}"
                     }
                 ],
                 "name": "SetToOnLog",
                 "type": 1
             },
             {
-                "activityType": "tibco-rest",
+                "activityType": "tibco-gpio",
                 "attributes": [
                     {
                         "name": "method",
                         "type": "string",
-                        "value": "POST"
+                        "value": "Set State"
                     },
                     {
-                        "name": "uri",
+                        "name": "pinNumber",
                         "type": "string",
-                        "value": "http://10.97.170.106:8000/GPIO/23/value/1"
+                        "value": "23"
+                    },
+                    {
+                        "name": "direction",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "state",
+                        "type": "string",
+                        "value": "High"
+                    },
+                    {
+                        "name": "Pull",
+                        "type": "string",
+                        "value": ""
                     }
                 ],
-                "id": 5,
+                "id": 6,
                 "name": "SetToOn",
                 "type": 1
             },
@@ -154,10 +223,10 @@
                     {
                         "name": "data",
                         "type": "any",
-                        "value": "Update light to 1 successfully"
+                        "value": "Update light to high successfully"
                     }
                 ],
-                "id": 6,
+                "id": 7,
                 "name": "Reply To Trigger",
                 "type": 1
             },
@@ -180,32 +249,47 @@
                         "value": "true"
                     }
                 ],
-                "id": 7,
+                "id": 8,
                 "inputMappings": [
                     {
                         "mapTo": "message",
                         "type": 1,
-                        "value": "{A3.result}"
+                        "value": "{A4.result}"
                     }
                 ],
                 "name": "SetToOffLog",
                 "type": 1
             },
             {
-                "activityType": "tibco-rest",
+                "activityType": "tibco-gpio",
                 "attributes": [
                     {
                         "name": "method",
                         "type": "string",
-                        "value": "POST"
+                        "value": "Set State"
                     },
                     {
-                        "name": "uri",
+                        "name": "pinNumber",
                         "type": "string",
-                        "value": "http://10.97.170.106:8000/GPIO/23/value/0"
+                        "value": "23"
+                    },
+                    {
+                        "name": "direction",
+                        "type": "string",
+                        "value": ""
+                    },
+                    {
+                        "name": "state",
+                        "type": "string",
+                        "value": "Low"
+                    },
+                    {
+                        "name": "Pull",
+                        "type": "string",
+                        "value": ""
                     }
                 ],
-                "id": 8,
+                "id": 9,
                 "name": "SetToOff",
                 "type": 1
             },
@@ -220,10 +304,10 @@
                     {
                         "name": "data",
                         "type": "any",
-                        "value": "Update light to 1 successfully"
+                        "value": "Update light to low successfully"
                     }
                 ],
-                "id": 9,
+                "id": 10,
                 "name": "Reply To Trigger (2)",
                 "type": 1
             }
