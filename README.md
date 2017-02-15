@@ -16,25 +16,35 @@ Project Flogo consists of the following sub-projects available as separate repos
 
 ## Getting Started
 
-**IMPORTANT**: Project Flogo is currently in Developer Preview and primarily addresses the needs of   
+Project Flogo is currently in Developer Preview and primarily addresses the needs of:
+
 - Flogo Extensions developers 
-- IoT Solutions Developers 
+- IoT Solutions Developers
 
-In other words, currently it is for developers, by developers. 
+In addition, tooling to address the needs of the zero-code application developer is available via the Flogo Web UI. As Project Flogo and the tooling continue to evolve, we recommend that you check out the videos and sign up for updates on the project to stay current.
 
-As Project Flogo develops and matures, we are considering adding more integration tooling and developing zero-code experiences and services for end users based on Project Flogo. If you are an end user or a traditional zero-code integration app developer, we would recommend to check out the videos and sign up for updates on the project to see when it's ready for you to get started.  
+### Extensions & IoT Solution Developer
 
 If you are an Extensions or IoT Solutions developer, read on because it's easy to get started with Project Flogo:
 * To install just the Flogo CLI and runtime, go to https://github.com/TIBCOSoftware/flogo-cli & follow instructions in the README
 * For extensions developers, visit the docs in this repository to get started with developing your first Flogo activity
 
-## Roadmap
-Refer to [Flogo Statement of Direction](sod.md) for an overview of the strategic dircetion of the project. You can also monitor [milestones](https://github.com/TIBCOSoftware/flogo/milestones) to see what's coming up. 
+### Zero-code Integration Developer
+
+If your background is in zero-coding environments and platforms and would like to begin developing apps with Project Flogo, then read on, because we’ve been working on something special for you.
+
+Flogo Web UI was launched under a beta license and is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flogo Web UI along with all required components to begin developing, testing and building deployable artifacts that leverage the Project Flogo Open Source Framework technology.
+
+To report any issues with Flogo Web UI, use the Issue tracker on this project.
 
 ## Contributing 
-Contact flogo-oss@tibco.com to learn about contributing to the project. 
+Contact flogo-oss@tibco.com to learn about contributing to the project.
 
 ## License 
-The top level flogo repo, consisting of flow samples & documentation, is licensed under the [TIBCO Samples Internal End User License](http://www.tibco.com/assets/bltaa3b690244486fc9/tibco-samples-with-redistribution-eula.pdf). See TIBCO Samples Internal End User License.txt for license text. 
+The top level flogo repo, consisting of flow samples & documentation, is licensed licensed under a BSD-style license. Refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE.txt) for license text.
 
 Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib), [flgo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) & [flogo-services](https://github.com/TIBCOSoftware/flogo-services) repos are licensed under a BSD-style license. Refer to [flogo-cli license](https://github.com/TIBCOSoftware/flogo-cli/blob/master/TIBCO%20LICENSE.txt) for license text. 
+
+### Usage Guidelines
+
+We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines]() when referencing the use of Project Flogo within your project(s).
