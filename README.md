@@ -21,7 +21,7 @@ Project Flogo is currently in Developer Preview and primarily addresses the need
 - Flogo Extensions developers 
 - IoT Solutions Developers
 
-In addition, tooling to address the needs of the zero-code application developer is available via the Flogo Web UI. As Project Flogo and the tooling continue to evolve, we recommend that you check out the videos and sign up for updates on the project to stay current.
+In addition, tooling to address the needs of the zero-code application developer is available via Flogo Web UI. Project Flogo and the tooling continue to evolve quickly, we recommend that you check out the videos and sign up for updates on the project to stay current.
 
 ### Extensions & IoT Solution Developer
 
@@ -31,7 +31,7 @@ If you are an Extensions or IoT Solutions developer, read on because it's easy t
 
 ### Zero-code Integration Developer
 
-If your background is in zero-coding environments and platforms and would like to begin developing apps with Project Flogo, then read on, because we’ve been working on something special for you.
+If your background is in or you prefer to develop using zero-coding environments and platforms and would like to begin developing apps with Project Flogo, then read on, because we’ve been working on something special for you.
 
 Flogo Web UI was launched under a beta license and is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flogo Web UI along with all required components to begin developing, testing and building deployable artifacts that leverage the Project Flogo Open Source Framework technology.
 
