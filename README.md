@@ -47,7 +47,7 @@ Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [f
 
 ### Usage Guidelines
 
-We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines](http://flogo.io/brand-guidelines) when referencing the use of Project Flogo within your project(s) and don't forget to let others know you're using Project Flogo by produly displaying one of the following badges or the Flynn logo, found in the [branding](branding) folder of this project.
+We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines](http://flogo.io/brand-guidelines) when referencing the use of Project Flogo within your project(s) and don't forget to let others know you're using Project Flogo by proudly displaying one of the following badges or the Flynn logo, found in the [branding](branding) folder of this project.
 
 ![Powered By Project Flogo](branding/flogo_badge.png)
 ![Powered By Project Flogo](branding/flogo_badge_white.png)
