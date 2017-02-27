@@ -44,3 +44,11 @@ Contact flogo-oss@tibco.com to learn about contributing to the project.
 The top level flogo repo, consisting of flow samples & documentation, is licensed licensed under a BSD-style license. Refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE.txt) for license text.
 
 Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib), [flgo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) & [flogo-services](https://github.com/TIBCOSoftware/flogo-services) repos are licensed under a BSD-style license. Refer to [flogo-cli license](https://github.com/TIBCOSoftware/flogo-cli/blob/master/TIBCO%20LICENSE.txt) for license text. 
+
+### Usage Guidelines
+
+We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines]() when referencing the use of Project Flogo within your project(s).
+
+Are you proud to be using Project Flogo to power your project(s)? Awesome! You can let others know by downloading one of the following buttons.
+
+![Powered By Project Flogo]() | ![Powered By Project Flogo]()
