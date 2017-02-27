@@ -47,8 +47,7 @@ Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [f
 
 ### Usage Guidelines
 
-We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines]() when referencing the use of Project Flogo within your project(s).
+We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines]() when referencing the use of Project Flogo within your project(s) and don't forget to let others know you're using Project Flogo by downloading of the following buttons.
 
-Are you proud to be using Project Flogo to power your project(s)? Awesome! You can let others know by downloading one of the following buttons.
-
-![Powered By Project Flogo](https://github.com/mellistibco/flogo/blob/master/flogo_badge.png) | ![Powered By Project Flogo](https://github.com/mellistibco/flogo/blob/master/flogo_badge_white.png)
+![Powered By Project Flogo](flogo_badge.png)
+![Powered By Project Flogo](flogo_badge_white.png)
