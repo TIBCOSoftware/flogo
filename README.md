@@ -51,4 +51,4 @@ We’re excited that you’re using Project Flogo to power your project(s). Plea
 
 Are you proud to be using Project Flogo to power your project(s)? Awesome! You can let others know by downloading one of the following buttons.
 
-![Powered By Project Flogo]() | ![Powered By Project Flogo]()
+![Powered By Project Flogo](https://github.com/mellistibco/flogo/blob/master/flogo_badge.png) | ![Powered By Project Flogo](https://github.com/mellistibco/flogo/blob/master/flogo_badge_white.png)
