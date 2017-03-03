@@ -1,3 +1,5 @@
+![Flynn](branding/Flynn1.png)
+
 # Project Flogo
 
 Project Flogo is an Open Source Framework for IoT Edge Apps & Integration. 
