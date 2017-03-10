@@ -1,7 +1,4 @@
 {
-    "$table": "flows",
-    "_id": "flows:flogoweb-admin:2016-11-15T21:12:26.666Z",
-    "_rev": "47-8635b0c40a9d93dd22e6628e933df75a",
     "description": "A simple flow using Raspberry PI GPIO to control home light",
     "errorHandler": {
         "items": {},
@@ -29,7 +26,8 @@
                 "name": "tibco-reply",
                 "outputs": [],
                 "title": "Reply To Trigger",
-                "version": "0.0.1"
+                "version": "0.0.1",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/reply"
             },
             "activityType": "tibco-reply",
             "attributes": {
@@ -55,12 +53,14 @@
             "name": "Reply To Trigger (2)",
             "title": "Reply To Trigger",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/reply"
         },
         "Mg": {
             "__schema": {
                 "description": "Simple Log Activity",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
                 "inputs": [
                     {
                         "name": "message",
@@ -121,12 +121,14 @@
             "name": "Received",
             "title": "Log Message",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
         },
         "Mw": {
             "__schema": {
                 "description": "Control raspberry gpio",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/gpio",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
                 "inputs": [
                     {
                         "allowed": [
@@ -244,12 +246,14 @@
             "name": "SetToOutput",
             "title": "Control GPIO",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio"
         },
         "NA": {
             "__schema": {
                 "description": "Control raspberry gpio",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/gpio",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
                 "inputs": [
                     {
                         "allowed": [
@@ -367,12 +371,14 @@
             "name": "GetStatus",
             "title": "Control GPIO",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio"
         },
         "NQ": {
             "__schema": {
                 "description": "Simple Log Activity",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
                 "inputs": [
                     {
                         "name": "message",
@@ -440,12 +446,14 @@
             "name": "SetToOnLog",
             "title": "Log Message",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
         },
         "Ng": {
             "__schema": {
                 "description": "Control raspberry gpio",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/gpio",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
                 "inputs": [
                     {
                         "allowed": [
@@ -563,12 +571,14 @@
             "name": "SetToOn",
             "title": "Control GPIO",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio"
         },
         "Nw": {
             "__schema": {
                 "description": "Simple Reply Activity",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
                 "inputs": [
                     {
                         "name": "code",
@@ -604,6 +614,7 @@
             },
             "description": "Simple Reply Activity",
             "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/reply",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
             "id": "Nw",
             "installed": true,
             "name": "Reply To Trigger",
@@ -615,6 +626,7 @@
             "__schema": {
                 "description": "Simple Log Activity",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
                 "inputs": [
                     {
                         "name": "message",
@@ -682,12 +694,14 @@
             "name": "SetToOffLog",
             "title": "Log Message",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
         },
         "OQ": {
             "__schema": {
                 "description": "Control raspberry gpio",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/gpio",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
                 "inputs": [
                     {
                         "allowed": [
@@ -805,7 +819,8 @@
             "name": "SetToOff",
             "title": "Control GPIO",
             "type": 1,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio"
         },
         "RmxvZ286OkJyYW5jaDo6MTQ3OTI0NDQyNjYzNA": {
             "condition": "${A4.result}==0",
@@ -869,6 +884,7 @@
                     ]
                 },
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/rest",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
                 "name": "tibco-rest",
                 "outputs": [
                     {
@@ -960,7 +976,8 @@
             "title": "Receive HTTP Message",
             "triggerType": "tibco-rest",
             "type": 0,
-            "version": "0.0.1"
+            "version": "0.0.1",
+            "where": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
         }
     },
     "name": "Control home light",
