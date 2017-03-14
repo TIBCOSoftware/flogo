@@ -1,10 +1,10 @@
 {
-    "$table": "flows",
     "description": "A sample flow to update AWS IOT Shadow",
     "items": {
         "Mg": {
             "__schema": {
                 "description": "Simple Log Activity",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
                 "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
                 "inputs": [
                     {
@@ -68,7 +68,7 @@
             "title": "Log Activity",
             "type": 1,
             "version": "0.0.1",
-            "where": "file:///Users/xli/git/flogo-cicd/dev/flogo-web/submodules/flogo-contrib/activity/log"
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
         },
         "Mw": {
             "__schema": {
@@ -95,7 +95,8 @@
                 ],
                 "name": "tibco-awsiot",
                 "title": "AWS IoT Activity",
-                "version": "0.0.1"
+                "version": "0.0.1",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/awsiot"
             },
             "activityType": "tibco-awsiot",
             "attributes": {
@@ -169,7 +170,8 @@
                     }
                 ],
                 "title": "Log Activity",
-                "version": "0.0.1"
+                "version": "0.0.1",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
             },
             "activityType": "tibco-log",
             "attributes": {
@@ -206,7 +208,7 @@
             "title": "Log Activity",
             "type": 1,
             "version": "0.0.1",
-            "where": "file:///Users/xli/git/flogo-cicd/dev/flogo-web/submodules/flogo-contrib/activity/log"
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
         },
         "NQ": {
             "__schema": {
@@ -226,7 +228,8 @@
                 "name": "tibco-reply",
                 "outputs": [],
                 "title": "Reply Activity",
-                "version": "0.0.1"
+                "version": "0.0.1",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/activity/reply"
             },
             "activityType": "tibco-reply",
             "attributes": {
@@ -254,7 +257,7 @@
             "title": "Reply Activity",
             "type": 1,
             "version": "0.0.1",
-            "where": "file:///Users/xli/git/flogo/flogo-web/submodules/flogo-contrib/activity/reply"
+            "where": "github.com/TIBCOSoftware/flogo-contrib/activity/reply"
         },
         "RmxvZ286OlRyaWdnZXI6OjE0NzM4NjY0ODA0NDA": {
             "__props": {
@@ -334,7 +337,8 @@
                     }
                 ],
                 "title": "REST Trigger",
-                "version": "0.0.1"
+                "version": "0.0.1",
+                "where": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
             },
             "__status": {
                 "hasRun": false,

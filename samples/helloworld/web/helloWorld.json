@@ -94,6 +94,7 @@
             ]
          },
          "__schema":{  
+            "where":"github.com/TIBCOSoftware/flogo-contrib/trigger/timer",
             "name":"tibco-timer",
             "version":"0.0.1",
             "title":"Timer Trigger",
@@ -203,6 +204,7 @@
             "title":"Counter Activity",
             "description":"Simple Global Counter Activity",
             "homepage":"https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/counter",
+            "where":"github.com/TIBCOSoftware/flogo-contrib/activity/counter",
             "inputs":[  
                {  
                   "name":"counterName",
@@ -226,7 +228,7 @@
             ]
          },
          "author":"Anonymous",
-         "where":"file:///Users/wenchun/dev/coderepos/github/flogo-web/submodules/flogo-contrib/activity/counter",
+         "where":"github.com/TIBCOSoftware/flogo-contrib/activity/counter",
          "installed":true,
          "id":"Mg"
       },
@@ -268,6 +270,7 @@
             "version":"0.0.1",
             "title":"Log Activity",
             "description":"Simple Log Activity",
+            "where":"github.com/TIBCOSoftware/flogo-contrib/activity/log",
             "homepage":"https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
             "inputs":[  
                {  
@@ -294,10 +297,9 @@
             ]
          },
          "author":"Anonymous",
-         "where":"file:///Users/wenchun/dev/coderepos/github/flogo-web/submodules/flogo-contrib/activity/log",
+         "where":"github.com/TIBCOSoftware/flogo-contrib/activity/log",
          "installed":true,
          "id":"Mw"
       }
-   },
-   "$table":"flows"
+   }
 }
