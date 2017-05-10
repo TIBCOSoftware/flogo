@@ -1,9 +1,15 @@
 # Application Configuration Provider
 
 Unless you want to provide the application configuration (for example: flogo.json) in a different way or format you should not worry about this feature.
-We have provided an extension mechanism for you to override the default way of providing the application configuration.
 
-## Default behaviour
+We have provided an extension mechanism for you to override the default way of providing the application configuration if needed.
+
+## Topics
+* [Default behavior](#default-behavior)
+* [Optimized configuration](#optimized-configuration)
+* [Custom configuration](#custom-configuration)
+
+## Default behavior
 
 Out of the box, the default behavior will be as follows:
 
@@ -17,7 +23,7 @@ Out of the box, the default behavior will be as follows:
 $ export flogo.config.path=/path/to/config/myconfig.json
 ```
 
-## Optimized Configuration
+## Optimized configuration
 
 There is an option when building the application to compile the flogo.json and embed it into the code instead of loading it from a file.
 ```bash
@@ -25,7 +31,7 @@ There is an option when building the application to compile the flogo.json and e
  $ flogo -o build
 ```
 
-## Custom Configuration hook
+## Custom configuration
 
 If you need to customize the way the configuration is provided to the engine (for example: "change the format of the configuration"), you just need to do the following:
 * Place a file in the "main" package of your application that looks like this:
