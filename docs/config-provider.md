@@ -6,7 +6,7 @@ We have provided an extension mechanism for you to override the default way of p
 
 ## Topics
 * [Default behavior](#default-behavior)
-* [Optimized configuration](#optimized-configuration)
+* [Embedded configuration](#embedded-configuration)
 * [Custom configuration](#custom-configuration)
 
 ## Default behavior
