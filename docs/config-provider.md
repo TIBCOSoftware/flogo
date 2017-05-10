@@ -28,7 +28,7 @@ $ export flogo.config.path=/path/to/config/myconfig.json
 There is an option when building the application to compile the flogo.json and embed it into the code instead of loading it from a file.
 ```bash
  # Example building the application in optimized mode
- $ flogo -o build
+ $ flogo build -o
 ```
 
 ## Custom configuration
