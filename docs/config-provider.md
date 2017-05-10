@@ -23,12 +23,12 @@ Out of the box, the default behavior will be as follows:
 $ export flogo.config.path=/path/to/config/myconfig.json
 ```
 
-## Optimized configuration
+## Embedded configuration
 
 There is an option when building the application to compile the flogo.json and embed it into the code instead of loading it from a file.
 ```bash
- # Example building the application in optimized mode
- $ flogo build -o
+ # Example building the application in embedded mode
+ $ flogo build -e
 ```
 
 ## Custom configuration
