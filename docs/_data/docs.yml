@@ -6,7 +6,5 @@
       title: Getting started with the CLI
 - title: Extenions Developer
   items:
-    - id: building-extension
-      title: Building your first extension
     - id: config-provider
       title: Developing a custom serializer for your app.json
