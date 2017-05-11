@@ -1,0 +1,10 @@
+- title: Getting Started
+  items:
+    - id: getting-started-webui
+      title: Getting started with the Web UI
+    - id: getting-started-cli
+      title: Getting started with the CLI
+- title: Extenions Developer
+  items:
+    - id: config-provider
+      title: Developing a custom serializer for your app.json
