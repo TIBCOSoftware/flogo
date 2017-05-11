@@ -6,11 +6,11 @@ category: start
 
 In this document we’ll discuss how to download the Flogo Web UI, a zero-code development environment for IoT and microservices.
 
-Prerequisites
+## Prerequisites
 
 Ensure that the following prerequisites have been fulfilled.
 
-Docker
+### Docker
 Docker is required to pull the Web UI, as it is publicly available via hub.docker.com. If you're running Windows 10, Linux or macOS/OSX then the latest version of Docker should be installed and can be found at the link below.
 
 https://www.docker.com/
@@ -19,10 +19,10 @@ If you're running a Windows machine and have anything older than Windows 10, the
 
 https://docs.docker.com/toolbox/toolbox_install_windows/
 
-Installing Flogo Web UI
+## Installing Flogo Web UI
 Installing Flogo Web UI is quite simple and requires nothing more than Docker pre-installed on your machine to fetch the Docker image.
 
-1. Fetching and Starting Flogo Web UI
+### Fetching and Starting Flogo Web UI
 Execute the following command.
 
 ```docker run -it -p 3303:3303 flogo/flogo-docker:latest eula-accept```
@@ -31,13 +31,15 @@ If you don’t already have the Docker Image on your machine, Docker will pull t
 
 The input parameters are:
 
--p 3303:3303: This argument tells docker to bind the local port, 3303 to the container port, 3303.
-flogo/flogo-docker:latest: The repo, image name and the specific tag to pull. If you’d like to pull a specific version, you can replace ‘latest’ with the specific version. Check the available tags on the DockerHub repo.
-eula-accept: This argument just states that you’ve accepted the license agreement.
+* -p 3303:3303: This argument tells docker to bind the local port, 3303 to the container port, 3303.
+* flogo/flogo-docker:latest: The repo, image name and the specific tag to pull. If you’d like to pull a specific version, you can replace ‘latest’ with the specific version. Check the available tags on the DockerHub repo.
+* eula-accept: This argument just states that you’ve accepted the license agreement.
 
 You should see something similar to the following output in your terminal/console window indicating that the image is up and the webui is running and available.
 
-<< insert image here>>
+![Docker Container Started](/flogo/images/start-docker-webui.png)
 
-2. Launching Flogo WebUI
-To launch Flogo WebUI simply open your favorite web browser, and navigate to http://localhost:3303. 
+### Launching Flogo WebUI
+To launch Flogo WebUI simply open your favorite web browser, and navigate to http://localhost:3303. You should be presented with the WebUI welcome page, as shown below.
+
+![Web UI](/flogo/images/webui-landing.png)
