@@ -8,3 +8,7 @@
   items:
     - id: config-provider
       title: Developing a custom serializer for your app.json
+- title: Contributing
+  items:
+    - id: contribute-docs
+      title: Contribute to Docs
