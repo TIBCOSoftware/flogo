@@ -1,4 +1,8 @@
-# Application Configuration Provider
+---
+layout: page
+title: "Application Configuration Provider"
+category: guide
+---
 
 Unless you want to provide the application configuration (for example: flogo.json) in a different way or format you should not worry about this feature.
 
