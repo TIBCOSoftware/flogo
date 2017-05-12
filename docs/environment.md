@@ -3,7 +3,7 @@
 List of environment variables to configure the flogo engine
 
 | Environment name      | Default value             | Info                                  |
-| --------------------- |:-------------------------:| -------------------------------------:|
+| --------------------- |:-------------------------:|-------------------------------------- |
 | flogo.log.dtformat    | "2006-01-02 15:04:05.000" | Sets the log date and time format     |
 | flogo.log.level       | "INFO"                    | Sets the log level                    |
 | flogo.runner.type     | "POOLED"                  | Sets the type of the runner           |
