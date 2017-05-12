@@ -1,4 +1,8 @@
-# Flogo environment variables
+---
+layout: page
+title: “Environment variables”
+category: guide
+---
 
 List of environment variables to configure the flogo engine
 
