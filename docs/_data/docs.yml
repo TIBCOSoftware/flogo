@@ -4,7 +4,7 @@
       title: Getting started with the Web UI
     - id: getting-started-cli
       title: Getting started with the CLI
-- title: Extenions Developer
+- title: Extensions Developer
   items:
     - id: create-activity
       title: Building your first activity
@@ -14,3 +14,7 @@
   items:
     - id: contribute-docs
       title: Contribute to Docs
+- title: Configuration
+  items:
+    - id: environment-vars
+      title: Environment variables
