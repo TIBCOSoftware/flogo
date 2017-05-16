@@ -43,3 +43,8 @@ You should see something similar to the following output in your terminal/consol
 To launch Flogo WebUI simply open your favorite web browser, and navigate to http://localhost:3303. You should be presented with the WebUI welcome page, as shown below.
 
 ![Web UI](/flogo/images/webui-landing.png)
+
+## Restarting the Web UI docker container
+After the Docker container has been shutdown, you may wish to simply restart the same container instance, rather than creating a new instance via the `docker run` command. You can easily do this by issuing the `docker start` command and reference the previously running container id. You can find the container name and id by using the command `docker ps -a` and searching for the container with the image flogo/flogo-docker. Use the ID (or name) associated with the image to issue the `docker start` command. For example:
+
+```docker start b24e4b9f3fa5```
