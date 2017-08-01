@@ -126,7 +126,7 @@ import (
 	"testing"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
-	"github.com/TIBCOSoftware/flogo-lib/flow/test"
+	"github.com/TIBCOSoftware/flogo-contrib/action/flow/test"
 )
 
 var activityMetadata *activity.Metadata
