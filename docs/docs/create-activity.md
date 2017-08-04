@@ -10,7 +10,7 @@ Adding a new activity to Flogo is quite easy and we've outlined the steps for yo
 Before you can get started with this guide you need to make sure you have the right prerequisites installed:
 
 * The Go programming language should be [installed](https://golang.org/doc/install). This includes setting your GOPATH env var, as well.
-* You should have Flogo installed: `go get github.com/TIBCOSoftware/flogo-cli`
+* You should have Flogo installed: `go get -u github.com/TIBCOSoftware/flogo-cli/...`
 * And you should have golint installed: `go get -u github.com/golang/lint/golint`
 
 ## Creating the basic framework
@@ -100,7 +100,7 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 
 // THIS HAS CHANGED
 // Eval implements activity.Activity.Eval
-func (a *MyActivity) Eval(context activity.Context) (done bool, evalError *activity.Error) {
+func (a *MyActivity) Eval(context activity.Context) (done bool, err error)  {
 	// Get the activity data from the context
 	name := context.GetInput("name").(string)
 	salutation := context.GetInput("salutation").(string)
