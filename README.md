@@ -18,11 +18,11 @@ Project Flogo consists of the following sub-projects available as separate repos
 
 ## Getting Started
 
-Project Flogo was designed from the ground up leveraging modern technology and architectural principals to target IoT, edge and cloud-based microservices. The current set of tooling is designed for:
+Project Flogo was designed from the ground up leveraging modern technology and architectural principals to better suit the IoT, edge and microservices app developers. The current set of tooling is designed for:
 
+- IoT Solutions developers
+- Cloud-native microservices developers
 - Flogo Extensions developers 
-- IoT Solutions developers (gateway microservices as well as microcontrollers)
-- Microservices developers
 
 In addition, tooling to address the needs of the zero-code application developer is available via Flogo Web UI. Project Flogo and the tooling continue to evolve quickly, we recommend that you check out the videos and sign up for updates on the project to stay current.
 
