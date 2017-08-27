@@ -10,6 +10,8 @@
       title: Building your first activity
     - id: config-provider
       title: Developing a custom serializer for your app.json
+    - id: continuously-testing-flogo-activities
+      title: Continuously testing Flogo activities
 - title: Contributing
   items:
     - id: contribute-docs
