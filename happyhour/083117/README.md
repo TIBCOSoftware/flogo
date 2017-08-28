@@ -1,4 +1,4 @@
-# Flogo Happy Hour - August 32st
+# Flogo Happy Hour - August 31st
 Welcome to the first Flogo Happy Hour! To be held on August 31st at 9AM PST... Yes, I know, not exactly a happy hour, but at least our European friends can enjoy a fine beverage of their choice! :)
 
 ## Agenda
