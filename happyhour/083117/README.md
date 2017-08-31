@@ -1,7 +1,7 @@
 # Flogo Happy Hour - August 31st
 Welcome to the first Flogo Happy Hour! To be held on August 31st at 9AM PST... Yes, I know, not exactly a happy hour, but at least our European friends can enjoy a fine beverage of their choice! :)
 
-Google Hangout: https://hangouts.google.com/hangouts/_/elburn36vnbrnbsmkxzqlww52me
+Google Hangout: https://hangouts.google.com/hangouts/_/et7wlxpujrd3jblegyia4agggye
 
 ## Agenda
 - Wait, where is the beer? What are we doing here?
