@@ -4,6 +4,8 @@
       title: Getting started with the Web UI
     - id: getting-started-cli
       title: Getting started with the CLI
+    - id: getting-started-faas
+      title: Getting started with Flow as a Service
 - title: Extensions Developer
   items:
     - id: create-activity
