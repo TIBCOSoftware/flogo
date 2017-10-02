@@ -1,5 +1,0 @@
-# Site title and subtitle. This is used in _includes/header.html
-title: 'Project Flogo'
-subtitle: 'Documentation and Tutorials'
-permalink: /:title
-baseurl: '/flogo'

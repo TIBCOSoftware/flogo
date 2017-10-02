@@ -1,0 +1,29 @@
+sudo: false
+
+language: go
+
+go:
+  - master
+
+os:
+  - linux
+
+branches:
+  only:
+  - master
+
+install:
+  - go get github.com/spf13/hugo
+
+script:
+  - cd docs && hugo
+  - cd public && ls -alh
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  email: $EMAIL
+  name: retgits
+  on:
+    branch: master
