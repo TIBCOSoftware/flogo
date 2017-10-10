@@ -11,7 +11,8 @@ Before you can get started with this guide you need to make sure you have the ri
 
 * The Go programming language should be [installed](https://golang.org/doc/install). This includes setting your GOPATH env var, as well.
 * You should have Flogo installed: `go get -u github.com/TIBCOSoftware/flogo-cli/...`
-* And you should have golint installed: `go get -u github.com/golang/lint/golint`
+* You should have golint installed: `go get -u github.com/golang/lint/golint`
+* And you should have `$GOPATH/bin` in your path (see [here](https://golang.org/doc/code.html#GOPATH) or [here](https://github.com/golang/go/wiki/Setting-GOPATH) for more details)
 
 ## Creating the basic framework
 The easiest way to start creating activities is to have the Flogo CLI create the basic framework for you. The Flogo CLI takes two important parameters to create the basic framework for activities:

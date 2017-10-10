@@ -1,8 +1,8 @@
+![Flynn](branding/Flynn1.png)
+
 ![](https://travis-ci.org/TIBCOSoftware/flogo.svg)
 ![](https://img.shields.io/badge/dependencies-up%20to%20date-green.svg)
 ![](https://img.shields.io/badge/license-BSD%20style-blue.svg)
-
-![Flynn](branding/Flynn1.png)
 
 # Project Flogo
 

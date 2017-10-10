@@ -76,8 +76,8 @@ Once we have our flow defined, we'll add it to our application along with the re
 
 ```bash
 
-flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/log
-flogo add activity github.com/TIBCOSoftware/flogo-contrib/activity/counter
+flogo install activity github.com/TIBCOSoftware/flogo-contrib/activity/log
+flogo install activity github.com/TIBCOSoftware/flogo-contrib/activity/counter
 
 flogo add flow reqcounter.json
 ``` 
