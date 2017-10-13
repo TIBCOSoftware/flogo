@@ -1,10 +1,10 @@
 ---
 title: Extensions Developer
-weight: 2
+weight: 4
 chapter: true
 ---
 
-### Chapter 2
+### Chapter 4
 
 # Extensions Developer
 

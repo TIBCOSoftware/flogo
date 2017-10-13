@@ -1,7 +1,8 @@
 ---
 date: 2016-04-09T16:50:16+02:00
 title: Application Configuration Provider
-weight: 30
+weight: 20
+pre: "<i class=\"fa fa-cogs\" aria-hidden=\"true\"></i> "
 ---
 
 Unless you want to provide the application configuration (for example: flogo.json) in a different way or format you should not worry about this feature.

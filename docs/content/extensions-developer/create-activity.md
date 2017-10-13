@@ -1,38 +1,45 @@
 ---
 date: 2016-04-09T16:50:16+02:00
 title: Building your first activity
-weight: 20
+weight: 10
+pre: "<i class=\"fa fa-wrench\" aria-hidden=\"true\"></i> "
 ---
 
-Adding a new activity to Flogo is quite easy and we've outlined the steps for you in this howto guide. This guide will walk you through the steps required to create a simple activity which can also be used in the Flogo web UI. We'll be leveraging the flogogen scafolding CLI available via the flogo-cli repo. See below for details on installing Flogo + CLI.
+Creating a new activity for Project Flogo is not that hard! Let's walk  through the steps required to create a simple activity.
 
-## Prerequisites
-Before you can get started with this guide you need to make sure you have the right prerequisites installed:
+{{% notice warning %}}
+Please make sure you've installed the flogo CLI tools, golint and updated your path to have the $GOPATH/bin folder included. For instructions how to do that, please check [here](../../getting-started/getting-started-cli/)
+{{% /notice %}}
 
-* The Go programming language should be [installed](https://golang.org/doc/install). This includes setting your GOPATH env var, as well.
-* You should have Flogo installed: `go get -u github.com/TIBCOSoftware/flogo-cli/...`
-* You should have golint installed: `go get -u github.com/golang/lint/golint`
-* And you should have `$GOPATH/bin` in your path (see [here](https://golang.org/doc/code.html#GOPATH) or [here](https://github.com/golang/go/wiki/Setting-GOPATH) for more details)
+## The basic framework
+The easiest way to start creating activities is to have the **flogogen** CLI create the basic framework for you. The flogogen CLI takes two important parameters to create the framework for activities:
 
-## Creating the basic framework
-The easiest way to start creating activities is to have the Flogo CLI create the basic framework for you. The Flogo CLI takes two important parameters to create the basic framework for activities:
-```bash
-$ flogogen activity activityName
 ```
-You first specify the action followed by the name of your new activity. The parameter `activityName` is obviously the name of your new activity. For the guide we'll create a new activity called `HelloWorld`. To do that you need to execute the command:
-```bash
-$ flogogen activity HelloWorld
-```
-The Flogo CLI will create the required folders and download the needed dependencies for you and you now have a new folder called `HelloWorld` which has the structure of the Flogo activity
-```bash
-	HelloWorld\
-			activity.json
-			activity.go
-			activity_test.go
+flogogen activity activityName
 ```
 
-## Updating the metadata
-The file `activity.json` has the metadata of the Flogo activity describing to the Flogo engine what the activity is called, what the version of the activity is and a few other things. For the HelloWorld activity we'll add a few more things and update the input and the output section. The latter two describe to the Flogo engine what the engine should expect to create in terms of in- and output
+The parameters are:
+
+* **activity**: the [action](../../flogo-cli/flogogen-cli/#activity) you want to execute
+* **activityName**: the name for your new activity (for now we'll use `HelloWorld` as the name for our activity)
+
+So to generate our scaffolding, we need to execute the command:
+
+```
+flogogen activity HelloWorld
+```
+
+The flogogen CLI will create the required folders and download the needed dependencies for you and you now have a new folder called `HelloWorld` which has the structure of the Flogo activity
+```
+HelloWorld\
+		activity.json
+		activity.go
+		activity_test.go
+```
+
+## The metadata
+The file `activity.json` has the metadata of the Flogo activity describing to the Flogo engine what the activity is called, what the version of the activity is and a few other things. For the **HelloWorld** activity we'll add a few more things and update the input and the output section. The latter two describe to the Flogo engine what the engine should expect to create in terms of in- and output
+
 ```json
 {
   "name": "HelloWorld",
@@ -57,18 +64,23 @@ The file `activity.json` has the metadata of the Flogo activity describing to th
     }
   ]
 }
-``` 
-We've updated the following for the JSON file:
-* Updated the `inputs` section with a `saluation` and `name`
-* Updated the `outputs` section to `result`
+```
 
-Don't forget to update the `author` and `description` fields, as well! This will manifest in the Web UI.
+In the file we've updated:
 
-## Creating the Go logic
-For the Flogo engine to actually do something we need to update the files in the `runtime` folder:
+* Updated the **inputs** section and added a **salutation** and **name**
+* Updated the **outputs** section and changed the name parameter to **result**
 
-* *activity.go*: this file contains the actual activity implementation in go
-* *activity_test.go*: this file contains tests for the activity
+{{% notice tip %}}
+Don't forget to update the **author** and **description** fields, as well! This will manifest in the Web UI.
+{{% /notice %}}
+
+
+## Writing Go
+For the Flogo engine to actually do something we need to update the *.go files
+
+* **activity.go**: this file contains the actual activity implementation in go
+* **activity_test.go**: this file contains unit tests for the activity
 
 For the activity itself the only mandatory function that needs to be implemented is the `Eval()` method. We'll add some logic to retrieve the name and salutation from the process context, log it to the console and return the concatenation of the two as the response of the activity. In the code below we've added a new import for the core logger.
 
@@ -117,7 +129,21 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error)  {
 }
 ```
 
-Following best practice, we should write some test cases to make sure that the activity works and that other developers can run the same tests to validate the output as well. For this case we'll just use the default tests that are generated by flogogen.
+So we've made a few changes, and we need to make sure that the packages we're using are available to Go when we want to run unit tests. To get the packages execute
+
+```
+go get github.com/TIBCOSoftware/flogo-lib/core/activity
+go get github.com/TIBCOSoftware/flogo-lib/logger
+```
+
+Following best practice, we should write some test cases to make sure that the activity works and that other developers can run the same tests to validate the output as well. In order to run the test cases we need to intall two more package. One to be able to tun the tests and one to be able to create assertions.
+
+```
+go get github.com/TIBCOSoftware/flogo-contrib/action/flow/test
+go get github.com/stretchr/testify/assert
+```
+
+For this case we've updated the TestEval function to make check whether the output is indeed the output we expect based on the two parameters we're giving it.
 
 ```go
 package HelloWorld
@@ -126,8 +152,9 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-contrib/action/flow/test"
+	"github.com/TIBCOSoftware/flogo-lib/core/activity"
+	"github.com/stretchr/testify/assert"
 )
 
 var activityMetadata *activity.Metadata
@@ -136,7 +163,7 @@ func getActivityMetadata() *activity.Metadata {
 
 	if activityMetadata == nil {
 		jsonMetadataBytes, err := ioutil.ReadFile("activity.json")
-		if err != nil{
+		if err != nil {
 			panic("No Json Metadata found for activity.json path")
 		}
 
@@ -170,11 +197,27 @@ func TestEval(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-
+	tc.SetInput("name", "Leon")
+	tc.SetInput("salutation", "Hello")
 	act.Eval(tc)
 
 	//check result attr
+	result := tc.GetOutput("result")
+	assert.Equal(t, result, "The Flogo engine says Hello to Leon")
 }
+```
+
+To run all the test cases simply enter
+
+```
+go test
+```
+
+and if all goes well the result should look like
+
+```
+PASS
+ok      _/C_/tools/gosrc/HelloWorld     0.051s
 ```
 
 ## Development best practices

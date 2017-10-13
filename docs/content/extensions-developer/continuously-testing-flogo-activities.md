@@ -1,13 +1,13 @@
 ---
 date: 2016-04-09T16:50:16+02:00
 title: Continuously testing Flogo activities
-weight: 40
+weight: 20
 ---
 
-Depending on where you store the source code and how publicly you want to have the code available you have a few options. In this post I'll use [Jenkins](https://jenkins.io/) to show how I can test activities with a local git server and I'll use [Travis-CI](travis-ci.org) for activities on GitHub
+Depending on where you store the source code and how publicly you want to have the code available you have a few options to continuously testing Flogo activities. Let's look at [Jenkins](https://jenkins.io/) when using a local git server and [Travis-CI](travis-ci.org) for activities on GitHub
 
 ## Intro
-Before we begin let me quickly walk through my project structure as some of the scripts are based on that structure. I like to structure my extensions to Flogo in a category and have separate folders for activities and triggers. A sample layout would look like this:
+The project structure we'll use has separate folders for activities and triggers. A sample layout would look like this:
 ```
 ├───<Repo root>
 │   └───activity
@@ -17,6 +17,7 @@ Before we begin let me quickly walk through my project structure as some of the 
 |       └───<my-trigger>
 |           |───<all my files>
 ```
+
 A real life repository I created looks like this. The name of my repository is called `Concat` and the other files are below it.
 ```
 ├───Concat
@@ -106,6 +107,3 @@ deploy:
   on:
     tags: true
 ```
-
-## Conclusion
-With both Jenkins and Travis-CI you can very easily set up continuous testing and continuous delivery of your Flogo activities. Go check out [Project Flogo](http://www.flogo.io/) and let us know what you've built!

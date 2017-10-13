@@ -2,6 +2,7 @@
 date: 2016-04-09T16:50:16+02:00
 title: The Web UI
 weight: 20
+pre: "<i class=\"fa fa-desktop\" aria-hidden=\"true\"></i> "
 ---
 
 ### Getting Started
