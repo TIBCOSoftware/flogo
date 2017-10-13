@@ -1,6 +1,6 @@
 ---
 title: Extensions Developer
-weight: 4
+weight: 5
 chapter: true
 ---
 
