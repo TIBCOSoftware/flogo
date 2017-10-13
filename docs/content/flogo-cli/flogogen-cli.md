@@ -18,10 +18,12 @@ flogogen trigger mytrigger
 
 The create command creates a basic structure and files for an trigger.
 
-	mytrigger\
-			trigger.json
-			trigger.go
-			trigger_test.go
+```
+mytrigger\
+		trigger.json
+		trigger.go
+		trigger_test.go
+```
 
 **files**
 
@@ -40,10 +42,12 @@ flogogen action myaction
 
 The create command creates a basic structure and files for an action.
 
-	myaction\
-			action.json
-			action.go
-			action_test.go
+```
+myaction\
+		action.json
+		action.go
+		action_test.go
+```
 
 **files**
 
@@ -62,10 +66,12 @@ flogogen activity myactivity
 
 The create command creates a basic structure and files for an activity.
 
-	myactivity\
-			activity.json
-			activity.go
-			activity_test.go
+```
+myactivity\
+		activity.json
+		activity.go
+		activity_test.go
+```
 
 **files**
 
@@ -84,10 +90,12 @@ flogogen flowmodel myflowmodel
 
 The create command creates a basic structure and files for an flowmodel.
 
-	myflowmodel\
-			flowmodel.json
-			flowmodel.go
-			flowmodel_test.go
+```
+myflowmodel\
+		flowmodel.json
+		flowmodel.go
+		flowmodel_test.go
+```
 
 **files**
 
