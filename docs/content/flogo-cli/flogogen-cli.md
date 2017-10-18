@@ -12,7 +12,7 @@ With the trigger command of **flogogen** you can create a custom flogo trigger. 
 
 ```
 flogogen trigger mytrigger
-``` 	 
+```
 
 ### Project Structure
 
