@@ -18,15 +18,7 @@ Follow these steps to create an AWS Lambda function example
 
 ### Create the application
 
-```bash
-flogo create lambda
-
-cd lambda
-
-flogo install github.com/TIBCOSoftware/flogo-contrib/trigger/lambda
-```
-
-Replace the contents of flogo.json with the following
+Create a flogo.json file with the following content
 
 ```json
 {
@@ -86,6 +78,19 @@ Replace the contents of flogo.json with the following
 }
 ```
 
+Create the app using the copied flogo.json
+
+Note: this example command assumes that you are executing it in the same directory where flogo.json lives
+
+```bash
+flogo create -f flogo.json lambda
+
+cd lambda
+```
+
+After that, your application is created
+
+
 ### Build the application
 
 We will be building an embedded application [-e] option and with target shim [-shim] option using the trigger id as shim
@@ -96,7 +101,7 @@ flogo build -e -shim my_lambda_trigger
 
 This command will pull the docker image 'eawsy/aws-lambda-go-shim:latest' locally and build the zip file needed to run in AWS lambda.
 
-Once this command finishes successfully the zip file (handler.zip) will be located in your app directory.
+Once this command finishes successfully the zip file (handler.zip) will be located in your app directory (for example /path/to/app/lambda/src/lambda/handler.zip).
 
 
 ### Deploy the application
