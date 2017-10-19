@@ -1,7 +1,7 @@
 ---
-layout: page
-title: "Getting started with Flow as a Service"
-category: guide
+date: 2016-04-09T16:50:16+02:00
+title: How-to for Flow as a Service
+weight: 20
 ---
 
 This page will guide you through the set of steps needed to make your flogo application run as 'Flow as a Service'.
@@ -28,7 +28,7 @@ flogo install github.com/TIBCOSoftware/flogo-contrib/trigger/lambda
 
 Replace the contents of flogo.json with the following
 
-```
+```json
 {
   "name": "lambda",
   "type": "flogo:app",
@@ -88,20 +88,16 @@ Replace the contents of flogo.json with the following
 
 ### Build the application
 
-We will be building an embedded application [-e] option and with target function [-t] option
-```
-flogo build -e -t function
+We will be building an embedded application [-e] option and with target shim [-shim] option using the trigger id as shim
+
+```bash
+flogo build -e -shim my_lambda_trigger
 ```
 
 This command will pull the docker image 'eawsy/aws-lambda-go-shim:latest' locally and build the zip file needed to run in AWS lambda.
 
-Once this command finishes successfully the last line should give you the location of your zip file, for example
+Once this command finishes successfully the zip file (handler.zip) will be located in your app directory.
 
-```
-...
-
-Function succesfully created at '/path/to/flogo/app/lambda/handler.zip'
-```
 
 ### Deploy the application
 
