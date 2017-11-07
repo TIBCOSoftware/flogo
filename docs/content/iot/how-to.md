@@ -23,96 +23,138 @@ Lets get started by creating a simple IOT application that just counts the numbe
 
 ### Application
 
-First we'll start by creating the application using the CLI.  This creates the basic structure for your application.
-
-```bash
-flogo create myIotApp
-cd myIotApp
-``` 
-### Flow
-
-Next we'll create our flow, it will consist of two activities, a [counter](https://github.com/TIBCOSoftware/flogo-contrib/blob/master/activity/counter/README.md) activity that increments our request counter and a [log](https://github.com/TIBCOSoftware/flogo-contrib/blob/master/activity/log/README.md) activity that logs the current count.  Lets define our flow in the file named **reqcounter.json**.
+We are going to create an application from an existing flogo.json configuration file, create a file my_flogo.json and copy the following content to it
 
 ```json
-{
-  "name": "Request Counter",
-  "model": "tibco-simple",
-  "type": 1,
-  "attributes": [],
-  "rootTask": {
-    "id": 1,
-    "type": 1,
-    "activityType": "",
-    "name": "root",
-    "tasks": [
-      {
-        "id": 2,
-        "type": 1,
-        "activityType": "tibco-counter",
-        "name": "Increment Request Count",
-        "attributes": [
-          { "name": "counterName", "type": "string" , "value": "requests" },
-          { "name": "increment", "type": "boolean", "value": true }
-        ]
-      },
-      {
-        "id": 3,
-        "type": 1,
-        "activityType": "tibco-log",
-        "name": "Log reqeuest count",
-        "attributes": [],
-        "inputMappings": [
-          { "type": 1, "value": "{A2.value}", "mapTo": "message" }
-        ]
+{  
+   "name":"counter",
+   "type":"flogo:app",
+   "version":"0.0.1",
+   "description":"Sample flogo app",
+   "triggers":[  
+      {  
+         "name":"Receiver",
+         "ref":"github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+         "description":"Simple REST Trigger",
+         "settings":{  
+            "port":"8189"
+         },
+         "id":"receiver",
+         "handlers":[  
+            {  
+               "settings":{  
+                  "method":"GET",
+                  "path":"/counter",
+                  "autoIdReply":"true",
+                  "useReplyHandler":"true"
+               },
+               "actionId":"hello_world"
+            }
+         ]
       }
-    ],
-    "links": [
-        { "id": 1, "type": 1,  "name": "", "from": 2, "to": 3 }
-      ]
-  }
+   ],
+   "actions":[  
+      {  
+         "name":"HelloWorld",
+         "data":{  
+            "flow":{  
+               "type":1,
+               "attributes":[  
+
+               ],
+               "rootTask":{  
+                  "id":1,
+                  "type":1,
+                  "tasks":[  
+                     {  
+                        "id":2,
+                        "name":"Number Counter",
+                        "description":"Simple Global Counter Activity",
+                        "type":1,
+                        "activityRef":"github.com/TIBCOSoftware/flogo-contrib/activity/counter",
+                        "attributes":[  
+                           {  
+                              "name":"counterName",
+                              "value":"number",
+                              "required":false,
+                              "type":"string"
+                           },
+                           {  
+                              "name":"increment",
+                              "value":"true",
+                              "required":false,
+                              "type":"boolean"
+                           },
+                           {  
+                              "name":"reset",
+                              "value":"false",
+                              "required":false,
+                              "type":"boolean"
+                           }
+                        ]
+                     },
+                     {  
+                        "id":3,
+                        "name":"Logger",
+                        "description":"Simple Log Activity",
+                        "type":1,
+                        "activityRef":"github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                        "attributes":[  
+                           {  
+                              "name":"message",
+                              "value":"hello world",
+                              "required":false,
+                              "type":"string"
+                           },
+                           {  
+                              "name":"flowInfo",
+                              "value":"true",
+                              "required":false,
+                              "type":"boolean"
+                           },
+                           {  
+                              "name":"addToFlow",
+                              "value":"true",
+                              "required":false,
+                              "type":"boolean"
+                           }
+                        ],
+                        "inputMappings":[  
+                           {  
+                              "type":1,
+                              "value":"{A2.value}",
+                              "mapTo":"message"
+                           }
+                        ]
+                     }
+                  ],
+                  "links":[  
+                     {  
+                        "id":1,
+                        "from":2,
+                        "to":3,
+                        "type":0
+                     }
+                  ],
+                  "attributes":[  
+
+                  ]
+               }
+            }
+         },
+         "id":"hello_world",
+         "ref":"github.com/TIBCOSoftware/flogo-contrib/action/flow"
+      }
+   ]
 }
 ```
-Once we have our flow defined, we'll add it to our application along with the required activities. Note: you must add the activites you are using first, because the flogo CLI will validate to make sure that all activities used in a flow have been added to the application.
+
+We will continue by creating the application using the CLI.  This creates the basic structure for your application and imports the needed dependencies according to the flogo.json (In this case my_flogo.json created in the previous step).
 
 ```bash
-
-flogo install activity github.com/TIBCOSoftware/flogo-contrib/activity/log
-flogo install activity github.com/TIBCOSoftware/flogo-contrib/activity/counter
-
-flogo add flow reqcounter.json
+flogo create -f /path/to/file/my_flogo.json counter
+cd counter
 ``` 
-
-###Trigger
-
-Now lets configure our trigger.  For this example we'll use a simple REST trigger in order to simplify testing of you application.
-
-```bash
-flogo add trigger github.com/TIBCOSoftware/flogo-contrib/trigger/rest
-```
-
-Now that we have added our trigger, we can proceed with configuring it to kick off our flow.  We well trigger our flow using a simple **POST** to **/counter** on port 8189.  This configuration goes in triggers.json in the applications bin directory. Note that the flow we added earlier is now referenced as embedded://reqcounter
-
-```json
-{
-  "triggers": [
-    {
-      "name": "tibco-rest",
-      "settings": {
-        "port": "8189"
-      },
-      "endpoints": [
-        {
-          "flowURI": "embedded://reqcounter",
-          "settings": {
-            "method": "POST",
-            "path": "/counter"
-          }
-        }
-      ]
-    }
-  ]
-}
-```
 
 ## Building your App
 Now our application is ready to build. It can be built to run locally for preliminary testing and also for you IOT device.
@@ -140,7 +182,7 @@ Once you have your application built, you can execute the generated binary to te
 Once your app is started, you can test it out using a simple **curl** command.
 
 ```bash
-curl -X POST http://localhost:8189/counter
+curl http://localhost:8189/counter
 ```
 
 Now you should see your counter value increment in the engine console with each invocation.
