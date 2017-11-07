@@ -177,7 +177,7 @@ Once you are ready to test your application on your device, the following links 
 
 ## Testing your App
 
-Once you have your application built, you can execute the generated binary to test it out.  You should set the **loglevel** to **DEBUG** in the *bin\config.json* file when initially testing.
+Once you have your application built, you can execute the generated binary to test it out.
 
 Once your app is started, you can test it out using a simple **curl** command.
 
