@@ -8,4 +8,4 @@ chapter: true
 
 # Flogo and the Flow as a Service
 
-Discover how you can use Project Flogo to build a Flow as a Service!
+Discover how you can use Project Flogo to build a Flow as Functions.
