@@ -18,6 +18,18 @@ This command is used to create a flogo application project.
 *Create a flogo application project from an existing flogo application descriptor.*
 	
 	flogo create -f myapp.json
+	
+*Create a flogo application project using your own vendor directory.*
+	
+	flogo create -vendor /path/to/my/vendor
+	
+Important, when using -vendor option use 'flogo ensure -no-vendor' when updating dependencies to not override your imported vendor folder.
+
+*Create a flogo application project specifying constraints for your libraries.*
+	
+	flogo create -flv github.com/TIBCOSoftware/flogo-lib@0.0.0,github.com/TIBCOSoftware/flogo-contrib@0.0.0
+	
+Note: pass a comma separated value of libraries and dependencies (you can also use branches and tags)
 		
 ### install
 This command is used to install a contribution to your project.
