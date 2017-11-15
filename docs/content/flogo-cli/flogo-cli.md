@@ -34,28 +34,39 @@ Note: pass a comma separated value of libraries and dependencies (you can also u
 ### install
 This command is used to install a contribution to your project.
 
-*activity*
+*Install an activity using the latest version, or existing version constraint*
 
 	flogo install github.com/TIBCOSoftware/flogo-contrib/activity/log
+
+*Install an activity with a specific version constraint*
+
+	flogo install -v 0.0.0 github.com/TIBCOSoftware/flogo-contrib/activity/log
+
+Note: if an existing constraint for the given package exist, the version will be ignored
 	
-*trigger*
+*Install a trigger the latest version, or existing version constraint*
 
 	flogo install github.com/TIBCOSoftware/flogo-contrib/trigger/rest
 	
+*Install a trigger with a specific version constraint*
+
+	flogo install -v 0.0.0 github.com/TIBCOSoftware/flogo-contrib/trigger/rest
+
+Note: if an existing constraint for the given package exist, the version will be ignored
 	
 ### uninstall
 This command is used to remove a contribution to your project.
 
-*activity*
+*Uninstall an activity*
 
 	flogo uninstall github.com/TIBCOSoftware/flogo-contrib/activity/log
 	
-*trigger*
+*Uninstall a trigger*
 
 	flogo uninstall github.com/TIBCOSoftware/flogo-contrib/trigger/rest
 	
 ### list
-This command is used to list the activities, triggers, flows and models installed in the application.  
+This command is used to list the activities, triggers and flows installed in the application.  
 	 
 	flogo list
 	
@@ -63,8 +74,6 @@ This command is used to list the activities, triggers, flows and models installe
 	  github.com/TIBCOSoftware/flogo-contrib/action/flow
 	activities:
 	  github.com/TIBCOSoftware/flogo-contrib/activity/log
-	flow-model:
-	  github.com/TIBCOSoftware/flogo-contrib/model/simple
 	triggers:
 	  github.com/TIBCOSoftware/flogo-contrib/trigger/rest
 
@@ -81,17 +90,17 @@ The list can be generated in a JSON format using the 'json' flag
 	    "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
 	  },
 	  {
-	    "type": "flow-model",
-	    "ref": "github.com/TIBCOSoftware/flogo-contrib/model/simple"
-	  },
-	  {
 	    "type": "trigger",
 	    "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
 	  }
 	]
 
 ### prepare
-This command is used to prepare the application. Preperation consist of code generation for contribution metadata and go imports.
+Note: This command is deprecated! please use instead
+
+ 	flogo build [-gen]
+
+This command is used to prepare the application. Preparation consist of code generation for contribution metadata and go imports.
 
  	flogo prepare
  	
@@ -101,15 +110,31 @@ This command is used to prepare the application. Preperation consist of code gen
 - [ -e ] : embeds the configuration into the compiled application	 	 
 
 ### build
-This command is used to build the application.  The *prepare* command is also invoked by default when doing a build.
+This command is used to build the application.  The generation of metadata is done by default when doing a build, if you don't want to regenerate the metadata use [-nogen] option.
 
  	flogo build
  	
 **options**
 	
-- [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
-- [ -e ] : embeds the configuration into the compiled application
-- [ -sp ] : skip *prepare* step
+- [ -o ]    : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
+- [ -e ]    : embeds the configuration into the compiled application
+- [-nogen]  : ONLY perform the build, without performing the generation of metadata
+- [-gen]    : ONLY perform generation of metadata, without performing the build
+- [ -sp ]   : [Deprecated, use '-nogen' instead] skip *prepare* step
+- [ -shim ] : trigger shim creates an app as shim, pass trigger id as value (for example flogo build -shim my_trigger_id)
+
+### ensure
+This command is used to manage project dependencies. It is mainly a wrapper for the 'dep ensure' command for the official [dep](https://github.com/golang/dep) library
+
+ 	flogo ensure
+ 	
+**options**
+
+- [ -add ]          : add new dependencies, or populate Gopkg.toml with constraints for existing dependencies (default: false)
+- [ -no-vendor ]    : update Gopkg.lock (if needed), but do not update vendor/ (default: false)
+- [ -update ]       : update the named dependencies (or all, if none are named) in Gopkg.lock to the latest allowed by Gopkg.toml (default: false)
+- [ -v ]            : enable verbose logging (default: false)
+- [ -vendor-only ]  : populate vendor/ from Gopkg.lock without updating it first (default: false)
 
 ### help
 This command is used to display help on a particular command
@@ -127,15 +152,19 @@ The create command creates a basic structure and files for an application.
 		flogo.json
 		src/
 			my_app/
+			    vendor/
+			    Gopkg.lock
+			    Gopkg.toml
 				imports.go
 				main.go
-		vendor/
 		
 **files**
 
 - *flogo.json* : flogo project application configuration descriptor file
 - *imports.go* : contains go imports for contributions (activities, triggers and models) used by the application
-- *main.go* : main file for the engine.
+- *main.go*    : main file for the engine.
+- *Gopkg.toml* : manifest file including dependency contraints and overrides.
+- *Gopkg.lock* : lock file including the actual revision used according to the contraints.
 
 **directories**	
 	
