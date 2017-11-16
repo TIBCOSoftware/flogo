@@ -170,10 +170,10 @@ This will compile your application and place the binary in the bin directory.  Y
 ### Device
 Once you are ready to test your application on your device, the following links have information on specific devices including on how to build flogo for that device.
 
-* [Raspberry Pi](https://tibcosoftware.github.io/flogo/iot/device-pi) 
-* [C.H.I.P.](https://tibcosoftware.github.io/flogo/iot/device-chip)
-* [Intel Edison](https://tibcosoftware.github.io/flogo/iot/device-edison)
-* [BeagleBone](https://tibcosoftware.github.io/flogo/iot/device-beaglebone)
+* [Raspberry Pi](../device-pi) 
+* [C.H.I.P.](../device-chip)
+* [Intel Edison](../device-edison)
+* [BeagleBone](../device-beaglebone)
 
 ## Testing your App
 

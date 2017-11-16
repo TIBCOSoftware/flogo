@@ -8,7 +8,7 @@ pre: "<i class=\"fa fa-terminal\" aria-hidden=\"true\"></i> "
 Project Flogo provides two different command-line interfaces and which you need depends on the task you need to execute. The **flogo** CLI tool gives you the ability to build flows and microservices. With this tool you can, among other things, create your applications, build applications and install new extensions. It is also great to use with Continuous Integration and Continuous Deployment tools like Jenkins and Travis-CI.
 
 {{% notice info %}}
-Please make sure that you have installed the **flogo CLI** tools and **gb** as described in the [CLI tools](../getting-started-cli)
+Please make sure that you have installed the **flogo CLI** tools and **dep** as described in the [CLI tools](../getting-started-cli)
 {{% /notice %}}
 
 ### Building your app
