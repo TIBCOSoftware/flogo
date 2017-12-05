@@ -1,5 +1,5 @@
 ---
-title: FaaS
+title: Flow Developer
 weight: 7
 chapter: true
 ---
