@@ -6,6 +6,6 @@ chapter: true
 
 ### Chapter 6
 
-# Flogo and the Flow as a Service
+# Flogo Flows as Functions for Serverless Platforms
 
 Discover how you can use Project Flogo to build a Flow as Functions.

@@ -1,11 +1,11 @@
 ---
-title: Flogo and Flogogen
+title: Flogo CLI
 weight: 3
 chapter: true
 ---
 
 ### Chapter 2
 
-# Flogo and Flogogen
+# Flogo CLI
 
-How does those CLI tools work and what can you do with it?
+Discover the Flogo CLI tools to build applications & extensions.
