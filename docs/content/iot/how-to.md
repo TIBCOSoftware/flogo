@@ -4,7 +4,7 @@ title: How-to for IOT
 weight: 20
 ---
 
-Creating a flogo application is easy andand we've outlined the steps for you in this howto guide. This guide will walk you through the steps required to create a simple flogo application which can also be used on an IOT device.
+Creating a flogo application is easy and we've outlined the steps for you in this howto guide. This guide will walk you through the steps required to create a simple flogo application which can also be used on an IOT device.
 
 ## Prerequisites
 Before you can get started building IOT applications with flogo, you need to have the following prerequisites installed:

@@ -131,3 +131,5 @@ We're referencing the result property from the activity named rest_3. We're then
 - Flow properties are accessible via: $flow.<PROPERTY_NAME>
 - Activity output properties/objects are accessible via: $activity[<ACTIVITY_NAMER>].property
 - Envrionment variables are accessible via: $env
+
+The type 2 mapping is pretty simple to understand, however type 4 does require a bit of an explanation. Note that the value param is assigned an object, not a string, and also note the use of the template style variable injection. You can use "{{ }}" when you need to inject the value of another object into your complex object. If you assign the value of an array then that param will be treated as an array, likewise for a string, int, etc. For example, let us pretend flow.Author is an array, then the Author object would be an array. In otherwords, direct assignment is occurring.

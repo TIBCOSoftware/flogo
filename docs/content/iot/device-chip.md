@@ -4,7 +4,7 @@ title: Flogo for C.H.I.P
 weight: 50
 ---
 
-You can run your Flogo application on a C.H.I.P. device.  This documents contains all relevant information on this device including how to build.
+You can run your Flogo application on a C.H.I.P. device. (https://getchip.com/pages/chip) This documents contains all relevant information on this device including how to build.
 
 
 ## Build
