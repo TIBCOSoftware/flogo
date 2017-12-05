@@ -59,18 +59,15 @@ The WebUI insulates you frome much of this understanding and will infer the corr
 
 Flogo has the concept of mapping resolvers and resolvers are contained within a specific scope, hence not all objects can be accessed from anywhere within the scope.
 
-Trigger->Handler->actionMapper:
-- input scope : trigger ouput <-- "value" field - only property and env resolver can be used. That is, only the output of the trigger or an environment variable can be used here.
-- output scope: action. Properties defined as ahe output of the flow can be used.
-
-Action->Flow->Activity->inputMapper:
-- input scope : flow  <-- "value" field  - all resolvers can be used
-- output scope: activity input
-Action->Flow->Activity->outputMapper
-- input scope : activity output
-- output scope: flow
-
-Link Expression -  all resolvers can be used for link expressions.
+| Mapper | Scope |
+| --- | --- |
+| Trigger->Handler->actionMapper/input | Trigger ouput <-- "value" field - only property and env resolver can be used. That is, only the output of the trigger or an environment variable can be used here. |
+| Trigger->Handler->actionMapper/output | action scope. Properties defined as ahe output of the flow can be used. |
+| Action->Flow->Activity->inputMapper/input | flow  <-- "value" field  - all resolvers can be used |
+| Action->Flow->Activity->inputMapper/output | activity input |
+| Action->Flow->Activity->outputMapper/input | activity output |
+| Action->Flow->Activity->outputMapper/output | flow |
+| Link Expression | all resolvers can be used for link expressions. |
 
 ## Mapping Syntax
 
@@ -131,5 +128,3 @@ We're referencing the result property from the activity named rest_3. We're then
 - Flow properties are accessible via: $flow.<PROPERTY_NAME>
 - Activity output properties/objects are accessible via: $activity[<ACTIVITY_NAMER>].property
 - Envrionment variables are accessible via: $env
-
-The type 2 mapping is pretty simple to understand, however type 4 does require a bit of an explanation. Note that the value param is assigned an object, not a string, and also note the use of the template style variable injection. You can use "{{ }}" when you need to inject the value of another object into your complex object. If you assign the value of an array then that param will be treated as an array, likewise for a string, int, etc. For example, let us pretend flow.Author is an array, then the Author object would be an array. In otherwords, direct assignment is occurring.
