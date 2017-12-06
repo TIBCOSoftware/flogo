@@ -1,6 +1,6 @@
 ---
 title: Flow Developer
-weight: 7
+weight: 4
 chapter: true
 ---
 
