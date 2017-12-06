@@ -16,7 +16,7 @@ When building a Flow, you must first define the input and output params, that is
 
 From the WebUI, open your new Flow, and click the "Flow Params" box, you'll be presented with the Flow input/output editor.
 
-![WebUI Input/Output Editor](../../static/images/flow-params2.png)
+![WebUI Input/Output Editor](../../images/flow-params2.png)
 
 You will be presented with a dialog containing two tabs, Input and Output. Use this dialog to define your input and output parameters.
 
@@ -56,11 +56,11 @@ Before we jump in, to understand the concepts used here:
 
 To map the trigger data using the WebUI, add a trigger to your Flow, and click on it.
 
-![WebUI Map Flow Params](../../static/images/map-trigger1.png)
+![WebUI Map Flow Params](../../images/map-trigger1.png)
 
 Now select "Map flow params".
 
-![WebUI Map Flow Params](../../static/images/map-trigger2.png)
+![WebUI Map Flow Params](../../images/map-trigger2.png)
 
 Now you can map the output of the trigger to Flow input params, and Flow output params can be mapped to the reply params available for the trigger.
 
