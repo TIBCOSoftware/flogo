@@ -1,0 +1,23 @@
+language: go
+
+go:
+  - master # This uses automatically the latest version of go
+
+install:
+  - go get github.com/spf13/hugo # This provides the latest version of Hugo to Travis CI
+
+script:
+  - hugo # This commands builds your website on travis
+
+# Deploy to GitHub pages
+deploy:
+  local_dir: public
+  repo: vboddeboina/vboddeboina.github.io # This is the slug of the repo you want to deploy your site to
+  target_branch: master # GitHub pages branch to deploy to (in other cases it can be gh-pages)
+  provider: pages
+  skip_cleanup: true
+  github_token:  fqvV7zU4ubaPeisDNzfz # Set in travis-ci.org dashboard
+  email: vboddebo@tibco.com
+  name: "vboddeboina"
+on:
+    branch: master

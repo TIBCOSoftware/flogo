@@ -1,0 +1,88 @@
+[[items]]
+name = "Amazon SQS"
+type = "trigger"
+description = "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications."
+url = "https://github.com/TIBCOSoftware/tci-webintegrator/tree/master/examples/AWS"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "IFTTT"
+type = "activity"
+description = "An extension for TIBCO Cloud Integration - Web Integrator to connect Web Integrator Apps to IFTTT and do amazing things."
+url = "https://github.com/retgits/wi-ifttt-extension"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "Concat"
+type = "app"
+description = "In formal language theory and computer programming, string concatenation is the operation of joining character strings end-to-end. For example, the concatenation of 'snow' and 'ball' is 'snowball'."
+url = "https://github.com/TIBCOSoftware/tci-webintegrator/tree/master/examples/TIBCO/activity/concat"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "GloSS"
+type = "activity"
+description = "A quick start project for TIBCO Business Studio - Cloud Edition to make it easy to work with different text message services"
+url = "https://github.com/TIBCOSoftware/tci-studio-samples/tree/master/TIBCO%20Business%20Studio-Cloud%20Edition/GloSS"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "Microsoft Translator"
+type = "activity"
+description = "Translate text, pictures, websites, documents and full conversations at home or anywhere in the world, in a browser or on your favorite mobile device"
+url = "https://github.com/TIBCOSoftware/tci-studio-samples/tree/master/TIBCO%20Business%20Studio-Cloud%20Edition/Sample%20for%20Microsoft%20Translator"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "MongoDB"
+type = "activity"
+description = "MongoDB (from humongous) is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas."
+url = "https://github.com/TIBCOSoftware/tci-studio-samples/tree/master/TIBCO%20Business%20Studio-Cloud%20Edition/Sample%20for%20MongoDB"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "Slack"
+type = "activity"
+description = "Slack is a cloud-based set of team collaboration tools and services, founded by Stewart Butterfield.[1] Slack began as an internal tool used by their company, Tiny Speck, in the development of Glitch, a now defunct online game."
+url = "https://github.com/TIBCOSoftware/tci-studio-samples/tree/master/TIBCO%20Business%20Studio-Cloud%20Edition/Sample%20for%20Slack"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "Stripe"
+type = "activity"
+description = "Stripe is a US technology company [2] operating in over 25 countries, that allows both private individuals and businesses to accept payments over the Internet."
+url = "https://github.com/TIBCOSoftware/tci-studio-samples/tree/master/TIBCO%20Business%20Studio-Cloud%20Edition/Sample%20for%20Stripe"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "SugarCRM"
+type = "activity"
+description = "SugarCRM is a software company based in Cupertino, California. It produces the web application Sugar, a customer relationship management (CRM) system."
+url = "https://github.com/TIBCOSoftware/tci-studio-samples/tree/master/TIBCO%20Business%20Studio-Cloud%20Edition/Sample%20for%20SugarCRM"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "Twilio"
+type = "activity"
+description = "Twilio is a cloud communications platform as a service (PaaS) company based in San Francisco, California. Twilio allows software developers to programmatically make and receive phone calls and send and receive text messages using its web service APIs."
+url = "https://github.com/TIBCOSoftware/tci-studio-samples/tree/master/TIBCO%20Business%20Studio-Cloud%20Edition/Sample%20for%20Twilio"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"
+
+[[items]]
+name = "tci-awesome"
+type = "activity"
+description = "See the rest of the awesome TIBCO Cloud Integration projects in our GitHub repo"
+buttontext = "Visit the repo"
+url = "https://github.com/TIBCOSoftware/tci-awesome"
+uploadedon = "July 22, 2015 5:34pm"
+author = "anonymous"

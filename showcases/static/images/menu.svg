@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="16px" width="22px" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 16"><!-- Generator: sketchtool 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <g id="flogo.io" fill-rule="evenodd" fill="none">
+        <g id="Mobile-Portrait-320" fill="#9B9B9B" transform="translate(-281 -16)">
+            <g id="menu" transform="translate(281 16)">
+                <path id="Line" d="m20.88 1.8578c0.513 0 0.929-0.4159 0.929-0.92891s-0.416-0.92889-0.929-0.92889h-19.507c-0.51268 0-0.92856 0.41588-0.92856 0.92889s0.41588 0.92891 0.92886 0.92891h19.507z"/>
+                <path id="Line-Copy" d="m20.88 8.5244c0.513 0 0.929-0.4158 0.929-0.9288 0-0.5131-0.416-0.9289-0.929-0.9289h-19.507c-0.51268 0-0.92856 0.4158-0.92856 0.9289 0 0.513 0.41588 0.9288 0.92886 0.9288h19.507z"/>
+                <path id="Line-Copy-2" d="m20.88 15.191c0.513 0 0.929-0.416 0.929-0.929s-0.416-0.929-0.929-0.929h-19.507c-0.51268 0-0.92856 0.416-0.92856 0.929s0.41588 0.929 0.92886 0.929h19.507z"/>
+            </g>
+        </g>
+    </g>
+</svg>
