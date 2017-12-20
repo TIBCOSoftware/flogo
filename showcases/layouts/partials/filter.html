@@ -1,11 +1,23 @@
 <div class="filters-container">
     <div class="labels-container">
-        <div class="badge all"> All </div>
-        <div class="badge activity"> Activities </div>
-        <div class="badge trigger"> Triggers </div>
-        <div class="badge app"> Apps </div>
+        <div class="badge all selected"> <span>All</span> </div>
+        <div class="badge activity">
+            <svg class="card-label__img" viewBox="-4 -6 24 24">
+                <use href="{{ .Site.BaseURL }}images/showcases-labels.svg#activity"></use>
+            </svg>
+            <span>Activities</span> </div>
+        <div class="badge trigger">
+            <svg class="card-label__img" viewBox="-4 -6 24 24">
+                <use href="{{ .Site.BaseURL }}images/showcases-labels.svg#trigger"></use>
+            </svg>
+            <span>Triggers</span> </div>
+        <div class="badge app">
+            <svg class="card-label__img" viewBox="-4 -6 24 24">
+                <use href="{{ .Site.BaseURL }}images/showcases-labels.svg#app"></use>
+            </svg>
+            <span>Apps</span> </div>
     </div><div class="search-container">
     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-    <input type="text" class="form-control" placeholder="Search">
+    <input type="text" id="search" class="form-control" placeholder="Search">
 </div>
 </div>
