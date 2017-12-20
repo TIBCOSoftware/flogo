@@ -11,7 +11,7 @@
         {{ partial "filter.html" . }}
         <div class="cards-container">
         {{ range $.Site.Data.items.items }}
-            <div class="card-main card-main--{{ .type }}" data-description="{{ .description}}">
+            <div class="card-main card-main--{{ .type }}" data-description="{{ .description}}" data-name="{{.name}}" data-author="{{ .author }}">
                 <div class="card-header">
                     <div class="card-header__label">
                         <svg class="card-label__img" viewBox="-4 -6 29 29">
