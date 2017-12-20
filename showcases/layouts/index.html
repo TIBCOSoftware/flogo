@@ -10,8 +10,8 @@
     <div class="main">
         {{ partial "filter.html" . }}
         <div class="cards-container">
-        {{ range $.Site.Data.items.items }}
-            <div class="card-main card-main--{{ .type }}" data-description="{{ .description}}">
+            {{ range $.Site.Data.items.items }}
+            <div class="card-main card-main--{{ .type }}" data-description="{{ .description}}" data-name="{{.name}}" data-author="{{ .author }}">
                 <div class="card-header">
                     <div class="card-header__label">
                         <svg class="card-label__img" viewBox="-4 -6 29 29">
@@ -41,7 +41,7 @@
                     <a href="{{ .url }}"><button class="fg-btn fg-btn--blue card-footer__btn">View on GitHub</button></a>
                 </div>
             </div>
-        {{ end }}
+            {{ end }}
         </div>
         {{ partial "footer.html" . }}
     </div>
