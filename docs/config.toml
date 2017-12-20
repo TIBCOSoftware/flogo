@@ -38,6 +38,6 @@ url = "https://community.tibco.com/products/project-flogo"
 weight = 11
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-plug'></i> Connectors"
-url = "https://community.tibco.com/exchange"
+name = "<i class='fa fa-plug'></i> Showcase"
+url = "https://tibcosoftware.github.io/flogo/showcases"
 weight = 12
