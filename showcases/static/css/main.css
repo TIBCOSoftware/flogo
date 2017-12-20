@@ -1,0 +1,922 @@
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
+@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
+
+body {
+    color: #8A8C8F;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    color: #43B9F1;
+}
+
+a:hover {
+    color: #1DBFBB;
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* ---------------------------------------------- /*
+ * Elements
+/* ---------------------------------------------- */
+
+.fg-img--right {
+    float: right;
+}
+
+.fg-btn {
+    background: none;
+    border: none;
+    padding: 1.3rem 5rem;
+    color: #fff;
+    border-radius: 0;
+    font-size: 1.7rem;
+}
+
+.fg-btn--blue {
+    background-color: #36bfbb;
+}
+
+.fg-btn--blue:hover {
+    background-color: #00a9b0;
+    color: #fff;
+}
+
+.fg-btn-try {
+    margin: 1em 0;
+}
+
+.fg-hr {
+    height: 2px;
+    width: 75%;
+}
+
+.fg-hr--gray {
+    background-color: #d1d1d1;
+    border: none;
+}
+
+.fg-hr--white {
+    color: #b6b6b6;
+    background-color: #b6b6b6;
+    border: none;
+    width: 100%;
+}
+
+.fg-link--light-blue {
+    color: #36bfbb;
+}
+
+.fg-link--light-blue:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+div.fg-element--hidden {
+    display: none;
+}
+
+/* ---------------------------------------------- /*
+ * Modal
+/* ---------------------------------------------- */
+
+.fg-modal {
+}
+
+.fg-modal__header {
+    border: none;
+}
+
+.fg-modal__content {
+    background: none;
+    box-shadow: none;
+    border: none;
+    margin: 5em 0;
+    width: inherit;
+}
+
+.fg-modal__body {
+}
+
+.fg-modal__close-button {
+    opacity: 1;
+    color: #fff;
+}
+
+.fg-modal__close-button:hover {
+    opacity: 1;
+    color: #1DBFBB;
+    text-shadow: none;
+}
+
+/* ---------------------------------------------- /*
+ * Main section
+/* ---------------------------------------------- */
+
+.fg-section-main {
+    background-image: url("../images/topbanner.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #475567;
+    background-position: 50% 50%;
+    color: #fff;
+}
+
+.fg-section-main__container {
+    text-align: center;
+}
+
+.fg-section-main__img {
+    display: none;
+}
+
+.fg-section-main__video-icon {
+    margin: 2em 0;
+}
+
+.fg-section-main__player {
+    display: block;
+    width: 22em;
+    height: 13em;
+    margin: 3rem auto;
+    position: relative;
+}
+
+.fg-section-main__player--hidden {
+    display: none;
+}
+
+.fg-section-main__title {
+    font-size: 64px;
+}
+
+.fg-section-main__subtitle {
+    font-size: 24px;
+    margin-bottom: 6em;
+    position: relative;
+    max-width: 370px;
+    margin-left: 4em;
+}
+
+.fg-section-main__btn-play {
+    margin: 3rem auto;
+    padding: 0;
+    letter-spacing: 2.1px;
+}
+
+.fg-section-main__btn-play__icon {
+    background-color: #36BFBB;
+    border: solid 3px #fff;
+    border-radius: 50%;
+
+    display: block;
+    margin: 1em auto;
+    padding: 0;
+
+    height: 64px;
+    width: 64px;
+}
+
+.fg-section-main__btn-play__icon:after {
+    border: solid 15px transparent;
+    border-left-color: #fff;
+    content: "";
+    display: block;
+
+    margin: 0 auto;
+    margin-left: 25px;
+    margin-top: 13px;
+    padding: 0;
+
+    height: 0;
+    width: 0;
+}
+
+.fg-section-main__btn-play:hover {
+    color: #00a9b0;
+}
+
+.fg-section-main__btn-play:hover .fg-section-main__btn-play__icon {
+    background-color: #3A8D92;
+    border-color: #A4ACB3;
+}
+
+.fg-section-main__segment-container--blue {
+    background: #576474;
+    margin-bottom: -5em;
+    padding: 1em 0;
+    text-align: center;
+    transition: height 0.8s;
+}
+
+.fg-section-main-license-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    height: 6.3em;
+    width: 100%;
+}
+
+.fg-section-accept-license {
+    opacity: 0;
+}
+
+.fg-section-accept-license__divider {
+    padding: 0 0.5em;
+}
+
+.fg-btn:hover .fg-btn--video-play {
+    opacity: 1;
+    fill: #1DBFBB;
+}
+
+.fg-section-main__text {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 1.3em;
+}
+
+/* ---------------------------------------------- /*
+ * IoT section
+/* ---------------------------------------------- */
+
+.fg-section-iot__icon {
+    background: url("../images/integration-icn.svg") no-repeat;
+    background-position: 0 25px;
+}
+
+/* ---------------------------------------------- /*
+ * Ultralight section
+/* ---------------------------------------------- */
+
+.fg-section-ultralight__icon {
+    background: url("../images/lightweight-icn.svg") no-repeat;
+    background-position: 0 25px;
+}
+
+#r-java.fg-section-ultralight__graph__bar {
+    animation-duration: 2s;
+    animation-delay: .2s;
+}
+
+#r-node.fg-section-ultralight__graph__bar {
+    animation-duration: 1.5s;
+    animation-delay: .1s;
+}
+
+#r-flogo.fg-section-ultralight__graph__bar {
+    animation-duration: 1s;
+    animation-delay: .1s;
+}
+
+/* ---------------------------------------------- /*
+ * OpenSource section
+/* ---------------------------------------------- */
+
+.fg-section-opensource__icon {
+    position: relative;
+    top: -3px;
+}
+
+.fg-section-opensource__img {
+    width: 50%;
+    position: relative;
+    bottom: -5em;
+}
+
+/* ---------------------------------------------- /*
+ * Get Started section
+/* ---------------------------------------------- */
+
+.fg-section-getstarted {
+    margin-bottom: 1em;
+}
+
+.fg-section-getstarted__btn {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+/* ---------------------------------------------- /*
+ * Section
+/* ---------------------------------------------- */
+
+.fg-section {
+    padding: 5em 0;
+}
+
+.fg-section__subtitle {
+    font-size: 2.5em;
+    color: #CECFD0;
+}
+
+.fg-section__text-container {
+    padding-left: 35px;
+}
+
+.fg-section-container--dark-blue {
+    padding: 3em 0 1em 0;
+    color: #fff;
+    background-color: #475668;
+    background-image: url("../images/bottom-flynn.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 87%;
+    background-size: 25em;
+}
+
+.fg-section-container--dark-blue .fg-section__title--white {
+    color: white;
+}
+
+.fg-section__title {
+    color: #212121;
+    line-height: 1.1;
+    font-size: 2.5em;
+}
+
+
+/* ---------------------------------------------- /*
+ * Clipboard
+/* ---------------------------------------------- */
+
+.fg-clipboard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+}
+
+.fg-clipboard-wrapper__text {
+    text-align: right;
+    padding-right: 1em;
+}
+
+.fg-clipboard-wrapper__input {
+    width: 63%;
+}
+
+.fg-clipboard {
+    background-color: #fff;
+    border: solid 1px #9b9b9b;
+    display: inline-block;
+    margin: 1.3em auto;
+    height: 3.2em;
+    width: 100%;
+}
+
+.fg-clipboard__segment {
+    height: 100%;
+    padding: 0;
+}
+
+.fg-clipboard__btn-options {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    height: inherit;
+    background-color: #00a9b0;
+    color: white;
+    font-size: 16px;
+    padding: 0;
+}
+
+.fg-clipboard__btn-options:hover, .fg-clipboard__btn-options:focus {
+    background-color: #36bfbb;
+    color: #fff
+}
+
+.fg-clipboard__btn-options__text {
+    padding: 0 1em;
+}
+
+.fg-clipboard__dropdown-menu {
+    border: solid 1px #36bfbb;
+    border-radius: 0;
+}
+
+.fg-clipboard__dropdown-menu .fg-clipboard__dropdown-menu__option {
+    color: #4a4a4a;
+    padding: 1em 3em;
+}
+
+.fg-clipboard__dropdown-menu .fg-clipboard__dropdown-menu__option:hover {
+    background-color: #bee4e2;
+    cursor: pointer;
+    color: #4a4a4a;
+}
+
+.fg-clipboard__btn-copy {
+    background: none;
+    border: none;
+    height: inherit;
+}
+
+.fg-clipboard__text {
+    color: #4a4a4a;
+    border: none;
+    display: block;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    padding-left: 1em;
+    text-align: center;
+    width: 100%;
+    height: inherit;
+}
+
+/* ---------------------------------------------- /*
+ * Navbar
+/* ---------------------------------------------- */
+
+.fg-navbar {
+    background-color: #fff;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+}
+
+.fg-navbar__header {
+    background-color: #fff;
+}
+
+.fg-navbar__header .fg-navbar__header__brand {
+    color: #000;
+}
+
+.fg-navbar__menu a {
+    margin: 0 1rem;
+    letter-spacing: 2.8px;
+    text-align: center;
+    color: #9b9b9b;
+    border-bottom: solid 1px white;
+}
+
+.fg-navbar .fg-navbar__menu a:hover {
+    color: #1DBFBB;
+    background-color: #fff;
+}
+
+/* ---------------------------------------------- /*
+ * Footer
+/* ---------------------------------------------- */
+
+.fg-footer {
+    position: relative;
+    background-color: #475668;
+    width: 100%;
+}
+
+.fg-footer__img {
+    position: absolute;
+    right: 0;
+    bottom: -3em;
+    z-index: 0;
+}
+
+.fg-footer__links {
+    text-align: center;
+    z-index: 1;
+}
+
+.fg-footer__links__link {
+    margin: 0 .5em;
+    color: white;
+}
+
+.fg-footer__copyright__text {
+    font-size: 1em;
+    margin: 0 .5em;
+    display: inline;
+}
+
+.fg-footer-community__text {
+    font-size: 1em;
+}
+
+.search-icon .icon {
+    fill: #9b9b9b;
+}
+
+.search-icon:hover .icon {
+    fill: #1dbfbb;
+}
+
+/* ---------------------------------------------- /*
+ * Animations
+/* ---------------------------------------------- */
+
+.fg-animate {
+    opacity: 0;
+    transition: all;
+}
+
+.fg-animate.animated {
+    opacity: 1;
+}
+
+.fg-animate--line {
+    fill-opacity: 0;
+    stroke: #E6E7E8;
+    stroke-width: 4;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: fg-animation-draw 5s linear forwards;
+    animation-play-state: paused;
+    -webkit-animation: fg-animation-draw 5s linear forwards;
+    -webkit-animation-play-state: paused;
+}
+
+.fg-animate--reverse {
+    fill-opacity: 1;
+    stroke: #E6E7E8;
+    stroke-width: 4;
+    stroke-dasharray: 110;
+    stroke-dashoffset: 80;
+    animation: fg-animation-drawReverse 5s linear forwards;
+    animation-play-state: paused;
+    -webkit-animation: fg-animation-drawReverse 5s linear forwards;
+    -webkit-animation-play-state: paused;
+}
+
+.fg-animate--dashed {
+    fill-opacity: 0;
+    stroke: #E6E7E8;
+    stroke-width: 3;
+    stroke-dasharray: 15;
+    stroke-dashoffset: 200;
+    animation: fg-animation-drawDash 6s infinite linear;
+    -webkit-animation: fg-animation-drawDash 6s infinite linear;
+}
+.fg-ultralight_img{
+    margin-top: 2em;
+}
+.fg-animate--grow {
+    visibility: hidden;
+    animation: fg-animation-grow forwards paused;
+    -webkit-animation: fg-animation-grow forwards paused;
+}
+
+@keyframes fg-animation-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fg-animation-drawReverse {
+    to {
+        stroke-dashoffset: 200;
+    }
+}
+
+@keyframes fg-animation-drawDash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+@keyframes fg-animation-grow {
+    from {
+        transform: translateY(200px) scaleY(0);
+    }
+    to {
+        transform: translateY(0px) scaleY(1);
+        visibility: visible;
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Brand Guideline page
+/* ---------------------------------------------- */
+
+.fg-body__guide {
+    color: #1b2128;
+}
+
+.fg-body__guide sup {
+    font-size: 0.55em;
+}
+
+.fg-body__guide .fg-section__title {
+    margin: 20px auto;
+}
+
+.fg-body__guide .fg-section {
+    padding: 2em 0;
+}
+
+.fg-body__guide .fg-section a{
+    color: #30b3ad;
+}
+
+.fg-body__guide .fg-section a:hover{
+    color: #30b3ad;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.fg-body__guide .fg-section__guide{
+    padding: 90px 0;
+}
+
+.fg-section__guide h1{
+    font-size: 48px;
+}
+
+.fg-section__guide h3{
+    font-weight: 300;
+}
+
+.fg-list__index {
+    list-style: lower-alpha;
+}
+
+.fg-para__marks {
+    width: 270px;
+}
+
+.fg-para__marks.fg-mark__wordmark {
+    background: #d8d8d8;
+    padding: 53px 107px;
+    font-weight: 600;
+    margin-bottom: 2em;
+}
+
+.fg-para__marks.fg-mark__flynnlogo {
+    margin-bottom: 2em;
+    width: 425px;
+}
+
+.fg-para__marks.fg-mark__flynnlogo img{
+    border: 4px solid rgba(216, 216, 216, 0.5);
+    width: 200px;
+}
+
+.fg-row__generalguidelines p{
+    margin-bottom: 1.2em;
+}
+
+.fg-img__poweredby {
+    margin: 2em auto 1em auto;
+}
+
+.fg-list__donts {
+    padding-left: 30px;
+}
+
+.fg-list__donts li span.glyphicon {
+    margin-right: 4px;
+    margin-top: 4px;
+    font-size: 16px;
+    color: #ee3342;
+    vertical-align: top;
+}
+
+.fg-list__donts li p {
+    display: inline-block;
+    width: 95%;
+}
+
+.fg-trademark-notice-highlight {
+    padding: 40px;
+    background: #d8d8d8;
+    margin-bottom: 1.2em;
+}
+
+/* ---------------------------------------------- /*
+ * Media (Responsive)
+/* ---------------------------------------------- */
+
+@media (min-width: 1200px) {
+    .fg-flynn--right:after {
+        background: url(../images/birthdayflynn-fullgraphic_bdayflynn-full.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        position: absolute;
+        height: 15em;
+        width: 15em;
+        right: -37rem;
+        top: -17rem;
+    }
+
+    /* ---------------------------------------------- /*
+     * Brand Guideline page
+    /* ---------------------------------------------- */
+
+    .fg-body__guide .fg-section .container {
+        width: 760px;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    .fg-img {
+        margin: 0 auto;
+    }
+
+    .fg-section__text-container {
+        margin: 1em 5em;
+    }
+
+    .fg-section-main__img {
+        width: 17em;
+        height: auto;
+        display: block;
+    }
+    .fg-section-main__subtitle{
+        margin-left: 7em;
+    }
+
+    .fg-section-iot__icon, .fg-section-ultralight__icon {
+        background-position: 0 5px;
+    }
+
+    .fg-section-container--dark-blue {
+        padding: 1em 0;
+        color: #fff;
+        background-color: #475668;
+        background-image: none;
+    }
+
+    .fg-footer__links {
+        text-align: center;
+    }
+
+    .fg-clipboard-wrapper__input{
+        width: 50%;
+    }
+}
+
+@media (max-width: 992px) {
+    .fg-navbar__menu {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .fg-navbar .fg-navbar__header {
+        width: 100%;
+    }
+
+    .fg-navbar__header__brand {
+        width: inherit;
+    }
+
+    .fg-navbar__header__brand img {
+        margin: 0 auto;
+    }
+
+    .fg-clipboard-wrapper__input{
+        width: 68%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .fg-navbar .fg-navbar__header {
+        width: auto;
+    }
+
+    .fg-section {
+        padding: 3em 0;
+    }
+
+    .fg-section__title {
+        font-size: 24px;
+    }
+
+    .fg-section__text-container {
+        margin: 2em 1em;
+        text-align: justify;
+    }
+
+    .fg-section-main__title {
+        font-size: 36px;
+    }
+
+    .fg-section-main__content {
+        margin-top: 10em;
+    }
+
+    .fg-section-main__subtitle {
+         font-size: 24px;
+        margin-left: 0em;
+     }
+
+    .fg-section-iot__icon, .fg-section-ultralight__icon {
+        background-position: 0 0;
+        background-size: 2.5rem;
+    }
+
+    .fg-section-opensource__icon img {
+        width: 2.5rem;
+    }
+
+    .fg-section-opensource__img {
+        width: 75%;
+        position: relative;
+        bottom: -3em;
+    }
+
+    .fg-section-getstarted {
+        margin-bottom: 0;
+    }
+
+    .fg-clipboard__btn-options__text {
+        padding: 0;
+    }
+
+    .fg-clipboard__btn-options__icon {
+        position: relative;
+        top: -5px;
+        display: block;
+    }
+
+    .fg-clipboard-wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    .fg-clipboard-wrapper__text {
+        display: block;
+        text-align: center;
+        padding-right: inherit;
+        width: 100%;
+    }
+
+    .fg-clipboard-wrapper__input {
+        display: block;
+        width: 100%;
+    }
+
+    .fg-clipboard {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .fg-clipboard__text {
+        padding-left: .4em;
+    }
+
+    .fg-clipboard__btn-copy {
+        padding: 0;
+    }
+
+    .fg-footer {
+        padding: 0 .5em;
+        font-size: .8em;
+    }
+
+    .fg-footer__copyright__text {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .fg-footer__links__link {
+        margin: 0 5px;
+    }
+
+    /* ---------------------------------------------- /*
+     * Brand Guideline page
+    /* ---------------------------------------------- */
+    .fg-list__donts li p {
+        width: 90%;
+    }
+
+    .fg-trademark-notice-highlight {
+        padding: 15px;
+    }
+
+    .fg-list__donts {
+        padding-left: 10px;
+    }
+
+    .fg-para__marks.fg-mark__flynnlogo {
+        width: 325px;
+    }
+
+    .fg-para__marks.fg-mark__flynnlogo img{
+        width: 150px;
+    }
+}
+
+/* ---------------------------------------------- /*
+ * Brand Guideline page
+/* ---------------------------------------------- */
+
+@media (min-width: 992px) {
+    .fg-body__guide .fg-section .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 768px) {
+    .fg-body__guide .fg-section .container {
+        width: 750px;
+    }
+}

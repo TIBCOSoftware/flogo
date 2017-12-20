@@ -1,0 +1,10 @@
+<section id="main" class="fg-section fg-section__showcase fg-section-main">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1>{{ with .Site.Params.title }}{{ . | markdownify }}{{ end }}</h1>
+				<h3>{{ with .Site.Params.subtitle }}{{ . | markdownify }}{{ end }}</h3>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+language: go
+
+go:
+  - master
+
+install:
+  - go get github.com/spf13/hugo
+
+script:
+
+  - hugo
+
+deploy:
+  local_dir: public
+  repo: vboddeboina/vboddeboina.github.io
+  target_branch: master
+  provider: pages
+  skip_cleanup: true
+  github_token:  $GITHUB_TOKEN
+  email: vboddebo@tibco.com
+  name: vboddeboina
+on:
+    branch: master
