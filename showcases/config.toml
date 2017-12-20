@@ -12,9 +12,9 @@ layoutdir = "layouts"
     # Meta
     siteAssetUrl = "/assets/"
     title = "Showcase"
-    subtitle = "Showcase of awesome extensions and projects for Flogo!"
+    subtitle = "Showcase of awesome activities, triggers and apps for Flogo!"
     author = "tibcosoftware"
-    description = "Showcase of awesome extensions and projects for Flogo"
+    description = "Showcase of awesome activities, triggers and apps for Flogo"
 
     # Preview container button text
     buttontext = "Get the project"
