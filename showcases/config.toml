@@ -20,7 +20,7 @@ layoutdir = "layouts"
     buttontext = "Get the project"
 
     # Footer text
-    footertext = "Made by [Codrops](http://tympanus.net/codrops/2013/03/19/thumbnail-grid-with-expanding-preview/), [Hugo](http://gohugo.io) and [aerohub](https://github.com/aerohub). Updated by [retgits](https://github.com/retgits)"
+    footertext = "Made by [Codrops](http://tympanus.net/codrops/2013/03/19/thumbnail-grid-with-expanding-preview/), [Hugo](http://gohugo.io) and [aerohub](https://github.com/aerohub). Updated by [tibcosoftware](https://github.com/retgits)"
 
     # add extra-css
     # custom_css = ['css/extra1.css', 'css/extra2.css']
