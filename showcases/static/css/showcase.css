@@ -134,6 +134,27 @@
     float: right;
     display: none;
 }
+.badge .card-label__img{
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+.badge.activity .card-label__img{
+    fill: #36bfbb;
+    stroke: #36bfbb;
+}
+.badge.trigger .card-label__img{
+    fill: #79b8dc;
+    stroke: #79b8dc;
+}
+.badge.app .card-label__img{
+    fill: #899bcf;
+    stroke: #899bcf;
+}
+.badge.activity.selected .card-label__img ,.badge.trigger.selected .card-label__img,.badge.app.selected .card-label__img {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+}
 @media only screen and (min-width: 710px) and (max-width: 1199px) {
     .cards-container {
         width: 663px;
@@ -179,9 +200,14 @@ footer {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
     border: solid 1px #dedede;
     color: inherit;
-    padding: 7px 20px;
+    padding: 3px 15px;
     border-radius: 16px;
     margin-right: 16px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 62px;
 }
 .search-container .glyphicon-search{
     left: 28px;
