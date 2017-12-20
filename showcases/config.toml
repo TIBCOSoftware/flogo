@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "/showcases/"
+baseurl = "https://tibcosoftware.github.io/flogo/showcases/"
 languageCode = "en-us"
 title = "Showcase of awesome projects for Flogo"
 theme = "hugrid"
