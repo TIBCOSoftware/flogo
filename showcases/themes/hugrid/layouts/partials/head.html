@@ -1,0 +1,21 @@
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ .Site.Title }}</title>
+		<meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}" />
+		<meta name="keywords" content="{{ with .Site.Params.keywords }}{{ . }}{{ end }}" />
+		<meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}" />
+		{{ .Hugo.Generator }}
+		<style>
+		body {
+		background: {{ .Site.Params.bodybgcolor }};
+		color: {{ .Site.Params.bodytextcolor }};
+		}
+		</style>
+		<link rel="shortcut icon" href="https://www.tibco.com/sites/tibco/files/favicon_0.ico" type="image/vnd.microsoft.icon">
+		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/default.css" />
+		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/component.css" />
+		{{ range .Site.Params.custom_css }}
+			<link rel="stylesheet" href="{{ . }}">
+		{{ end }}
+		<script src="{{ .Site.BaseURL }}js/modernizr.custom.js"></script>

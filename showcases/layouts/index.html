@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+{{ partial "nav.html" . }}
+{{ partial "header.html" . }}
+<div class="container">
+    <div class="main">
+        {{ partial "filter.html" . }}
+        <div class="cards-container">
+        {{ range $.Site.Data.items.items }}
+            <div class="card-main card-main--{{ .type }}" data-description="{{ .description}}">
+                <div class="card-header">
+                    <div class="card-header__label">
+                        <svg class="card-label__img" viewBox="-4 -6 29 29">
+                            <use href="{{ .Site.BaseURL }}images/showcases-labels.svg#{{ .type }}"></use>
+                        </svg>
+                    </div>
+                    <div class="card-header__title">
+                        <h4 class="card-title">{{ .name }}</h4>
+                        <p class="subtitle">
+                            <svg class="card-icon">
+                                <use href="{{ .Site.BaseURL }}images/showcases-icons.svg#upload"></use>
+                            </svg>
+                            {{ .uploadedon }}
+                        </p>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <p class="card-section__para">{{ .description }}</p>
+                </div>
+                <div class="card-footer">
+                    <p class="subtitle">
+                        <svg class="card-icon">
+                            <use href="{{ .Site.BaseURL }}images/showcases-icons.svg#author"></use>
+                        </svg>
+                        {{ .author }}
+                    </p>
+                    <a href="{{ .url }}"><button class="fg-btn fg-btn--blue card-footer__btn">View github</button></a>
+                </div>
+            </div>
+        {{ end }}
+        </div>
+        {{ partial "footer.html" . }}
+    </div>
+</div>
+{{ partial "pagescripts.html" . }}
+</body>
+</html>

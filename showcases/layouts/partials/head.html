@@ -1,0 +1,23 @@
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ .Site.Title }}</title>
+		<meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}" />
+		<meta name="keywords" content="{{ with .Site.Params.keywords }}{{ . }}{{ end }}" />
+		<meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}" />
+		{{ .Hugo.Generator }}
+		<!-- Favicon icons -->
+
+		<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+
+		<link rel="shortcut icon" href="https://www.tibco.com/sites/tibco/files/favicon_0.ico" type="image/vnd.microsoft.icon">
+		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/default.css" />
+		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/component.css" />
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/animate.css/animate.min.css">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/showcase.css" />
+		{{ range .Site.Params.custom_css }}
+			<link rel="stylesheet" href="{{ . }}">
+		{{ end }}
+		<script src="{{ .Site.BaseURL }}js/modernizr.custom.js"></script>
