@@ -1,0 +1,301 @@
+{
+  "name": "GetBookSample",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "description": "",
+  "triggers": [
+    {
+      "name": "Receive HTTP Message",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+      "description": "Simple REST Trigger",
+      "settings": {
+        "port": "9099"
+      },
+      "id": "receive_http_message",
+      "handlers": [
+        {
+          "actionMappings": {
+            "input": [
+              {
+                "mapTo": "ISBN",
+                "type": 1,
+                "value": "pathParams.ISBN"
+              }
+            ],
+            "output": [
+              {
+                "mapTo": "data",
+                "type": 1,
+                "value": "someResponse"
+              }
+            ]
+          },
+          "settings": {
+            "method": "GET",
+            "path": "/:ISBN",
+            "autoIdReply": "false",
+            "useReplyHandler": "false"
+          },
+          "actionId": "get_book_details"
+        }
+      ]
+    },
+    {
+      "name": "Start Flow as a function in Lambda",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/lambda",
+      "description": "Simple Lambda Trigger",
+      "settings": {},
+      "id": "start_flow_as_a_function_in_lambda",
+      "handlers": [
+        {
+          "actionMappings": {
+            "input": [
+              {
+                "mapTo": "ISBN",
+                "type": 1,
+                "value": "evt.ISBN"
+              }
+            ],
+            "output": [
+              {
+                "mapTo": "data",
+                "type": 1,
+                "value": "someResponse"
+              }
+            ]
+          },
+          "settings": {},
+          "actionId": "get_book_details"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "metadata": {
+        "input": [
+          {
+            "name": "ISBN",
+            "type": "string"
+          }
+        ],
+        "output": [
+          {
+            "name": "someResponse",
+            "type": "object"
+          }
+        ]
+      },
+      "data": {
+        "flow": {
+          "name": "GetBookDetails",
+          "type": 1,
+          "attributes": [],
+          "rootTask": {
+            "id": "root",
+            "type": 1,
+            "tasks": [
+              {
+                "id": "log_2",
+                "name": "Log Incoming Field",
+                "description": "Simple Log Activity",
+                "type": 1,
+                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                "attributes": [
+                  {
+                    "name": "message",
+                    "value": null,
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "flowInfo",
+                    "value": "false",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "addToFlow",
+                    "value": "true",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "inputMappings": [
+                  {
+                    "type": 1,
+                    "value": "$flow.ISBN",
+                    "mapTo": "message"
+                  }
+                ]
+              },
+              {
+                "id": "rest_3",
+                "name": "Get Books",
+                "description": "Simple REST Activity",
+                "type": 1,
+                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
+                "attributes": [
+                  {
+                    "name": "method",
+                    "value": "GET",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "name": "uri",
+                    "value": "https://www.googleapis.com/books/v1/volumes",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "name": "proxy",
+                    "value": null,
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "pathParams",
+                    "value": null,
+                    "required": false,
+                    "type": "params"
+                  },
+                  {
+                    "name": "queryParams",
+                    "value": null,
+                    "required": false,
+                    "type": "params"
+                  },
+                  {
+                    "name": "content",
+                    "value": null,
+                    "required": false,
+                    "type": "any"
+                  }
+                ],
+                "inputMappings": [
+                  {
+                    "type": 4,
+                    "value": {
+                      "q": "{{$flow.ISBN}}"
+                    },
+                    "mapTo": "queryParams"
+                  }
+                ]
+              },
+              {
+                "id": "log_5",
+                "name": "Log Message (2)",
+                "description": "Simple Log Activity",
+                "type": 1,
+                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                "attributes": [
+                  {
+                    "name": "message",
+                    "value": "Error from rest service",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "flowInfo",
+                    "value": "false",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "addToFlow",
+                    "value": "false",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ]
+              },
+              {
+                "id": "actreturn_6",
+                "name": "Return (2)",
+                "description": "Simple Return Activity",
+                "type": 1,
+                "activityType": "github-com-tibco-software-flogo-contrib-activity-actreturn",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
+                "attributes": [
+                  {
+                    "name": "mappings",
+                    "value": [
+                      {
+                        "type": 1,
+                        "mapTo": "someResponse",
+                        "value": "${activity.log_5.message}"
+                      }
+                    ],
+                    "required": false,
+                    "type": "array"
+                  }
+                ]
+              },
+              {
+                "id": "actreturn_7",
+                "name": "Return (3)",
+                "description": "Simple Return Activity",
+                "type": 1,
+                "activityType": "github-com-tibco-software-flogo-contrib-activity-actreturn",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
+                "attributes": [
+                  {
+                    "name": "mappings",
+                    "value": [
+                      {
+                        "mapTo": "someResponse",
+                        "type": 4,
+                        "value": {
+                          "Title": "{{$activity[rest_3].result.items[0].volumeInfo.title}}",
+                          "PublishedDate": "{{$activity[rest_3].result.items[0].volumeInfo.publishedDate}}",
+                          "Description": "{{$activity[rest_3].result.items[0].volumeInfo.description}}"
+                        }
+                      }
+                    ],
+                    "required": false,
+                    "type": "array"
+                  }
+                ]
+              }
+            ],
+            "links": [
+              {
+                "id": 1,
+                "from": "log_2",
+                "to": "rest_3",
+                "type": 0
+              },
+              {
+                "id": 2,
+                "from": "rest_3",
+                "to": "log_5",
+                "type": 1,
+                "value": "$activity[rest_3].status != 200"
+              },
+              {
+                "id": 3,
+                "from": "log_5",
+                "to": "actreturn_6",
+                "type": 0
+              },
+              {
+                "id": 4,
+                "from": "rest_3",
+                "to": "actreturn_7",
+                "type": 1,
+                "value": "$activity[rest_3].status == 200"
+              }
+            ],
+            "attributes": []
+          }
+        }
+      },
+      "id": "get_book_details",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+    }
+  ]
+}
