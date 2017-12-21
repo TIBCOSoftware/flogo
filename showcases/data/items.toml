@@ -165,3 +165,11 @@ description = "This trigger provides your Flogo application the ability to sched
 url = "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/timer"
 uploadedon = "December 20, 2017"
 author = "TIBCOSoftware"
+
+[[items]]
+name = "Get Book Information"
+type = "app"
+description = "A sample application demonstrating multi trigger flows, mappings and REST invocations."
+url = "https://github.com/TIBCOSoftware/flogo/tree/master/samples/getbooksample"
+uploadedon = "December 20, 2017"
+author = "TIBCOSoftware"
