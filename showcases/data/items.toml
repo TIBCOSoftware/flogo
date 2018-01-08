@@ -1,4 +1,12 @@
 [[items]]
+name = "Aggregate"
+type = "activity"
+description = "This activity provides your flogo application with rudimentary aggregation capabilities."
+url = "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/aggregate"
+uploadedon = "January 8, 2018"
+author = "TIBCOSoftware"
+
+[[items]]
 name = "Activity Reply"
 type = "activity"
 description = "This activity provides your flogo action/flow the ability to reply to a trigger invocation and set output values."
