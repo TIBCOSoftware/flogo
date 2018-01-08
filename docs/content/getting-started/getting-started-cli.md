@@ -20,7 +20,7 @@ Don't forget to set your `GOPATH` variable and make sure that `$GOPATH/bin` is p
 
 * After that, **go get** flogo by running `go get -u github.com/TIBCOSoftware/flogo-cli/...`. This will get you both the CLI tools.
 * If you want to develop extensions, by using the **flogogen** tool you should also install **golint** by running `go get -u github.com/golang/lint/golint`
-* In order to simplify development and building in Go, we are using the gb build tool. You can install that by running `go get github.com/constabulary/gb/...`
+* In order to simplify dependency management, we are using the go dep tool. You can install that by following the instructions [here](https://github.com/golang/dep#setup) .
 
 {{% notice note %}}
 If you want to update the CLI tools, you can run `go get -u github.com/TIBCOSoftware/flogo-cli/...` to get the latest version. 
