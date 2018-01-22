@@ -1,11 +1,9 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Building your first activity
-weight: 10
-pre: "<i class=\"fa fa-wrench\" aria-hidden=\"true\"></i> "
+weight: 4410
 ---
 
-Creating a new activity for Project Flogo is not that hard! Let's walk  through the steps required to create a simple activity.
+Creating a new activity for Project Flogo is not that hard! Let's walk through the steps required to create a simple activity.
 
 {{% notice warning %}}
 Please make sure you've installed the flogo CLI tools, golint and updated your path to have the $GOPATH/bin folder included. For instructions how to do that, please check [here](../../getting-started/getting-started-cli/)

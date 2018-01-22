@@ -1,204 +1,147 @@
 ---
-date: 2016-04-09T16:50:16+02:00
-title: Flogo CLI
-weight: 10
+title: flogo
+weight: 5020
 pre: "<i class=\"fa fa-terminal\" aria-hidden=\"true\"></i> "
 ---
 
-The flogo CLI tool has a bunch of different actions and command. Below is a complete list of all of them, including samples on how to use them.
+The **flogo** CLI tool gives you the ability to build flows and microservices. With this tool you can, among other things, create your applications, build applications and install new extensions. It is also great to use with Continuous Integration and Continuous Deployment tools like Jenkins and Travis-CI. Below is a complete list of all all commands supported, including samples on how to use them.
 
-## Commands
-### create
-This command is used to create a flogo application project.
+{{% notice info %}}
+Please make sure that you have installed the **flogo** tools as described in [Getting Started > Flogo CLI](../../getting-started/getting-started-cli/)
+{{% /notice %}}
 
-*Create the base sample project with a specific name.*
-	
-	flogo create my_app
-	
-*Create a flogo application project from an existing flogo application descriptor.*
-	
-	flogo create -f myapp.json
-		
-### install
-This command is used to install a contribution to your project.
+## build
+Build the flogo application
+```
+Usage:
 
-*activity*
+flogo build [-o][-e][-sp][-shim][-docker]
 
-	flogo install github.com/TIBCOSoftware/flogo-contrib/activity/log
-	
-*trigger*
-
-	flogo install github.com/TIBCOSoftware/flogo-contrib/trigger/rest
-	
-	
-### uninstall
-This command is used to remove a contribution to your project.
-
-*activity*
-
-	flogo uninstall github.com/TIBCOSoftware/flogo-contrib/activity/log
-	
-*trigger*
-
-	flogo uninstall github.com/TIBCOSoftware/flogo-contrib/trigger/rest
-	
-### list
-This command is used to list the activities, triggers, flows and models installed in the application.  
-	 
-	flogo list
-	
-	actions:
-	  github.com/TIBCOSoftware/flogo-contrib/action/flow
-	activities:
-	  github.com/TIBCOSoftware/flogo-contrib/activity/log
-	flow-model:
-	  github.com/TIBCOSoftware/flogo-contrib/model/simple
-	triggers:
-	  github.com/TIBCOSoftware/flogo-contrib/trigger/rest
-
-The list can be generated in a JSON format using the 'json' flag
-
-	flogo list -json
-	[
-	  {
-	    "type": "action",
-	    "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
-	  },
-	  {
-	    "type": "activity",
-	    "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
-	  },
-	  {
-	    "type": "flow-model",
-	    "ref": "github.com/TIBCOSoftware/flogo-contrib/model/simple"
-	  },
-	  {
-	    "type": "trigger",
-	    "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
-	  }
-	]
-
-### prepare
-This command is used to prepare the application. Preperation consist of code generation for contribution metadata and go imports.
-
- 	flogo prepare
+Options:
+    -o      optimize for directly referenced contributions
+    -e      embed application configuration into executable
+    -sp     skip prepare
+    -shim   trigger shim
+    -docker create a docker image based on Alpine Linux
+```
  	
-**options**
-	
-- [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
-- [ -e ] : embeds the configuration into the compiled application	 	 
+options	
 
-### build
-This command is used to build the application.  The *prepare* command is also invoked by default when doing a build.
+* [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
+* [ -e ] : embeds the configuration into the compiled application
+* [ -sp ] : skip *prepare* step
+* [ -shim ] : creates a package based on the availability of a shim in the trigger (for example when creating a cli app)
+* [ -docker ] : creates a docker image of your app, where the docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/)
 
- 	flogo build
- 	
-**options**
-	
-- [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
-- [ -e ] : embeds the configuration into the compiled application
-- [ -sp ] : skip *prepare* step
+## create
+Creates a flogo project
+```
+Usage:
 
-### help
-This command is used to display help on a particular command
-	
-	flogo help build 
+flogo create AppName
 
-## Application Project
-
-### Structure
-
-The create command creates a basic structure and files for an application.
-
-
-	my_app/
-		flogo.json
-		src/
-			my_app/
-				imports.go
-				main.go
-		vendor/
-		
-**files**
-
-- *flogo.json* : flogo project application configuration descriptor file
-- *imports.go* : contains go imports for contributions (activities, triggers and models) used by the application
-- *main.go* : main file for the engine.
-
-**directories**	
-	
-- *vendor* : go libraries
-
-
-## Application Configuration
-
-### Application
-
-The *flogo.json* file is the metadata describing the application project.  
-
-```json
-{
-  "name": "myApp",
-  "type": "flogo:app",
-  "version": "0.0.1",
-  "description": "My flogo application description",
-  "triggers": [
-    {
-      "id": "my_rest_trigger",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
-      "settings": {
-        "port": "9233"
-      },
-      "handlers": [
-        {
-          "actionId": "my_simple_flow",
-          "settings": {
-            "method": "GET",
-            "path": "/test"
-          }
-        }
-      ]
-    }
-  ],
-  "actions": [
-    {
-      "id": "my_simple_flow",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
-      "data": {
-        "flow": {
-          "attributes": [],
-          "rootTask": {
-            "id": 1,
-            "type": 1,
-            "tasks": [
-              {
-                "id": 2,
-                "type": 1,
-                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                "name": "log",
-                "attributes": [
-                  {
-                    "name": "message",
-                    "value": "Simple Log",
-                    "type": "string"
-                  }
-                ]
-              }
-            ],
-            "links": [
-            ]
-          }
-        }
-      }
-    }
-  ]
-}
+Options:
+    -flv     specify the flogo-lib version
+    -f       specify the flogo.json to create project from
+    -vendor  specify existing vendor directory to copy
 ```
 
-***Trigger Configuration***
+Create the base sample project with a specific name.
+```	
+flogo create my_app
+```
 
-- id: the ID of the trigger
-- settings: global settings for the trigger
-- *handlers* the handlers for endpoints configured for the trigger
-	- actionId: the ID of the action the handler invokes
-	- settings: the handler specific settings
+Create a flogo application project from an existing flogo application descriptor.
+```	
+flogo create -f myapp.json
+```
+
+## help
+Provides help for a specific command
+```
+Usage:
+
+flogo help <command>
+
+Commands:
+
+    build        build the flogo application
+    create       create a flogo project
+    help         Get help for a command
+    install      install a flogo contribution
+    list         list installed contributions
+    prepare      prepare the flogo application
+    uninstall    uninstall a flogo contribution
+```
+
+## install
+Installs a flogo contribution.
+```
+Usage:
+
+flogo  install [-v version][-p] contribution
+
+Options:
+    -v specify the version
+    -p install palette file
+```
+
+Install an activity from GitHub
+```
+flogo install github.com/TIBCOSoftware/flogo-contrib/activity/log
+```
+
+## list
+Lists installed contributions.
+```
+Usage:
+
+flogo  list [-json] [actions|triggers|activities]
+
+Options:
+    -json generate output as json
+```  
+
+List the contributions you have used in your app
+```
+flogo list
+	
+actions:
+  github.com/TIBCOSoftware/flogo-contrib/action/flow
+activities:
+	github.com/TIBCOSoftware/flogo-contrib/activity/log
+flow-model:
+	github.com/TIBCOSoftware/flogo-contrib/model/simple
+triggers:
+	github.com/TIBCOSoftware/flogo-contrib/trigger/rest
+```
+
+_The list can be generated in a JSON format using the `-json` flag_
+
+## prepare
+Prepare the flogo application. This consists of code generation for contribution metadata and go imports.
+```
+flogo  prepare [-o][-e]
+
+Options:
+    -o   optimize for directly referenced contributions
+    -e   embed application configuration into executable
+```
+ 	
+options
+	
+* [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
+* [ -e ] : embeds the configuration into the compiled application	 	
+	
+## uninstall
+Uninstalls a flogo contribution.
+```
+Usage:
+
+flogo  uninstall contribution
+```
+
+Remove an activity from your project
+```
+flogo uninstall github.com/TIBCOSoftware/flogo-contrib/activity/log
+```

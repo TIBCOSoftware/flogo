@@ -1,10 +1,8 @@
 ---
 title: Contribute
-weight: 999
+weight: 9000
 chapter: true
 ---
-
-### Chapter 5
 
 # Contribute
 

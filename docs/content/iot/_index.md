@@ -1,10 +1,8 @@
 ---
 title: IoT
-weight: 6
+weight: 7000
 chapter: true
 ---
-
-### Chapter 5
 
 # Flogo and the Internet of Things
 

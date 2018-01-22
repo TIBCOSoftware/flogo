@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
-title: Flogo for Raspberry Pi 
-weight: 30
+title: Raspberry Pi 
+weight: 7020
 ---
 
 You can run your Flogo application on a Raspberry Pi device. (https://www.raspberrypi.org/) This documents contains all relevant information on this device including how to build.

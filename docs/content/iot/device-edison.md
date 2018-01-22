@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
-title: Flogo for Intel Edison 
-weight: 40
+title: Intel Edison 
+weight: 7030
 ---
 
 You can run your Flogo application on a Edison device.  This documents contains all relevant information on this device including how to build.

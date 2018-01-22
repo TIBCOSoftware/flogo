@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Continuously testing Flogo activities
-weight: 20
+weight: 4420
 ---
 
 Depending on where you store the source code and how publicly you want to have the code available you have a few options to continuously testing Flogo activities. Let's look at [Jenkins](https://jenkins.io/) when using a local git server and [Travis-CI](travis-ci.org) for activities on GitHub

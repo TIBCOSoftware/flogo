@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Environment variables
-weight: 10
+weight: 3010
 pre: "<i class=\"fa fa-cog\" aria-hidden=\"true\"></i> "
 ---
 
