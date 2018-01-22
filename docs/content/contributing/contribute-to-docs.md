@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Building the docs website
-weight: 999
+weight: 9100
 ---
 
 If you want to contribute to the documentation, that is awesome! Your help is very much appreciated, but please do keep in mind the instructions below.

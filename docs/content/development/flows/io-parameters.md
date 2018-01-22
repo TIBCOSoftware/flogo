@@ -1,14 +1,9 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Flow Input/Output Params
-weight: 20
+weight: 4320
 ---
 
-As of Flogo 0.5.0, a Flow is more inline with the concept of a function, that is, a Flow has both input and output parameters. In this section we'll analyze what this means and how to map data between triggers and flows.
-
-## Why?
-
-The concept pf decoupling a trigger from a flow is a key part of supporting multiple triggers and re-use/sharing of a flow. A Flow can now operate against the data that it has defined within its declartion, it otherwords, just like a function, the scope of data that a Flow can operate against must reside within either the Flow context (or as an environment variable).
+For Flogo a Flow is more inline with the concept of a function, that is, a Flow has both input and output parameters.  The concept of decoupling a trigger from a flow is a key part of supporting multiple triggers and re-use/sharing of a flow. A Flow can now operate against the data that it has defined within its declartion, it otherwords, just like a function, the scope of data that a Flow can operate against must reside within either the Flow context (or as an environment variable).
 
 ## Setting Flow Input and Output Params
 

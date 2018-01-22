@@ -1,11 +1,10 @@
 ---
 title: Configuration
-weight: 4
+weight: 3000
 chapter: true
+pre: "<i class=\"fa fa-wrench\" aria-hidden=\"true\"></i> "
 ---
-
-### Chapter 3
 
 # Configuration
 
-Environment variables and stuff :)
+Configurating your Flogo apps with environment variables and stuff :)

@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Quickstart
-weight: 10
+weight: 2010
 pre: "<i class=\"fa fa-bolt\" aria-hidden=\"true\"></i> "
 ---
 

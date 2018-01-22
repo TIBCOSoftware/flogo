@@ -1,10 +1,9 @@
 ---
-title: Extensions Developer
-weight: 5
+title: Extensions
+weight: 4400
 chapter: true
+pre: "<i class=\"fa fa-cogs\" aria-hidden=\"true\"></i> "
 ---
-
-### Chapter 4
 
 # Extensions Developer
 
