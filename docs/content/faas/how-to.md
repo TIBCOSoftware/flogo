@@ -69,9 +69,8 @@ We'll guide you through the set of steps required to build the most basic of fun
 
 Before we get started there are a few prerequisites that we need to take into account:
 
-* You’ll need to have [Docker](https://docs.docker.com/engine/installation/) installed
 * You’ll need to have the [Flogo CLI](https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/) installed
-* You’ll obviously need an account for AWS :)
+* You’ll obviously need an AWS account :)
 
 ## Create the flogo.json
 
@@ -141,7 +140,7 @@ With the flogo.json created, you can create an app out of it by simply executing
 flogo create -f flogo.json lambda
 ```
 
-This command will download some of the dependencies for you and create a bunch of directories.
+This command will download the Flogo Flow dependencies and create the directory structure for your new app.
 
 ## Build
 To continue you'll need to change directories to the directory that was just created
@@ -149,25 +148,16 @@ To continue you'll need to change directories to the directory that was just cre
 cd lambda
 ```
 
-We will build an embedded application [-e] option and with target shim [-shim] option using the trigger id as the shim. Note that the AWS Lambda trigger leverages a makefile to kick off the build process, the build process must happen within a container, as a Golang .so (plugin) is built, and at the time of this writing, plugins can only be built on Linux.
+We will build an embedded application [-e] option and with target shim [-shim] option using the trigger id as the shim. Note that the AWS Lambda trigger leverages a makefile to kick off the build process, the build process simply builds your Flogo application using the Lambdfa trigger shim and zips the binary for deployment to AWS Lambda.
 
 ```bash
 flogo build -e -shim my_lambda_trigger
 ```
 
-This command will pull the docker image 'eawsy/aws-lambda-go-shim:latest' locally and build the zip file needed for deployment to AWS Lambda.
-
-Once this command finishes successfully the zip file (handler.zip) will be located in your app directory (for example /path/to/app/lambda/src/lambda/handler.zip).
+Once this command finishes successfully the zip file (handler.zip) will be located in your app src directory (for example /path/to/app/lambda/src/lambda/handler.zip).
 
 
 ## And deploy...
 Deploy to AWS providing the following configuration
-- Runtime: python2.7
-- Handler: handler.Handle
-
-<p align="center">
-   <img src="https://raw.githubusercontent.com/eawsy/aws-lambda-go-shim/master/asset/aws_config-preview.png" align="center">
-</p>
-
-## Final notes
-We are using the library https://github.com/eawsy/aws-lambda-go-shim behind the scenes, so you can have a look at it to understand a bit more the internals.
+- Runtime: Go 1.x
+- Handler: handler (this is the name of the executable file)
