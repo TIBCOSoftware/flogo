@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Quickstart
-weight: 10
+weight: 2010
 pre: "<i class=\"fa fa-bolt\" aria-hidden=\"true\"></i> "
 ---
 
@@ -26,7 +25,7 @@ The parameters after the `docker run` command are:
 * **-it**: This parameter keeps a pseudo-tty terminal open and keeps the terminal running in interactive mode. The Flogo Web Ui will print logs to this terminal window
 * **-p 3303:3303**: This parameter tells Docker to bind your computer's port 3303 to the container's port 3303
 * **flogo/flogo-docker:latest**: This parameter tells the Docker daemon which container you want to run. In this case it will try to get the latest version of `flogo/flogo-docker`
-* **eula-accept**: This parameter says you've accepted the EULA agreement on our [website](https://flogo.io)
+* **eula-accept**: This parameter says you've accepted the EULA agreement on our [website](http://flogo.io)
 
 After it is done starting the container, you'll see something like the image below in your terminal.
 

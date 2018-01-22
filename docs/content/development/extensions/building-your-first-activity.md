@@ -1,14 +1,12 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Building your first activity
-weight: 10
-pre: "<i class=\"fa fa-wrench\" aria-hidden=\"true\"></i> "
+weight: 4410
 ---
 
-Creating a new activity for Project Flogo is not that hard! Let's walk  through the steps required to create a simple activity.
+Creating a new activity for Project Flogo is not that hard! Let's walk through the steps required to create a simple activity.
 
-{{% notice warning %}}
-Please make sure you've installed the flogo CLI tools, golint and updated your path to have the $GOPATH/bin folder included. For instructions how to do that, please check [here](../../getting-started/getting-started-cli/)
+{{% notice info %}}
+Please make sure that you have installed the **flogo** tools as described in [Getting Started > Flogo CLI](../../../getting-started/getting-started-cli/).
 {{% /notice %}}
 
 ## The basic framework
@@ -20,7 +18,7 @@ flogogen activity activityName
 
 The parameters are:
 
-* **activity**: the [action](../../flogo-cli/flogogen-cli/#activity) you want to execute
+* **activity**: becaue you want to create an activity
 * **activityName**: the name for your new activity (for now we'll use `HelloWorld` as the name for our activity)
 
 So to generate our scaffolding, we need to execute the command:

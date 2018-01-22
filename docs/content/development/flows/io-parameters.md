@@ -1,14 +1,9 @@
 ---
-date: 2016-04-09T16:50:16+02:00
 title: Flow Input/Output Params
-weight: 20
+weight: 4320
 ---
 
-As of Flogo 0.5.0, a Flow is more inline with the concept of a function, that is, a Flow has both input and output parameters. In this section we'll analyze what this means and how to map data between triggers and flows.
-
-## Why?
-
-The concept pf decoupling a trigger from a flow is a key part of supporting multiple triggers and re-use/sharing of a flow. A Flow can now operate against the data that it has defined within its declartion, it otherwords, just like a function, the scope of data that a Flow can operate against must reside within either the Flow context (or as an environment variable).
+For Flogo a Flow is more inline with the concept of a function, that is, a Flow has both input and output parameters.  The concept of decoupling a trigger from a flow is a key part of supporting multiple triggers and re-use/sharing of a flow. A Flow can now operate against the data that it has defined within its declartion, it otherwords, just like a function, the scope of data that a Flow can operate against must reside within either the Flow context (or as an environment variable).
 
 ## Setting Flow Input and Output Params
 
@@ -16,7 +11,7 @@ When building a Flow, you must first define the input and output params, that is
 
 From the WebUI, open your new Flow, and click the "Flow Params" box, you'll be presented with the Flow input/output editor.
 
-![WebUI Input/Output Editor](../../images/flow-params2.png)
+![WebUI Input/Output Editor](../../../images/flow-params2.png)
 
 You will be presented with a dialog containing two tabs, Input and Output. Use this dialog to define your input and output parameters.
 
@@ -56,11 +51,11 @@ Before we jump in, to understand the concepts used here:
 
 To map the trigger data using the WebUI, add a trigger to your Flow, and click on it.
 
-![WebUI Map Flow Params](../../images/map-trigger1.png)
+![WebUI Map Flow Params](../../../images/map-trigger1.png)
 
 Now select "Map flow params".
 
-![WebUI Map Flow Params](../../images/map-trigger2.png)
+![WebUI Map Flow Params](../../../images/map-trigger2.png)
 
 Now you can map the output of the trigger to Flow input params, and Flow output params can be mapped to the reply params available for the trigger.
 

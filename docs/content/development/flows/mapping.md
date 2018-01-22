@@ -1,10 +1,7 @@
 ---
-date: 2016-04-09T16:50:16+02:00
-title: Flow Mappings
-weight: 20
+title: Mappings
+weight: 4320
 ---
-
-On this page we'll analyze the different types of mappings available to you as a Flow developer.
 
 ## What are mappings?
 

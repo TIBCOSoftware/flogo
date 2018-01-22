@@ -1,7 +1,6 @@
 ---
-date: 2016-04-09T16:50:16+02:00
-title: Flogo for BeagleBone 
-weight: 60
+title: BeagleBone 
+weight: 7050
 ---
 
 You can run your Flogo application on a BeagleBone device. (http://beagleboard.org/bone) This documents contains all relevant information on this device including how to build.
