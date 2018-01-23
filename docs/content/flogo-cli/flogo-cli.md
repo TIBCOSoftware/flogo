@@ -11,7 +11,7 @@ Please make sure that you have installed the **flogo** tools as described in [Ge
 {{% /notice %}}
 
 ## build
-Build the flogo application
+Build a flogo application. This command must be executed from within an app directory (the directory created by executing flogo create).
 ```
 Usage:
 
@@ -30,8 +30,8 @@ options
 * [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
 * [ -e ] : embeds the configuration into the compiled application
 * [ -sp ] : skip *prepare* step
-* [ -shim ] : creates a package based on the availability of a shim in the trigger (for example when creating a cli app)
-* [ -docker ] : creates a docker image of your app, where the docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/)
+* [ -shim ] : creates a package based on the availability of a shim in the trigger (for example when creating a cli app). This switch takes a single argument, the ID of the shim trigger. The ID of the trigger can be found in your application json.
+* [ -docker ] : creates a docker image of your app, where the docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/). This switch takes a single argument, a trigger ID for the port to expose. If you don't want to expose any port specify 'no-trigger'.
 
 ## create
 Creates a flogo project
