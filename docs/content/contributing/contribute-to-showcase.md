@@ -1,5 +1,5 @@
 ---
-title: Building the docs website
+title: Contributing to the Showcase
 weight: 9200
 ---
 
