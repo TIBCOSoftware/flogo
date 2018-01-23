@@ -159,9 +159,6 @@ Once this command finishes successfully the zip file (handler.zip) will be locat
 
 ## And deploy...
 Deploy to AWS providing the following configuration
-<<<<<<< HEAD
 
-=======
->>>>>>> 5161d8145f8dbf67cb3c10b2f7f9868e6494ad63
 - Runtime: Go 1.x
 - Handler: handler (this is the name of the executable file)
