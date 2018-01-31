@@ -182,7 +182,6 @@ url = "https://github.com/TIBCOSoftware/flogo/tree/master/samples/getbooksample"
 uploadedon = "December 20, 2017"
 author = "TIBCOSoftware"
 
-
 [[items]]
 name = "JSON Config Reader"
 type = "activity"
