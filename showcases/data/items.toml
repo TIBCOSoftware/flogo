@@ -181,3 +181,11 @@ description = "A sample application demonstrating multi trigger flows, mappings 
 url = "https://github.com/TIBCOSoftware/flogo/tree/master/samples/getbooksample"
 uploadedon = "December 20, 2017"
 author = "TIBCOSoftware"
+
+[[items]]
+name = "JSON Config Reader"
+type = "activity"
+description = "This activity reads configuration from JSON file."
+url = "https://github.com/philippegabert/configreader/tree/master/flogo-contrib/activity/configreader"
+uploadedon = "December 5, 2017"
+author = "philippegabert"
