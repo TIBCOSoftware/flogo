@@ -1,9 +1,9 @@
 ---
-title: Inferencing TensorFlow Models
+title: Inferencing
 weight: 4220
 ---
 
-Before you begin with the [ML Inferencing activity](https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/inference), refer to the [Flows > TensorFlow > Getting Started](../../flows/tensorflow/getting-started/) documentation.
+Before you begin with the [ML Inferencing activity](https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/inference), refer to the [Flows > TensorFlow > Getting Started](../../tensorflow/getting-started/) documentation.
 
 ## Overview of the Inferencing Activity
 
