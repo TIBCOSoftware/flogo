@@ -1,0 +1,110 @@
+{
+  "name": "PredictMovement",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "description": "",
+  "triggers": [
+    {
+      "name": "CLI Trigger",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/cli",
+      "description": "Simple CLI Trigger",
+      "settings": {},
+      "id": "cli_trigger",
+      "handlers": [
+        {
+          "settings": {
+            "command": null,
+            "default": null
+          },
+          "actionId": "tensor_flow_predict",
+          "actionMappings": {
+            "input": [],
+            "output": []
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "data": {
+        "flow": {
+          "name": "TensorFlowPredict",
+          "type": 1,
+          "attributes": [],
+          "rootTask": {
+            "id": "root",
+            "type": 1,
+            "tasks": [
+              {
+                "id": "inference_2",
+                "name": "Invoke ML Model",
+                "description": "Basic inferencing activity to invoke ML model using the flogo-ml framework.",
+                "type": 1,
+                "activityType": "flogo-inference",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/inference",
+                "attributes": [
+                  {
+                    "name": "model",
+                    "value": "Archive.zip",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "name": "inputName",
+                    "value": "inputs",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "name": "features"
+                  },
+                  {
+                    "name": "framework",
+                    "value": "Tensorflow",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+                "inputMappings": [
+                  {
+                    "type": 4,
+                    "value": {
+                        "z-axis-q75": 4.140586,
+                        "corr-x-z": 0.1381063882214782,
+                        "x-axis-mean": 1.7554575428900194,
+                        "z-axis-sd": 4.6888631696380765,
+                        "z-axis-skew": -0.3619011587545954,
+                        "y-axis-sd": -7.959084724314854,
+                        "y-axis-q75": 16.467001,
+                        "corr-z-y": 0.3467060369518231,
+                        "x-axis-sd": 6.450293741961166,
+                        "x-axis-skew": 0.09756801680727022,
+                        "y-axis-mean": 9.389463650669393,
+                        "y-axis-skew": -0.49036224958471764,
+                        "z-axis-mean": 1.1226106985139188,
+                        "x-axis-q25": -3.1463003,
+                        "x-axis-q75": 6.3198414,
+                        "y-axis-q25": 3.0645783,
+                        "z-axis-q25": -1.9477097,
+                        "corr-x-y": 0.08100326860866637
+                    },
+                    "mapTo": "features"
+                  }
+                ]
+              }
+            ],
+            "links": [],
+            "attributes": []
+          }
+        }
+      },
+      "id": "tensor_flow_predict",
+      "metadata": {
+        "input": [],
+        "output": []
+      },
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+    }
+  ]
+}
