@@ -58,6 +58,8 @@ Flogo has the concept of mapping resolvers and resolvers are contained within a 
 
 | Mapper | Scope |
 | --- | --- |
+| Trigger->Settings | env and property resolvers |
+| Trigger->Handler->Settings | env and property resolvers |
 | Trigger->Handler->actionMapper/input | Trigger ouput <-- "value" field - only property and env resolver can be used. That is, only the output of the trigger or an environment variable can be used here. |
 | Trigger->Handler->actionMapper/output | action scope. Properties defined as ahe output of the flow can be used. |
 | Action->Flow->Activity->inputMapper/input | flow  <-- "value" field  - all resolvers can be used |

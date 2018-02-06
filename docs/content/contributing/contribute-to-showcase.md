@@ -10,7 +10,7 @@ The showcase is located at the root of the [flogo](https://github.com/TIBCOSoftw
 
     showcases
     ├── data 
-    │   ├── items.toml                  <-- /level-one/level-two/level-three/level-four
+    │   ├── items.toml                  <-- the showcase data file
 
 {{% notice note %}}
 items.toml is the file that you'll need to edit to add your activity, trigger or app.
