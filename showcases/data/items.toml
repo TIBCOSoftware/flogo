@@ -189,3 +189,11 @@ description = "This activity reads configuration from a JSON file."
 url = "https://github.com/philippegabert/configreader/tree/master/flogo-contrib/activity/configreader"
 uploadedon = "Jan 31, 2018"
 author = "philippegabert"
+
+[[items]]
+name = "TensorFlow HelloWorld"
+type = "app"
+description = "Basic sample demonstrating how to inference a TensorFlow model."
+url = "https://github.com/TIBCOSoftware/flogo/tree/master/samples/tensorflow/helloworld"
+uploadedon = "Feb 6, 2018"
+author = "TIBCOSoftware"

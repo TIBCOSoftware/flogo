@@ -26,9 +26,12 @@ Project Flogo was designed from the ground up leveraging modern technology and a
 
 - IoT Solutions developers
 - Cloud-native microservices developers
+- Serverless function developers
 - Flogo Extensions developers 
 
 In addition, tooling to address the needs of the zero-code application developer is available via Flogo Web UI. Project Flogo and the tooling continue to evolve quickly, we recommend that you check out the videos and sign up for updates on the project to stay current.
+
+To get started today, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/)
 
 ### Extensions & IoT Solution Developer
 
@@ -36,7 +39,7 @@ If you are an Extensions or IoT Solutions developer, read on because it's easy t
 * To install just the Flogo CLI and runtime, go to https://github.com/TIBCOSoftware/flogo-cli & follow instructions in the README
 * For extensions developers, visit the docs in this repository to get started with developing your first Flogo activity
 
-### Zero-code Integration Developer
+### Zero-code Function & Microservice Developer
 
 If your background is in or you prefer to develop using zero-coding environments and platforms and would like to begin developing apps with Project Flogo, then read on, because we’ve been working on something special for you.
 
