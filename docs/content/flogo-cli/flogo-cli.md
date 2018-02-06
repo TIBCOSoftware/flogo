@@ -10,138 +10,241 @@ The **flogo** CLI tool gives you the ability to build flows and microservices. W
 Please make sure that you have installed the **flogo** tools as described in [Getting Started > Flogo CLI](../../getting-started/getting-started-cli/)
 {{% /notice %}}
 
-## build
-Build a flogo application. This command must be executed from within an app directory (the directory created by executing flogo create).
-```
-Usage:
+## Commands
 
-flogo build [-o][-e][-sp][-shim][-docker]
+### create
+This command is used to create a flogo application project.
 
-Options:
-    -o      optimize for directly referenced contributions
-    -e      embed application configuration into executable
-    -sp     skip prepare
-    -shim   trigger shim
-    -docker create a docker image based on Alpine Linux
-```
+*Create the base sample project with a specific name.*
+	
+	flogo create my_app
+	
+*Create a flogo application project from an existing flogo application descriptor.*
+	
+	flogo create -f myapp.json
+	
+*Create a flogo application project using your own vendor directory.*
+	
+	flogo create -vendor /path/to/my/vendor
+	
+Important, when using -vendor option use 'flogo ensure -no-vendor' when updating dependencies to not override your imported vendor folder.
+
+*Create a flogo application project specifying constraints for your libraries.*
+	
+	flogo create -flv github.com/TIBCOSoftware/flogo-lib@0.0.0,github.com/TIBCOSoftware/flogo-contrib@0.0.0
+	
+Note: pass a comma separated value of libraries and dependencies (you can also use branches and tags)
+		
+### install
+This command is used to install a contribution to your project.
+
+*Install an activity using the latest version, or existing version constraint*
+
+	flogo install github.com/TIBCOSoftware/flogo-contrib/activity/log
+
+*Install an activity with a specific version constraint*
+
+	flogo install -v 0.0.0 github.com/TIBCOSoftware/flogo-contrib/activity/log
+
+Note: if an existing constraint for the given package exist, the version will be ignored
+	
+*Install a trigger the latest version, or existing version constraint*
+
+	flogo install github.com/TIBCOSoftware/flogo-contrib/trigger/rest
+	
+*Install a trigger with a specific version constraint*
+
+	flogo install -v 0.0.0 github.com/TIBCOSoftware/flogo-contrib/trigger/rest
+
+Note: if an existing constraint for the given package exist, the version will be ignored
+	
+### uninstall
+This command is used to remove a contribution to your project.
+
+*Uninstall an activity*
+
+	flogo uninstall github.com/TIBCOSoftware/flogo-contrib/activity/log
+	
+*Uninstall a trigger*
+
+	flogo uninstall github.com/TIBCOSoftware/flogo-contrib/trigger/rest
+	
+### list
+This command is used to list the activities, triggers and flows installed in the application.  
+	 
+	flogo list
+	
+	actions:
+	  github.com/TIBCOSoftware/flogo-contrib/action/flow
+	activities:
+	  github.com/TIBCOSoftware/flogo-contrib/activity/log
+	triggers:
+	  github.com/TIBCOSoftware/flogo-contrib/trigger/rest
+
+The list can be generated in a JSON format using the 'json' flag
+
+	flogo list -json
+	[
+	  {
+	    "type": "action",
+	    "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+	  },
+	  {
+	    "type": "activity",
+	    "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log"
+	  },
+	  {
+	    "type": "trigger",
+	    "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
+	  }
+	]
+
+### prepare
+Note: This command is deprecated! please use instead
+
+ 	flogo build [-gen]
+
+This command is used to prepare the application. Preparation consist of code generation for contribution metadata and go imports.
+
+ 	flogo prepare
  	
-options	
-
-* [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
-* [ -e ] : embeds the configuration into the compiled application
-* [ -sp ] : skip *prepare* step
-* [ -shim ] : creates a package based on the availability of a shim in the trigger (for example when creating a cli app). This switch takes a single argument, the ID of the shim trigger. The ID of the trigger can be found in your application json.
-* [ -docker ] : creates a docker image of your app, where the docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/). This switch takes a single argument, a trigger ID for the port to expose. If you don't want to expose any port specify 'no-trigger'.
-
-## create
-Creates a flogo project
-```
-Usage:
-
-flogo create AppName
-
-Options:
-    -flv     specify the flogo-lib version
-    -f       specify the flogo.json to create project from
-    -vendor  specify existing vendor directory to copy
-```
-
-Create the base sample project with a specific name.
-```	
-flogo create my_app
-```
-
-Create a flogo application project from an existing flogo application descriptor.
-```	
-flogo create -f myapp.json
-```
-
-## help
-Provides help for a specific command
-```
-Usage:
-
-flogo help <command>
-
-Commands:
-
-    build        build the flogo application
-    create       create a flogo project
-    help         Get help for a command
-    install      install a flogo contribution
-    list         list installed contributions
-    prepare      prepare the flogo application
-    uninstall    uninstall a flogo contribution
-```
-
-## install
-Installs a flogo contribution.
-```
-Usage:
-
-flogo  install [-v version][-p] contribution
-
-Options:
-    -v specify the version
-    -p install palette file
-```
-
-Install an activity from GitHub
-```
-flogo install github.com/TIBCOSoftware/flogo-contrib/activity/log
-```
-
-## list
-Lists installed contributions.
-```
-Usage:
-
-flogo  list [-json] [actions|triggers|activities]
-
-Options:
-    -json generate output as json
-```  
-
-List the contributions you have used in your app
-```
-flogo list
+**options**
 	
-actions:
-  github.com/TIBCOSoftware/flogo-contrib/action/flow
-activities:
-	github.com/TIBCOSoftware/flogo-contrib/activity/log
-flow-model:
-	github.com/TIBCOSoftware/flogo-contrib/model/simple
-triggers:
-	github.com/TIBCOSoftware/flogo-contrib/trigger/rest
-```
+- [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
+- [ -e ] : embeds the configuration into the compiled application	 	 
 
-_The list can be generated in a JSON format using the `-json` flag_
+### build
+This command is used to build the application.  The generation of metadata is done by default when doing a build, if you don't want to regenerate the metadata use [-nogen] option.
 
-## prepare
-Prepare the flogo application. This consists of code generation for contribution metadata and go imports.
-```
-flogo  prepare [-o][-e]
-
-Options:
-    -o   optimize for directly referenced contributions
-    -e   embed application configuration into executable
-```
+ 	flogo build
  	
-options
+**options**
 	
-* [ -o ] : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
-* [ -e ] : embeds the configuration into the compiled application	 	
+- [ -o ]    : optimize compilation, compiled application will only contain contribution directly referenced in the flogo.json
+- [ -e ]    : embeds the configuration into the compiled application
+- [-nogen]  : ONLY perform the build, without performing the generation of metadata
+- [-gen]    : ONLY perform generation of metadata, without performing the build
+- [ -sp ]   : [Deprecated, use '-nogen' instead] skip *prepare* step
+- [ -shim ] : trigger shim creates an app as shim, pass trigger id as value (for example flogo build -shim my_trigger_id)
+- [ -docker ] : creates a docker image of your app, where the docker image is based on [Alpine Linux](https://hub.docker.com/_/alpine/). This switch takes a single argument, a trigger ID for the port to expose. If you don't want to expose any port specify 'no-trigger'.
+
+### ensure
+This command is used to manage project dependencies. It is mainly a wrapper for the 'dep ensure' command for the official [dep](https://github.com/golang/dep) library
+
+ 	flogo ensure
+ 	
+**options**
+
+- [ -add ]          : add new dependencies, or populate Gopkg.toml with constraints for existing dependencies (default: false)
+- [ -no-vendor ]    : update Gopkg.lock (if needed), but do not update vendor/ (default: false)
+- [ -update ]       : update the named dependencies (or all, if none are named) in Gopkg.lock to the latest allowed by Gopkg.toml (default: false)
+- [ -v ]            : enable verbose logging (default: false)
+- [ -vendor-only ]  : populate vendor/ from Gopkg.lock without updating it first (default: false)
+
+### help
+This command is used to display help on a particular command
 	
-## uninstall
-Uninstalls a flogo contribution.
-```
-Usage:
+	flogo help build 
 
-flogo  uninstall contribution
+## Application Project
+
+### Structure
+
+The create command creates a basic structure and files for an application.
+
+
+	my_app/
+		flogo.json
+		src/
+			my_app/
+			    vendor/
+			    Gopkg.lock
+			    Gopkg.toml
+				imports.go
+				main.go
+		
+**files**
+
+- *flogo.json* : flogo project application configuration descriptor file
+- *imports.go* : contains go imports for contributions (activities, triggers and models) used by the application
+- *main.go*    : main file for the engine.
+- *Gopkg.toml* : manifest file including dependency contraints and overrides.
+- *Gopkg.lock* : lock file including the actual revision used according to the contraints.
+
+**directories**	
+	
+- *vendor* : go libraries
+
+
+## Application Configuration
+
+### Application
+
+The *flogo.json* file is the metadata describing the application project.  
+
+```json
+{
+  "name": "myApp",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "description": "My flogo application description",
+  "triggers": [
+    {
+      "id": "my_rest_trigger",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+      "settings": {
+        "port": "9233"
+      },
+      "handlers": [
+        {
+          "actionId": "my_simple_flow",
+          "settings": {
+            "method": "GET",
+            "path": "/test"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "my_simple_flow",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+      "data": {
+        "flow": {
+          "attributes": [],
+          "rootTask": {
+            "id": 1,
+            "type": 1,
+            "tasks": [
+              {
+                "id": 2,
+                "type": 1,
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                "name": "log",
+                "attributes": [
+                  {
+                    "name": "message",
+                    "value": "Simple Log",
+                    "type": "string"
+                  }
+                ]
+              }
+            ],
+            "links": [
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
 ```
 
-Remove an activity from your project
-```
-flogo uninstall github.com/TIBCOSoftware/flogo-contrib/activity/log
-```
+***Trigger Configuration***
+
+- id: the ID of the trigger
+- settings: global settings for the trigger
+- *handlers* the handlers for endpoints configured for the trigger
+	- actionId: the ID of the action the handler invokes
+	- settings: the handler specific settings
