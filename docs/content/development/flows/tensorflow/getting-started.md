@@ -1,5 +1,5 @@
 ---
-title: Getting Started with TensorFlow
+title: Getting Started
 weight: 4210
 ---
 
