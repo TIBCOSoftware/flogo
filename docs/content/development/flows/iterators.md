@@ -5,7 +5,7 @@ weight: 4320
 
 ## What is an iterator in Flogo?
 
-The iterator construct in Flogo enables the iteration of a single activity. The configuration elements are associated with that activity. In Flogo, you can iterate only over a single activity. The iterator acts much like a for loop in any procedural lamguage.
+The iterator construct in Flogo enables the iteration of a single activity. The configuration elements are associated with that activity. In Flogo, you can iterate only over a single activity. The iterator acts much like a for loop in any procedural language.
 
 ### Flow configuration
 
@@ -38,7 +38,7 @@ Iterators are associated with an activity. The activity type must be defined as 
 A few important things to note:
 
 - The type is **2**
-- A new settings element with the value **iterate** set to the array that should be iterated over. It is also possible to define a static value, for example, if the value of "10" was specified, the iterator construct would invoke this activity 10 times
+- A new settings element with a property named **iterate** set to the array that should be iterated over. It is also possible to define a static value, for example, if the value of "10" was specified, the iterator construct would invoke this activity 10 times
 - The $current scope has not been introduced and can be used to access the value and key of the current iteration.
 
 The $current scope has two properties:
