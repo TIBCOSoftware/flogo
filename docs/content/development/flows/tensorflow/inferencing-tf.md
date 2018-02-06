@@ -55,4 +55,4 @@ map[scores:[[0.049997408 0.010411096 0.93959147]] classes:[[Jogging Sitting Upst
 
 ## Sample application
 
-Refer to the [predictmovement sample](https://github.com/TIBCOSoftware/flogo/tree/master/samples/predictmovement)
+Refer to the [TensorFlow samples](https://github.com/TIBCOSoftware/flogo/tree/master/samples/tensorflow)
