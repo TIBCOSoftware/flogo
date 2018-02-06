@@ -53,6 +53,6 @@ The output is an object and can contain multiple outputs. For example, for a cla
 map[scores:[[0.049997408 0.010411096 0.93959147]] classes:[[Jogging Sitting Upstairs]]]
 ```
 
-### Sample application
+## Sample application
 
 Refer to the [predictmovement sample](https://github.com/TIBCOSoftware/flogo/tree/master/samples/predictmovement)
