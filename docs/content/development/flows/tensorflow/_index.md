@@ -2,7 +2,6 @@
 title: TensorFlow
 weight: 4300
 chapter: true
-pre: "<i class=\"fa fa-map\" aria-hidden=\"true\"></i> "
 ---
 
 # TensorFlow
