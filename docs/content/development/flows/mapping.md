@@ -52,6 +52,18 @@ The type 2 mapping is pretty simple to understand, however type 4 does require a
 
 The WebUI insulates you frome much of this understanding and will infer the correct mapping type.
 
+## Mapping Resolvers
+
+Flogo will resolve mappings with the following. Note the scopes table below, which indicates what objects are accessible within what scope.
+
+| Scope | Description |
+| --- | --- |
+| $env | Used to resolve an environment variable |
+| $property | Used to resolve properties from the global application property bag |
+| $flow | Used to resolve params from within the current flow. If a flow has a single trigger and no input params defined, then the output of the trigger is made available via $flow |
+| $activity | Used to resolve activity params. Activities are referenced by id, for example, $activity[acivity_id].activity_property. |
+| $current | Used to resolve data scoped to a current iterator |
+
 ## Mapping Scopes
 
 Flogo has the concept of mapping resolvers and resolvers are contained within a specific scope, hence not all objects can be accessed from anywhere within the scope.
