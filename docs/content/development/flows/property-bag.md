@@ -22,7 +22,7 @@ Properties are defined within the root of the application json, as shown below v
   }
   ```
 
-As previously stated, properties are accessible via the $property resolver. Consider the following mappings into a log activity:
+As previously stated, properties are accessible via the `$property` resolver. Consider the following mappings into a log activity:
 
 ```json
 {
