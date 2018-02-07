@@ -3,8 +3,6 @@ title: App Properties
 weight: 4320
 ---
 
-## What is a property bag?
-
 In Flogo, the concept of an application-level property bag is made available to flow developers that want to reuse properties across different flows, within the same application for trigger settings or as input to activities. Properties are exposed via the `$property` resolver and made available to the scopes defined in the [mappings]((../mapping/)) documentation.
 
 ### Flow configuration
