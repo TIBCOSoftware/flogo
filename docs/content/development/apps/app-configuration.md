@@ -1,9 +1,11 @@
 ---
-title: App configuration
+title: App Model
 weight: 4220
 ---
 
-The *flogo.json* file is the metadata describing the application project.  
+# Flogo Application Model
+
+The *flogo.json* file is the metadata describing an application. The application dictates the dependencies to be used during compile time and can also be embeded into the compiled binary.
 
 ```json
 {
@@ -64,7 +66,12 @@ The *flogo.json* file is the metadata describing the application project.
 }
 ```
 
-# Trigger Configuration
+## Root Properties
+
+- name: The application name
+- type: The type of application. Currently the only valid value is `flogo:app`
+
+## Triggers
 
 - id: the ID of the trigger
 - settings: global settings for the trigger
