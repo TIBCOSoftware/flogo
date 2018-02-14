@@ -6,7 +6,7 @@ pre: "<i class=\"fa fa-book\" aria-hidden=\"true\"></i> "
 
 # Glossary
 
-Flogo terminology and constructs, defined here, all in one place.
+Flogo terminology and constructs, defined here, all in one place in a logical order vs alphabetical.
 
 ## App
 
@@ -43,7 +43,7 @@ Flows, as previously stated in the triggers section, can exist without a trigger
 - Application properties
 - The output data from activities referenced in the flow
 
-The flow cannot access trigger data directly, trigger input and output data must be mapped into the flows input and output parameters. Refer to [Development > Flows > Mappings](development/flows/mapping/)
+The flow cannot access trigger data directly, trigger input and output data must be mapped into the flows input and output parameters. Refer to [Development > Flows > Mappings](../development/flows/mapping/)
 
 ## Mapping
 
