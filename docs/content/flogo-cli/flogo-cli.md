@@ -32,8 +32,10 @@ Important, when using -vendor option use 'flogo ensure -no-vendor' when updating
 *Create a flogo application project specifying constraints for your libraries.*
 	
 	flogo create -flv github.com/TIBCOSoftware/flogo-lib@0.0.0,github.com/TIBCOSoftware/flogo-contrib@0.0.0
-	
-Note: pass a comma separated value of libraries and dependencies (you can also use branches and tags)
+
+{{% notice note %}}
+Pass a comma separated value of libraries and dependencies (you can also use branches and tags).
+{{% /notice %}}
 		
 ### install
 This command is used to install a contribution to your project.
@@ -174,77 +176,3 @@ The create command creates a basic structure and files for an application.
 **directories**	
 	
 - *vendor* : go libraries
-
-
-## Application Configuration
-
-### Application
-
-The *flogo.json* file is the metadata describing the application project.  
-
-```json
-{
-  "name": "myApp",
-  "type": "flogo:app",
-  "version": "0.0.1",
-  "description": "My flogo application description",
-  "triggers": [
-    {
-      "id": "my_rest_trigger",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
-      "settings": {
-        "port": "9233"
-      },
-      "handlers": [
-        {
-          "actionId": "my_simple_flow",
-          "settings": {
-            "method": "GET",
-            "path": "/test"
-          }
-        }
-      ]
-    }
-  ],
-  "actions": [
-    {
-      "id": "my_simple_flow",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
-      "data": {
-        "flow": {
-          "attributes": [],
-          "rootTask": {
-            "id": 1,
-            "type": 1,
-            "tasks": [
-              {
-                "id": 2,
-                "type": 1,
-                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                "name": "log",
-                "attributes": [
-                  {
-                    "name": "message",
-                    "value": "Simple Log",
-                    "type": "string"
-                  }
-                ]
-              }
-            ],
-            "links": [
-            ]
-          }
-        }
-      }
-    }
-  ]
-}
-```
-
-***Trigger Configuration***
-
-- id: the ID of the trigger
-- settings: global settings for the trigger
-- *handlers* the handlers for endpoints configured for the trigger
-	- actionId: the ID of the action the handler invokes
-	- settings: the handler specific settings
