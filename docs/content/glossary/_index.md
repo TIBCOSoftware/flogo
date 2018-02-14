@@ -4,8 +4,6 @@ weight: 20000
 pre: "<i class=\"fa fa-book\" aria-hidden=\"true\"></i> "
 ---
 
-# Glossary
-
 Flogo terminology and constructs, defined here, all in one place in a logical order vs alphabetical.
 
 ## App
