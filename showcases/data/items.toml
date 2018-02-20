@@ -1,4 +1,20 @@
 [[items]]
+name = "Random Number"
+type = "activity"
+description = "Generate a random unique number between the min and max value."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/randomnumber"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
+name = "Random String"
+type = "activity"
+description = "Generate a random string consisting with the length you specify."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/randomstring"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
 name = "Aggregate"
 type = "activity"
 description = "This activity provides your flogo application with rudimentary aggregation capabilities."
