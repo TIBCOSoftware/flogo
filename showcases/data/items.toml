@@ -1,4 +1,20 @@
 [[items]]
+name = "Payment Service"
+type = "app"
+description = "A sample application demonstrating environment variables, custom activities and mappings"
+url = "https://github.com/retgits/flogo-components/tree/master/apps/paymentservice"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
+name = "Invoice Service"
+type = "app"
+description = "A sample application demonstrating environment variables, custom activities, mappings and REST invocations."
+url = "https://github.com/retgits/flogo-components/tree/master/apps/invoiceservice"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
 name = "Add to Date"
 type = "activity"
 description = "Adds a specified number of units (days, months or years) to a date."
