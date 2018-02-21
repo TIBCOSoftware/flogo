@@ -1,4 +1,12 @@
 [[items]]
+name = "Add to Date"
+type = "activity"
+description = "Adds a specified number of units (days, months or years) to a date."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/addtodate"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
 name = "Random Number"
 type = "activity"
 description = "Generate a random unique number between the min and max value."
