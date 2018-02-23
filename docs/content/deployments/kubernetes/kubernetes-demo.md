@@ -3,7 +3,7 @@ title: Kubernetes demo scenario
 weight: 6050
 ---
 
-This demo scneario will help you get up and running with a Flogo demo on Kubernetes. We'll assume you have the following tools installed already. If that is not the case, you might want to install them first.
+This demo scneario will help you get up and running with a Flogo demo on Kubernetes. We'll assume you have the following tools installed already. If that is not the case, you might want to install them first. Our [Getting Started](../../../getting-started/getting-started-cli/) guide walks you through the installation of Go, the Flogo CLI and Go Dep
 
 * curl
 * golang 1.9+
