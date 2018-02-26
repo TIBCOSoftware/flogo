@@ -1,4 +1,12 @@
 [[items]]
+name = "JavaScript Activity"
+type = "activity"
+description = "This activity provides your Flogo application the ability to execute embedded JavaScript code."
+url = "https://github.com/vijaynalawade/flogo/tree/master/activity/js"
+uploadedon = "February 25, 2018"
+author = "vijaynalawade"
+
+[[items]]
 name = "Payment Service"
 type = "app"
 description = "A sample application demonstrating environment variables, custom activities and mappings"
