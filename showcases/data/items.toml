@@ -1,4 +1,20 @@
 [[items]]
+name = "DynamoDB Insert"
+type = "activity"
+description = "Inserts a record in an Amazon DynamoDB."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/dynamodbinsert"
+uploadedon = "February 28, 2018"
+author = "retgits"
+
+[[items]]
+name = "DynamoDB Query"
+type = "activity"
+description = "Executes a query against an Amazon DynamoDB."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/dynamodbquery"
+uploadedon = "February 28, 2018"
+author = "retgits"
+
+[[items]]
 name = "JavaScript Activity"
 type = "activity"
 description = "This activity provides your Flogo application the ability to execute embedded JavaScript code."
