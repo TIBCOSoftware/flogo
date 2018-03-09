@@ -68,7 +68,7 @@ Type 3:
 }
 ```
 The above sample from REST Invoke Services-> Reply activity, Use REST Invoke to get [a pet](http://petstore.swagger.io/v2/pet/9233) from public [petstore](http://petstore.swagger.io/) services.
-First mapper to achieve getting pet's first[array index] id of tag and assign to id field of data attribute. and next mapper use a string concat function `string.concat(str1, str2, str3)` and assign function return to `description` field.
+First mapper to achieve getting pet's first[array index] id of tag and assign to id field of data attribute and next mapper use a string concat function `string.concat(str1, str2, str3)` and assign function return to `description` field.
 
 Type 5:
 ```json
@@ -187,10 +187,10 @@ Here are 4 exmaple of function we have today
 
 | function | Description | Return Type |
 | --- | --- |---|
-|string.concat(<str1>,<str2>)| Returns the concatenation of the arguments. You can concatenate two or more strings| string|
-|string.equals(<<str>>,<<str2>>,<<boolean>>)| Returns whether those two string are equals.| boolean|
-|string.length(<<str>>)|Returns the length of a string|integer|
-|number.random(<<limit>>)|Generates a pseudo-random integer number between 0 and the specified limit|integer|
+|string.concat()| Returns the concatenation of the arguments. You can concatenate two or more strings. Eg: string.concat("Hello",' ', "World")| string|
+|string.equals()| Returns whether those two string are equals. Eg: string.equals("TIBCO FLOGO", "TIBCO FLOGO", false)| boolean|
+|string.length()|Returns the length of a string. Eg: string.length("TIBCO FLOGO")|integer|
+|number.random()|Generates a pseudo-random integer number between 0 and the specified limit. Eg: number.random(10)|integer|
 
 ```json
 {
