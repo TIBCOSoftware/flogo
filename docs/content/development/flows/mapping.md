@@ -185,7 +185,7 @@ We're referencing the result property from the activity named rest_3. We're then
 Most of time you want to add some custome logic to the mapping, such as concat/substring/length of a string or generate a random number base on a range and so on.  any logic you want to add you can come up with an function.
 Here are 4 exmaple of function we have today
 
-| function | Description | Return Type |
+| Function Name | Description | Return Type |
 | --- | --- |---|
 |string.concat()| Returns the concatenation of the arguments. You can concatenate two or more strings. Eg: string.concat("Hello",' ', "World")| string|
 |string.equals()| Returns whether those two string are equals. Eg: string.equals("TIBCO FLOGO", "TIBCO FLOGO", false)| boolean|
