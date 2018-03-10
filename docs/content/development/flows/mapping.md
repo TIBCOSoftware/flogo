@@ -13,56 +13,56 @@ If you peak under the covers, you'll note that we have a number of different map
 
 | Type | Description |
 | --- | --- |
-| 1 | Direct mapping. Assigning the value from var1 to var2. No other implied logic. |
-| 2 | A literal mapping. For example, mapping the string "hello" to a string typed variable. |
-| 3 | Expression mapping.  This enable using functions and expression condition in mamping|
-| 4 | Complex object. Used when a JSON-based complex object must be built and assigned. |
-| 5 | Array mapping. Mapping an Array of Objects. |
+| assign | Direct mapping. Assigning the value from var1 to var2. No other implied logic. |
+| literal | A literal mapping. For example, mapping the string "hello" to a string typed variable. |
+| expression | Expression mapping.  This enable using functions and expression condition in mamping|
+| object | Complex object. Used when a JSON-based complex object must be built and assigned. |
+| array | Array mapping. Mapping an Array of Objects. |
 
 Types manifest themselves directly in your application json, as follows:
 
 ```json
 {
   "mapTo": "ISBN",
-  "type": 1,
+  "type": "assign",
   "value": "evt.ISBN"
 }
 ```
 
-The obove mapping indicates that the value of evt.ISBN should be mapped to the variables named ISBN. This is a type 1 mapping, hence the value of evnt.ISBN is assigned directly to ISBN. Consider two additional samples, below you will find a type 2 mapping, as well as a complex object, type 4 mapping.
+The obove mapping indicates that the value of evt.ISBN should be mapped to the variables named ISBN. This is a type assign mapping, hence the value of evnt.ISBN is assigned directly to ISBN. Consider two additional samples, below you will find a type literal mapping, as well as a complex object, type object mapping.
 
-Type 2:
+Type literal:
 ```json
 {
   "mapTo": "ISBN",
-  "type": 2,
+  "type": "literal",
   "value": "12937"
 }
 ```
 
-Type 4:
+Type object:
 ```json
 {
   "mapTo": "ISBN",
-  "type": 4,
+  "type": "object",
   "value": { "ISBN": "12937", "Author": "{{$flow.Author}}" }
 }
 ```
-The type 2 mapping is pretty simple to understand, however type 4 does require a bit of an explanation. Note that the value param is assigned an object, not a string, and also note the use of the template style variable injection. You can use "{{ }}" when you need to inject the value of another object into your complex object. If you assign the value of an array then that param will be treated as an array, likewise for a string, int, etc. For example, let us pretend flow.Author is an array, then the Author object would be an array. In otherwords, direct assignment is occurring.
+The type literal mapping is pretty simple to understand, however type object does require a bit of an explanation. Note that the value param is assigned an object, not a string, and also note the use of the template style variable injection. You can use "{{ }}" when you need to inject the value of another object into your complex object. If you assign the value of an array then that param will be treated as an array, likewise for a string, int, etc. For example, let us pretend flow.Author is an array, then the Author object would be an array. In otherwords, direct assignment is occurring.
 
 The WebUI insulates you frome much of this understanding and will infer the correct mapping type.
 
 
-Type 3:
+Type expression:
 
 ```json
 {
-  "type": 3,
+  "type": "expression",
   "value": "$activity[rest_3].result.tags[0].id",
   "mapTo": "data.id"
 },
 {
-  "type": 3,
+  "type": "expression",
   "value": "string.concat(\"The pet category name is: \", $activity[rest_3].result.category.name)",
   "mapTo": "data.description"
 }
@@ -70,11 +70,11 @@ Type 3:
 The above sample from REST Invoke Services-> Reply activity, Use REST Invoke to get [a pet](http://petstore.swagger.io/v2/pet/9233) from public [petstore](http://petstore.swagger.io/) services.
 First mapper to achieve getting pet's first[array index] id of tag and assign to id field of data attribute and next mapper use a string concat function `string.concat(str1, str2, str3)` and assign function return to `description` field.
 
-Type 5:
+Type array:
 ```json
 {
     "mapTo": "data",
-    "type": 5,
+    "type": "array",
     "value": {
         "fields": [
             {
@@ -138,7 +138,7 @@ Flogo leverages a few simple syntax paradigms when mapping. The first being, the
   "input": [
     {
       "mapTo": "ISBN",
-      "type": 1,
+      "type": "assign",
       "value": "pathParams.ISBN"
     }
   ]
@@ -151,7 +151,7 @@ What is you're accessing someone out of the immediate scope? The mapping should 
 ```json
 "inputMappings": [
   {
-    "type": 1,
+    "type": "assign",
     "value": "$flow.ISBN",
     "mapTo": "message"
   }
@@ -167,7 +167,7 @@ Most of the time you wont want to perform a direct assigning from one complex ob
 ```json
 {
   "mapTo": "someResponse",
-  "type": 4,
+  "type": "object",
   "value": {
     "Title": "{{$activity[rest_3].result.items[0].volumeInfo.title}}",
     "PublishedDate": "{{$activity[rest_3].result.items[0].volumeInfo.publishedDate}}",
@@ -175,7 +175,7 @@ Most of the time you wont want to perform a direct assigning from one complex ob
   }
 }
 ```
-First note that this is from a Return activity, which is mapping a complex object (type 4) to a flow paramater named someResponse. The object we're accessing is from the response of an activity, this is fetched using the $activity scope. Consider one of the examples:
+First note that this is from a Return activity, which is mapping a complex object (type object) to a flow paramater named someResponse. The object we're accessing is from the response of an activity, this is fetched using the $activity scope. Consider one of the examples:
 
 $activity[rest_3].result.items[0].volumeInfo.title
 
@@ -183,7 +183,7 @@ We're referencing the result property from the activity named rest_3. We're then
 
 ### Using function and expression
 Most of time you want to add some custome logic to the mapping, such as concat/substring/length of a string or generate a random number base on a range and so on.  any logic you want to add you can come up with an function.
-Here are 4 exmaple of function we have today
+Here are object exmaple of function we have today
 
 | Function Name | Description | Return Type |
 | --- | --- |---|
@@ -194,7 +194,7 @@ Here are 4 exmaple of function we have today
 
 ```json
 {
-  "type": 3,
+  "type": "expression",
   "value": "string.concat(\"The pet category name is: \", $activity[rest_3].result.category.name)",
   "mapTo": "data.description"
 }
