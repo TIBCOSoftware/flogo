@@ -29,9 +29,10 @@ Types manifest themselves directly in your application json, as follows:
 }
 ```
 
-The obove mapping indicates that the value of evt.ISBN should be mapped to the variables named ISBN. This is a type assign mapping, hence the value of evnt.ISBN is assigned directly to ISBN. Consider two additional samples, below you will find a type literal mapping, as well as a complex object, type object mapping.
+The above mapping indicates that the value of evt.ISBN should be mapped to the variable named ISBN. This is a type assign mapping, hence the value of evt.ISBN is assigned directly to ISBN. Consider two additional samples, below you will find a type literal mapping, as well as a complex object type object mapping.
 
 Type literal:
+
 ```json
 {
   "mapTo": "ISBN",
@@ -41,6 +42,7 @@ Type literal:
 ```
 
 Type object:
+
 ```json
 {
   "mapTo": "ISBN",
@@ -67,10 +69,12 @@ Type expression:
   "mapTo": "data.description"
 }
 ```
-The above sample from REST Invoke Services-> Reply activity, Use REST Invoke to get [a pet](http://petstore.swagger.io/v2/pet/9233) from public [petstore](http://petstore.swagger.io/) services.
-First mapper to achieve getting pet's first[array index] id of tag and assign to id field of data attribute and next mapper use a string concat function `string.concat(str1, str2, str3)` and assign function return to `description` field.
+
+The above sample leverages the output of a REST Invoke activity to get [a pet](http://petstore.swagger.io/v2/pet/9233) from the public [petstore](http://petstore.swagger.io/) service.
+The first mapper fetches the pet's first[array index] id of tag and assigns the value to the id field of the data attribute and next mapper uses a string concat function `string.concat(str1, str2, str3)` and assigns function return to the `description` field.
 
 Type array:
+
 ```json
 {
     "mapTo": "data",
@@ -96,9 +100,9 @@ Type array:
 
 ```
 
-To iterate over an array from the output of previous activities or trigger to current field of array by supporting nest array and no limitation on the deep of array.
+To iterate over an array from the output of the previous activities or trigger to the current field of type array by supporting nested arrays and there are no limitation to how deep the array can be.
 
-The `$$` or `$.` indicate current array element object,  `$.name` to get current element's name field.
+The `$$` or `$.` indicates the current array element object,  `$.name` to get current element's name field.
 
 
 ## Mapping Resolvers
@@ -181,7 +185,8 @@ $activity[rest_3].result.items[0].volumeInfo.title
 
 We're referencing the result property from the activity named rest_3. We're then accessing an items array (the first entry of the array) to another complex object, where finally we're at a simple string property named title.
 
-### Using function and expression
+### Using functions and expression
+
 Most of time you want to add some custome logic to the mapping, such as concat/substring/length of a string or generate a random number base on a range and so on.  any logic you want to add you can come up with an function.
 Here are object exmaple of function we have today
 
@@ -224,9 +229,11 @@ or
 ```
 
 
-### Hanlding array mapping
+### Hanlding arrays in mappings
+
 There are lots of use cases for array mapping, map entire array to another or iterator partial array to another with functions
 The array mapping value comes from a JSON format
+
 ```json
 {
         "from": "$activity[rest_3].result.tags",
@@ -257,6 +264,7 @@ The array mapping value comes from a JSON format
 
 
 If you want to only create one element of array. using NEWARRAY for from field.
+
 ```
 {
     "fields": [
