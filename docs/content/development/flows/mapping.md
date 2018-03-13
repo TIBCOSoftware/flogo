@@ -58,11 +58,6 @@ Type expression:
 ```json
 {
   "type": "expression",
-  "value": "$activity[rest_3].result.tags[0].id",
-  "mapTo": "data.id"
-},
-{
-  "type": "expression",
   "value": "string.concat(\"The pet category name is: \", $activity[rest_3].result.category.name)",
   "mapTo": "data.description"
 }
