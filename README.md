@@ -3,7 +3,7 @@
 ![](https://travis-ci.org/TIBCOSoftware/flogo.svg)
 ![](https://img.shields.io/badge/dependencies-up%20to%20date-green.svg)
 ![](https://img.shields.io/badge/license-BSD%20style-blue.svg)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)]https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 # Project Flogo
 
