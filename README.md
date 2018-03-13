@@ -47,8 +47,15 @@ Flogo Web UI was launched under a beta license and is available via [Docker Hub]
 
 To report any issues with Flogo Web UI, use the Issue tracker on this project.
 
-## Contributing 
-Contact flogo-oss@tibco.com to learn about contributing to the project.
+## Contributing
+Want to contribute to Project Flogo? We've made it easy, all you need to do is fork the repository you intend to contribute to, make your changes and create a Pull Request! Once the pull request has been created, you'll be prompted to sign the CLA (Contributor License Agreement) online.
+
+Not sure where to start? No problem, here are a few suggestions:
+
+* [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib): This repository contains all of the contributions, such as activities, triggers, etc. Perhaps there is something missing? Create a new activity or trigger or fix a bug in an existing activity or trigger.
+* Browse all of the Project Flogo repositories and look for issues tagged 'kind/help-wanted' or 'good first issue'
+
+If you have any questions, feel free to post an issue and tag it as a question or contact flogo-oss@tibco.com.
 
 ## License 
 The top level flogo repo, consisting of flow samples & documentation, is licensed licensed under a BSD-style license. Refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE) for license text.
