@@ -23,7 +23,7 @@ The team at Serverless did an amazing job making deployments and packaging reall
 The first thing is to create a new Serverless service in the same folder as your `flogo.json` file:
 ```
 # Let’s create a serverless service with the same name as the app
-serverless create -u https://github.com/retgits/flogo-serverless -p serverlesslambdaapp
+serverless create -u https://github.com/tibcosoftware/flogo/tree/master/serverless -p serverlesslambdaapp
 ```
 
 The next step is to copy the `handler` over to the newly-created Serverless folder:
