@@ -247,6 +247,14 @@ uploadedon = "December 20, 2017"
 author = "TIBCOSoftware"
 
 [[items]]
+name = "GrovePi"
+type = "activity"
+description = "allows Digital Write to GrovePi Board from Raspberry Pi, more to come. (will update path after Dexter accept the pull request)"
+url = "https://github.com/JGrotex/GrovePi/tree/master/Software/flogo"
+uploadedon = "March 22, 2018"
+author = "jgrote"
+
+[[items]]
 name = "JSON Config Reader"
 type = "activity"
 description = "This activity reads configuration from a JSON file."
