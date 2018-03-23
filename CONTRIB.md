@@ -12,6 +12,11 @@ If you’re ready and interested to make code contributions, we’ve tried to ma
 
 Never made an open source contribution before? Wondering how contributions work in our project? Here's a quick rundown!
 
+If you have any questions, feel free to post an issue and tag it as a question, email flogo-oss@tibco.com or chat with the team and community:
+
+* The [project-flogo/Lobby](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) Gitter channel should be used for general discussions, start here for all things Flogo!
+* The [project-flogo/developers](https://gitter.im/project-flogo/developers?utm_source=share-link&utm_medium=link&utm_campaign=share-link) Gitter channel should be used for developer/contributor focused conversations. 
+
 * Find an issue that you are interested in addressing or a feature that you would like to add. Look for issues labeled `good first issue`, `kind/help-wanted` if you’re unsure where to begin. Don’t forget to checkout all of the Flogo repositories: [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib), [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib), [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli) & [flogo-services](https://github.com/TIBCOSoftware/flogo-services).
 * Fork the repository associated with the issue to your local GitHub account. This means that you will have a copy of the repository under github-username/repository-name.
 * Clone the repository to your local machine using `git clone https://github.com/github-username/repository-name.git`.
