@@ -32,3 +32,18 @@ If you have any questions, feel free to post an issue and tag it as a question, 
 * Wait for the pull request to be reviewed by a maintainers.
 * Make changes to the pull request if the reviewing maintainer recommends them.
 * Congratulations, you’ve contributed to Project Flogo, a celebration is in order!
+
+## Best Practices for Code Contributions
+
+If you're adding a new feature, such as an activity or trigger, please follow the best practices below:
+
+* Provide test cases for your feature
+* Package name should match your activity dir. For example, if a new activity is placed in activity/awesomeActivity then the go package name should match.
+    * Follow Go best practices for package names: https://blog.golang.org/package-names
+* Run gofmt to format your code
+* Leverage activity trigger metadata (activity/trigger.json)
+    * Use metadata ‘required’ attribute when the attribute is required
+    * Supply a default value in metadata not code (use the value attribute)
+* Activity Eval() should return `true` only when completed successfully & err should be returned when an error occurs
+
+Refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) for more guidence and help.
