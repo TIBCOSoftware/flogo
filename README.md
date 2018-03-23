@@ -48,6 +48,8 @@ Flogo Web UI was launched under a beta license and is available via [Docker Hub]
 
 To report any issues with Flogo Web UI, use the Issue tracker on this project.
 
+![Flogo Web In Action](images/flogo-web2.gif)
+
 ## Contributing
 Want to contribute to Project Flogo? We've made it easy, all you need to do is fork the repository you intend to contribute to, make your changes and create a Pull Request! Once the pull request has been created, you'll be prompted to sign the CLA (Contributor License Agreement) online.
 
