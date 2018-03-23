@@ -47,3 +47,5 @@ If you're adding a new feature, such as an activity or trigger, please follow th
 * Activity Eval() should return `true` only when completed successfully & err should be returned when an error occurs
 
 Refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) for more guidence and help.
+
+Don't forget, if you build an awesome Activity or Trigger you can [share your work via the Flogo Showcase](https://tibcosoftware.github.io/flogo/contributing/) rather than contributing to [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib).
