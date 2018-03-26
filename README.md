@@ -1,4 +1,7 @@
-<div style="text-align:center"><img src ="branding/Flynn1.png" /></div>
+<h1 align="center">
+  <br>
+  <img src ="branding/Flynn1.png" />
+</h1>
 
 ![](https://travis-ci.org/TIBCOSoftware/flogo.svg)
 ![](https://img.shields.io/badge/dependencies-up%20to%20date-green.svg)
