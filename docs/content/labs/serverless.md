@@ -1,6 +1,6 @@
 ---
-title: Deploying Flogo apps with Serverless
-weight: 8020
+title: Tutorial with Serverless Framework
+weight: 2540
 ---
 
 You can deploy your Flogo apps to, for example, AWS Lambda using the [Serverless Framework](https://serverless.com).With the Serverless Framework, you can configure which events should trigger it, where to deploy it and what kind of resources it is allowed to use without going into the AWS console.
@@ -9,6 +9,7 @@ You can deploy your Flogo apps to, for example, AWS Lambda using the [Serverless
 In this tutorial, we’ll walk you through deploying your Flogo app to AWS Lambda using Serverless. 
 
 You’ll need to have:
+
 1. an app built for [AWS Lambda](https://tibcosoftware.github.io/flogo/faas/how-to/)
 1. the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/)
 1. an [AWS account](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) 

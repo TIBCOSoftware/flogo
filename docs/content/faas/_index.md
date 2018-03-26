@@ -2,6 +2,7 @@
 title: FaaS
 weight: 8000
 chapter: true
+pre: "<i class=\"fa fa-filter\" aria-hidden=\"true\"></i> "
 ---
 
 # Flows as Functions for Serverless Platforms
