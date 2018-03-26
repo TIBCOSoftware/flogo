@@ -1,4 +1,4 @@
-![Flynn](branding/Flynn1.png)
+<div style="text-align:center"><img src ="branding/Flynn1.png" /></div>
 
 ![](https://travis-ci.org/TIBCOSoftware/flogo.svg)
 ![](https://img.shields.io/badge/dependencies-up%20to%20date-green.svg)
