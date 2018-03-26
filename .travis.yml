@@ -16,11 +16,8 @@ install:
   - go get github.com/spf13/hugo
 
 script:
-  - cd docs && hugo
-  - cd ../showcases && hugo
-  - mv public ../docs/public/showcases
-  - cd ../docs
-  - cd public && ls -alh
+  - chmod +x build-docs.sh
+  - ./build-docs.sh
 
 deploy:
   provider: pages
