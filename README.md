@@ -1,3 +1,7 @@
+# Project Flogo
+
+Project Flogo is an open source framework that makes building serverless functions and microservices easy!
+
 <h1 align="center">
   <br>
   <img src ="branding/Flynn1.png" />
@@ -7,11 +11,6 @@
 ![](https://img.shields.io/badge/license-BSD%20style-blue.svg)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 </h1>
-
-# Project Flogo
-
-Project Flogo is an Open Source Framework for IoT Edge Apps & Integration. 
-
 
 Highlights include:
 * Ultra-light process engine - 20x-50x lighter than Java or NodeRed
