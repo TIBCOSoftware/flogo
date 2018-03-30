@@ -15,9 +15,9 @@
 
 ## Highlights
 
-🎈 **Ultra-light process engine** 20x-50x lighter than Java or NodeRed
-🏘 **Extensible & reusable** by design to build your own apps, frameworks & platforms
-🎉 **100% Open Source**
+🎈 **Ultra-light process engine** 20x-50x lighter than Java or NodeRed <br/>
+🏘 **Extensible & reusable** by design to build your own apps, frameworks & platforms <br/>
+🎉 **100% Open Source** <br/>
 
 
 Project Flogo consists of the following sub-projects available as separate repos:
