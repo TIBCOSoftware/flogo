@@ -57,8 +57,7 @@ Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https:
 ```bash
 go get -u github.com/TIBCOSoftware/flogo-cli/...
 ```
-
-![Flogo CLI](images/flogo-cli.gif)
+<img src="images/flogo-cli.gif" width="70%"/>
 
 * **flogo** the core CLI for creating and building your applications
 * **flogogen** a scafolding tool to begin building your Flogo contributons (activities & triggers)
