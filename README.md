@@ -73,7 +73,7 @@ Want to contribute to Project Flogo? We've made it easy, all you need to do is f
 Not sure where to start? No problem, here are a few suggestions:
 
 * [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib): This repository contains all of the contributions, such as activities, triggers, etc. Perhaps there is something missing? Create a new activity or trigger or fix a bug in an existing activity or trigger.
-* Browse all of the Project Flogo repositories and look for issues tagged 'kind/help-wanted' or 'good first issue'
+* Browse all of the Project Flogo repositories and look for issues tagged `kind/help-wanted` or `good first issue`
 
 If you have any questions, feel free to post an issue and tag it as a question, email flogo-oss@tibco.com or chat with the team and community:
 
