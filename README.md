@@ -54,9 +54,12 @@ To report any issues with Flogo Web UI, use the Issue tracker on this project.
 
 Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https://github.com/TIBCOSoftware/flogo-cli) repo for detail instructions and dependencies):
 
+* Install the CLI
 ```bash
 go get -u github.com/TIBCOSoftware/flogo-cli/...
 ```
+
+* Create & build your app
 <img src="images/flogo-cli.gif" width="70%"/>
 
 * **flogo** the core CLI for creating and building your applications
