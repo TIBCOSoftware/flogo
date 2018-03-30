@@ -1,5 +1,5 @@
 <p align="center">
-  <img src ="branding/Flynn1.png" />
+  <img src ="images/projectflogo.png" />
 </p>
 
 <p align="center" >
