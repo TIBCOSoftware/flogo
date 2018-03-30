@@ -26,35 +26,44 @@
 ## Repos
 
 Project Flogo consists of the following sub-projects available as separate repos:
-* [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli): A command line tool to build flogo apps 
-* [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib): A library to build Flogo extensions
+* [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli):  Command line tools to build Flogo apps & scfolding tools for extensions developers
+* [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib): The Flogo core library
 * [flogo-services](https://github.com/TIBCOSoftware/flogo-services): Backing services required by Flogo 
-* [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) : Flogo Extensions available out of the box
+* [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) : Flogo contributions/extensions
 
 ## Getting Started
 
-Project Flogo was designed from the ground up leveraging modern technology and architectural principals to better suit the IoT, edge and microservices app developers. The current set of tooling is designed for:
+We've made getting started with Project Flogo as easy as possible. The current set of tooling is designed for:
 
+- Serverless function developers
 - IoT Solutions developers
 - Cloud-native microservices developers
-- Serverless function developers
-- Flogo Extensions developers 
+- Go developers
 
-In addition, tooling to address the needs of the zero-code application developer is available via Flogo Web UI. Project Flogo and the tooling continue to evolve quickly, we recommend that you check out the videos and sign up for updates on the project to stay current.
+Note, a Flogo Flow represents function logic, and a Flogo Application contains one or more Flows (or functions). The application model is a coincise, easy to read JSON document. Refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) for details.
 
-To get started today, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or start chatting with the team via the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
+### Go Developers
 
-### Extensions & IoT Solution Developer
+Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https://github.com/TIBCOSoftware/flogo-cli) repo for detail instructions and dependencies):
 
-If you are an Extensions or IoT Solutions developer, read on because it's easy to get started with Project Flogo:
-* To install just the Flogo CLI and runtime, go to https://github.com/TIBCOSoftware/flogo-cli & follow instructions in the README
-* For extensions developers, visit the docs in this repository to get started with developing your first Flogo activity
+```bash
+go get -u github.com/TIBCOSoftware/flogo-cli/...
+```
+
+<<insert gif>>
+  
+We've built in a number of commands:
+
+* **flogo** the core CLI for creating and building your applications
+* **flogogen** a scafolding tool to begin building your Flogo contributons (activities & triggers)
+
+If you're interested in bulding Flogo Contributsions, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or join us on the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
 
 ### Zero-code Function & Microservice Developer
 
-If your background is in or you prefer to develop using zero-coding environments and platforms and would like to begin developing apps with Project Flogo, then read on, because we’ve been working on something special for you.
+If your background is in or you prefer to develop your apps using zero-coding environments, then read on, because we’ve been working on something special for you.
 
-Flogo Web UI was launched under a beta license and is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flogo Web UI along with all required components to begin developing, testing and building deployable artifacts that leverage the Project Flogo Open Source Framework technology.
+Flogo Web UI is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flogo Web UI along with all required components to begin developing, testing and building deployable artifacts right from your web browser.
 
 To report any issues with Flogo Web UI, use the Issue tracker on this project.
 
