@@ -40,22 +40,7 @@ We've made getting started with Project Flogo as easy as possible. The current s
 - IoT Solutions developers
 - Go developers
 
-### Go Developers
-
-Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https://github.com/TIBCOSoftware/flogo-cli) repo for detail instructions and dependencies):
-
-```bash
-go get -u github.com/TIBCOSoftware/flogo-cli/...
-```
-
-<<insert gif>>
-
-* **flogo** the core CLI for creating and building your applications
-* **flogogen** a scafolding tool to begin building your Flogo contributons (activities & triggers)
-
-If you're interested in bulding your own Flogo Contributsions, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or join us on the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
-
-### Zero-code Function & Microservice Developer
+### Zero-code Developers
 
 If your background is in or you prefer to develop your apps using zero-coding environments, then read on, because we’ve been working on something special for you.
 
@@ -64,6 +49,21 @@ Flogo Web UI is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-
 To report any issues with Flogo Web UI, use the Issue tracker on this project.
 
 ![Flogo Web In Action](images/flogo-web2.gif)
+
+### Go Developers
+
+Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https://github.com/TIBCOSoftware/flogo-cli) repo for detail instructions and dependencies):
+
+```bash
+go get -u github.com/TIBCOSoftware/flogo-cli/...
+```
+
+![Flogo CLI](images/flogo-cli.gif)
+
+* **flogo** the core CLI for creating and building your applications
+* **flogogen** a scafolding tool to begin building your Flogo contributons (activities & triggers)
+
+If you're interested in bulding your own Flogo Contributsions, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or join us on the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
 
 ## Contributing
 Want to contribute to Project Flogo? We've made it easy, all you need to do is fork the repository you intend to contribute to, make your changes and create a Pull Request! Once the pull request has been created, you'll be prompted to sign the CLA (Contributor License Agreement) online.
