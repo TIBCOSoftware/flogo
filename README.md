@@ -13,10 +13,12 @@
   <a href="https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link"><img src="https://badges.gitter.im/Join%20Chat.svg"/></a>
 </p>
 
-## Highlights <br/>
-🎈 *Ultra-light process engine* 20x-50x lighter than Java or NodeRed <br/>
-🏘 *Extensible & reusable* by design to build your own apps, frameworks & platforms <br/>
-🎉 *100% Open Source* <br/>
+## Highlights
+
+🎈 **Ultra-light process engine** 20x-50x lighter than Java or NodeRed
+🏘 **Extensible & reusable** by design to build your own apps, frameworks & platforms
+🎉 **100% Open Source**
+
 
 Project Flogo consists of the following sub-projects available as separate repos:
 * [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli): A command line tool to build flogo apps 
