@@ -13,12 +13,17 @@
   <a href="https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link"><img src="https://badges.gitter.im/Join%20Chat.svg"/></a>
 </p>
 
+<p align="center">
+  <a href="#highlights">Highlights</a> | <a href="#repos">Repos</a> | <a href="#getting-started">Getting Started</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+</p>
+
 ## Highlights
 
 🎈 **Ultra-light process engine** 20x-50x lighter than Java or NodeRed <br/>
 🏘 **Extensible & reusable** by design to build your own apps, frameworks & platforms <br/>
 🎉 **100% Open Source** <br/>
 
+## Repos
 
 Project Flogo consists of the following sub-projects available as separate repos:
 * [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli): A command line tool to build flogo apps 
@@ -78,6 +83,3 @@ Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [f
 ### Usage Guidelines
 
 We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines](http://flogo.io/brand-guidelines) when referencing the use of Project Flogo within your project(s) and don't forget to let others know you're using Project Flogo by proudly displaying one of the following badges or the Flynn logo, found in the [branding](branding) folder of this project.
-
-![Powered By Project Flogo](branding/flogo_badge.png)
-![Powered By Project Flogo](branding/flogo_badge_white.png)
