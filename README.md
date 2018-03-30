@@ -3,7 +3,7 @@
 </p>
 
 <p align="center" >
-  <b>Project Flogo is an open source framework that makes building reliable & efficent serverless functions and microservices easy!</b>
+  <b>An open source framework that makes building reliable & efficent serverless functions and microservices easy!</b>
 </p>
 
 <p align="center">
