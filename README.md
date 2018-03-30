@@ -1,21 +1,23 @@
-# Project Flogo
-
-Project Flogo is an open source framework that makes building serverless functions and microservices easy!
-
-<h1 align="center">
-  <br>
+<p align="center">
   <img src ="branding/Flynn1.png" />
+</p>
 
+<p align="center">
+  *Project Flogo is an open source framework that makes building serverless functions and microservices easy!*
+</p>
+<br/>
+
+<p align="center">
 ![](https://travis-ci.org/TIBCOSoftware/flogo.svg)
 ![](https://img.shields.io/badge/dependencies-up%20to%20date-green.svg)
 ![](https://img.shields.io/badge/license-BSD%20style-blue.svg)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-</h1>
+</p>
 
-Highlights include:
-* Ultra-light process engine - 20x-50x lighter than Java or NodeRed
-* Extensible & reusable by design to build your own apps, frameworks & platforms 
-* 100% Open Source 
+## Highlights <br/>
+🎈 *Ultra-light process engine* 20x-50x lighter than Java or NodeRed <br/>
+🏘 *Extensible & reusable* by design to build your own apps, frameworks & platforms <br/>
+🎉 *100% Open Source* <br/>
 
 Project Flogo consists of the following sub-projects available as separate repos:
 * [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli): A command line tool to build flogo apps 
