@@ -65,7 +65,7 @@ go get -u github.com/TIBCOSoftware/flogo-cli/...
 * **flogo** the core CLI for creating and building your applications
 * **flogogen** a scafolding tool to begin building your Flogo contributons (activities & triggers)
 
-If you're interested in bulding your own Flogo Contributsions, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or join us on the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
+If you're interested in bulding your own Flogo contributions, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or join us on the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
 
 ## Contributing
 Want to contribute to Project Flogo? We've made it easy, all you need to do is fork the repository you intend to contribute to, make your changes and create a Pull Request! Once the pull request has been created, you'll be prompted to sign the CLA (Contributor License Agreement) online.
