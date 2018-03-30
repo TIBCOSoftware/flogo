@@ -26,8 +26,8 @@
 ## Repos
 
 Project Flogo consists of the following sub-projects available as separate repos:
-* [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli):  Command line tools to build Flogo apps & scfolding tools for extensions developers
-* [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib): The Flogo core library
+* [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli):  Command line tools for building Flogo apps & extensions
+* [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib): The core Flogo library
 * [flogo-services](https://github.com/TIBCOSoftware/flogo-services): Backing services required by Flogo 
 * [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) : Flogo contributions/extensions
 
@@ -36,11 +36,9 @@ Project Flogo consists of the following sub-projects available as separate repos
 We've made getting started with Project Flogo as easy as possible. The current set of tooling is designed for:
 
 - Serverless function developers
-- IoT Solutions developers
 - Cloud-native microservices developers
+- IoT Solutions developers
 - Go developers
-
-Note, a Flogo Flow represents function logic, and a Flogo Application contains one or more Flows (or functions). The application model is a coincise, easy to read JSON document. Refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) for details.
 
 ### Go Developers
 
@@ -51,13 +49,11 @@ go get -u github.com/TIBCOSoftware/flogo-cli/...
 ```
 
 <<insert gif>>
-  
-We've built in a number of commands:
 
 * **flogo** the core CLI for creating and building your applications
 * **flogogen** a scafolding tool to begin building your Flogo contributons (activities & triggers)
 
-If you're interested in bulding Flogo Contributsions, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or join us on the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
+If you're interested in bulding your own Flogo Contributsions, refer to the [Flogo Documentation](https://tibcosoftware.github.io/flogo/) or join us on the [project-flogo/Lobby Gitter Channel](https://gitter.im/project-flogo/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
 
 ### Zero-code Function & Microservice Developer
 
