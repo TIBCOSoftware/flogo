@@ -23,10 +23,11 @@ Project Flogo is an open source framework to simplify building efficient & moder
 ## Highlights
 
 🎈 **Ultra-light process engine** 20x-50x lighter than Java or NodeRed <br/>
-🌟 **Painless app development** Web-native visual modeler & elegant and simple DSL <br/>
-⚡️ **Event driven** by design for native FaaS development<br/>
+🌟 **Painless development** Visual modeler & elegant DSL <br/>
+⚡️ **Event driven** by design for FaaS <br/>
+⚙️ **Edge deployment model** Static binaries for painless edge deployments <br/>
 🏘 **Extensible & reusable** by design to build your own apps, frameworks & platforms <br/>
-🎉 **100% Open Source** <br/>
+🎉 **100% Open Source** for your dev & hacking pleasure<br/>
 
 ## Repos
 
