@@ -3,7 +3,6 @@
 </p>
 
 <p align="center" >
-  <b>An open source framework that makes building reliable & efficient serverless functions and microservices easy!</b> <br/>
   <b>Open Source framework for building reliable & efficient serverless functions and microservices</b>
 </p>
 
