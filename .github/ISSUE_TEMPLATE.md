@@ -14,7 +14,7 @@
 
 **What is the motivation / use case for changing the behavior?**
 
-**Please tell us about your environment (Operating system, docker version, browser & verison if webui, etc):**
+**Please tell us about your environment (Operating system, docker version, browser & web ui version, etc):**
 
 **Flogo version (CLI & contrib/lib. If unknown, leave empty or state unknown):** 0.X.X
 
