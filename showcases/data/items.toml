@@ -269,3 +269,12 @@ description = "Basic sample demonstrating how to inference a TensorFlow model."
 url = "https://github.com/TIBCOSoftware/flogo/tree/master/samples/tensorflow/helloworld"
 uploadedon = "Feb 6, 2018"
 author = "TIBCOSoftware"
+
+[[items]]
+name = "MySQL Fetch"
+type = "activity"
+description = "This activity provides your flogo application the ability to fire a select query to mySQL database and fetch the required data returning it as a JSON string."
+url = "https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mySQLFetch"
+uploadedon = "April 3, 2018"
+author = "Ganitagya"
+
