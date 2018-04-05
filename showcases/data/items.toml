@@ -1,4 +1,12 @@
 [[items]]
+name = "Parse CSV"
+type = "activity"
+description = "Parses a CSV string and produces an array of objects."
+url = "https://github.com/mellistibco/flogo-activities/tree/master/activities/parsecsv"
+uploadedon = "April 5, 2018"
+author = "mellistibco"
+
+[[items]]
 name = "DynamoDB Insert"
 type = "activity"
 description = "Inserts a record in an Amazon DynamoDB."
