@@ -34,6 +34,14 @@ cd bin
 
 Test the application by opening your browser or via CURL and getting the following URL: http://localhost:9099/isbn:0747532699
 
+Note, if you're invoking the service via Lambda tester, the input payload should be:
+
+```json
+{
+"ISBN": "isbn:0747532699"
+}
+```
+
 The following result should appear:
 
 ```json
