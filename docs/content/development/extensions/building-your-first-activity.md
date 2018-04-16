@@ -43,6 +43,7 @@ The file `activity.json` has the metadata of the Flogo activity describing to th
   "name": "HelloWorld",
   "version": "0.0.1",
   "type": "flogo:activity",
+  "ref": "github.com/yourusername/yourrepository",
   "description": "activity description",
   "author": "Your Name <you.name@example.org>",
   "inputs":[
@@ -70,7 +71,7 @@ In the file we've updated:
 * Updated the **outputs** section and changed the name parameter to **result**
 
 {{% notice tip %}}
-Don't forget to update the **author** and **description** fields, as well! This will manifest in the Web UI.
+Don't forget to update the **author**, **ref**, and **description** fields, as well! The **author** and **description** fields are used in the Web UI and the **ref** field is needed by the Web UI to display the activity on the canvas. Without the **ref** your activity will not be usable.
 {{% /notice %}}
 
 
