@@ -13,14 +13,14 @@ branches:
   - master
 
 install:
-  - go get github.com/spf13/hugo
+  - wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.38.1/hugo_0.38.1_Linux-64bit.tar.gz
+  - tar -xzvf hugo.tar.gz
+  - mv hugo $HOME/gopath/bin
+  - rm hugo.tar.gz && rm LICENSE.md && rm README.md
 
 script:
-  - cd docs && hugo
-  - cd ../showcases && hugo
-  - mv public ../docs/public/showcases
-  - cd ../docs
-  - cd public && ls -alh
+  - chmod +x build-docs.sh
+  - ./build-docs.sh
 
 deploy:
   provider: pages

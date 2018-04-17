@@ -24,6 +24,8 @@ flogo build -e -shim cli_trigger
 
 ## Run the application
 
+Don't forget to download and place [Archive.zip](https://github.com/TIBCOSoftware/flogo/blob/master/samples/tensorflow/helloworld/Archive.zip) in the bin directory before running the application. The zip file contains the TensorFlow model that will be run by the inference activity.
+
 Now that the application has been built, run the application:
 
 ```{r, engine='bash', count_lines}

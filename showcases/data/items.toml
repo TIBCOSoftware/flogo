@@ -1,4 +1,84 @@
 [[items]]
+name = "Parse CSV"
+type = "activity"
+description = "Parses a CSV string and produces an array of objects."
+url = "https://github.com/mellistibco/flogo-activities/tree/master/activities/parsecsv"
+uploadedon = "April 5, 2018"
+author = "mellistibco"
+
+[[items]]
+name = "DynamoDB Insert"
+type = "activity"
+description = "Inserts a record in an Amazon DynamoDB."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/dynamodbinsert"
+uploadedon = "February 28, 2018"
+author = "retgits"
+
+[[items]]
+name = "DynamoDB Query"
+type = "activity"
+description = "Executes a query against an Amazon DynamoDB."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/dynamodbquery"
+uploadedon = "February 28, 2018"
+author = "retgits"
+
+[[items]]
+name = "Azure IoT Hub"
+type = "activity"
+description = "Provides your Flogo app the ability to perform operations on the Azure Iot Hub"
+url = "https://github.com/pradyuz3rocool/flogo-workspace/tree/master/activity/azureiot"
+uploadedon = "April 17, 2018"
+author = "pradyuz3rocool"
+
+[[items]]
+name = "JavaScript Activity"
+type = "activity"
+description = "This activity provides your Flogo application the ability to execute embedded JavaScript code."
+url = "https://github.com/vijaynalawade/flogo/tree/master/activity/js"
+uploadedon = "February 25, 2018"
+author = "vijaynalawade"
+
+[[items]]
+name = "Payment Service"
+type = "app"
+description = "A sample application demonstrating environment variables, custom activities and mappings"
+url = "https://github.com/retgits/flogo-components/tree/master/apps/paymentservice"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
+name = "Invoice Service"
+type = "app"
+description = "A sample application demonstrating environment variables, custom activities, mappings and REST invocations."
+url = "https://github.com/retgits/flogo-components/tree/master/apps/invoiceservice"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
+name = "Add to Date"
+type = "activity"
+description = "Adds a specified number of units (days, months or years) to a date."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/addtodate"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
+name = "Random Number"
+type = "activity"
+description = "Generate a random unique number between the min and max value."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/randomnumber"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
+name = "Random String"
+type = "activity"
+description = "Generate a random string consisting with the length you specify."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/randomstring"
+uploadedon = "February 20, 2018"
+author = "retgits"
+
+[[items]]
 name = "Aggregate"
 type = "activity"
 description = "This activity provides your flogo application with rudimentary aggregation capabilities."
@@ -183,6 +263,14 @@ uploadedon = "December 20, 2017"
 author = "TIBCOSoftware"
 
 [[items]]
+name = "GrovePi"
+type = "activity"
+description = "allows Digital Write to GrovePi Board from Raspberry Pi."
+url = "https://github.com/JGrotex/GrovePi/tree/master/Software/flogo"
+uploadedon = "March 22, 2018"
+author = "jgrote"
+
+[[items]]
 name = "JSON Config Reader"
 type = "activity"
 description = "This activity reads configuration from a JSON file."
@@ -197,3 +285,12 @@ description = "Basic sample demonstrating how to inference a TensorFlow model."
 url = "https://github.com/TIBCOSoftware/flogo/tree/master/samples/tensorflow/helloworld"
 uploadedon = "Feb 6, 2018"
 author = "TIBCOSoftware"
+
+[[items]]
+name = "MySQL Fetch"
+type = "activity"
+description = "This activity provides your flogo application the ability to fire a select query to mySQL database and fetch the required data returning it as a JSON string."
+url = "https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mySQLFetch"
+uploadedon = "April 3, 2018"
+author = "Ganitagya"
+

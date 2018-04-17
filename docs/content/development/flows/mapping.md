@@ -13,44 +13,92 @@ If you peak under the covers, you'll note that we have a number of different map
 
 | Type | Description |
 | --- | --- |
-| 1 | Direct mapping. Assigning the value from var1 to var2. No other implied logic. |
-| 2 | A literal mapping. For example, mapping the string "hello" to a string typed variable. |
-| 3 | Reserved for future use. |
-| 4 | Complex object. Used when a JSON-based complex object must be built and assigned. |
+| assign | Direct mapping. Assigning the value from var1 to var2. No other implied logic. |
+| literal | A literal mapping. For example, mapping the string "hello" to a string typed variable. |
+| expression | Expression mapping.  This enable using functions and expression condition in mamping|
+| object | Complex object. Used when a JSON-based complex object must be built and assigned. |
+| array | Array mapping. Mapping an Array of Objects. |
 
 Types manifest themselves directly in your application json, as follows:
 
 ```json
 {
   "mapTo": "ISBN",
-  "type": 1,
+  "type": "assign",
   "value": "evt.ISBN"
 }
 ```
 
-The obove mapping indicates that the value of evt.ISBN should be mapped to the variables named ISBN. This is a type 1 mapping, hence the value of evnt.ISBN is assigned directly to ISBN. Consider two additional samples, below you will find a type 2 mapping, as well as a complex object, type 4 mapping.
+The above mapping indicates that the value of evt.ISBN should be mapped to the variable named ISBN. This is a type assign mapping, hence the value of evt.ISBN is assigned directly to ISBN. Consider two additional samples, below you will find a type literal mapping, as well as a complex object type object mapping.
 
-Type 2:
+Type literal:
+
 ```json
 {
   "mapTo": "ISBN",
-  "type": 2,
+  "type": "literal",
   "value": "12937"
 }
 ```
 
-Type 4:
+Type object:
+
 ```json
 {
   "mapTo": "ISBN",
-  "type": 4,
+  "type": "object",
   "value": { "ISBN": "12937", "Author": "{{$flow.Author}}" }
 }
 ```
-
-The type 2 mapping is pretty simple to understand, however type 4 does require a bit of an explanation. Note that the value param is assigned an object, not a string, and also note the use of the template style variable injection. You can use "{{ }}" when you need to inject the value of another object into your complex object. If you assign the value of an array then that param will be treated as an array, likewise for a string, int, etc. For example, let us pretend flow.Author is an array, then the Author object would be an array. In otherwords, direct assignment is occurring.
+The type literal mapping is pretty simple to understand, however type object does require a bit of an explanation. Note that the value param is assigned an object, not a string, and also note the use of the template style variable injection. You can use "{{ }}" when you need to inject the value of another object into your complex object. If you assign the value of an array then that param will be treated as an array, likewise for a string, int, etc. For example, let us pretend flow.Author is an array, then the Author object would be an array. In otherwords, direct assignment is occurring.
 
 The WebUI insulates you frome much of this understanding and will infer the correct mapping type.
+
+
+Type expression:
+
+```json
+{
+  "type": "expression",
+  "value": "string.concat(\"The pet category name is: \", $activity[rest_3].result.category.name)",
+  "mapTo": "data.description"
+}
+```
+
+The above sample leverages the output of a REST Invoke activity to get [a pet](http://petstore.swagger.io/v2/pet/9233) from the public [petstore](http://petstore.swagger.io/) service.
+The first mapper fetches the pet's first[array index] id of tag and assigns the value to the id field of the data attribute and next mapper uses a string concat function `string.concat(str1, str2, str3)` and assigns function return to the `description` field.
+
+Type array:
+
+```json
+{
+    "mapTo": "data",
+    "type": "array",
+    "value": {
+        "fields": [
+            {
+                "from": "$.id",
+                "to": "$.id",
+                "type": "primitive"
+            },
+            {
+                "from": "$.name",
+                "to": "$.name",
+                "type": "primitive"
+            }
+        ],
+        "from": "$activity[rest_3].result.tags",
+        "to": "data.response",
+        "type": "foreach"
+    }
+}
+
+```
+
+To iterate over an array from the output of the previous activities or trigger to the current field of type array by supporting nested arrays and there are no limitation to how deep the array can be.
+
+The `$$` or `$.` indicates the current array element object,  `$.name` to get current element's name field.
+
 
 ## Mapping Resolvers
 
@@ -89,7 +137,7 @@ Flogo leverages a few simple syntax paradigms when mapping. The first being, the
   "input": [
     {
       "mapTo": "ISBN",
-      "type": 1,
+      "type": "assign",
       "value": "pathParams.ISBN"
     }
   ]
@@ -102,7 +150,7 @@ What is you're accessing someone out of the immediate scope? The mapping should 
 ```json
 "inputMappings": [
   {
-    "type": 1,
+    "type": "assign",
     "value": "$flow.ISBN",
     "mapTo": "message"
   }
@@ -118,7 +166,7 @@ Most of the time you wont want to perform a direct assigning from one complex ob
 ```json
 {
   "mapTo": "someResponse",
-  "type": 4,
+  "type": "object",
   "value": {
     "Title": "{{$activity[rest_3].result.items[0].volumeInfo.title}}",
     "PublishedDate": "{{$activity[rest_3].result.items[0].volumeInfo.publishedDate}}",
@@ -126,11 +174,115 @@ Most of the time you wont want to perform a direct assigning from one complex ob
   }
 }
 ```
-First note that this is from a Return activity, which is mapping a complex object (type 4) to a flow paramater named someResponse. The object we're accessing is from the response of an activity, this is fetched using the $activity scope. Consider one of the examples:
+First note that this is from a Return activity, which is mapping a complex object (type object) to a flow paramater named someResponse. The object we're accessing is from the response of an activity, this is fetched using the $activity scope. Consider one of the examples:
 
 $activity[rest_3].result.items[0].volumeInfo.title
 
 We're referencing the result property from the activity named rest_3. We're then accessing an items array (the first entry of the array) to another complex object, where finally we're at a simple string property named title.
+
+### Using functions and expression
+
+Most of time you want to add some custome logic to the mapping, such as concat/substring/length of a string or generate a random number base on a range and so on.  any logic you want to add you can come up with an function.
+Here are object exmaple of function we have today
+
+| Function Name | Description | Return Type |
+| --- | --- |---|
+|string.concat()| Returns the concatenation of the arguments. You can concatenate two or more strings. Eg: string.concat("Hello",' ', "World")| string|
+|string.equals()| Returns whether those two string are equals. Eg: string.equals("TIBCO FLOGO", "TIBCO FLOGO", false)| boolean|
+|string.length()|Returns the length of a string. Eg: string.length("TIBCO FLOGO")|integer|
+|number.random()|Generates a pseudo-random integer number between 0 and the specified limit. Eg: number.random(10)|integer|
+
+```json
+{
+  "type": "expression",
+  "value": "string.concat(\"The pet category name is: \", $activity[rest_3].result.category.name)",
+  "mapTo": "data.description"
+}
+```
+
+The function or expression condition can also use to link expreesion in branch, any functions that return a boolean can use in link expression.
+
+```
+{
+    "from": "rest_3",
+    "id": 3,
+    "to": "log_5",
+    "type": 1,
+    "value": "$activity[rest_3].result.category.name == \"BOOK\""
+}
+
+or
+
+{
+    "from": "rest_3",
+    "id": 3,
+    "to": "log_5",
+    "type": 1,
+    "value": "string.length($activity[rest_3].result.category.name) >= 10"
+}
+
+```
+
+
+### Hanlding arrays in mappings
+
+There are lots of use cases for array mapping, map entire array to another or iterator partial array to another with functions
+The array mapping value comes from a JSON format
+
+```json
+{
+        "from": "$activity[rest_3].result.tags",
+        "to": "data.response",
+        "type": "foreach",
+        "fields": [
+            {
+                "from": "$.id",
+                "to": "$.id",
+                "type": "primitive"
+            },
+            {
+                "from": "string.concat($activity[rest_4].result.category.name, $.name)",
+                "to": "$.name",
+                "type": "primitive"
+            }
+        ]
+ }
+```
+
+- **from**: Previous activity's array output field
+- **to**: current activity's input array field
+- **type**: foreach indicate iterator array element
+- **fields**: list all element field that use to iterator and assign.
+   - **from**: the value comes from
+   - **to**:  to the current element, $. indicate current element.
+   - **type**: The type either primitive or foreach. foreach mean another array mapping. nest array support without deep limitation
+
+
+If you want to only create one element of array. using NEWARRAY for from field.
+
+```
+{
+    "fields": [
+        {
+            "from": "10001",
+            "to": "$.id",
+            "type": "primitive"
+        },
+        {
+            "from": "$activity[rest].result.category.name",
+            "to": "$.name",
+            "type": "primitive"
+        }
+    ],
+    "from": "NEWARRAY",
+    "to": "data.response",
+    "type": "foreach"
+}
+```
+
+Note:
+You can use any literal string, functions, expression in **from** under fields node.
+
 
 ## Recap
 
