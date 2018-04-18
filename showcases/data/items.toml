@@ -294,3 +294,10 @@ url = "https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mySQLFetc
 uploadedon = "April 3, 2018"
 author = "Ganitagya"
 
+[[items]]
+name = "UDP Subscriber Trigger"
+type = "trigger"
+description = "This trigger provides your flogo application a stream of UDP data from the specificed port and, optionally, Multicast group"
+url = "https://github.com/github.com/ayh20/flogo-components/trigger/udp"
+uploadedon = "April 18, 2018"
+author = "ayh20"
