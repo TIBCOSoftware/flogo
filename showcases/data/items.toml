@@ -28,12 +28,8 @@ type = "activity"
 description = "Provides your Flogo app the ability to perform operations on the Azure Iot Hub"
 url = "https://github.com/pradyuz3rocool/flogo-workspace/tree/master/activity/azureiot"
 uploadedon = "April 17, 2018"
-<<<<<<< HEAD
 author = "iSteerApps"
-=======
-author = "pradyuz3rocool"
->>>>>>> 77df565e92fab52cc7658acfe034e87dee3484bc
-
+    
 [[items]]
 name = "JavaScript Activity"
 type = "activity"
