@@ -304,7 +304,7 @@ author = "ayh20"
 
 [[items]]
 name = "UDP Receive activity"
-type = "trigger"
+type = "activity"
 description = "This activity provides your flogo application the ability to send a message over UDP"
 url = "https://github.com/jvanderl/flogo-components/tree/master/activity/udp"
 uploadedon = "April 18, 2018"
