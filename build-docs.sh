@@ -13,9 +13,9 @@ echo "Updating the frontpage"
 cp README.md docs/content/introduction/_index.md
 sed -i '9,20d' docs/content/introduction/_index.md
 sed -i '1i ---' docs/content/introduction/_index.md
-sed -i '1i pre: "<i class=\"fa fa-home\" aria-hidden=\"true\"></i> "' docs/content/contributing/contributing.md
-sed -i '1i weight: 1000' docs/content/contributing/contributing.md
-sed -i '1i title: Introduction' docs/content/contributing/contributing.md
+sed -i '1i pre: "<i class=\"fa fa-home\" aria-hidden=\"true\"></i> "' docs/content/introduction/_index.md
+sed -i '1i weight: 1000' docs/content/introduction/_index.md
+sed -i '1i title: Introduction' docs/content/introduction/_index.md
 sed -i '1i ---' docs/content/introduction/_index.md
 
 echo "Getting the docs for the activities and triggers"
