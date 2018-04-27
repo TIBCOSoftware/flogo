@@ -39,6 +39,14 @@ uploadedon = "February 25, 2018"
 author = "vijaynalawade"
 
 [[items]]
+name = "Riff Trigger"
+type = "trigger"
+description = "This trigger provides your Flogo application the ability to start a flow as a Riff(https://projectriff.io/) function."
+url = "https://github.com/vijaynalawade/flogo/tree/master/trigger/riff"
+uploadedon = "April 27, 2018"
+author = "vijaynalawade"
+
+[[items]]
 name = "Payment Service"
 type = "app"
 description = "A sample application demonstrating environment variables, custom activities and mappings"
