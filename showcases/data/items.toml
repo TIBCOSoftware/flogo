@@ -1,4 +1,12 @@
 [[items]]
+name = "GNU Zip"
+type = "activity"
+description = "Activities for reading and writing of gzip format compressed files."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/gzip"
+uploadedon = "May 2, 2018"
+author = "retgits"
+
+[[items]]
 name = "Parse CSV"
 type = "activity"
 description = "Parses a CSV string and produces an array of objects."
