@@ -1,4 +1,12 @@
 [[items]]
+name = "Amazon S3"
+type = "activity"
+description = "Activities for interacting with Amazon Simple Storage Service (S3)."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/amazons3"
+uploadedon = "May 2, 2018"
+author = "retgits"
+
+[[items]]
 name = "GNU Zip"
 type = "activity"
 description = "Activities for reading and writing of gzip format compressed files."
