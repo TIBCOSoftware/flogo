@@ -8,8 +8,6 @@ Welcome to the next Flogo Happy Hour! To be held on May 17th at 9AM PST... Yes, 
   * Flynn Script
   * Streaming Action
   * Revamping the UI
-- Hey Flynn, what's up?
-  * Evolution of Flynn the mascot
 - Flogo Powered Project Spotlight
 - Community Advocacy
   * What are we doing right?
