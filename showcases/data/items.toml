@@ -1,4 +1,28 @@
 [[items]]
+name = "Amazon S3"
+type = "activity"
+description = "Activities for interacting with Amazon Simple Storage Service (S3)."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/amazons3"
+uploadedon = "May 2, 2018"
+author = "retgits"
+
+[[items]]
+name = "Amazon SSM"
+type = "activity"
+description = "Activities for interacting with the parameter store of Amazon Simple Systems Manager (SSM)."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/amazonssm"
+uploadedon = "May 2, 2018"
+author = "retgits"
+
+[[items]]
+name = "GNU Zip"
+type = "activity"
+description = "Activities for reading and writing of gzip format compressed files."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/gzip"
+uploadedon = "May 2, 2018"
+author = "retgits"
+
+[[items]]
 name = "Parse CSV"
 type = "activity"
 description = "Parses a CSV string and produces an array of objects."
