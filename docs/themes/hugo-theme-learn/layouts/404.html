@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
 
 <head>
   <meta charset="utf-8"> {{ partial "meta.html" . }} {{ partial "favicon.html" . }} {{ .Scratch.Add "title" "" }}{{ if eq .Site.Data.titles .Title }}{{ .Scratch.Set "title" (index .Site.Data.titles .Title).title }}{{ else }}{{ .Scratch.Set "title" .Title}}{{end}}
@@ -48,8 +48,8 @@
           </p>
           <p>{{T "message-404"}}</p>
           <p></p>
-          <p><a href="{{.Site.BaseURL}}">{{T "Go-to-homepage"}}</a></p>
-          <p><img src="{{ .Site.BaseURL }}/images/gopher-404.jpg" style="width:50%"></img></p>
+          <p><a href='{{ "" | relLangURL }}'>{{T "Go-to-homepage"}}</a></p>
+          <p><img src='{{ "/images/gopher-404.jpg" | relURL }}' style="width:50%"></img></p>
         </div>
       </div>
 

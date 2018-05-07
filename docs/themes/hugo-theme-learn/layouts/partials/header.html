@@ -39,18 +39,18 @@
     {{ partial "menu.html" . }}
         <section id="body">
         <div id="overlay"></div>
-        <div class="padding highlightable sticky-parent">
+        <div class="padding highlightable">
               {{if not .IsHome}}
-              <div class="sticky-spacer">
+              <div>
                 <div id="top-bar">
                 {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
                   {{ $File := .File }}
                   {{ $Site := .Site }}
                   {{with $File.Path }}
                   <div id="top-github-link">
-                    <a class="github-link" href="{{ $Site.Params.editURL }}{{ replace $File.Dir "\\" "/" }}{{ $File.LogicalName }}" target="blank">
+                    <a class="github-link" title='{{T "Edit-this-page"}}' href="{{ $Site.Params.editURL }}{{ replace $File.Dir "\\" "/" }}{{ $File.LogicalName }}" target="blank">
                       <i class="fa fa-code-fork"></i>
-                      {{T "Edit-this-page"}}
+                      <span id="top-github-link-text">{{T "Edit-this-page"}}</span>
                     </a>
                   </div>
                   {{ end }}

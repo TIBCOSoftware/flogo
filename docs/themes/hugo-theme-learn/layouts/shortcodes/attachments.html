@@ -14,7 +14,7 @@
 		{{if ($.Get "pattern")}}
 			{{if (findRE ($.Get "pattern") .Name)}}
 				<li>
-					<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $fileDir ($.Scratch.Get "filesName") .Name }}" >
+					<a href="{{ (printf "%s%s/%s" $fileDir ($.Scratch.Get "filesName") .Name) | relURL }}" >
 						{{.Name}}
 					</a>
 					({{div .Size 1024 }} ko)
@@ -22,7 +22,7 @@
 			{{end}}
 		{{else}}
 			<li>
-				<a href="{{ printf "%s/%s%s/%s" $.Site.BaseURL $fileDir ($.Scratch.Get "filesName") .Name }}" >
+				<a href="{{ (printf "%s%s/%s" $fileDir ($.Scratch.Get "filesName") .Name) | relURL }}" >
 					{{.Name}}
 				</a>
 				({{div .Size 1024 }} ko)
