@@ -23,7 +23,7 @@ ADD {{.name}}-linux-amd64 .
 EXPOSE {{.port}}
 CMD ./{{.name}}-linux-amd64`
 ```
-_note that {{.name}} and {{.port}} are subsctitution variables coming from the configuration of your app_
+_note that {{.name}} and {{.port}} are substitution variables coming from the configuration of your app_
 
 After building the image you can run the container using the `docker run` command
 
