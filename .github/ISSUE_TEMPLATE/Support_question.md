@@ -1,6 +1,6 @@
 ---
 name: 🤗 Support Question
-about: If you have a question 💬, please check out our Slack or StackOverflow!
+about: If you have a question 💬, please check out our Gitter!
 
 ---
 
