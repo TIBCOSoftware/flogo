@@ -15,9 +15,13 @@ Properties are defined within the root of the application json, as shown below v
   "type": "flogo:app",
   "version": "0.0.1",
   "description": "Sample flogo app",
-  "properties": {
-    "my_property": "My Property Value"
-  }
+  "properties": [
+     {
+       "name": "my_property",
+       "type": "string",
+       "value": "My Property Value"
+     }
+  ]
   ```
 
 As previously stated, properties are accessible via the `$property` resolver. Consider the following mappings into a log activity:
@@ -35,9 +39,44 @@ As previously stated, properties are accessible via the `$property` resolver. Co
   "inputMappings": [
     {
       "type": 1,
-      "value": "$property.my_property",
+      "value": "$property[my_property]",
       "mapTo": "message"
     }
   ]
 }
 ```
+
+### Grouping of properties
+You can group related properties by using **<group1>.<group2>....<groupn>.<name>** naming convention.
+
+```json
+{
+  "name": "default_app",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "description": "Sample flogo app",
+  "properties": [
+     {
+       "name": "PURCHASE.SERVICE.DB.URL",
+       "type": "string",
+       "value": "postgres://10.10.10.10:5370/mydb"
+     },
+     {
+       "name": "PURCHASE.SERVICE.DB.USER",
+       "type": "string",
+       "value": "testuser"
+     },
+     {
+        "name": "INVENTORY.SERVICE.DB.URL",
+        "type": "string",
+        "value": "postgres://10.10.10.20:5370/mydb"
+     },
+     {
+        "name": "INVENTORY.SERVICE.DB.USER",
+        "type": "string",
+        "value": "testuser"
+     }
+  ]
+  ```
+
+These properties can be accessed via $property[PURCHASE.SERVICE.DB.URL] or $property[INVENTORY.SERVICE.DB.URL]
