@@ -31,7 +31,7 @@
         <h3>{{ if not $disableShortcutsTitle}}{{ T "Shortcuts-Title"}}{{ end }}</h3>
         <ul>
           {{ range sort . "Weight"}}
-              <li class="" role=""> 
+              <li> 
                   {{.Pre}}<a class="padding" href="{{.URL | absLangURL }}">{{safeHTML .Name}}</a>{{.Post}}
               </li>
           {{end}}
@@ -103,7 +103,7 @@
         {{if .Params.alwaysopen}}parent{{end}}
         ">
       <a href="{{.RelPermalink}}">
-          {{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}
+          {{safeHTML .Params.Pre}}{{or .Params.menuTitle .LinkTitle .Title}}{{safeHTML .Params.Post}}
           {{ if $showvisitedlinks}}
             <i class="fa fa-check read-icon"></i>
           {{ end }}
@@ -111,11 +111,11 @@
       {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
       {{ if ne $numberOfPages 0 }}
         <ul>
-          {{ .Scratch.Set "pages" .Pages }}
+          {{ $currentNode.Scratch.Set "pages" .Pages }}
           {{ if .Sections}}
-            {{ .Scratch.Set "pages" (.Pages | union .Sections) }}
+            {{ $currentNode.Scratch.Set "pages" (.Pages | union .Sections) }}
           {{end}}
-          {{ $pages := (.Scratch.Get "pages") }}
+          {{ $pages := ($currentNode.Scratch.Get "pages") }}
           
         {{if eq .Site.Params.ordersectionsby "title"}}  
           {{ range $pages.ByTitle }}
@@ -139,7 +139,7 @@
     {{ if not .Params.Hidden }}
       <li data-nav-id="{{.URL}}" title="{{.Title}}" class="dd-item {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}">
         <a href="{{ .RelPermalink}}">
-        {{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}
+        {{safeHTML .Params.Pre}}{{or .Params.menuTitle .LinkTitle .Title}}{{safeHTML .Params.Post}}
         {{ if $showvisitedlinks}}<i class="fa fa-check read-icon"></i>{{end}}
         </a>
     </li>
