@@ -67,11 +67,11 @@
 {{if eq $.style "li"}}
 <ul>
 {{end}}
-	{{ .Scratch.Set "pages" .Pages }}
+	{{ $.Page.Scratch.Set "pages" .Pages }}
     {{ if .Sections}}
-	    {{ .Scratch.Set "pages" (.Pages | union .Sections) }}
+	    {{ $.Page.Scratch.Set "pages" (.Pages | union .Sections) }}
     {{end}}
-    {{ $pages := (.Scratch.Get "pages") }}
+    {{ $pages := ($.Page.Scratch.Get "pages") }}
 
 	{{if eq $.sortTerm "Weight"}}
 		{{template "childs" dict "menu" $pages.ByWeight  "style" $.style "showhidden" $.showhidden "count" (add $.count 1) "depth" $.depth "pages" $.pages "description" $.description "sortTerm" $.sortTerm}}

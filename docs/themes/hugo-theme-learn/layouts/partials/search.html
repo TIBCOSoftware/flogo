@@ -8,9 +8,9 @@
 <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
 <script type="text/javascript">
     {{ if .Site.IsMultiLingual }}
-        var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
+        var baseurl = "{{.Site.LanguagePrefix | relURL }}";
     {{ else }}
-        var baseurl = "{{.Site.BaseURL}}";
+        var baseurl = '{{ "" | relURL }}';
     {{ end }}
 </script>
 <script type="text/javascript" src="{{"js/search.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>

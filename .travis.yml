@@ -14,9 +14,10 @@ branches:
 
 install:
   - wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.38.1/hugo_0.38.1_Linux-64bit.tar.gz
-  - tar -xzvf hugo.tar.gz
-  - mv hugo $HOME/gopath/bin
-  - rm hugo.tar.gz && rm LICENSE.md && rm README.md
+  - mkdir -p hugobin
+  - tar -xzvf hugo.tar.gz -C ./hugobin
+  - mv ./hugobin/hugo $HOME/gopath/bin
+  - rm hugo.tar.gz && rm -rf ./hugobin
 
 script:
   - chmod +x build-docs.sh
