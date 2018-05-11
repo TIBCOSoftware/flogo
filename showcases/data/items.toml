@@ -365,3 +365,11 @@ description = "Activities for sending and receiving EMS messages."
 url = "https://github.com/mmussett/flogo-components/tree/master/activity/ems"
 uploadedon = "May 11, 2018"
 author = "mmussett"
+
+[[items]]
+name = "Env activity"
+type = "activity"
+description = "Activities for getting and setting Environment Variables."
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/env"
+uploadedon = "May 11, 2018"
+author = "mmussett"
