@@ -36,41 +36,85 @@ To launch Flogo WebUI simply open your favorite web browser, and navigate to htt
 
 ![Web UI](../../images/webui-landing.png)
 
-### Your first microservice
-Let's build a new microservice and add some logic to it. On the welcome page, click on the big blue button that says **New** and choose **Microservice**. At the top of the screen you can give your new microservice a name. Since there are no flows yet, and flows represent the logic of our microservice, let's **Create a flow** next by clicking that button. After naming your flow, simply press **Create**.
+#### A new app
+To create a new microservice app, simply click on the big blue button `new` and select **Microservice** as the profile. A new app will be created for you and at the top of the screen you can give the app a name and an optional description. The name of the app will also be used as the name of the executable later on, so you should use a meaningful name.
 
-![Screen1](../../images/screen1.png)
+#### A new flow
+To create a new flow you can click either the `+ New Flow` button at the top or the `Create a flow` button in the middle of the screen.
 
-Now you can give the new flow, which implements the logic of your service, a new name.
+![screen1.png](../../images/screen1.png)
 
-![Screen2](../../images/screen2.png)
+No matter which you pick, you'll be presented with a dialog to give your new flow a name and an optional description. Click **Create** to create the new flow and click on the newly created flow to open the editor.
 
-The next step is to make a choice how your flow is triggered. Out of the box Project Flogo comes with a bunch of triggers and if none of them fit your needs, you can either create new ones yourself or look at the community. For now we'll choose the **Receive HTTP Message** as the trigger.
+![screen2.png](../../images/screen2.png)
 
-![Screen3](../../images/screen3.png)
+#### Add a new trigger
+To get started, click on the newly created flow to open the flow editor. On the left hand side of the screen you should see a dotted box with a `+` sign in it. 
 
-Now we know the flow will be started with an HTTP trigger, and we can configure it. Click on your flow and you'll see the editor for all flows in Project Flogo. Your flow will have a single **activity**, the trigger, which is shown by an orange circle. Click on that to show the configuration panel on the right and edit the value:
+![screen3.png](../../images/screen3.png)
 
-* **port**: The HTTP port on which this flow should listen. For this example we'll use `8080`
-* **method**: The HTTP method that will trigger the flow. To make testing a bit easier we'll use the `get` method so we can test it from the browser
-* **path**: The path for the flow to listen to. We'll set this to `/helloworld` 
-* **autoIdReply**: Should the flow automatically reply with the identifier the flow. You can set that to `false`
-* **useReplyHandler**: Should the flow send data back. In this case we'll choose `true` to make sure we see something in the browser as the end result
+When you click there you'll be asked to select a trigger to get started. For now we’ll choose the **Receive HTTP Message**, which means our microservice will listen to incoming HTTP messages.
+
+![screen4.png](../../images/screen4.png)
+
+#### Configure the trigger
+Click on the trigger you just created. There are three settings that we'll configure:
+
+* **port**: The HTTP port on which this flow should listen. For this example we’ll use 9233
+* **method**: The HTTP method that will trigger the flow. To make testing a bit easier we’ll use the `GET` method so we can test it from the browser
+* **path**: The path for the flow to listen to. We’ll set this to `/test/:name`
+
+![screen5.png](../../images/screen5.png)
 
 {{% notice tip %}}
-The URL on which our microservice will listen will he http://localhost:8080/helloworld. If you made changes to any of the variables above, please make sure to change those in the rest of these examples.
+The URL on which our microservice will listen will be `http://localhost:9233/test/:name` (the _:name_ is a parameter that you can replace with anything during runtime). If you made changes to any of the variables above, please make sure to change those in the rest of these examples.
 {{% /notice %}}
 
-Add a **Log activity** by clicking on the **+** icon. This will give the flow the ability to write data to the standard output. The message parameter is what you want to write to the log, so for now we'll simply add `Hello World`.  
+#### Add Flow params
+To add a new flow parameter, click on the large grey box called `Flow params`. In the iput section type _name_ in the box where it says _parameter name_ and in the output section type _greeting_ in the box where it says _parameter name_. Click the big blue **save** button to complete this step.
 
-![Screen5](../../images/screen5.png)
+![screen6.png](../../images/screen6.png)
 
-The last step is to add a reply handler and set the result code to 200. After that is done, click on the **<** to go back to the page where you added your flows. Now we can build an executable out of it to run it on your machine. From that page select **build** and choose the target plaform for which you want to build an executable.
+#### Add a log activity
+You can add activities to the canvas by clicking the `+` button. Let's add a new **Log Message** activity to the service by clicking on the icon and choosing the **Log Message**. By default you'll have a bunch of activities to choose from and just as with triggers, if none of them fit your needs, you can either create new ones yourself or look at the [community](https://tibcosoftware.github.io/flogo/showcases/). The Log activity will give the flow the ability to write data to the standard output. As you hover over it, a panel will slide out and you can select **configure** to start configuring your activity.
+
+The configuration should be as follows:
+
+* message: `string.concat("Hello ", $flow.name)` (this will take the name you passed into the flow as a parameter and log a hello)
+
+![screen7.png](../../images/screen7.png)
+
+_Note: you can leave `flowInfo`and `addToFlow` blank_
+
+#### Add a reply handler
+The last step in the flow is to add a reply handler. You can do that in the same way we just added the Log activity in the previous step. Click on the `+` button and choose the **Return** activity.
+
+![screen8.png](../../images/screen8.png)
+
+#### Configure it
+Hover over the new activity select **configure** to start mapping. Click on **greeting** on the left hand side of the screen (which is the flow param you created earlier). You can paste in `string.concat(\"Hello \", $flow.name)` and click the big blue **save** button to complete this step. This will return the same hello statement we logged in the earlier step.
+
+![screen9.png](../../images/screen9.png)
+
+#### One final mapping step
+The last step to complete the mappings is to map all the input and output to the trigger. Hover over the trigger you created, a slide out panel will appear with an option for `Configure`. Click on that option to open the configuration pane. 
+
+Select the option for **Flow Inputs** on the left hand side and click on `a.. name`. Type `$.pathParams.name` in the input box, which means you'll map the name parameter from the URL to this field.
+
+![screen10.png](../../images/screen10.png)
+
+Select the option for **Trigger Reply** on the left hand side and click on `1.. code`. Type the value `200` in the input box, which means you'll hardcode the value for code. While usually not a best practice to hardcode things, it is an easy way to test. Now click on `* data` and instead of typing a value, click on `a.. greeting` underneath the box. This means you'll map the flow parameter **greeting** as part of the output. Click the big blue **save** button to complete this step.
+
+![screen11.png](../../images/screen11.png)
+
+#### Build your app 
+To build your executable and be able to run the app on your machine, click on the `<` at the top of the screen to go back to the page where you added your flows. Now we can build an executable out of it to run it on your machine. From the page you're on right now select build and choose the target plaform for which you want to build an executable. This will build an executable and give you the option to download it.
+
+![screen12.png](../../images/screen12.png)
 
 {{% notice tip %}}
 Project Flogo can build binaries for most platforms that exist. If you choose to build one for a unix based system (e.g. Linux or macOS) be sure to add the executable property to it (`chmod +x <executable>`).
 {{% /notice %}}
 
-Now run the executable you just built (e.g. `./build.dms`) and navigate your browser to http://localhost:8080/helloworld. That should result in something like the below message
-
-![Screen7](../../images/screen7.png)
+#### Running your app
+To run your app simply execute the app from a terminal and you'll not only see the output of the log step, but you'll see the same in your browser window as well. The URL on which our microservice will listen should be `http://localhost:9233/test/:name` (or might be different if you made changes in the previous steps). If you're running it on your machine you can open a browser window and go to `http://localhost:9233/test/flogo` to see what the output was (spoiler alert: you'll see `"Hello flogo"` in your web browser). To stop your app simply close the terminal window in which you started the app or press **ctrl + c**

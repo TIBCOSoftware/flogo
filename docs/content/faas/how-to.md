@@ -61,73 +61,129 @@ weight: 8010
 </svg>
 </center>
 
-Embrace serverless computing with Flogo's first class support for AWS Lambda. Infinitely scale Flogo's ultralight functions and scale back to zero when not in use with AWS Lambda's NoOps and seamless scaling capabilities.
+Serverless is all around us and perhaps the fastest growing market for compute. Flogo has first class support for AWS Lambda. So you can infinitely scale your ultralight functions and scale back to zero when not in use with AWS Lambda’s NoOps and seamless scaling capabilities.
 
-We'll guide you through the set of steps required to build the most basic of functions for deployment to AWS Lambda. The flow you'll build will be the function you deploy.
+We’ll guide you through the set of steps required to build the most basic of functions for deployment to AWS Lambda. The flow you’ll build will be the function you deploy.
 
 ## Prerequisites
 
 Before we get started there are a few prerequisites that we need to take into account:
 
-* You’ll need to have the [Flogo CLI](https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/) installed
+* You’ll need to have the [Flogo CLI](https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/) and `dep` installed
+* If you want to deploy using the AWS cli you'll need to install [that](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) too
 * You’ll obviously need an AWS account :)
 
 ## Create the flogo.json
 
-Every Flogo app starts with a flogo.json file. For this scenario we'll start with a very simple app that simply logs one line. You can copy the below content and paste it into a file called `flogo.json`
+Flogo apps are constructed using a JSON file called `flogo.json`. You can create those files using the Flogo Web UI, or you can create them manually. You can copy the below content and paste it into a file called `flogo.json`. The Flogo app has a Lambda trigger which can be triggered by any event supported by AWS Lambda.
 
 ```json
 {
-  "name": "lambda",
+  "name": "Tutorial",
   "type": "flogo:app",
   "version": "0.0.1",
-  "description": "My flogo application description",
+  "appModel": "1.0.0",
   "triggers": [
     {
-      "id": "my_lambda_trigger",
+      "id": "start_flow_as_a_function_in_lambda",
       "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/lambda",
-      "settings": {
-      },
+      "name": "Start Flow as a function in Lambda",
+      "description": "Simple Lambda Trigger",
+      "settings": {},
       "handlers": [
         {
-          "actionId": "my_simple_flow",
-          "settings": {
+          "action": {
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+            "data": {
+              "flowURI": "res://flow:lambda_flow"
+            },
+            "mappings": {
+              "input": [
+                {
+                  "mapTo": "name",
+                  "type": "assign",
+                  "value": "$.evt.name"
+                }
+              ],
+              "output": [
+                {
+                  "mapTo": "data",
+                  "type": "assign",
+                  "value": "$.greeting"
+                }
+              ]
+            }
           }
         }
       ]
     }
   ],
-  "actions": [
+  "resources": [
     {
-      "id": "my_simple_flow",
-      "name": "my simple flow",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+      "id": "flow:lambda_flow",
       "data": {
-        "flow": {
-          "name": "my simple flow",
-          "attributes": [],
-          "rootTask": {
-            "id": 1,
-            "type": 1,
-            "tasks": [
-              {
-                "id": 2,
-                "type": 1,
-                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                "name": "log",
-                "attributes": [
+        "name": "LambdaFlow",
+        "metadata": {
+          "input": [
+            {
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "output": [
+            {
+              "name": "greeting",
+              "type": "any"
+            }
+          ]
+        },
+        "tasks": [
+          {
+            "id": "log_2",
+            "name": "Log Message",
+            "description": "Simple Log Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "input": {
+                "message": "",
+                "flowInfo": "false",
+                "addToFlow": "false"
+              },
+              "mappings": {
+                "input": [
                   {
-                    "name": "message",
-                    "value": "Simple Log",
-                    "type": "string"
+                    "type": "expression",
+                    "value": "string.concat(\"Hello \", $flow.name)",
+                    "mapTo": "message"
                   }
                 ]
               }
-            ],
-            "links": [
-            ]
+            }
+          },
+          {
+            "id": "actreturn_3",
+            "name": "Return",
+            "description": "Simple Return Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
+              "input": {
+                "mappings": [
+                  {
+                    "mapTo": "greeting",
+                    "type": "object",
+                    "value": {"Hello": "{{$flow.name}}"}
+                  }
+                ]
+              }
+            }
           }
-        }
+        ],
+        "links": [
+          {
+            "from": "log_2",
+            "to": "actreturn_3"
+          }
+        ]
       }
     }
   ]
@@ -135,30 +191,89 @@ Every Flogo app starts with a flogo.json file. For this scenario we'll start wit
 ```
 
 ## Create an app
-With the flogo.json created, you can create an app out of it by simply executing one command:
-```bash
-flogo create -f flogo.json lambda
+To create the source code simply execute 
 ```
-
-This command will download the Flogo Flow dependencies and create the directory structure for your new app.
+flogo create -f flogo.json myapp
+```
+This tells the flogo cli to take the flogo.json file and create the source for the app in a folder called `myapp`. It will also download a few Go packages that the app will need.
 
 ## Build
-To continue you'll need to change directories to the directory that was just created
+The next step is to build the executable and for that we need to be in the directory `myapp`. To build a flogo app from the source that you can run on AWS Lambda we'll need to execute the command
 ```
-cd lambda
+flogo build -e -shim start_flow_as_a_function_in_lambda
 ```
-
-We will build an embedded application [-e] option and with target shim [-shim] option using the trigger id as the shim. Note that the AWS Lambda trigger leverages a makefile to kick off the build process, the build process simply builds your Flogo application using the Lambdfa trigger shim and zips the binary for deployment to AWS Lambda.
-
-```bash
-flogo build -e -shim my_lambda_trigger
-```
+. This command tells the flogo cli to build the app as an embedded application (the -e option) and with a target shim (the -shim option which uses the trigger id). The AWS Lambda trigger leverages a makefile to kick off the build process, which simply builds your Flogo application using the Lambda trigger shim and zips the binary for deployment to AWS Lambda.
 
 Once this command finishes successfully the zip file (handler.zip) will be located in your app src directory (for example /path/to/app/lambda/src/lambda/handler.zip).
 
 
-## And deploy...
-Deploy to AWS providing the following configuration
+## Deploy
+There are several ways to deploy to AWS Lambda. A non-exhaustive list is:
 
-- Runtime: Go 1.x
-- Handler: handler (this is the name of the executable file)
+* Uploading the code
+* Using SAM templates
+* Using Serverless Framework
+* Using the AWS CLI
+
+In this scenario we'll look at numbers 1 and 4
+
+### Uploading the code
+From the Lambda console you can easily create a new function. As you do that set the runtime to **Go 1.x**, upload the zip file and set the handler to **handler**.
+
+### Using the AWS CLI
+To deploy your app using the AWS CLI go to the directory where the zip was created and from there execute the command 
+```
+aws lambda create-function --function-name tutorial --runtime go1.x --role arn:aws:iam::<account>:role/<role name> --handler handler --zip-file "fileb://handler.zip"
+```
+This will create a new function in Lambda called _tutorial_, which uses the Go runtime. The _--role arn:aws:iam::<account>:role/<role name>_ is the full ARN of the IAM role used to deploy this function. If all went well you'll see a JSON response like this:
+```json
+{
+    "TracingConfig": {
+        "Mode": "PassThrough"
+    },
+    "CodeSha256": "KzHoXLnTXi9uMugXAOLrMHq6qJ6RimzYdNfrWXIxwLw=",
+    "FunctionName": "tutorial",
+    "CodeSize": 4026592,
+    "RevisionId": "94b184e5-74e3-4881-abf5-debad47541b5",
+    "MemorySize": 128,
+    "FunctionArn": "arn:aws:lambda:<region>:<account>:function:tutorial",
+    "Version": "$LATEST",
+    "Role": "arn:aws:iam::<account>:role/<role>",
+    "Timeout": 3,
+    "LastModified": "2018-05-12T19:30:41.116+0000",
+    "Handler": "handler",
+    "Runtime": "go1.x",
+    "Description": ""
+}
+```
+
+## Testing 1... 2... 3...
+The only thing left is to test your function. To do that log into AWS and select "Lambda", you'll be presented with all the functions you've deployed so far and one of them will be called `tutorial`. Click on that, and you'll see the overview of your function, including a large button that says "Test". Click "Test" to configure a new test event. The input for the test event should be
+```
+{
+  "name": "World"
+}
+```
+_You can replace "world" with any name or message you want_
+
+From there, click "Test" and the execution logs will display the result
+
+```
+{
+  "Hello": "World"
+}
+```
+
+And the log output
+```
+START RequestId: 4f26990d-561d-11e8-96ca-bb9eb4465310 Version: $LATEST
+2018-05-12 19:47:31.969 INFO   [trigger-flogo-lambda] - Starting AWS Lambda Trigger
+2018/05/12 19:47:31 Starting AWS Lambda Trigger
+2018/05/12 19:47:31 Received evt: 'map[name:World]'
+2018/05/12 19:47:31 Received ctx: 'map[logStreamName:2018/05/12/[$LATEST]7f886628e07a4256b0f411b6cd3b6915 memoryLimitInMB:128 awsRequestId:4f26990d-561d-11e8-96ca-bb9eb4465310 functionName:tutorial functionVersion:$LATEST logGroupName:/aws/lambda/tutorial]'
+2018-05-12 19:47:31.969 INFO   [activity-flogo-log] - Hello World
+$flow.nameEND RequestId: 4f26990d-561d-11e8-96ca-bb9eb4465310
+REPORT RequestId: 4f26990d-561d-11e8-96ca-bb9eb4465310	Duration: 1.63 ms	Billed Duration: 100 ms 	Memory Size: 128 MB	Max Memory Used: 23 MB
+```
+
+As you're glancing over the results, also look at the _Duration_ and _Max Memory Used_. Isn't that one of the smallest functions you've seen?!
