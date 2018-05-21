@@ -23,6 +23,14 @@ uploadedon = "May 2, 2018"
 author = "retgits"
 
 [[items]]
+name = "Send Message Azure IOT"
+type = "activity"
+description = "Activity for sending data to Azure IOT Hub"
+url = "https://github.com/pradyuz3rocool/flogo-workspace/tree/master/activity/sendazureiot"
+uploadedon = "May 18, 2018"
+author = "iSteerApps"
+
+[[items]]
 name = "Parse CSV"
 type = "activity"
 description = "Parses a CSV string and produces an array of objects."
@@ -49,7 +57,7 @@ author = "retgits"
 [[items]]
 name = "Azure IoT Hub"
 type = "activity"
-description = "Provides your Flogo app the ability to perform operations on the Azure Iot Hub"
+description = "Provides your Flogo app the ability to perform CRUD operations for device management on  the Azure Iot Hub"
 url = "https://github.com/pradyuz3rocool/flogo-workspace/tree/master/activity/azureiot"
 uploadedon = "April 17, 2018"
 author = "iSteerApps"
@@ -341,3 +349,35 @@ description = "This activity provides your flogo application the ability to send
 url = "https://github.com/jvanderl/flogo-components/tree/master/activity/udp"
 uploadedon = "April 18, 2018"
 author = "jvanderl"
+
+[[items]]
+name = "Redis activity"
+type = "activity"
+description = "Activity for interacting with Redis DB."
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/redis"
+uploadedon = "May 11, 2018"
+author = "mmussett"
+
+[[items]]
+name = "Statsd activity"
+type = "activity"
+description = "Activity for publishing statsd events."
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/statsd"
+uploadedon = "May 11, 2018"
+author = "mmussett"
+
+[[items]]
+name = "EMS activity"
+type = "activity"
+description = "Activity for sending and receiving EMS messages."
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/ems"
+uploadedon = "May 11, 2018"
+author = "mmussett"
+
+[[items]]
+name = "Env activity"
+type = "activity"
+description = "Activity for getting and setting Environment Variables."
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/env"
+uploadedon = "May 11, 2018"
+author = "mmussett"
