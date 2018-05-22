@@ -3,7 +3,7 @@ Welcome to the next Flogo Happy Hour! To be held on May 17th at 9AM PST... Yes, 
 
 ## Agenda
 - Wait, where is the beer? What are we doing here?
-  * What has the Flogo OSS team been up to?
+  * What has the Flogo contributors been up to?
 - Open Design
   * Golang API
   * Streaming Action
