@@ -1,11 +1,11 @@
-## Flogo Happy Hour: May 17th, 2018
+## Flogo Happy Hour: June 7th, 2018
 Welcome to the next Flogo Happy Hour! To be held on May 17th at 9AM PST... Yes, I know, not exactly a happy hour, but at least our European friends can enjoy a fine beverage of their choice! :)
 
 ## Agenda
 - Wait, where is the beer? What are we doing here?
   * What has the Flogo OSS team been up to?
 - Open Design
-  * Flynn Script
+  * Golang API
   * Streaming Action
   * Revamping the UI
 - Flogo Powered Project Spotlight
