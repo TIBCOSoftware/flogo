@@ -17,7 +17,7 @@ items.toml is the file that you'll need to edit to add your activity, trigger or
 {{% /notice %}}
 
 ## Adding your contribution
-After you've forked the [flogo](https://github.com/TIBCOSoftware/flogo) repo and cloned it to your local machine, open showcases/data/items.toml in your favorite text editor. Append your specific contribution, as shown below.
+After you've forked the [flogo](https://github.com/TIBCOSoftware/flogo) repo and cloned it to your local machine, open showcases/data/items.toml in your favorite text editor. You can search to see if your contribution has been listed already or simply append your specific contribution, as shown below.
 
 ```toml
 [[items]]
@@ -27,6 +27,7 @@ description = "This activity provides your flogo application with rudimentary ag
 url = "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/aggregate"
 uploadedon = "January 8, 2018"
 author = "TIBCOSoftware"
+showcase = "true"
 ```
 
 * Enter your contribution name
@@ -35,6 +36,7 @@ author = "TIBCOSoftware"
 * Provide the GitHub url
 * Specify your uploaded date
 * Provide your github id
+* display your contribution in the showcase
 
 ## Building the showcase
 In order to build and submit your changes, please follow the instructions below:
@@ -42,3 +44,6 @@ In order to build and submit your changes, please follow the instructions below:
 * Fork the [flogo](https://github.com/TIBCOSoftware/flogo) repo
 * Update the showcase with your content, as shown above
 * Create a PR against the [flogo](https://github.com/TIBCOSoftware/flogo) repo
+
+## Automatic updates
+Flogo checks for activity updates and new activities once per day and automatically adds them to the `items.toml` file. By default new additions will not be visible in the showcase, unless the author of the contribution submits a PR to the Flogo repository to do so. Flogo automatically removes contributions that are no longer on GitHub.

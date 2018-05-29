@@ -11,6 +11,7 @@
         {{ partial "filter.html" . }}
         <div class="cards-container">
             {{ range $.Site.Data.items.items }}
+            {{ if eq .showcase "true" }}
             <div class="card-main card-main--{{ .type }}" data-description="{{ .description}}" data-name="{{.name}}" data-author="{{ .author }}">
                 <div class="card-header">
                     <div class="card-header__label">
@@ -41,6 +42,7 @@
                     <a href="{{ .url }}"><button class="fg-btn fg-btn--blue card-footer__btn">View on GitHub</button></a>
                 </div>
             </div>
+            {{ end }}
             {{ end }}
         </div>
         {{ partial "footer.html" . }}
