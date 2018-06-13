@@ -429,3 +429,12 @@ url = "https://github.com/mmussett/flogo-components/tree/master/activity/env"
 uploadedon = "May 11, 2018"
 author = "mmussett"
 showcase = "true"
+
+[[items]]
+name = "Randon number activity"
+type = "activity"
+description = "Activity to generate a random number value given a distribution type: Normal, Uniform, Triangular or Exponential"
+url = "https://github.com/ecarlier-tibco/flogo/tree/master/activity/numdatasim"
+uploadedon = "June 13, 2018"
+author = "ecarlier-tibco"
+showcase = "true"
