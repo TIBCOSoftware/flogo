@@ -1,4 +1,22 @@
 [[items]]
+name = "PubNub publisher"
+type = "activity"
+description = "Publish messages to PubNub."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/pubnubpublisher"
+uploadedon = "July 5, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "PubNub subscriber"
+type = "trigger"
+description = "Receive messages from PubNub."
+url = "https://github.com/retgits/flogo-components/tree/master/trigger/pubnubsubscriber"
+uploadedon = "July 5, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
 name = "Amazon S3"
 type = "activity"
 description = "Activities for interacting with Amazon Simple Storage Service (S3)."
