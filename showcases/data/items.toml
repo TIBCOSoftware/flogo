@@ -456,3 +456,13 @@ url = "https://github.com/ecarlier-tibco/flogo/tree/master/activity/numdatasim"
 uploadedon = "June 13, 2018"
 author = "ecarlier-tibco"
 showcase = "true"
+
+[[items]]
+name = "WebSocket Trigger"
+type = "trigger"
+description = "This trigger provides your Flogo application the ability to start a flow from a WebSocket trigger."
+url = "https://github.com/mmussett/flogo-components/tree/master/trigger/websocket"
+uploadedon = "July 4, 2018"
+author = "mmussett"
+showcase = "true"
+
