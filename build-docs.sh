@@ -11,12 +11,15 @@ sed -i '1i ---' docs/content/contributing/contributing.md
 
 echo "Updating the frontpage"
 cp README.md docs/content/introduction/_index.md
-sed -i '9,20d' docs/content/introduction/_index.md
+sed -i '1,4d' docs/content/introduction/_index.md
+sed -i '5,18d' docs/content/introduction/_index.md
 sed -i '1i ---' docs/content/introduction/_index.md
 sed -i '1i pre: "<i class=\\"fa fa-home\\" aria-hidden=\\"true\\"></i> "' docs/content/introduction/_index.md
 sed -i '1i weight: 1000' docs/content/introduction/_index.md
 sed -i '1i title: Introduction' docs/content/introduction/_index.md
 sed -i '1i ---' docs/content/introduction/_index.md
+sed -i 's#images/flogo-web2.gif#https://raw.githubusercontent.com/TIBCOSoftware/flogo/master/images/flogo-web2.gif#g' docs/content/introduction/_index.md
+sed -i 's#images/flogo-cli.gif#https://raw.githubusercontent.com/TIBCOSoftware/flogo/master/images/flogo-cli.gif#g' docs/content/introduction/_index.md
 
 echo "Getting the docs for the activities and triggers"
 git clone https://github.com/TIBCOSoftware/flogo-contrib

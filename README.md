@@ -32,6 +32,7 @@ Project Flogo is an open source framework to simplify building efficient & moder
 ## Repos
 
 Project Flogo consists of the following sub-projects available as separate repos:
+
 * [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli):  Command line tools for building Flogo apps & extensions
 * [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib): The core Flogo library
 * [flogo-services](https://github.com/TIBCOSoftware/flogo-services): Backing services required by Flogo 
