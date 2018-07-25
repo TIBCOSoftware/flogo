@@ -1,6 +1,6 @@
 # Contributing to Project Flogo
 
-Are you interested in contributing to Project Flogo? If so, this doc was created specifically for you! If you’re not ready to start contributing code, no problem, feel free to check out the [documentation issues](https://github.com/TIBCOSoftware/flogo/labels/kind%2Fdocs) and begin my helping enhance the documentation!
+Are you interested in contributing to Project Flogo? If so, this doc was created specifically for you! If you’re not ready to start contributing code, no problem, feel free to check out the [documentation issues](https://github.com/TIBCOSoftware/flogo/labels/kind%2Fdocs) and begin by helping enhance the documentation!
 
 Detailed instructions on contributing to the documentation and sharing your projects via the showcase can be found in our documentation, here:
 

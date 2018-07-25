@@ -6,6 +6,7 @@ weight: 6040
 [Kubernetes](https://kubernetes.io/) is an open-source system for automating deployment, scaling, and management of containerized applications. It groups containers that make up an application into logical units for easy management and discovery.
 
 For this scenario to work you'll need to have access to a Kubernetes environment. If you haven’t set up your own Kubernetes cluster yet, you might want to look at [minikube](https://github.com/kubernetes/minikube). The team has made an amazing effort to make it super easy to run your own cluster locally with minimal installation effort. The [readme](https://github.com/kubernetes/minikube/blob/master/README.md) is an excellent place to get started, including installing your own Kubernetes cluster. In this scenario we'll use a few minikube commands:
+
 * `minikube start` -> Start your minikube cluster
 * `minikube ip` -> Get the public IP address of your cluster
 

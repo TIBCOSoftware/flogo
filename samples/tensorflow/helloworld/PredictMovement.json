@@ -57,9 +57,6 @@
                     "type": "string"
                   },
                   {
-                    "name": "features"
-                  },
-                  {
                     "name": "framework",
                     "value": "Tensorflow",
                     "required": true,
