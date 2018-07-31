@@ -391,7 +391,15 @@ type = "activity"
 description = "This activity provides your flogo application the ability to fire a select query to mySQL database and fetch the required data returning it as a JSON string."
 url = "https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mysqlfetch"
 uploadedon = "April 3, 2018"
-author = "Ganitagya"
+author = "Akash Mahapatra"
+
+[[items]]
+name = "databasequery"
+type = "activity"
+description = "This activity provides your flogo application the ability to connect to various database providers like MySQL, Postgres, SQLITE3 and query the required data returning it as a JSON string."
+url = "https://github.com/Ganitagya/flogo-contrib/tree/master/activity/databasequery"
+uploadedon = "April 7, 2018"
+author = "Akash Mahapatra"
 showcase = "true"
 
 [[items]]
