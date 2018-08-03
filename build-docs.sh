@@ -2,7 +2,7 @@
 
 # Description: Build script for Project Flogo documentation
 # Author: retgits <https://github.com/retgits>
-# Last Updated: 2018-07-23
+# Last Updated: 2018-08-03
 
 #--- Variables ---
 HUGO_VERSION=0.45
@@ -32,9 +32,16 @@ ext_docs() {
 
     echo "Getting interactive labs"
     git clone https://github.com/retgits/katacoda-scenarios
-    for i in `find katacoda-scenarios -name \*interactive-lab.md` ; do filename=$(basename $i); cp $i docs/content/labs/$filename.md; title=`echo | awk 'NR==2 {print;exit}' docs/content/labs/$filename.md`; echo "* [${title:7}](./$filename)" >> docs/content/labs/_index.md; done;
+    for i in `find katacoda-scenarios -name \*interactive-lab.md` ; do filename=$(basename $i); title=`echo | awk 'NR==2 {print;exit}' $i`; link=`echo | awk 'NR==3 {print;exit}' $i`; echo "<div class="card"><div class="card-header bg3"><img class="card-image" src="../images/labs/047-safety-glasses.svg" alt="Share" /></div><div class="card-content"><p class="card-text">${title:7}</p><a class="card-start" href="${link:5}" target="_blank" alt="Start">Start!</a></div></div>" >> docs/content/labs/_index.md ; done;
+    echo "</div><div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>" >> docs/content/labs/_index.md
     rm -rf katacoda-scenarios
 }
+
+echo "Getting interactive labs"
+    git clone https://github.com/retgits/katacoda-scenarios
+    for i in `find katacoda-scenarios -name \*interactive-lab.md` ; do filename=$(basename $i); title=`echo | awk 'NR==2 {print;exit}' $i`; link=`echo | awk 'NR==3 {print;exit}' $i`; echo "<div class=\"card\"><div class=\"card-header bg3\"><img class=\"card-image\" src=\"../images/labs/047-safety-glasses.svg\" alt=\"Share\" /></div><div class=\"card-content\"><p class=\"card-text\">${title:7}</p><a class=\"card-start\" href=\"${link:5}\" target=\"_blank\" alt=\"Start\">Start!</a></div></div>" >> docs/content/labs/_index.md ; done;
+    echo "</div><div>Icons made by <a href=\"http://www.freepik.com\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a> is licensed by <a href=\"http://creativecommons.org/licenses/by/3.0/\" title=\"Creative Commons BY 3.0\" target=\"_blank\">CC 3.0 BY</a></div>" >> docs/content/labs/_index.md
+    rm -rf katacoda-scenarios
 
 #--- Update contributions page ---
 update_page_contrib() {
