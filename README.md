@@ -27,7 +27,7 @@ Project Flogo is an event-driven stack for building a variety of applications, s
 The above mentioned capabilities are built using the common Flogo Core, enabling all activity and trigger contributions within the Project Flogo ecosystem to be leveraged. For example, all available triggers can be leveraged to dispatch events to integration flows and/or streaming applications. Likewise, all activities can be leveraged within these applications.
 
 ## Flogo Core
-Flogo Core is a common framework implementing the following core features:
+Flogo Core is a common framework with the following key highlights:
 
 🎈 **Ultra-light** 20x-50x lighter than Java or Node.js <br/>
 🔧 **Golang based** Built entirely in Golang for efficeny & statically compiled binary <br/>
