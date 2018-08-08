@@ -3,7 +3,7 @@
 </p>
 
 <p align="center" >
-  <b>Serverless functions and edge microservices made painless</b>
+  <b>Project Flogo is an Open Source stack for event-driven apps</b>
 </p>
 
 <p align="center">
@@ -14,18 +14,22 @@
 </p>
 
 <p align="center">
-  <a href="#highlights">Highlights</a> | <a href="#repos">Repos</a> | <a href="#getting-started">Getting Started</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#highlights">Flogo Core</a> | <a href="#repos">Repos</a> | <a href="#getting-started">Getting Started</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
-Project Flogo is an open source framework to simplify building efficient & modern serverless functions and edge microservices.
+Project Flogo is an event-driven stack for building a variety of applications, such as:
 
-## Highlights
+* Integration via **Flogo Flows**
 
-🎈 **Ultra-light process engine** 20x-50x lighter than Java or NodeRed <br/>
-🌈 **Painless development** Visual modeler & elegant DSL <br/>
-⚡️ **Event driven** by design for Function as a Service (FaaS) <br/>
-⚙️ **Edge deployment model** Static binaries for painless edge deployments <br/>
+The above mentioned capabilities are built using the common Flogo Core, enabling all activity and trigger contributions within the Project Flogo ecosystem to be re-used. For example, all available triggers can be leveraged to dispatch events to integration flows and/or streaming applications. Likewise, all activities can be leveraged within these applications.
+
+## Flogo Core
+Flogo Core is a common framework implementing the following core features:
+
+🎈 **Ultra-light** 20x-50x lighter than Java or Node.js <br/>
+🔧 **Golang based** Built entirely in Golang for efficeny & statically compiled binary <br/>
+🏘 **Contribution model** easily build activities, triggers & actions that can be used by all of the Flogo capabilities <br/>
 🏘 **Extensible & reusable** by design to build your own apps, frameworks & platforms <br/>
 🎉 **100% Open Source** for your dev & hacking pleasure<br/>
 
