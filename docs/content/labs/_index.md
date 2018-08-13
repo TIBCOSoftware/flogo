@@ -132,3 +132,13 @@ body {
     </div>
   </div>
 
+  <div class="card">
+    <div class="card-header bg1">
+      <img class="card-image" src="../images/labs/009-scientific.svg" alt="Share" />
+    </div>
+    <div class="card-content">
+      <p class="card-text">Secure communication using PubNub</p>
+      <a class="card-start" href="./pubnub-demo" alt="Start">Start!</a>
+    </div>
+  </div>
+
