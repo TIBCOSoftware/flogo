@@ -1,0 +1,11 @@
+{{ $click := .Get "show" }}
+<a href="{{.Get "href"}}">
+    <div class="card smallcard" {{ if ($click) }} onclick=show({{$click}}) {{ end }}>
+        <div class="card-header {{.Get "headercolor"}}">
+            <img class="card-smallimage" src="{{.Get "img"}}" alt="Share" />
+        </div>
+        <div class="card-content">
+            <p class="card-text">{{.Get "text"}}</p>
+        </div>
+    </div>
+</a>
