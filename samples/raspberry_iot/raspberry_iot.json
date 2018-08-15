@@ -1,0 +1,270 @@
+{
+  "name": "Raspberry IoT",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "appModel": "1.0.0",
+  "description": "An IoT app for Raspberry Pi",
+  "triggers": [
+    {
+      "id": "receive_http_message",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+      "name": "Receive HTTP Message",
+      "description": "Simple REST Trigger",
+      "settings": {
+        "port": "9999"
+      },
+      "handlers": [
+        {
+          "action": {
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+            "data": {
+              "flowURI": "res://flow:control_home_light"
+            },
+            "mappings": {
+              "output": [
+                {
+                  "mapTo": "code",
+                  "type": "assign",
+                  "value": "$.code"
+                },
+                {
+                  "mapTo": "data",
+                  "type": "assign",
+                  "value": "$.message"
+                }
+              ]
+            }
+          },
+          "settings": {
+            "method": "GET",
+            "path": "/lights/status",
+            "autoIdReply": "true",
+            "useReplyHandler": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "flow:control_home_light",
+      "data": {
+        "name": "Control home light",
+        "description": "A simple flow using Raspberry PI GPIO to control home light",
+        "metadata": {
+          "output": [
+            {
+              "name": "code",
+              "type": "integer"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        },
+        "tasks": [
+          {
+            "id": "log_1",
+            "name": "Received",
+            "description": "Simple Log Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "input": {
+                "message": "Received request.",
+                "flowInfo": "true",
+                "addToFlow": "true"
+              }
+            }
+          },
+          {
+            "id": "gpio_1",
+            "name": "SetToOutput",
+            "description": "Control raspberry gpio",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
+              "input": {
+                "method": "Direction",
+                "pinNumber": "23",
+                "direction": "Output",
+                "state": "",
+                "Pull": ""
+              }
+            }
+          },
+          {
+            "id": "gpio_2",
+            "name": "GetStatus",
+            "description": "Control raspberry gpio",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
+              "input": {
+                "method": "Read State",
+                "pinNumber": "23",
+                "direction": "",
+                "state": "",
+                "Pull": ""
+              }
+            }
+          },
+          {
+            "id": "log_2",
+            "name": "SetToOnLog",
+            "description": "Simple Log Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "input": {
+                "message": "",
+                "flowInfo": "true",
+                "addToFlow": "true"
+              },
+              "mappings": {
+                "input": [
+                  {
+                    "type": "assign",
+                    "value": "$activity[gpio_2].result",
+                    "mapTo": "message"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "gpio_3",
+            "name": "SetToOn",
+            "description": "Control raspberry gpio",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
+              "input": {
+                "method": "Set State",
+                "pinNumber": "23",
+                "direction": "",
+                "state": "High",
+                "Pull": ""
+              }
+            }
+          },
+          {
+            "id": "actreturn_5",
+            "name": "Return",
+            "description": "Simple Return Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
+              "input": {
+                "mappings": [
+                  {
+                    "mapTo": "message",
+                    "type": "literal",
+                    "value": "Updated light to high successfully"
+                  },
+                  {
+                    "mapTo": "code",
+                    "type": "literal",
+                    "value": 200
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "log_3",
+            "name": "SetToOffLog",
+            "description": "Simple Log Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "input": {
+                "message": "",
+                "flowInfo": "true",
+                "addToFlow": "true"
+              },
+              "mappings": {
+                "input": [
+                  {
+                    "type": "assign",
+                    "value": "$activity[gpio_2].result",
+                    "mapTo": "message"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "gpio_4",
+            "name": "SetToOff",
+            "description": "Control raspberry gpio",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/gpio",
+              "input": {
+                "method": "Set State",
+                "pinNumber": "23",
+                "direction": "",
+                "state": "Low",
+                "Pull": ""
+              }
+            }
+          },
+          {
+            "id": "actreturn_6",
+            "name": "Return (2)",
+            "description": "Simple Return Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
+              "input": {
+                "mappings": [
+                  {
+                    "mapTo": "message",
+                    "type": "literal",
+                    "value": "Updated light to low successfully"
+                  },
+                  {
+                    "mapTo": "code",
+                    "type": "literal",
+                    "value": 200
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "links": [
+          {
+            "from": "log_1",
+            "to": "gpio_1"
+          },
+          {
+            "from": "gpio_1",
+            "to": "gpio_2"
+          },
+          {
+            "from": "gpio_2",
+            "to": "log_2",
+            "type": "expression",
+            "value": "$activity[gpio_2].result==0"
+          },
+          {
+            "from": "log_2",
+            "to": "gpio_3"
+          },
+          {
+            "from": "gpio_3",
+            "to": "actreturn_5"
+          },
+          {
+            "from": "gpio_2",
+            "to": "log_3",
+            "type": "expression",
+            "value": "$activity[gpio_2].result==1"
+          },
+          {
+            "from": "log_3",
+            "to": "gpio_4"
+          },
+          {
+            "from": "gpio_4",
+            "to": "actreturn_6"
+          }
+        ]
+      }
+    }
+  ]
+}
