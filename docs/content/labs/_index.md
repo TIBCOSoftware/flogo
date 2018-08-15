@@ -142,3 +142,13 @@ body {
     </div>
   </div>
 
+  <div class="card">
+    <div class="card-header bg2">
+      <img class="card-image" src="../images/labs/034-experiment.svg" alt="Share" />
+    </div>
+    <div class="card-content">
+      <p class="card-text">Controlling your home lights using Flogo and Raspberry Pi</p>
+      <a class="card-start" href="./raspberry_iot" alt="Start">Start!</a>
+    </div>
+  </div>
+
