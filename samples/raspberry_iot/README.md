@@ -7,7 +7,7 @@ A Raspberry Pi is probably one of the most well-known small single-board compute
 You can upload the `flogo.json` file and update any configuration that you want. As you're building the app, please make sure you select `linux/arm` as the build target
 
 ### From the command line
-To get started from the command line, download the `flogo.json` and update any variables you might want to update. Now, run `flogo create -f raspberry_iot.json raspberryapp` to create a new Flogo app with the name pubnubapp.
+To get started from the command line, download the `flogo.json` and update any variables you might want to update. Now, run `flogo create -f raspberry_iot.json raspberryapp` to create a new Flogo app with the name raspberryapp.
 
 To build and run the app, execute
 ```

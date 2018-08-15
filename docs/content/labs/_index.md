@@ -117,6 +117,16 @@ body {
       <img class="card-image" src="../images/labs/009-scientific.svg" alt="Share" />
     </div>
     <div class="card-content">
+      <p class="card-text">Getting book information from Google APIs by using the Invoke REST Service</p>
+      <a class="card-start" href="./books-demo" alt="Start">Start!</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header bg1">
+      <img class="card-image" src="../images/labs/009-scientific.svg" alt="Share" />
+    </div>
+    <div class="card-content">
       <p class="card-text">Deploy a Flogo app to a Kubernetes cluster</p>
       <a class="card-start" href="./kubernetes-demo" alt="Start">Start!</a>
     </div>
