@@ -1,0 +1,150 @@
+{
+  "name": "AWS IoT",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "appModel": "1.0.0",
+  "description": "A sample app to update AWS IOT Shadow",
+  "triggers": [
+    {
+      "id": "receiver",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+      "name": "Receiver",
+      "description": "Simple REST Trigger",
+      "settings": {
+        "port": "9998"
+      },
+      "handlers": [
+        {
+          "action": {
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+            "data": {
+              "flowURI": "res://flow:aws_iot_sample"
+            },
+            "mappings": {
+              "output": [
+                {
+                  "mapTo": "code",
+                  "type": "assign",
+                  "value": "$.code"
+                },
+                {
+                  "mapTo": "data",
+                  "type": "assign",
+                  "value": "$.message"
+                }
+              ]
+            }
+          },
+          "settings": {
+            "method": "GET",
+            "path": "/awsiot/status",
+            "autoIdReply": "true",
+            "useReplyHandler": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "flow:aws_iot_sample",
+      "data": {
+        "name": "AWS IOT Sample",
+        "metadata": {
+          "output": [
+            {
+              "name": "code",
+              "type": "integer"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        },
+        "tasks": [
+          {
+            "id": "log_1",
+            "name": "Start processing",
+            "description": "Simple Log Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "input": {
+                "message": "Received Rest request and starting trigger",
+                "flowInfo": "true",
+                "addToFlow": "true"
+              }
+            }
+          },
+          {
+            "id": "awsiot_1",
+            "name": "Update",
+            "description": "Simple AWS IoT",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/awsiot",
+              "input": {
+                "thingName": "flogo_test",
+                "awsEndpoint": "a1njsonnibpa75.iot.us-east-1.amazonaws.com",
+                "desired": {
+                  "switch": "on"
+                },
+                "reported": {
+                  "switch": "off"
+                }
+              }
+            }
+          },
+          {
+            "id": "log_2",
+            "name": "LogStatus",
+            "description": "Simple Log Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "input": {
+                "message": "Set Report to off and desired to on",
+                "flowInfo": "true",
+                "addToFlow": "true"
+              }
+            }
+          },
+          {
+            "id": "actreturn_3",
+            "name": "Done",
+            "description": "Simple Return Activity",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
+              "input": {
+                "mappings": [
+                  {
+                    "mapTo": "message",
+                    "type": "literal",
+                    "value": "AWS IOT update successful"
+                  },
+                  {
+                    "mapTo": "code",
+                    "type": "literal",
+                    "value": 200
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "links": [
+          {
+            "from": "log_1",
+            "to": "awsiot_1"
+          },
+          {
+            "from": "awsiot_1",
+            "to": "log_2"
+          },
+          {
+            "from": "log_2",
+            "to": "actreturn_3"
+          }
+        ]
+      }
+    }
+  ]
+}

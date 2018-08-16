@@ -15,5 +15,6 @@ After getting up and running you might want to try your hand at some more advanc
   {{< bigcard img="../images/labs/009-scientific.svg" headercolor="bg1" text="Deploy a Flogo app to a Kubernetes cluster" href="./kubernetes-demo">}}
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploy a Flogo app using the Serverless Framework" href="./serverless">}}
   {{< bigcard img="../images/labs/009-scientific.svg" headercolor="bg1" text="Secure communication using PubNub" href="./pubnub-demo">}}
-  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Controlling your home lights using Flogo and Raspberry Pi" href="/raspberry_iot">}}
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Controlling your home lights using Flogo and Raspberry Pi" href="/raspberry-iot">}}
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Updating device shadows on AWS IoT using Flogo" href="/aws-iot">}}
 
