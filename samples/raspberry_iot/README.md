@@ -20,4 +20,4 @@ Now you can copy the exectuable from the `bin` directory to your Raspberry Pi!
 Alternatively, you can also install Go on your Raspberry Pi and build everything from there :smile: 
 
 ## More information
-If you're looking for a more in-depth overview of how the app is built, check out the [lab](http://tibcosoftware.github.io/flogo/labs/raspberry_iot/)
+If you're looking for a more in-depth overview of how the app is built, check out the [lab](http://tibcosoftware.github.io/flogo/labs/raspberry-iot/)
