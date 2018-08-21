@@ -1,4 +1,103 @@
 [[items]]
+name = "Write to File"
+type = "activity"
+description = "Write to a file."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/writetofile"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Trello Cards"
+type = "activity"
+description = "Create a new Trello card."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/trellocard"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "TOML Reader"
+type = "activity"
+description = "Reads and queries TOML files."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/tomlreader"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Query Parser"
+type = "activity"
+description = "Parse a query string into name/value pairs."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/queryparser"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Null"
+type = "activity"
+description = "An activity that does nothing (useful for branching out right after the trigger)."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/null"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Mashery Token"
+type = "activity"
+description = "Get a Mashery Token (Login)."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/mashtoken"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "IFTTT WebHook"
+type = "activity"
+description = "Send webhook requests to IFTTT."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/iftttwebhook"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "GitHub Issues"
+type = "activity"
+description = "Get the GitHub issues assigned to an authenticated user."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/githubissues"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Download File"
+type = "activity"
+description = "Download a file."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/downloadfile"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Command Parser"
+type = "activity"
+description = "Parses a commandline string into separate arguments."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/commandparser"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Amazon SQS Send"
+type = "activity"
+description = "Send a message using Amazon Simple Queue Service (SQS)"
+url = "https://github.com/retgits/flogo-components/tree/master/activity/amazonsqssend"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
 name = "PubNub publisher"
 type = "activity"
 description = "Publish messages to PubNub."
@@ -107,6 +206,15 @@ author = "vijaynalawade"
 showcase = "true"
 
 [[items]]
+name = "Serverless Demo"
+type = "app"
+description = "Three sample apps working deployed using the Serverless Framework to query DynamoDB and RDS to return a combined result"
+url = "https://github.com/retgits/flogo-components/tree/master/apps/serverless-demo"
+uploadedon = "February 20, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
 name = "Payment Service"
 type = "app"
 description = "A sample application demonstrating environment variables, custom activities and mappings"
@@ -116,11 +224,29 @@ author = "retgits"
 showcase = "true"
 
 [[items]]
+name = "Payment Service (Go)"
+type = "app"
+description = "A sample application like the Payment service, but written using the Flogo Go API."
+url = "https://github.com/retgits/flogo-components/tree/master/apps/paymentservice-go"
+uploadedon = "August 21, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
 name = "Invoice Service"
 type = "app"
 description = "A sample application demonstrating environment variables, custom activities, mappings and REST invocations."
 url = "https://github.com/retgits/flogo-components/tree/master/apps/invoiceservice"
 uploadedon = "February 20, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Invoice Service (Go)"
+type = "app"
+description = "A sample application like the Invoice service, but written using the Flogo Go API."
+url = "https://github.com/retgits/flogo-components/tree/master/apps/invoiceservice-go"
+uploadedon = "August 21, 2018"
 author = "retgits"
 showcase = "true"
 
