@@ -600,3 +600,11 @@ uploadedon = "July 4, 2018"
 author = "mmussett"
 showcase = "true"
 
+[[items]]
+name = "gRPC Trigger"
+type = "trigger"
+description = "Subscribe to gRPC messages."
+url = "https://github.com/retgits/flogo-components/tree/master/trigger/grpctrigger"
+uploadedon = "August 23, 2018"
+author = "retgits"
+showcase = "true"
