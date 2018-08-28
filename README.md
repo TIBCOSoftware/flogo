@@ -115,7 +115,7 @@ A native streaming action as part of the Project Flogo Stack accomplishes the fo
 
 - Enables edge devices to implement basic streaming constructs in a simple pipeline fashion without the need to leave the device
 - Provides non-persistent state for streaming operations
-  - Streams are persisted in memory until the end of the pipeline has been reached. This means that aggregations, etc are only performed in memory, if the process crashes data is lost.
+  - Streams are persisted in memory until the end of the pipeline
 - Serves as a pre-process pipeline for raw data to perform basic mathematical and logical operations to feed ML models
 
 Some of the key highlights include:
