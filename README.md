@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-stack">Flogo Stack</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-stack">Flogo Stack</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | | <a href="#golang-api">Go Developers</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
@@ -53,8 +53,6 @@ The concept is simple, an event is just that, an event, how it’s processed is 
 - tracing & monitoring hooks 
 
 While also exposing a common set of contributions via activities and triggers. For example, all available triggers can be leveraged to dispatch events to any action implementation, that is, flows for application integration, streams for stream processing, rules for contextual rule processing, etc.
-
-<<build an animation showing events coming in and being dispatched to actions>>
 
 # Flogo Core
 
@@ -97,7 +95,7 @@ We've made getting started with Flogo Flows as easy as possible. The current set
 - Serverless function developers
 - Cloud-native microservices developers
 - IoT Solutions developers
-- [Go developers]()
+- <a href="#golang-api">Go Developers</a>
 
 ### Zero-code Developers
 
@@ -117,15 +115,15 @@ A native streaming action as part of the Project Flogo Stack accomplishes the fo
 
 - Enables edge devices to implement basic streaming constructs in a simple pipeline fashion without the need to leave the device
 - Provides non-persistent state for streaming operations
-- Streams are persisted in memory until the end of the pipeline has been reached. This means that aggregations, etc are only performed in memory, if the process crashes data is lost.
+  - Streams are persisted in memory until the end of the pipeline has been reached. This means that aggregations, etc are only performed in memory, if the process crashes data is lost.
 - Serves as a pre-process pipeline for raw data to perform basic mathematical and logical operations to feed ML models
 
 Some of the key highlights include:
 
-**Simple pipeline** construct enables a clean, easy way of dealing with streams of data
-**Stream aggregation** capabilities enables aggregation or accumulation across streams using tumbling and sliding windows based on time or event.
-**Join streams** from multiple data sources
-**Filter** out the noise with filtering capabilities
+**Simple pipeline** construct enables a clean, easy way of dealing with streams of data<br/>
+**Stream aggregation** capabilities enables aggregation or accumulation across streams using tumbling and sliding windows based on time or event.<br/>
+**Join streams** from multiple data sources<br/>
+**Filter** out the noise with filtering capabilities<br/>
 
 ## Getting Started
 
