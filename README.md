@@ -36,7 +36,7 @@ Some of the key highlights of the entire stack, include:
 😍 **100% Open Source** for your dev & hacking pleasure<br/>
 
 <p align="center">
-  <img src ="images/flogostack.svg" />
+  <img src ="images/flogostack.png" />
 </p>
 
 * **Integration Flows** Application Integration process engine with conditional branching and a visual development environment<br/>
