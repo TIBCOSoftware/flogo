@@ -14,13 +14,18 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-stack">Flogo Stack</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | | <a href="#golang-api">Go Developers</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-stack">Flogo Stack</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
 
-Project Flogo is an ultra-light, Go-based open source stack for building event-driven apps. Event-driven, you say? Yup, the notion of a trigger accepts incoming events from sources such as Kafka, MQTT or even physical devices (like an IoT sensor). The events are dispatched to an *action* for processing. An action, also a common interface, exposes key capabilities such as application integration, stream processing, etc.
-<br/><br/>
+Project Flogo is an ultra-light, Go-based open source stack for building event-driven apps. Event-driven, you say? Yup, the notion of *triggers* and *actions* are leveraged to process incoming events. An action, a common interface, exposes key capabilities such as application integration, stream processing, etc.
+<br/>
+
+<p align="center">
+  <img src ="images/projectflogo.png" />
+</p>
+<br/>
 
 # Project Flogo Stack
 
