@@ -44,7 +44,7 @@ All capabilities within the Flogo Stack have a few things in common, they all pr
 
 Some of the key highlights of the entire stack, include:
 
-🎈 **Ultra-light** 20x-50x lighter than Java or Node.js <br/>
+🎈**Ultra-light** 20x-50x lighter than Java or Node.js <br/>
 ⚡️**Event-driven** Powerful event-driven programming model based on *triggers* and *actions*<br/>
 ⚙️**Common core** a single, common core enables reuse and flexibility across all eventing constructs<br/>
 ✏️**Golang based** Written entirely in Golang for efficiency<br/>
@@ -102,7 +102,9 @@ Project Flogo consists of the following sub-projects available as separate repos
 
 Flogo Flows provides application integration capabilities and includes the following key highlights.
 
-🌈 **Painless development** Visual modeler & elegant DSL
+🌈**Painless development** Visual modeler with step-back debugging capabilities & elegant DSL<br/>
+⚙️**Ultra-light process engine** for conditional flow control
+
 
 ## Getting Started
 
@@ -115,11 +117,11 @@ We've made getting started with Flogo Flows as easy as possible. The current set
 
 ### Zero-code Developers
 
-If your background is in or you prefer to develop your apps using zero-coding environments, then read on, because we’ve been working on something special for you.
+If your background is in or you prefer to develop your apps using zero-coding environments, then read on, because we’ve got something special for you.
 
-Flogo Web UI is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flogo Web UI along with all required components to begin developing, testing and building deployable artifacts right from your web browser.
+Flows Web UI is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flows Web UI along with all required components to begin developing, testing and building deployable artifacts right from your web browser.
 
-To report any issues with Flogo Web UI, use the Issue tracker on this project.
+To report any issues with, use the Issue tracker on this project.
 
 ![Flogo Web In Action](images/flogo-web2.gif)
 
