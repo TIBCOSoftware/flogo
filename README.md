@@ -23,7 +23,7 @@ Project Flogo is an ultra-light, Go-based open source stack for building event-d
 <br/>
 
 <p align="center">
-  <img src ="images/projectflogo.png" />
+  <img src ="images/eventhandlers.png" />
 </p>
 <br/>
 
