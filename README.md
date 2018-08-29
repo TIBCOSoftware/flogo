@@ -27,6 +27,17 @@ Project Flogo is an ultra-light, Go-based open source stack for building event-d
 </p>
 <br/>
 
+- **App = Trigger(s) + Actions[&Activities]**
+- **Triggers**
+  - receive data from external sources.
+  - are managed by a configurable threading model
+  - have a common interface enabling anyone to build a Flogo trigger.
+- **Handlers**
+  - dispatch events to actions
+- **Actions**
+  - process events in a manner suitable with the implementation
+  - have a common interface enabling unique event processing capabilities
+
 # Project Flogo Stack
 
 All capabilities within the Flogo Stack have a few things in common, they all process events (in a manner suitable for the specific purpose) & they all implement the *action* interface exposed by Flogo Core.
