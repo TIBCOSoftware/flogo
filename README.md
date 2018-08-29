@@ -129,17 +129,17 @@ Edge devices have the potential for producing millions or even billions of event
 
 A native streaming action as part of the Project Flogo Stack accomplishes the following primary objectives:
 
-- Enables edge devices to implement basic streaming constructs in a simple pipeline fashion without the need to leave the device
+- Enables apps to implement basic streaming constructs in a simple pipeline fashion
 - Provides non-persistent state for streaming operations
   - Streams are persisted in memory until the end of the pipeline
-- Serves as a pre-process pipeline for raw data to perform basic mathematical and logical operations to feed ML models
+- Serves as a pre-process pipeline for raw data to perform basic mathematical and logical operations. Ideal for feeding ML models
 
 Some of the key highlights include:
 
-**Simple pipeline** construct enables a clean, easy way of dealing with streams of data<br/>
-**Stream aggregation** capabilities enables aggregation or accumulation across streams using tumbling and sliding windows based on time or event.<br/>
-**Join streams** from multiple data sources<br/>
-**Filter** out the noise with filtering capabilities<br/>
+😀**Simple pipeline** construct enables a clean, easy way of dealing with streams of data<br/>
+⨐ **Stream aggregation** capabilities enables aggregation or accumulation across streams using tumbling and sliding windows based on time or event.<br/>
+⨝ **Join streams** from multiple data sources<br/>
+🌪**Filter** out the noise with filtering capabilities<br/>
 
 ## Getting Started
 
