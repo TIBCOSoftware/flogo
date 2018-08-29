@@ -137,9 +137,9 @@ A native streaming action as part of the Project Flogo Stack accomplishes the fo
 Some of the key highlights include:
 
 😀**Simple pipeline** construct enables a clean, easy way of dealing with streams of data<br/>
-⨐ **Stream aggregation** capabilities enables aggregation or accumulation across streams using tumbling and sliding windows based on time or event.<br/>
-⨝ **Join streams** from multiple data sources<br/>
-🌪**Filter** out the noise with filtering capabilities<br/>
+⨐ **Stream aggregation** across streams using time or event tumbling & sliding windows<br/>
+⨝ **Join streams** from multiple event sources<br/>
+🌪**Filter** out the noise with stream filtering capabilities<br/>
 
 ## Getting Started
 
