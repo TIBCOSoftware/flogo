@@ -54,7 +54,7 @@ The broader Flogo ecosystem exposes an opinionated perspective on building event
 
 In short...
 
-| Flogo is  | Flogo is not |
+| Flogo is...  | Flogo is not... |
 | :--- | :--- |
 | a framework for building event-driven apps  | a web app framework  |
 | an ecosystem of opinionated, event-driven capabilities  | an analytics framework  |
@@ -62,7 +62,7 @@ In short...
 
 # Project Flogo Stack
 
-All capabilities within the Flogo Stack have a few things in common, they all process events (in a manner suitable for the specific purpose) & they all implement the *action* interface exposed by Flogo Core.
+All capabilities within the Flogo Stack have a few things in common, they all process events (in a manner suitable for the specific purpose) and they all implement the *action* interface exposed by Flogo Core.
 
 Some of the key highlights of the entire stack, include:
 
