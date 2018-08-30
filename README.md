@@ -76,7 +76,7 @@ Flogo Core is an event-driven app framework used to develop apps for the cloud &
 
 Flogo Core provides the following key benefits:
 
-⛓ **Action chaining** Say goodbye to multiple binaries connected together via externalized dependencies! Action chaining enables you to include one or more capabilities into a single, sub 10MB binary!<br/>
+⛓ **Action chaining** enables communication between one or more capabilities in a single, sub 10MB binary!<br/>
 🏘 **Common contribution model** build activities and triggers that can be leveraged by all capabilities<br/>
 🔨 **Extensible** easily extend the capabilities available by building your own action using the common interfaces<br/>
 
