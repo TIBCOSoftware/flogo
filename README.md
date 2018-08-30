@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-ecosystem">Flogo Ecosystem</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-do-i-use-flogo">When do I use Flogo?</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-ecosystem">Ecosystem</a> | <a href="#flogo-core">Core</a> | <a href="#flogo-flows">Flows</a> | <a href="#flogo-streams">Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-do-i-use-flogo">When do I use Flogo?</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
