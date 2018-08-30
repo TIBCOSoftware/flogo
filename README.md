@@ -203,12 +203,102 @@ If you're interested in building your own contribution(s), refer to the [Flogo D
 
 So you’re a Go dev and would rather code your own apps, but would love to leverage the capabilities exposed by the Flogo Stack? Makes total sense, we just ❤️to code, as well! We’ve exposed a number of Go APIs for leveraging the various action types, activities and triggers. Getting started is pretty easy, just follow the steps below.
 
-Go get …
+* Go get the latest [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib)
+```bash
+go get -u github.com/TIBCOSoftware/flogo-lib/...
+```
 
-Sample app
+* Open up your favorite IDE or txt editor and start coding!
 
 ```go
-Sample app
+package main
+
+import (
+	"context"
+
+	"github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
+	"github.com/TIBCOSoftware/flogo-lib/core/data"
+	"github.com/TIBCOSoftware/flogo-lib/engine"
+	"github.com/TIBCOSoftware/flogo-lib/flogo"
+	"github.com/TIBCOSoftware/flogo-lib/logger"
+)
+
+//go:generate go run $GOPATH/src/github.com/TIBCOSoftware/flogo-lib/flogo/gen/gen.go $GOPATH
+
+func main() {
+
+	// Create our Flogo app
+	app := flogo.NewApp()
+
+	// Setup our event trigger (HTTP REST in this case).
+
+	// Listen on port 9999
+	trg := app.NewTrigger(&rest.RestTrigger{}, map[string]interface{}{"port": 9999})
+
+	// Create a Function Handler for verb: GET and URI path: /blah
+	trg.NewFuncHandler(map[string]interface{}{"method": "GET", "path": "/blah"}, HandleHttpEvent)
+
+	// Create the Flogo engine
+	e, err := flogo.NewEngine(app)
+
+	if err != nil {
+		logger.Error(err)
+		return
+	}
+
+	// Start your engine!
+	engine.RunEngine(e)
+}
+
+// HandleHttpEvent handles events being dispatched by the function handler. 
+// All GET requests to http://localhost:9999/blah events will handled by this function
+func HandleHttpEvent(ctx context.Context, inputs map[string]*data.Attribute) (map[string]*data.Attribute, error) {
+
+	logger.Infof("#v", inputs)
+
+	return nil, nil
+}
+```
+
+* Before we can build the app, let's generate the metadata for the triggers
+```bash
+go generate
+```
+
+* Build the app
+```bash
+go build
+```
+
+Want to build your own binary, but leverage a Flow that has already been built by the WebUI? No problem:
+
+```go
+func main() {
+
+	app := flogo.NewApp()
+
+  // load the flow as json.RawMessage
+  app.AddResource("flow:myflow", flowJson)
+
+	// Listen on port 9999
+	trg := app.NewTrigger(&rest.RestTrigger{}, map[string]interface{}{"port": 9999})
+
+	h1 := trg.NewHandler(map[string]interface{}{"method": "GET", "path": "/blah"})
+  
+  // The handler will dispatch to the flow action in the previously loaded JSON via id: flow:myflow
+	a := h1.NewAction(&flow.FlowAction{}, map[string]interface{}{"flowURI": "res://flow:myflow"})
+	a.SetInputMappings("in1='blah'", "in2=1")
+	a.SetOutputMappings("out1='blah'", "out2=$.flowOut")
+	
+	e, err := flogo.NewEngine(app)
+
+	if err != nil {
+		logger.Error(err)
+		return
+	}
+
+	engine.RunEngine(e)
+}
 ```
 
 Sample leveraging your Flow or Stream.
