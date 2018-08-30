@@ -57,7 +57,7 @@ Some of the key highlights of the entire stack, include:
 
 * **Integration Flows** Application Integration process engine with conditional branching and a visual development environment<br/>
 * **Stream Processing** a simple pipeline-based stream processing action with event joining capabilities across multiple triggers & aggregation over time windows<br/>
-* **Contextual Decisioning**  Declarative Rules for Real-time Contextual Decisions engine<br/>
+* **Contextual Decisioning**  Declarative Rules for Real-time Contextual Decisions<br/>
 * **Microgateway**
 
 The concept is simple, an event is just that, an event, how it’s processed is what differs. Flogo Core eases the burden by enabling a common set of functionality, such as:
