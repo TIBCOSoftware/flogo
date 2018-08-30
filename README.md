@@ -36,7 +36,30 @@ Project Flogo is an ultra-light, Go-based open source stack for building event-d
   - dispatch events to actions
 - **Actions**
   - process events in a manner suitable with the implementation
-  - have a common interface enabling unique event processing capabilities
+  - have a common interface enabling opinionated event processing capabilities
+
+# What can I build with Flogo?
+
+You’ll look to leverage the Flogo if you’re a dev & sick of building all the messy stuff that comes along with coding apps. Such as connectivity to event-driven messaging platforms, datastores, SaaS apps, etc & want to deploy to a wide range of targets, such as
+
+- serverless compute
+- IoT edge devices
+- containers
+
+The broader Flogo ecosystem exposes an opinionated perspective on building event-driven apps. If you’re looking to process events in any of the following ways, then read on because the Project Flogo Ecosystem is for you!
+
+- long running processes with flow-control support geared toward application integration
+- consuming and manipulating large streams of data to act as a pre-processor for time-series data to serve things machine learning models or to feed into real-time decisioning apps
+- contextual, declarative rules for real-time decisioning
+
+## Flogo is...
+* a framework for building event-driven apps
+* an ecosystem of opinionated, event-driven capabilities
+
+## Flogo is not...
+* a web app framework
+* an analytics framework
+* an IoT platform
 
 # Project Flogo Stack
 
@@ -67,7 +90,7 @@ The concept is simple, an event is just that, an event, how it’s processed is 
 - logging
 - data type coercion
 - data mapping
-- tracing & monitoring hooks 
+- tracing & monitoring hooks
 
 While also exposing a common set of contributions via activities and triggers. For example, all available triggers can be leveraged to dispatch events to any action implementation, that is, flows for application integration, streams for stream processing, rules for contextual rule processing, etc.
 
