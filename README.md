@@ -49,7 +49,7 @@ You’ll look to leverage the Flogo if you’re a dev & sick of building all the
 The broader Flogo ecosystem exposes an opinionated perspective on building event-driven apps. If you’re looking to process events in any of the following ways, then read on because the Project Flogo Ecosystem is for you!
 
 - long running processes with flow-control support geared toward application integration
-- consuming and manipulating large streams of data to act as a pre-processor for time-series data to serve things machine learning models or to feed into real-time decisioning apps
+- consuming and manipulating large streams of events via a pipeline to act as a pre-processor for time-series data to serve things like machine learning models or to derive simple conclustions via data aggregation
 - contextual, declarative rules for real-time decisioning
 
 ## Flogo is...
