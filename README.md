@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-ecosystem">Ecosystem</a> | <a href="#flogo-core">Core</a> | <a href="#flogo-flows">Flows</a> | <a href="#flogo-streams">Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-do-i-use-flogo">When do I use Flogo?</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-ecosystem">Ecosystem</a> | <a href="#flogo-core">Core</a> | <a href="#flogo-flows">Flows</a> | <a href="#flogo-streams">Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-to-use-flogo">When to use Flogo</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
@@ -277,7 +277,7 @@ go build
 
 For additional examples, including how to leverage a flow that has already been built by the Web UI, refer to the [wiki](https://github.com/TIBCOSoftware/flogo/wiki/Go-App-Api-Proposal).
 
-# When do I use Flogo?
+# When to use Flogo
 
 You’ll look to leverage Flogo if you’re a dev & sick of building all the messy stuff that comes along with coding production apps. Such as connectivity to event-driven messaging platforms, datastores, SaaS apps, etc & want to deploy to a wide range of targets, such as
 
