@@ -208,6 +208,11 @@ So you’re a Go dev and would rather code your own apps, but would love to leve
 go get -u github.com/TIBCOSoftware/flogo-lib/...
 ```
 
+* Optionally, if you're using any of the Flogo contributions, don't forget to get that repo, as well
+```bash
+go get -u github.com/TIBCOSoftware/flogo-contrib/...
+```
+
 * Open up your favorite IDE or txt editor and start coding!
 
 ```go
