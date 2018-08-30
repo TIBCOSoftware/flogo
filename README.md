@@ -3,7 +3,7 @@
 </p>
 
 <p align="center" >
-  <b>Project Flogo is an Open Source stack for event-driven apps</b>
+  <b>Project Flogo is an Open Source ecosystem for event-driven apps</b>
 </p>
 
 <p align="center">
@@ -14,12 +14,12 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-stack">Flogo Stack</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-ecosystem">Flogo Ecosystem</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
 
-Project Flogo is an ultra-light, Go-based open source stack for building event-driven apps. Event-driven, you say? Yup, the notion of *triggers* and *actions* are leveraged to process incoming events. An action, a common interface, exposes key capabilities such as application integration, stream processing, etc.
+Project Flogo is an ultra-light, Go-based open source ecosystem for building event-driven apps. Event-driven, you say? Yup, the notion of *triggers* and *actions* are leveraged to process incoming events. An action, a common interface, exposes key capabilities such as application integration, stream processing, etc.
 <br/>
 
 <p align="center">
@@ -60,11 +60,11 @@ In short...
 | an ecosystem of opinionated, event-driven capabilities  | an analytics framework  |
 | a Go lib to increase dev productivity  | an IoT platform  |
 
-# Project Flogo Stack
+# Project Flogo Ecosystem
 
-All capabilities within the Flogo Stack have a few things in common, they all process events (in a manner suitable for the specific purpose) and they all implement the *action* interface exposed by Flogo Core.
+All capabilities within the Flogo Ecosystem have a few things in common, they all process events (in a manner suitable for the specific purpose) and they all implement the *action* interface exposed by Flogo Core.
 
-Some of the key highlights of the entire stack, include:
+Some of the key highlights include:
 
 🎈 **Ultra-light** 20x-50x lighter than Java or Node.js <br/>
 ⚡️ **Event-driven** Powerful event-driven programming model based on *triggers* and *actions*<br/>
@@ -108,7 +108,7 @@ Flogo Core provides the following key benefits:
 Flogo Core exposes three principal contribution interfaces that enable developers to build common capabilities and functionality. These contribution interfaces include:
 
 * **Trigger Interface** a common interface for building event-consumers that dispatch events to one or more actions. The Kafka subscriber is an example of a trigger.
-* **Activity Interface** a common interface for exposing common application logic in a reusable manner. Think of this as a function, such as write to database, publish to Kafka, etc that can be used by all applications within the Project Flogo Stack.
+* **Activity Interface** a common interface for exposing common application logic in a reusable manner. Think of this as a function, such as write to database, publish to Kafka, etc that can be used by all Flogo apps.
 * **Action Interface** a common interface for processing events. Actions contain the specific capability logic, such as integration, stream processing, rule processing, etc. Actions have a great deal of flexibility in how they’re developed and how developers leverage actions within their overall applications. For example, flows and streams expose JSON-based DSLs & Go APIs for maximum developer flexibility.
 
 # Repos
@@ -144,7 +144,7 @@ If your background is in or you prefer to develop your apps using zero-coding en
 
 Flows Web UI is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flows Web UI along with all required components to begin developing, testing and building deployable artifacts right from your web browser.
 
-To report any issues with, use the Issue tracker on this project.
+To report any issues with the Issue tracker on this project.
 
 ![Flogo Web In Action](images/flogo-web2.gif)
 
@@ -152,7 +152,7 @@ To report any issues with, use the Issue tracker on this project.
 
 Edge devices have the potential for producing millions or even billions of events at rapid intervals, often times the events on their own are meaningless, hence the need to provide basic streaming operations against the slew of events.
 
-A native streaming action as part of the Project Flogo Stack accomplishes the following primary objectives:
+A native streaming action as part of the Project Flogo Ecosystem accomplishes the following primary objectives:
 
 - Enables apps to implement basic streaming constructs in a simple pipeline fashion
 - Provides non-persistent state for streaming operations
@@ -223,7 +223,7 @@ If you're interested in building your own contribution(s), refer to the [Flogo D
 
 # Golang API
 
-Are you the kind of person who would rather code, but would love to leverage the capabilities of the Flogo Stack? Makes total sense, we just ❤️ to code also! We’ve exposed a number of Go APIs for leveraging the various action types, activities and triggers. Getting started is pretty easy, just follow the steps below.
+Are you the kind of person who would rather code, but would love to leverage the capabilities of the Flogo Ecosystem? Makes total sense, we just ❤️ to code also! We’ve exposed a number of Go APIs for leveraging the various action types, activities and triggers. Getting started is pretty easy, just follow the steps below.
 
 * Go get the latest [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib)
 ```bash
