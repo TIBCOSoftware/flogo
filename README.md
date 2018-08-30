@@ -274,18 +274,17 @@ Want to build your own binary, but leverage a Flow that has already been built b
 
 ```go
 func main() {
-
 	app := flogo.NewApp()
 
-  // load the flow as json.RawMessage
-  app.AddResource("flow:myflow", flowJson)
+  	// load the flow as json.RawMessage
+  	app.AddResource("flow:myflow", flowJson)
 
 	// Listen on port 9999
 	trg := app.NewTrigger(&rest.RestTrigger{}, map[string]interface{}{"port": 9999})
 
 	h1 := trg.NewHandler(map[string]interface{}{"method": "GET", "path": "/blah"})
   
-  // The handler will dispatch to the flow action in the previously loaded JSON via id: flow:myflow
+  	// The handler will dispatch to the flow action in the previously loaded JSON via id: flow:myflow
 	a := h1.NewAction(&flow.FlowAction{}, map[string]interface{}{"flowURI": "res://flow:myflow"})
 	a.SetInputMappings("in1='blah'", "in2=1")
 	a.SetOutputMappings("out1='blah'", "out2=$.flowOut")
