@@ -201,7 +201,7 @@ If you're interested in building your own contribution(s), refer to the [Flogo D
 
 # Golang API
 
-So you’re a Go dev and would rather code your own apps, but would love to leverage the capabilities exposed by the Flogo Stack? Makes total sense, we just ❤️to code, as well! We’ve exposed a number of Go APIs for leveraging the various action types, activities and triggers. Getting started is pretty easy, just follow the steps below.
+Are you the kind of person who would rather code, but would love to leverage the capabilities of the Flogo Stack? Makes total sense, we just ❤️ to code also! We’ve exposed a number of Go APIs for leveraging the various action types, activities and triggers. Getting started is pretty easy, just follow the steps below.
 
 * Go get the latest [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib)
 ```bash
