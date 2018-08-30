@@ -52,14 +52,13 @@ The broader Flogo ecosystem exposes an opinionated perspective on building event
 - consuming and manipulating large streams of events via a pipeline to act as a pre-processor for time-series data to serve things like machine learning models or to derive simple conclustions via data aggregation
 - contextual, declarative rules for real-time decisioning
 
-## Flogo is...
-* a framework for building event-driven apps
-* an ecosystem of opinionated, event-driven capabilities
+In short...
 
-## Flogo is not...
-* a web app framework
-* an analytics framework
-* an IoT platform
+| Flogo is  | Flogo is not |
+| ------------- | ------------- |
+| a framework for building event-driven apps  | a web app framework  |
+| an ecosystem of opinionated, event-driven capabilities  | an analytics framework  |
+| a Go lib to increase dev productivity  | an IoT platform  |
 
 # Project Flogo Stack
 
