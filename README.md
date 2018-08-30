@@ -44,13 +44,13 @@ All capabilities within the Flogo Stack have a few things in common, they all pr
 
 Some of the key highlights of the entire stack, include:
 
-🎈**Ultra-light** 20x-50x lighter than Java or Node.js <br/>
-⚡️**Event-driven** Powerful event-driven programming model based on *triggers* and *actions*<br/>
-⚙️**Common core** a single, common core enables reuse and flexibility across all eventing constructs<br/>
-✏️**Golang based** Written entirely in Golang for efficiency<br/>
-💪**Deployment flexibility** Deploy as ultra-lightweight serverless functions, containers or static binaries on IoT edge devices<br/>
-🧠**Native machine learning** Purpose built activity for TensorFlow SavedModel inferencing<br/>
-😍**100% Open Source** for your dev & hacking pleasure<br/>
+🎈 **Ultra-light** 20x-50x lighter than Java or Node.js <br/>
+⚡️ **Event-driven** Powerful event-driven programming model based on *triggers* and *actions*<br/>
+⚙️ **Common core** a single, common core enables reuse and flexibility across all eventing constructs<br/>
+✏️ **Golang based** Written entirely in Golang for efficiency<br/>
+💪 **Deployment flexibility** Deploy as ultra-lightweight serverless functions, containers or static binaries on IoT edge devices<br/>
+🧠 **Native machine learning** Purpose built activity for TensorFlow SavedModel inferencing<br/>
+😍 **100% Open Source** for your dev & hacking pleasure<br/>
 
 <p align="center">
   <img src ="images/flogostack.png" />
@@ -78,7 +78,7 @@ Flogo Core is an event-driven app framework used to develop apps for the cloud &
 Flogo Core provides the following key benefits:
 
 ⛓ **Action chaining** enables communication between one or more capabilities in a single, sub 10MB binary!<br/>
-🏘 **Common contribution model** build activities and triggers that can be leveraged by all capabilities<br/>
+🏗 **Common contribution model** build activities and triggers that can be leveraged by all capabilities<br/>
 🔨 **Extensible** easily extend the capabilities available by building your own action using the common interfaces<br/>
 
 ## Flogo Core Contribution Model
@@ -103,8 +103,8 @@ Project Flogo consists of the following sub-projects available as separate repos
 
 Flogo Flows provides application integration capabilities and includes the following key highlights.
 
-🌈**Painless development** Visual modeler with step-back debugging capabilities & elegant DSL<br/>
-⚙️**Ultra-light process engine** for conditional flow control
+🌈 **Painless development** Visual modeler with step-back debugging capabilities & elegant DSL<br/>
+⚙️ **Ultra-light process engine** for conditional flow control
 
 
 ## Getting Started
@@ -139,10 +139,10 @@ A native streaming action as part of the Project Flogo Stack accomplishes the fo
 
 Some of the key highlights include:
 
-😀**Simple pipeline** construct enables a clean, easy way of dealing with streams of data<br/>
-⏳**Stream aggregation** across streams using time or event tumbling & sliding windows<br/>
-🙌**Join streams** from multiple event sources<br/>
-🌪**Filter** out the noise with stream filtering capabilities<br/>
+😀 **Simple pipeline** construct enables a clean, easy way of dealing with streams of data<br/>
+⏳ **Stream aggregation** across streams using time or event tumbling & sliding windows<br/>
+🙌 **Join streams** from multiple event sources<br/>
+🌪 **Filter** out the noise with stream filtering capabilities<br/>
 
 ## Getting Started
 
