@@ -40,7 +40,7 @@ Project Flogo is an ultra-light, Go-based open source ecosystem for building eve
 
 # What can I build with Flogo?
 
-You’ll look to leverage the Flogo if you’re a dev & sick of building all the messy stuff that comes along with coding apps. Such as connectivity to event-driven messaging platforms, datastores, SaaS apps, etc & want to deploy to a wide range of targets, such as
+You’ll look to leverage Flogo if you’re a dev & sick of building all the messy stuff that comes along with coding production apps. Such as connectivity to event-driven messaging platforms, datastores, SaaS apps, etc & want to deploy to a wide range of targets, such as
 
 - serverless compute
 - IoT edge devices
