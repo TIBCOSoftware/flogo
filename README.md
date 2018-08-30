@@ -49,7 +49,8 @@ Some of the key highlights of the entire stack, include:
 ⚙️**Common core** a single, common core enables reuse and flexibility across all eventing constructs<br/>
 ✏️**Golang based** Written entirely in Golang for efficiency<br/>
 💪**Deployment flexibility** Deploy as ultra-lightweight serverless functions, containers or static binaries on IoT edge devices<br/>
-😍 **100% Open Source** for your dev & hacking pleasure<br/>
+🧠**Native machine learning** Purpose built activity for TensorFlow SavedModel inferencing<br/>
+😍**100% Open Source** for your dev & hacking pleasure<br/>
 
 <p align="center">
   <img src ="images/flogostack.png" />
