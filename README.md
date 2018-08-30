@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-ecosystem">Flogo Ecosystem</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-ecosystem">Flogo Ecosystem</a> | <a href="#flogo-core">Flogo Core</a> | <a href="#flogo-flows">Flogo Flows</a> | <a href="#flogo-streams">Flogo Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-do-i-use-flogo">When do I use Flogo?</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
@@ -37,28 +37,6 @@ Project Flogo is an ultra-light, Go-based open source ecosystem for building eve
 - **Actions**
   - process events in a manner suitable with the implementation
   - have a common interface enabling opinionated event processing capabilities
-
-# What can I build with Flogo?
-
-You’ll look to leverage Flogo if you’re a dev & sick of building all the messy stuff that comes along with coding production apps. Such as connectivity to event-driven messaging platforms, datastores, SaaS apps, etc & want to deploy to a wide range of targets, such as
-
-- serverless compute
-- IoT edge devices
-- containers
-
-The broader Flogo ecosystem exposes an opinionated perspective on building event-driven apps. If you’re looking to process events in any of the following ways, then read on because the Project Flogo Ecosystem is for you!
-
-- long running processes with flow-control support geared toward application integration
-- consuming and manipulating large streams of events via a pipeline to act as a pre-processor for time-series data to serve things like machine learning models or to derive simple conclustions via data aggregation
-- contextual, declarative rules for real-time decisioning
-
-In short...
-
-| Flogo is...  | Flogo is not... |
-| :--- | :--- |
-| a framework for building event-driven apps  | a web app framework  |
-| an ecosystem of opinionated, event-driven capabilities  | an analytics framework  |
-| a Go lib to increase dev productivity  | an IoT platform  |
 
 # Project Flogo Ecosystem
 
@@ -298,6 +276,28 @@ go build
 ```
 
 For additional examples, including how to leverage a flow that has already been built by the Web UI, refer to the [wiki](https://github.com/TIBCOSoftware/flogo/wiki/Go-App-Api-Proposal).
+
+# When do I use Flogo?
+
+You’ll look to leverage Flogo if you’re a dev & sick of building all the messy stuff that comes along with coding production apps. Such as connectivity to event-driven messaging platforms, datastores, SaaS apps, etc & want to deploy to a wide range of targets, such as
+
+- serverless compute
+- IoT edge devices
+- containers
+
+The broader Flogo ecosystem exposes an opinionated perspective on building event-driven apps. If you’re looking to process events in any of the following ways, then read on because the Project Flogo Ecosystem is for you!
+
+- long running processes with flow-control support geared toward application integration
+- consuming and manipulating large streams of events via a pipeline to act as a pre-processor for time-series data to serve things like machine learning models or to derive simple conclustions via data aggregation
+- contextual, declarative rules for real-time decisioning
+
+In short...
+
+| Flogo is...  | Flogo is not... |
+| :--- | :--- |
+| a framework for building event-driven apps  | a web app framework  |
+| an ecosystem of opinionated, event-driven capabilities  | an analytics framework  |
+| a Go lib to increase dev productivity  | an IoT platform  |
 
 # Contributing
 Want to contribute to Project Flogo? We've made it easy, all you need to do is fork the repository you intend to contribute to, make your changes and create a Pull Request! Once the pull request has been created, you'll be prompted to sign the CLA (Contributor License Agreement) online.
