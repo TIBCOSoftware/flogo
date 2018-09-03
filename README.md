@@ -295,8 +295,7 @@ In short...
 
 | Flogo is...  | Flogo is not... |
 | :--- | :--- |
-| a framework & Go lib for building better event-driven apps | a web app framework  |
-| an ecosystem of opinionated, event-driven capabilities  | an analytics framework  |
+| an ecosystem of opinionated, event-driven capabilities | a front-end web app or analytics framework |
 | a Go lib to increase dev productivity  | an IoT platform  |
 
 # Contributing
