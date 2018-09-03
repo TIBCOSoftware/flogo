@@ -1,4 +1,13 @@
 [[items]]
+name = "Transform"
+type = "activity"
+description = "Transform json using specification."
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/transform"
+uploadedon = "September 3, 2018"
+author = "mmussett"
+showcase = "true"
+
+[[items]]
 name = "Write to File"
 type = "activity"
 description = "Write to a file."
