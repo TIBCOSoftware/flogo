@@ -32,7 +32,7 @@ ext_docs() {
 
     echo "Getting interactive labs"
     git clone https://github.com/retgits/katacoda-scenarios
-    for i in `find katacoda-scenarios -name \*interactive-lab.md` ; do filename=$(basename $i); title=`echo | awk 'NR==2 {print;exit}' $i`; link=`echo | awk 'NR==3 {print;exit}' $i`; echo "<div class=\"card\"><div class=\"card-header bg3\"><img class=\"card-image\" src=\"../images/labs/047-safety-glasses.svg\" alt=\"Share\" /></div><div class=\"card-content\"><p class=\"card-text\">${title:7}</p><a class=\"card-start\" href=\"${link:5}\" target=\"_blank\" alt=\"Start\">Start!</a></div></div>" >> docs/content/labs/_index.md ; done;
+    for i in `find katacoda-scenarios -name \*interactive-lab.md` ; do filename=$(basename $i); title=`echo | awk 'NR==2 {print;exit}' $i`; link=`echo | awk 'NR==3 {print;exit}' $i`; echo "{{< bigcard img=\"../images/labs/047-safety-glasses.svg\" headercolor=\"bg3\" text=\"${title:7}\" href=\"${link:6}\">}}" >> docs/content/labs/_index.md ; done;
     echo "</div>" >> docs/content/labs/_index.md
     rm -rf katacoda-scenarios
 }

@@ -11,11 +11,12 @@
 #
 # Happy Coding!
 
-service: aws-golang # NOTE: update this with your service name
+service: myservice # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
+frameworkVersion: ">=1.28.0 <2.0.0"
 
 provider:
   name: aws
@@ -49,15 +50,20 @@ package:
  exclude:
    - ./**
  include:
-   - handler
+   - ./bin/**
 
 functions:
   hello:
-    handler: handler
+    handler: bin/hello
+    events:
+      - http:
+          path: hello
+          method: get
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
+# events:
 #    events:
 #      - http:
 #          path: users/create
@@ -66,7 +72,7 @@ functions:
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
 #      - stream: arn:aws:dynamodb:region:XXXXXX:table/foo/stream/1970-01-01T00:00:00.000
-#      - alexaSkill
+#      - alexaSkill: amzn1.ask.skill.xx-xx-xx-xx
 #      - alexaSmartHome: amzn1.ask.skill.xx-xx-xx-xx
 #      - iot:
 #          sql: "SELECT * FROM 'some_topic'"
