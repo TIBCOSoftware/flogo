@@ -97,7 +97,7 @@ Project Flogo consists of the following sub-projects available as separate repos
 * [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib): The core Flogo library
 * [flogo-services](https://github.com/TIBCOSoftware/flogo-services): Backing services required by Flogo 
 * [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib): Flogo contributions/extensions
-* [flogo-oss/stream](https://github.com/flogo-oss/stream): Flogo Streams Action
+* [project-flogo/stream](https://github.com/project-flogo/stream): Flogo Streams Action
 
 # Flogo Flows
 
@@ -151,7 +151,7 @@ We’ve made building powerful streaming pipelines as easy as possible. Develop 
 - A simple, clean JSON-based DSL
 - Golang API
 
-See the sample below of an aggregation pipeline (for brevity, the triggers and metadata of the resource has been omitted). Also don’t forget to check out the examples in the [flogo-oss/stream](https://github.com/flogo-oss/stream/tree/master/examples) repo.
+See the sample below of an aggregation pipeline (for brevity, the triggers and metadata of the resource has been omitted). Also don’t forget to check out the examples in the [project-flogo/stream](https://github.com/project-flogo/stream/tree/master/examples) repo.
 
 ```json
   "stages": [
@@ -325,7 +325,7 @@ For additional details, refer to the [Contribution Guidelines](https://github.co
 # License 
 The top level flogo repo, consisting of flow samples & documentation, is licensed licensed under a BSD-style license. Refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE) for license text.
 
-Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib), [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib), [flogo-services](https://github.com/TIBCOSoftware/flogo-services) & [flogo-oss/stream](https://github.com/flogo-oss/stream) are all licensed under a BSD-style license, refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE) 
+Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib), [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib), [flogo-services](https://github.com/TIBCOSoftware/flogo-services) & [project-flogo/stream](https://github.com/project-flogo/stream) are all licensed under a BSD-style license, refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE) 
 
 ## Usage Guidelines
 
