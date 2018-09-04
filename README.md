@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-ecosystem">Ecosystem</a> | <a href="#flogo-core">Core</a> | <a href="#flogo-flows">Flows</a> | <a href="#flogo-streams">Streams</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-to-use-flogo">When to use Flogo</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-ecosystem">Ecosystem</a> | <a href="#flogo-core">Core</a> | <a href="#flogo-flows">Flows</a> | <a href="#flogo-streams">Streams</a> | <a href="#flogo-rules">Flogo Rules</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-to-use-flogo">When to use Flogo</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
@@ -177,8 +177,17 @@ See the sample below of an aggregation pipeline (for brevity, the triggers and m
 
 # Flogo Rules
 
-## Getting Started
-Build your Declarative Rules app as a Flogo Action type or execute as a standalone lib 
+Processing Events in real-time to determine next best action is an important function of Event driven applications. With the vast amount of events that are generated from different sources, making sense of the information in a given context can be immensely valuable. 
+
+Flogo Rules simplifies the complexity involved with real-time contextual decisions.
+
+Flogo Rules supports
+
+- Declarative Rules to define conditional logic and trigger result rules
+- Joins/Correlations across multiple Event sources
+- Ability to define Rule Priorities
+- Timer Events; Configurable TTL (time to live) -1 - no expiry, 0 - event expiry set to end of run to completion cycle. 
+- Forward chaining for Inferencing
 
 # The CLI
 
