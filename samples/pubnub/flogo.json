@@ -1,0 +1,124 @@
+{
+    "name": "PubNubDemoApp",
+    "type": "flogo:app",
+    "version": "0.0.1",
+    "appModel": "1.0.0",
+    "triggers": [
+      {
+        "id": "receive_pub_nub_messages",
+        "ref": "github.com/retgits/flogo-components/trigger/pubnubsubscriber",
+        "name": "Receive PubNub Messages",
+        "description": "PubNub Subscriber",
+        "settings": {
+          "publishKey": "xxx",
+          "subscribeKey": "xxx"
+        },
+        "handlers": [
+          {
+            "action": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+              "data": {
+                "flowURI": "res://flow:pub_nub_listener"
+              },
+              "mappings": {
+                "input": [
+                  {
+                    "mapTo": "pubnubmessage",
+                    "type": "assign",
+                    "value": "$.message"
+                  }
+                ]
+              }
+            },
+            "settings": {
+              "channel": "xxx"
+            }
+          }
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "flow:pub_nub_listener",
+        "data": {
+          "name": "PubNubListener",
+          "metadata": {
+            "input": [
+              {
+                "name": "pubnubmessage",
+                "type": "string"
+              }
+            ]
+          },
+          "tasks": [
+            {
+              "id": "log_2",
+              "name": "Log Message",
+              "description": "Simple Log Activity",
+              "activity": {
+                "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                "input": {
+                  "message": "",
+                  "flowInfo": "false",
+                  "addToFlow": "false"
+                },
+                "mappings": {
+                  "input": [
+                    {
+                      "type": "assign",
+                      "value": "$flow.pubnubmessage",
+                      "mapTo": "message"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "writetofile_3",
+              "name": "Write file",
+              "description": "Write to a file",
+              "activity": {
+                "ref": "github.com/retgits/flogo-components/activity/writetofile",
+                "input": {
+                  "filename": "",
+                  "content": "",
+                  "append": false,
+                  "create": false
+                },
+                "mappings": {
+                  "input": [
+                    {
+                      "type": "literal",
+                      "value": true,
+                      "mapTo": "append"
+                    },
+                    {
+                      "type": "assign",
+                      "value": "$flow.pubnubmessage",
+                      "mapTo": "content"
+                    },
+                    {
+                      "type": "literal",
+                      "value": true,
+                      "mapTo": "create"
+                    },
+                    {
+                      "type": "literal",
+                      "value": "visitors.txt",
+                      "mapTo": "filename"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "links": [
+            {
+              "from": "log_2",
+              "to": "writetofile_3"
+            }
+          ]
+        }
+      }
+    ]
+  }
