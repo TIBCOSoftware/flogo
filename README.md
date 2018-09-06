@@ -98,6 +98,7 @@ Project Flogo consists of the following sub-projects available as separate repos
 * [flogo-services](https://github.com/TIBCOSoftware/flogo-services): Backing services required by Flogo 
 * [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib): Flogo contributions/extensions
 * [project-flogo/stream](https://github.com/project-flogo/stream): Flogo Streams Action
+* [project-flogo/rules](https://github.com/project-flogo/rules): Contextual, deterministic rules action
 
 # Flogo Flows
 
