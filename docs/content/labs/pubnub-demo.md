@@ -51,7 +51,7 @@ On the right-hand side of the screen a list with all the activities the Flogo We
 
 Now hit the "save" button and we're done with this part!
 
-Now we need to add a new activity to the Flogo Web UI to make sure you can add things to a file. On the main screen of your flow click "Install new activity" to get the same dialog as when installing the trigger. 
+Now we need to add a new activity to the Flogo Web UI to make sure you can add things to a file. On the main screen of your flow click on the "+" sign on the canvas to add a new activity and choose "Install new activity" to get the same dialog as when installing the trigger. 
 
 ![](../../images/labs/pubnub-demo/step5b.png)
 
