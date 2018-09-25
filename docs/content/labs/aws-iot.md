@@ -45,9 +45,7 @@ You’ll have to add some acvitivities to the flow for it to do something. to st
 
 ![](../../images/labs/aws-iot/step3.png)
 
-On the right-hand side of the screen a list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log Message" activity and click it to make sure it is added to the flow. To configure it, click on icon and type `Received Rest request and starting trigger.` in the box where it says message (on the right hand side of the screen).
-
-![](../../images/labs/aws-iot/step4.png)
+A list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log Message" activity and click it to make sure it is added to the flow. As you hover over the newly added activity, a cog will appear and as you hover over that thing, a menu will appear to configure your activity. Select "message" and type `Received Rest request and starting trigger.` in the input box.
 
 In the same way you just added the Log activity, now add a `Update AWS Device Shadow` activity and configure it in the same way with:
 

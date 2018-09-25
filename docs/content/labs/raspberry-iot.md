@@ -45,9 +45,7 @@ You’ll have to add some acvitivities to the flow for it to do something. to st
 
 ![](../../images/labs/raspberry-iot-demo/step3.png)
 
-On the right-hand side of the screen a list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log Message" activity and click it to make sure it is added to the flow. To configure it, click on icon and type `Received request.` in the box where it says message (on the right hand side of the screen).
-
-![](../../images/labs/raspberry-iot-demo/step4.png)
+A list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log Message" activity and click it to make sure it is added to the flow. To configure it, click on the icon, hover over it to let a menu appear and click the cog to open the configuration menu. Now select "message" and type `Received request.` in the input box.
 
 In the same way you just added the Log activity, now add a `Control GPIO` activity and configure it in the same way with:
 
@@ -71,13 +69,9 @@ Your flow should look something like the one below.
 ## Step 4: Adding a branch
 To be able to switch from on to off and vice versa, you'll need to create two branches. One that turns off the light if it was on and one that does the opposite. You'll start by creating the "_Turn it on_" branch.
 
-Click on the last activity you added and check the **ID** in the top right corner of the screen. That ID you'll need to properly configure the branches.
-
-![](../../images/labs/raspberry-iot-demo/step6.png)
-
 As you hover over the activity, a cog will appear and as you hover over that thing, a menu will appear to create a branch from your activity.
 
-Click anywhere on the branch to be able to set a condition. The condition is a JavaScript-like syntax `$activity[gpio_4].result==0`. Where it says `gpio_4` in the above condition, you might need to change that to the ID of your activity.
+Click anywhere on the branch to be able to set a condition. The condition is a JavaScript-like syntax `$activity[gpio_4].result==0`. Where it says `gpio_4` in the above condition, you might need to change that to the ID of your activity (which you can pick from the dropdown window).
 
 Add a new `Log Message` activity (click on the `+` right behind the created branch) and as you hover over the newly added activity, a cog will appear and as you hover over that thing, a menu will appear to configure your activity. In the modal that now appears, select "a.. message" to tell the app what the message is that will be logged. Now click on the caret next to the second GPIO activity to expand it and click "123 result" to tell the app to map the result from that activity to the message that will be logged.
 
