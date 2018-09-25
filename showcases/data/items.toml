@@ -626,3 +626,12 @@ url = "https://github.com/retgits/flogo-components/tree/master/trigger/grpctrigg
 uploadedon = "August 23, 2018"
 author = "retgits"
 showcase = "true"
+
+[[items]]
+name = "Key based Aggregator"
+type = "activity"
+description = "Aggregate based on a key"
+url = "https://github.com/ayh20/flogo-components/tree/master/activity/aggregate"
+uploadedon = "September 25, 2018"
+author = "ayh20"
+showcase = "true"
