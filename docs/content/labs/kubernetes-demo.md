@@ -11,7 +11,7 @@ Kubernetes is probably the most wellknown container orchestration platform out t
 _The invoice service will make use of the payment service to display all data_
 
 ## What you'll need
-The demo needs a working Kubernetes cluster. If you haven't got one, setting one up using [minikube](https://github.com/kubernetes/minikube) is quite easy! You'll also need to have the Flogo CLI installed. If that is not the case, you might want to install them first. Our [Getting Started](../../../getting-started/getting-started-cli/) guide walks you through the installation of Go, the Flogo CLI and Go Dep.
+The demo needs a working Kubernetes cluster. If you haven't got one, setting one up using [minikube](https://github.com/kubernetes/minikube) is quite easy! You'll also need to have the Flogo CLI installed. If that is not the case, you might want to install them first. Our [Getting Started](https://github.com/TIBCOSoftware/flogo/blob/master/docs/content/getting-started/getting-started-cli.md) guide walks you through the installation of Go, the Flogo CLI and Go Dep.
 
 
 ## Scripts!
