@@ -32,7 +32,7 @@ After it is done starting the container, you'll see something like the image bel
 ![Docker Container Started](../../images/start-docker-webui.png)
 
 ### Launching the Web UI
-To launch Flogo WebUI simply open your favorite web browser, and navigate to http://localhost:3303. You'll see our mascot Flynn there to greet you!
+To launch Flogo WebUI open your favorite web browser, and navigate to http://localhost:3303. You'll see our mascot Flynn there to greet you!
 
 ![Web UI](../../images/webui-landing.png)
 
