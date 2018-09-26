@@ -23,6 +23,10 @@ After getting up and running you might want to try your hand at some more advanc
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Kubernetes is probably the most wellknown container orchestration platform out there. In this demo you explore how to run Flogo apps on Kubernetes. The demo will walk you through deploying two apps" href="./kubernetes">}}
 
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Flogo apps are ultralight, so building docker images is not only really easy, because it can embed all dependencies it can also run inside of super small containers. Check out this lab to see how it works." href="./docker">}}
+
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Cloud Foundry is an open-source platform as a service (PaaS) that provides you with a choice of clouds, developer frameworks, and application services. The most awesome thing? It runs Flogo apps!" href="./cloudfoundry">}}
+
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Using the Serverless Framework, developers never have to worry about provisioning or maintaining servers, and only have to create the code that they need to power their next business idea!" href="./serverless">}}
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Secure comms with PubNub: Building microservices is awesome, having them talk to each other is even more awesome! But in today's world, you can't be too careful when it comes to data across the wire." href="./pubnub">}}
