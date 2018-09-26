@@ -35,4 +35,14 @@ After getting up and running you might want to try your hand at some more advanc
 
   {{< bigcard img="../images/labs/047-safety-glasses.svg" headercolor="bg3" text="Serverless is all around us and perhaps the fastest growing market for compute. Flogo has first class support for AWS Lambda. This tutorial covers building Lambda apps using the Flogo CLI" href="./flogo-lambda">}}
 
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Flogo can run almost anywhere. From the largest clouds, to the smallest of devices and everything in between. Take this lab to get yourself familiar with how to develop apps for IoT devices using the Flogo CLI." href="./iot-howto">}}
+
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to a BeagleBone" href="./beaglebone-iot">}}
+
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to a C.H.I.P device" href="./chip-iot">}}
+
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to an Edison" href="./edison-iot">}}
+
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to a Raspberry Pi" href="./raspberry-iot-cli">}}
+
 </div>
