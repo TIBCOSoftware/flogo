@@ -15,6 +15,10 @@ After getting up and running you might want to try your hand at some more advanc
 
 <div class="cards">
 
+  {{< bigcard img="../images/labs/009-scientific.svg" headercolor="bg1" text="Timers are great to schedule stuff, and a great way to learn new technology! Use this lab to get familiar with some of the concepts of Flogo!" href="./timers">}}
+
+  {{< bigcard img="../images/labs/009-scientific.svg" headercolor="bg1" text="Hello World! This lab will walk you through building your first API with Project Flogo" href="./helloworld">}}
+
   {{< bigcard img="../images/labs/009-scientific.svg" headercolor="bg1" text="Who doesn't like a good book? But what if you really, really need to get some information about a book first? In that case you build a Flogo app that uses the Google APIs to get book information!" href="./bookstore">}}
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Kubernetes is probably the most wellknown container orchestration platform out there. In this demo you explore how to run Flogo apps on Kubernetes. The demo will walk you through deploying two apps" href="./kubernetes">}}

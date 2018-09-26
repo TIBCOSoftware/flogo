@@ -489,7 +489,7 @@ div.notices p:first-child:before {
     top: 2px;
     color: #fff;
     font-family: FontAwesome;
-    content: '';
+    content: '\f06a';
     left: 10px;
 }
 div.notices p:first-child:after {
