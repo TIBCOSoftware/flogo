@@ -13,7 +13,7 @@
 .card {
   position: relative;
   border-radius: 1em;
-  width: 230px;
+  width: 250px;
   background-color: #FFF;
   -webkit-box-shadow: 0 2px 5px #777;
   -moz-box-shadow: 0 2px 5px #777;
@@ -77,7 +77,7 @@
 }
 .card .card-content {
   position: absolute;
-  top: 45%;
+  top: 55%;
   left: 0;
   width: 100%;
   height: 55%;
@@ -89,7 +89,7 @@
   -webkit-transform: translate(0, -50%);
   -moz-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  color: #AAA;
+  color: #323232;
   font-size: .85em;
 }
 .card .card-content .card-start {

@@ -1,6 +1,6 @@
 # Project Flogo
 
-<center>Docs and Tutorials for an Ultralight Edge Microservices Framework</center>
+<center>Docs and Tutorials for an Open Source ecosystem for event-driven apps</center>
 
 <img src="./images/Flynn1.png" width="250" height="174"/>
 

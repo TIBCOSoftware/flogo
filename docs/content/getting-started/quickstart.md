@@ -1,7 +1,7 @@
 ---
 title: Quickstart
 weight: 2010
-pre: "<i class=\"fa fa-bolt\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-bolt\" aria-hidden=\"true\"></i> "
 ---
 
 We think it is awesome that you want to get started with Project Flogo! To get started you don't even need to install anything other than Docker!

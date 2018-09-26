@@ -41,10 +41,10 @@
 
 
         {{with ($.Scratch.Get "prevPage")}}
-            <a class="nav nav-prev" href="{{.URL}}" title="{{.Title}}"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="{{.URL}}" title="{{.Title}}"> <i class="fas fa-chevron-left"></i></a>
         {{end}}
         {{with ($.Scratch.Get "nextPage")}}
-            <a class="nav nav-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         {{end}}
     </div>
 

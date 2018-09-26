@@ -2,7 +2,7 @@
 title: Flows
 weight: 4300
 chapter: true
-pre: "<i class=\"fa fa-map\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-map\" aria-hidden=\"true\"></i> "
 ---
 
 # Flows

@@ -2,7 +2,7 @@
 title: IoT
 weight: 7000
 chapter: true
-pre: "<i class=\"fa fa-rss\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-rss\" aria-hidden=\"true\"></i> "
 ---
 
 # Flogo and the Internet of Things
