@@ -371,11 +371,11 @@ jQuery(window).on('load', function() {
     $(".highlightable").highlight(sessionStorage.getItem('search-value'), { element: 'mark' });
 });
 
-$(function() {
-    $('a[rel="lightbox"]').featherlight({
-        root: 'section#body'
-    });
-});
+//$(function() {
+//    $('a[rel="lightbox"]').featherlight({
+//        root: 'section#body'
+//    });
+//});
 
 jQuery.extend({
     highlight: function(node, re, nodeName, className) {
