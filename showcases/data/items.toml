@@ -1,4 +1,13 @@
 [[items]]
+name = "Amqp"
+type = "activity"
+description = "AMQP publisher."
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/amqp"
+uploadedon = "September 4, 2018"
+author = "mmussett"
+showcase = "true"
+
+[[items]]
 name = "Transform"
 type = "activity"
 description = "Transform json using specification."
@@ -616,4 +625,13 @@ description = "Subscribe to gRPC messages."
 url = "https://github.com/retgits/flogo-components/tree/master/trigger/grpctrigger"
 uploadedon = "August 23, 2018"
 author = "retgits"
+showcase = "true"
+
+[[items]]
+name = "Key based Aggregator"
+type = "activity"
+description = "Aggregate based on a key"
+url = "https://github.com/ayh20/flogo-components/tree/master/activity/aggregate"
+uploadedon = "September 25, 2018"
+author = "ayh20"
 showcase = "true"
