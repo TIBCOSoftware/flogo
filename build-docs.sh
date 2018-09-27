@@ -46,12 +46,14 @@ update_page_contrib() {
 update_page_introduction() {
     cp README.md docs/content/introduction/_index.md
     sed -i '1,4d' docs/content/introduction/_index.md
-    sed -i '5,18d' docs/content/introduction/_index.md
+    sed -i '5,17d' docs/content/introduction/_index.md
     sed -i '1i ---' docs/content/introduction/_index.md
     sed -i '1i pre: "<i class=\\"fas fa-home\\" aria-hidden=\\"true\\"></i> "' docs/content/introduction/_index.md
     sed -i '1i weight: 1000' docs/content/introduction/_index.md
     sed -i '1i title: Introduction' docs/content/introduction/_index.md
     sed -i '1i ---' docs/content/introduction/_index.md
+    sed -i 's#images/eventhandlers.png#https://raw.githubusercontent.com/TIBCOSoftware/flogo/master/images/eventhandlers.png#g' docs/content/introduction/_index.md
+    sed -i 's#images/flogostack.png#https://raw.githubusercontent.com/TIBCOSoftware/flogo/master/images/flogostack.png#g' docs/content/introduction/_index.md
     sed -i 's#images/flogo-web2.gif#https://raw.githubusercontent.com/TIBCOSoftware/flogo/master/images/flogo-web2.gif#g' docs/content/introduction/_index.md
     sed -i 's#images/flogo-cli.gif#https://raw.githubusercontent.com/TIBCOSoftware/flogo/master/images/flogo-cli.gif#g' docs/content/introduction/_index.md
 }
