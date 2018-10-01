@@ -71,7 +71,7 @@ jQuery(document).ready(function() {
     var url = document.location.origin + document.location.pathname;
     var link = url + "#"+element[0].id;
     return " <span class='anchor' data-clipboard-text='"+link+"'>" +
-      "<i class='fa fa-link fa-lg'></i>" +
+      "<i class='fas fa-link fa-lg'></i>" +
       "</span>"
     ;
   });

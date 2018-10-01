@@ -4,7 +4,7 @@
             <img class="card-bigimage" src="{{.Get "img"}}" alt="Share" />
         </div>
         <div class="card-content">
-            <p class="card-text">{{.Get "text"}}</p>
+            <p class="card-text"><b>{{.Get "title"}}</b><br/>{{with .Get "text"}} {{substr . 0 175}}  {{end}}</p>
         </div>
     </div>
 </a>

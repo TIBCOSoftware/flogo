@@ -1,7 +1,7 @@
 ---
 title: Environment variables
 weight: 3010
-pre: "<i class=\"fa fa-cog\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-cog\" aria-hidden=\"true\"></i> "
 ---
 
 

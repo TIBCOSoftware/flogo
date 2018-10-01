@@ -1,7 +1,7 @@
 ---
 title: Glossary
 weight: 20000
-pre: "<i class=\"fa fa-book\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-book\" aria-hidden=\"true\"></i> "
 ---
 
 Flogo terminology and constructs, defined here, all in one place in a logical order vs alphabetical.
