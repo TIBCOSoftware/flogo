@@ -1,6 +1,6 @@
 ---
 title: Application Configuration Provider
-weight: 4430
+weight: 4230
 ---
 
 Unless you want to provide the application configuration (for example: flogo.json) in a different way or format you should not worry about this feature.
