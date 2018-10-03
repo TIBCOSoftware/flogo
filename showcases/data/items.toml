@@ -635,3 +635,12 @@ url = "https://github.com/ayh20/flogo-components/tree/master/activity/aggregate"
 uploadedon = "September 25, 2018"
 author = "ayh20"
 showcase = "true"
+
+[[items]]
+name = "UUID Generator"
+type = "activity"
+description = "Generates various UUID strings"
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/uuid"
+uploadedon = "October 3, 2018"
+author = "mmussett"
+showcase = "true"
