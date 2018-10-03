@@ -25,4 +25,4 @@ curl --request GET --url http://localhost:9999/books/0747532699
 _This will get you information on Harry Potter 1 and the Philosopher's Stone_
 
 ## More information
-If you're looking for a more in-depth overview of how the app is built, check out the [lab](http://tibcosoftware.github.io/flogo/labs/books-demo/)
+If you're looking for a more in-depth overview of how the app is built, check out the [lab](https://tibcosoftware.github.io/flogo/labs/bookstore/)

@@ -1,6 +1,6 @@
 ---
 title: Best practices for app development
-weight: 4220
+weight: 4240
 ---
 
 There are a few best practices that we recommend when developing apps and functions using Flogo.

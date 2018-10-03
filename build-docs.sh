@@ -2,10 +2,10 @@
 
 # Description: Build script for Project Flogo documentation
 # Author: retgits <https://github.com/retgits>
-# Last Updated: 2018-08-03
+# Last Updated: 2018-10-01
 
 #--- Variables ---
-HUGO_VERSION=0.45
+HUGO_VERSION=0.49
 
 #--- Download and install prerequisites ---
 prerequisites() {
