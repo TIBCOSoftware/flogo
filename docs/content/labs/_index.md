@@ -23,6 +23,12 @@ These labs have an emphasis on using the [Flogo CLI](../getting-started/getting-
 
   {{< bigcard img="../images/labs/047-safety-glasses.svg" headercolor="bg3" title="Building triggers" text="Triggers make it possible for Flogo to get data. How do you get started building a trigger, though? Check this tutorial to build a simple trigger." href="./building-triggers">}}
 
+  {{< bigcard img="../images/labs/047-safety-glasses.svg" headercolor="bg3" title="Build using Go" text="Cheesecakes are important! In fact, we believe perhaps the most important thing, right after Flogo. In this tutorial you'll build a cheesecake service using the Go API." href="./cheesecake-service">}}
+
+  {{< bigcard img="../images/labs/047-safety-glasses.svg" headercolor="bg3" title="Streams: Aggregate" text="Learn how to use the JSON DSL to build streaming pipelines using the power of Flogo." href="./streams-aggregate">}}
+
+  {{< bigcard img="../images/labs/047-safety-glasses.svg" headercolor="bg3" title="Streams: Filter" text="Learn how to use the JSON DSL to build a simple streaming pipelines, using the power of Flogo, that filters out all zeros." href="./streams-filter">}}
+
 </div>
 
 ## Flogo Web UI
@@ -74,5 +80,7 @@ These labs have an emphasis on using external tools together with Project Flogo,
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="Rapberry Pi (IoT)" text="Deploying apps to a Raspberry Pi" href="./raspberry-iot-cli">}}
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="CI/CD for Activities" text="A CI/CD pipeline is really important for proper a proper test and build cycle. This tutorial walks you through how to do that with Jenkins and Travis for Flogo activities." href="./cicd-for-activities">}}
+
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="AWS SAM" text="SAM provides a model to build Serverless apps for AWS. It also provides an easy way of testing your apps without deploying to AWS Lambda all the time..." href="./flogo-and-sam">}}
 
 </div>
