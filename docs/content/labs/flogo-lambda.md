@@ -28,7 +28,7 @@ If you have any questions, feel free to post an [issue on GitHub](https://github
 
 Flogo apps are constructed using a JSON file called `flogo.json`. You can create those files using the Flogo Web UI, or you can create them manually. Now let's create the flogo.json file. To do that, execute `touch flogo.json` in a terminal (or open up a new file in your text editor), which will create a new empty file for you.
 
-Now you can copy the contents below to the newly created flogo.json file. The Flogo app has a Lambda trigger which listens on port 9233 and a PATH parameter called `name`.
+Now you can copy the contents below to the newly created flogo.json file. The Flogo app has a Lambda trigger and a PATH parameter called `name`.
 
 ```json
 {
