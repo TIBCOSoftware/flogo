@@ -50,8 +50,6 @@ package main
 import (
     // Default Go packages
 	"context"
-	"encoding/json"
-	"io/ioutil"
 	"os"
 	"strconv"
 
@@ -202,8 +200,6 @@ package main
 import (
     // Default Go packages
 	"context"
-	"encoding/json"
-	"io/ioutil"
 	"os"
 	"strconv"
 
