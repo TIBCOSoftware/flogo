@@ -73,8 +73,6 @@ These labs have an emphasis on using external tools together with Project Flogo,
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="BeagleBone" text="Deploying apps to a BeagleBone" href="./beaglebone-iot">}}
 
-  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="C.H.I.P." text="Deploying apps to a C.H.I.P device" href="./chip-iot">}}
-
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="Intel Edison" text="Deploying apps to an Edison" href="./edison-iot">}}
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="Rapberry Pi (IoT)" text="Deploying apps to a Raspberry Pi" href="./raspberry-iot-cli">}}

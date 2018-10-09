@@ -133,6 +133,5 @@ To test it we'll use the curl command line tool, which is installed on most Oper
 Once you are ready to test your application on your device, check out these specialized labs that talk about building Flogo apps specifically for that device.
 
 * [Raspberry Pi](../raspberry-iot-cli) 
-* [C.H.I.P.](../chip)
 * [Intel Edison](../edison)
 * [BeagleBone](../beaglebone)
