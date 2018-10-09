@@ -307,12 +307,12 @@ Because you're using Flogo as a Library in your app, you don't need to use the `
 To run the app simply run
 
 ```bash
-HTTPORT=8888 ./cheesecakesvc
+HTTPPORT=8888 ./cheesecakesvc
 ```
 
 And in a separate terminal run to see the result of your app
 
 ```go
-$ curl --request GET --url http://localhost:9999/cheesecake/retgits
+$ curl --request GET --url http://localhost:8888/cheesecake/retgits
 {"cheesecake":"Likes all cheesecakes","name":"retgits"}
 ```
