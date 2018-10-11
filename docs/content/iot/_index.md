@@ -15,8 +15,6 @@ The Internet of Things is a magnificent place and with Flogo you can make it eve
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to a BeagleBone" href="../labs/beaglebone-iot">}}
 
-  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to a C.H.I.P device" href="../labs/chip-iot">}}
-
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to an Edison" href="../labs/edison-iot">}}
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" text="Deploying apps to a Raspberry Pi" href="../labs/raspberry-iot-cli">}}

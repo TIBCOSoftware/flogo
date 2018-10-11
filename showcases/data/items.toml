@@ -1,4 +1,13 @@
 [[items]]
+name = "GlobalCache"
+type = "activity"
+description = "An in-memory key:value store based on go-cache."
+url = "https://github.com/retgits/flogo-components/tree/master/activity/globalcache"
+uploadedon = "October 10, 2018"
+author = "retgits"
+showcase = "true"
+
+[[items]]
 name = "Amqp"
 type = "activity"
 description = "AMQP publisher."
