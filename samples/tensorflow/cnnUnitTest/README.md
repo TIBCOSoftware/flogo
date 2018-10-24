@@ -38,7 +38,7 @@ The first way to use this model is to use it as a unit test in the flogo-contrib
 
 ##### C2) Building app
 
-To build a Flogo app including the inference activity you can either use the CLI tool (as done [here](https://github.com/TIBCOSoftware/flogo/tree/master/samples/tensorflow/helloworld)) or you can use the Flogo library in your own go code.  Since there is already an example of the CLI tools here we will build an app in our own go code.  The file [main.go](main.go) is commented to hopefully help with understand the code.  The one thing the go code does that might be confusing is that it converts an array of size 10 of float64s into a [][][][]float32, which is the tensor structure read in by the CNN model.
+To build a Flogo app including the inference activity you can either use the CLI tool (as done [here](https://github.com/TIBCOSoftware/flogo/tree/master/samples/tensorflow/helloworld)) or you can use the Flogo library in your own go code.  Since there is already an example using the CLI trigger, here we will build an app leveraging the Flogo Go API in our own Go package.  The file [main.go](main.go) is generously commented to aid in understanding.  The one thing the go code does that might be confusing is that it converts an array of size 10 of `float64`s into a `[][][][]float32`, which is the tensor structure read in by the CNN model.
 
 To run this program to create a REST portal on your machine after making sure your GOPATH is defined.
 
