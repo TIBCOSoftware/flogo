@@ -9,7 +9,7 @@ This directory contains what is needed to construct a CNN model for a unit test 
 ## Creating the model
 ### A) Creating Model with Jupyter notebook
 
-The [making_basic_cnn_model.ipynb](making_basic_cnn_model.ipynb) jupyter notebook works through the python and tensorflow to build the model.  For more detail please see the notebook.
+The [making_basic_cnn_model.ipynb](making_basic_cnn_model.ipynb) Jupyter notebook works through python and TensorFlow to build the model.  For more detail please see the notebook.
 
 ### B) Zipping model
 Once a model has been produced by the jupyter notebook we need to convert it into a portable form.  The Flogo Inference Activity does take directories of models as input, but it is much more convienent (especially for size concerns like storing a unit test on github) to zip the model.  To do that from a terminal located in this directory you do the following:
