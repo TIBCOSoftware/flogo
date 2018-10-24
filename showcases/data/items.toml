@@ -653,3 +653,12 @@ url = "https://github.com/mmussett/flogo-components/tree/master/activity/uuid"
 uploadedon = "October 3, 2018"
 author = "mmussett"
 showcase = "true"
+
+[[items]]
+name = "Elastic Cloud Activity"
+type = "activity"
+description = "This activity lets you index documents into Elastic Cloud."
+url = "https://github.com/tuurleyck/flogo-components/tree/master/activity/elasticloud"
+uploadedon = "October 23, 2018"
+author = "tuurleyck"
+showcase = "true"
