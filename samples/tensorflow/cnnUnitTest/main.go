@@ -54,9 +54,8 @@ func handler(ctx context.Context, inputs map[string]*data.Attribute) (map[string
 	modelPath := "Archive_simpleCNN.zip"
 	framework := "Tensorflow"
 
-	var features []map[string]interface{}
-	features = append(features, make(map[string]interface{}))
-	features[0]["name"] = "X"
+	// features is the array that will be used to hold the input feature set that we pass into the inference activity
+	var features []interface{}
 
 	// So I read in the list of gaussin arrays from the POST request, but I need to convert them to the form the CNN model expects
 	//    (for an array of shape [x,10] to a tensor of shape [x,10,1,1] where x is the number of gaussians sent)
@@ -70,7 +69,13 @@ func handler(ctx context.Context, inputs map[string]*data.Attribute) (map[string
 		}
 		datafeat = append(datafeat, gaus)
 	}
-	features[0]["data"] = datafeat
+
+	// Now append the input feature with the name X to the features array. This will be passed into
+	// the inference activity.
+	features = append(features, map[string]interface{}{
+		"name": "X",
+		"data": datafeat,
+	})
 
 	// defining a map containing all the inputs to send to inference activity.
 	//    The keys correspond to inputs defined in the activity.json file for the inference activity
