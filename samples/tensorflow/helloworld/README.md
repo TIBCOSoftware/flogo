@@ -9,9 +9,11 @@ This sample Flogo application is used to demonstrate some key Flogo constructs:
 To build via the Flogo CLI, simply download the PredictMovement.json to your local machine and create the app structure:
 
 ```{r, engine='bash', count_lines}
-flogo create -f ~/Downloads/PredictMovement.json
+flogo create -flv github.com/TIBCOSoftware/flogo-contrib/action/flow@master,github.com/TIBCOSoftware/flogo-lib/engine@master -f PredictMovement.json
 cd PredictMovement
 ```
+
+Note that the above command indicates that the master branch of flogo-lib & flogo-contrib should be used when the dependencies are fetched.
 
 You can now build the application and target the CLI trigger as the entrypoint. When targeting a specific trigger, the resulting binary will include only the flow(s) where the trigger is mapped will be included.
 
