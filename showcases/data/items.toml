@@ -662,3 +662,12 @@ url = "https://github.com/tuurleyck/flogo-components/tree/master/activity/elasti
 uploadedon = "October 23, 2018"
 author = "tuurleyck"
 showcase = "true"
+
+[[items]]
+name = "Mashery ECLS Trigger"
+type = "trigger"
+description = "Mashery ECLS WebSocket Trigger"
+url = "https://github.com/mmussett/flogo-components/tree/master/trigger/ecls"
+uploadedon = "November 1, 2018"
+author = "mmussett"
+showcase = "true"
