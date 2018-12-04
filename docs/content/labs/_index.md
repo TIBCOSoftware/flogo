@@ -75,7 +75,7 @@ These labs have an emphasis on using external tools together with Project Flogo,
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="Intel Edison" text="Deploying apps to an Edison" href="./edison-iot">}}
 
-  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="Rapberry Pi (IoT)" text="Deploying apps to a Raspberry Pi" href="./raspberry-iot-cli">}}
+  {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="Raspberry Pi (IoT)" text="Deploying apps to a Raspberry Pi" href="./raspberry-iot-cli">}}
 
   {{< bigcard img="../images/labs/034-experiment.svg" headercolor="bg2" title="CI/CD for Activities" text="A CI/CD pipeline is really important for proper a proper test and build cycle. This tutorial walks you through how to do that with Jenkins and Travis for Flogo activities." href="./cicd-for-activities">}}
 
