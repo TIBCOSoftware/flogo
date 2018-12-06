@@ -59,7 +59,7 @@ Some of the key highlights include:
 * **Integration Flows** Application Integration process engine with conditional branching and a visual development environment<br/>
 * **Stream Processing** a simple pipeline-based stream processing action with event joining capabilities across multiple triggers & aggregation over time windows<br/>
 * **Contextual Decisioning**  Declarative Rules for Real-time Contextual Decisions<br/>
-* **Microgateway**
+* **Microgateway** Conditional content-based routing and includes common microgateway patterns such as JWT validator, rate limiter, circuit breaker<br/>
 
 The concept is simple, an event is just that, an event, how it’s processed is what differs. Flogo Core eases the burden by enabling a common set of functionality, such as:
 
@@ -99,6 +99,7 @@ Project Flogo consists of the following sub-projects available as separate repos
 * [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib): Flogo contributions/extensions
 * [project-flogo/stream](https://github.com/project-flogo/stream): Flogo Streams Action
 * [project-flogo/rules](https://github.com/project-flogo/rules): Contextual, deterministic rules action
+* [project-flogo/microgateway](https://github.com/project-flogo/microgateway): Flogo Microgateway Action
 
 # Flogo Flows
 
