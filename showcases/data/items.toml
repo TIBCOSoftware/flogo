@@ -17,6 +17,15 @@ author = "mmussett"
 showcase = "true"
 
 [[items]]
+name = "Colored Logger"
+type = "activity"
+description = "A log activity that will write colored logs to console."
+url = "https://github.com/eswarabhi/colored_logger"
+uploadedon = "December 06, 2018"
+author = "Abhi"
+showcase = "true"
+
+[[items]]
 name = "Transform"
 type = "activity"
 description = "Transform json using specification."
