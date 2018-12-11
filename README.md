@@ -59,7 +59,7 @@ Some of the key highlights include:
 * **Integration Flows** Application Integration process engine with conditional branching and a visual development environment<br/>
 * **Stream Processing** a simple pipeline-based stream processing action with event joining capabilities across multiple triggers & aggregation over time windows<br/>
 * **Contextual Decisioning**  Declarative Rules for Real-time Contextual Decisions<br/>
-* **Microgateway** Conditional content-based routing and includes common microgateway patterns such as JWT validator, rate limiter, circuit breaker<br/>
+* **Microgateway** Microgateway pattern for conditional, content-based routing, JWT validation, rate limiting, circuit breaking and other common patterns<br/>
 
 The concept is simple, an event is just that, an event, how it’s processed is what differs. Flogo Core eases the burden by enabling a common set of functionality, such as:
 
