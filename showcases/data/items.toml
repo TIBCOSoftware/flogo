@@ -680,3 +680,12 @@ url = "https://github.com/mmussett/flogo-components/tree/master/trigger/ecls"
 uploadedon = "November 1, 2018"
 author = "mmussett"
 showcase = "true"
+
+[[items]]
+name = "Execute a shell script"
+type = "activity"
+description = "This activity execute a shell script with optional parameters and consume the script response."
+url = "https://github.com/iainharfield/flogo/tree/master/activity/runshellscript"
+uploadedon = "December 14, 2018"
+author = "iharfiel"
+showcase = "true"
