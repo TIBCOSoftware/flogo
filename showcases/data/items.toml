@@ -17,6 +17,15 @@ author = "mmussett"
 showcase = "true"
 
 [[items]]
+name = "Colored Logger"
+type = "activity"
+description = "A log activity that will write colored logs to console."
+url = "https://github.com/eswarabhi/colored_logger"
+uploadedon = "December 06, 2018"
+author = "Abhi"
+showcase = "true"
+
+[[items]]
 name = "Transform"
 type = "activity"
 description = "Transform json using specification."
@@ -670,4 +679,13 @@ description = "Mashery ECLS WebSocket Trigger"
 url = "https://github.com/mmussett/flogo-components/tree/master/trigger/ecls"
 uploadedon = "November 1, 2018"
 author = "mmussett"
+showcase = "true"
+
+[[items]]
+name = "Execute a shell script"
+type = "activity"
+description = "This activity execute a shell script with optional parameters and consume the script response."
+url = "https://github.com/iainharfield/flogo/tree/master/activity/runshellscript"
+uploadedon = "December 14, 2018"
+author = "iharfiel"
 showcase = "true"
