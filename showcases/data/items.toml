@@ -188,6 +188,15 @@ author = "iSteerApps"
 showcase = "true"
 
 [[items]]
+name = "Recieve Message Azure IOT"
+type = "activity"
+description = "Activity for receiving data from Azure IOT Hub"
+url = "https://github.com/shaliniGovindaNayak/flogo-workspace/tree/master/activity/recieveazure"
+uploadedon = "Jan 29, 2019"
+author = "iSteerApps"
+showcase = "true"
+
+[[items]]
 name = "Parse CSV"
 type = "activity"
 description = "Parses a CSV string and produces an array of objects."
