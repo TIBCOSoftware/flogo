@@ -1,7 +1,7 @@
 <div class="searchbox">
-    <label for="search-by"><i class="fa fa-search"></i></label>
+    <label for="search-by"><i class="fas fa-search"></i></label>
     <input data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
-    <span data-search-clear=""><i class="fa fa-close"></i></span>
+    <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
 <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>

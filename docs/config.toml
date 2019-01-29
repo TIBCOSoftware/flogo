@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "Project Flogo - Docs and Tutorials"
 theme = "hugo-theme-learn"
 
+[outputs]
+home = [ "HTML", "JSON"]
+
 [params]
   # Author of the site, will be used in meta information
   author = "retgits"
@@ -13,12 +16,12 @@ theme = "hugo-theme-learn"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = false
   # Disable search function. It will hide search bar
-  disableSearch = true
+  disableSearch = false
   # Javascript and CSS cache are automatically busted when new version of site is generated. 
   # Set this to true to disable this behavior (some proxies don't handle well this optimization)
   disableAssetsBusting = false
   # Set this to true to disable copy-to-clipboard button for inline code.
-  disableInlineCopyToClipBoard = false
+  disableInlineCopyToClipBoard = true
   # A title for shortcuts in menu is set by default. Set this to true to disable it. 
   disableShortcutsTitle = true
   # When using mulitlingual website, disable the switch language button.
@@ -29,17 +32,17 @@ theme = "hugo-theme-learn"
   themeVariant = "blue"
 
 [[menu.shortcuts]] 
-name = "<i class='fa fa-github'></i> Github repo"
+name = "<i class='fab fa-github'></i> Github repo"
 identifier = "ds"
 url = "https://github.com/tibcosoftware/flogo"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-comments'></i> Community"
+name = "<i class='fas fa-comments'></i> Community"
 url = "https://community.tibco.com/products/project-flogo"
 weight = 11
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-plug'></i> Showcase"
+name = "<i class='fas fa-plug'></i> Showcase"
 url = "https://tibcosoftware.github.io/flogo/showcases"
 weight = 12

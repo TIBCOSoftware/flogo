@@ -2,7 +2,7 @@
 title: Web UI
 weight: 4500
 chapter: true
-pre: "<i class=\"fa fa-desktop\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-desktop\" aria-hidden=\"true\"></i> "
 ---
 
 # Web UI

@@ -1,7 +1,7 @@
 ---
 title: Flogo Web UI
 weight: 2020
-pre: "<i class=\"fa fa-desktop\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-desktop\" aria-hidden=\"true\"></i> "
 ---
 
 ### Getting Started
@@ -18,7 +18,7 @@ To get started with the latest version of the Flogo Web UI paste this command in
 ### Launching the Web UI
 To launch Flogo WebUI simply open your favorite web browser, and navigate to http://localhost:3303. You'll see our mascot Flynn there to greet you!
 
-![Web UI](../../images/webui-landing.png)
+![Web UI](../../images/labs/helloworld/step1b.png)
 
 
 ### Restarting the Web UI docker container

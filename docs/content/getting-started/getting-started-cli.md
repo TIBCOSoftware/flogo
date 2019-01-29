@@ -1,7 +1,7 @@
 ---
 title: Flogo CLI
 weight: 2030
-pre: "<i class=\"fa fa-terminal\" aria-hidden=\"true\"></i> "
+pre: "<i class=\"fas fa-terminal\" aria-hidden=\"true\"></i> "
 ---
 
 ### Before you get started
