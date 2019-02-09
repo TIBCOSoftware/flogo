@@ -698,3 +698,12 @@ url = "https://github.com/iainharfield/flogo/tree/master/activity/runshellscript
 uploadedon = "December 14, 2018"
 author = "iharfiel"
 showcase = "true"
+
+[[items]]
+name = "JSONata Mapper Activity"
+type = "activity"
+description = "This activity allows you map JSON data using JSONata transformation language."
+url = "https://github.com/yxuco/flogo-components/tree/master/activity/jsmapper"
+uploadedon = "February 8, 2019"
+author = "yxuco"
+showcase = "true"
