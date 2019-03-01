@@ -8,6 +8,15 @@ author = "retgits"
 showcase = "true"
 
 [[items]]
+name = "Sleep"
+type = "activity"
+description = "Pause flow execution for given time interval"
+url = "https://github.com/vijaynalawade/flogo-contrib/tree/master/activity/sleep"
+uploadedon = "February 28, 2019"
+author = "vijaynalawade"
+showcase = "true"
+
+[[items]]
 name = "Amqp"
 type = "activity"
 description = "AMQP publisher."
