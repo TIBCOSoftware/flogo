@@ -30,7 +30,7 @@
     <p class="center">As an Go Developer you might want to try...</p>
     <div class="cards">
 
-        {{< smallcard img="./images/get-started/010-gears.svg" headercolor="bg6" text="Building your first activity" href="./development/extensions/building-your-first-activity/">}}
+        {{< smallcard img="./images/get-started/010-gears.svg" headercolor="bg6" text="Building your first activity" href="./labs/building-activities/">}}
         {{< smallcard img="./images/get-started/012-diagram.svg" headercolor="bg6" text="Mapping some fields" href="./development/flows/mapping/">}}
         {{< smallcard img="./images/get-started/011-networking.svg" headercolor="bg8" text="Deploy a Flogo app to AWS Lambda" href="./faas/how-to/">}}
 
