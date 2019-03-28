@@ -71,6 +71,7 @@ Since you'll want to provide some inputs, you'll need to update the inputs and o
 
 {{% notice tip %}}
 Don't forget to update the **author**, **ref**, and **description** fields, as well!
+For Flogo Web UI, add a **title** field to label and help find your activity.
 {{% /notice %}}
 
 The updated activity.json will look quite similar to the below one.
@@ -279,7 +280,7 @@ func TestEval(t *testing.T) {
 }
 ```
 
-In order to run the test cases you'll need to intall two more packages. One to be able to tun the tests and one to be able to create assertions.
+In order to run the test cases you'll need to intall two more packages. One to be able to run the tests and one to be able to create assertions.
 
 ```bash
 go get github.com/TIBCOSoftware/flogo-contrib/action/flow/test
