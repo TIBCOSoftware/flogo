@@ -53,7 +53,7 @@ MyTimerTrigger
 
 ## The metadata
 
-The first step is to update the file `activity.json`, which has the metadata for your new Flogo activity, with proper information. The metadata describes to the Flogo engine what the activity is called, what the version of the activity is and a few other things. The elements in the file are:
+The first step is to update the file `trigger.json`, which has the metadata for your new Flogo activity, with proper information. The metadata describes to the Flogo engine what the activity is called, what the version of the activity is and a few other things. The elements in the file are:
 
 * **name**: The name of the activity (this should match the name of the folder the activity is in, like `MyTimerTrigger`)
 * **version**: The version of the activity (it is recommended to use [semantic versioning](https://semver.org/) for your trigger) 
@@ -118,6 +118,7 @@ To begin there are a few packages you'll need to import to make sure the code wi
 ```go
 "context"
 "strconv"
+"time"
 "github.com/TIBCOSoftware/flogo-lib/core/trigger"
 "github.com/TIBCOSoftware/flogo-lib/logger"
 "github.com/carlescere/scheduler"
@@ -193,13 +194,13 @@ Finally, you'll need to add a method called `scheduleJobEverySecond` to make sur
 ```go
 func (t *MyTrigger) scheduleJobEverySecond(tgrHandler *trigger.Handler, fn func()) {
 
-	var interval int
+	var interval int = 0
 	seconds, _ := strconv.Atoi(tgrHandler.GetStringSetting("seconds"))
 	interval = interval + seconds
 
 	log.Debug("Repeating seconds: ", interval)
 	// schedule repeating
-	timerJob, err := scheduler.Every(interval).Seconds().Run(fn)
+	timerJob, err := scheduler.Every(time.Duration(interval)).Seconds().Run(fn)
 	if err != nil {
 		log.Error("Error scheduleRepeating (repeat seconds) flo err: ", err.Error())
 	}
@@ -219,6 +220,7 @@ package MyTimerTrigger
 import (
 	"context"
 	"strconv"
+	"time"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
@@ -302,13 +304,13 @@ func (t *MyTrigger) scheduleRepeating(endpoint *trigger.Handler) {
 
 func (t *MyTrigger) scheduleJobEverySecond(tgrHandler *trigger.Handler, fn func()) {
 
-	var interval int
+	var interval int = 0
 	seconds, _ := strconv.Atoi(tgrHandler.GetStringSetting("seconds"))
 	interval = interval + seconds
 
 	log.Debug("Repeating seconds: ", interval)
 	// schedule repeating
-	timerJob, err := scheduler.Every(interval).Seconds().Run(fn)
+	timerJob, err := scheduler.Every(time.Duration(interval)).Seconds().Run(fn)
 	if err != nil {
 		log.Error("Error scheduleRepeating (repeat seconds) flo err: ", err.Error())
 	}
