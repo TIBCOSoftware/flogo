@@ -15,7 +15,7 @@ Don't forget to set your `GOPATH` variable and make sure that `$GOPATH/bin` is p
 Now that you've installed the Go programming language there are a few commands you can run to install the cli and make developing with the cli tools even easier
 
 * First you'll need to **go get** flogo by running `go get -u github.com/TIBCOSoftware/flogo-cli/...`. This will get you both the CLI tools.
-* If you want to develop extensions, by using the **flogogen** tool you should also install **golint** by running `go get -u golang.org/lint/x/golint`
+* If you want to develop extensions, by using the **flogogen** tool you should also install **golint** by running `go get -u golang.org/x/lint/golint`
 * In order to simplify dependency management, we're using the go dep tool. You can install that by following the instructions [here](https://github.com/golang/dep#setup).
 
 {{% notice note %}}
