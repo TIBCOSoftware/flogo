@@ -404,6 +404,15 @@ author = "TIBCOSoftware"
 showcase = "true"
 
 [[items]]
+name = "MQTT Trigger"
+type = "activity"
+description = "This activity allows you to send MQTT messages to TLS enabled servers (AWS IoT Core, Eclipse Hono and Bosch IoT Hub."
+url = "https://github.com/ayh20/flogo-components/tree/master/activity/mqtt"
+uploadedon = "April 24, 2019"
+author = "ayh20"
+showcase = "true"
+
+[[items]]
 name = "Couchbase"
 type = "activity"
 description = "This activity provides your Flogo application the ability to connect to a Couchbase server."
