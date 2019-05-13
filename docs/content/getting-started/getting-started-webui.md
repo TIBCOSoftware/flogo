@@ -7,16 +7,16 @@ pre: "<i class=\"fas fa-desktop\" aria-hidden=\"true\"></i> "
 ### Getting Started
 For an overview of how to get started, check out the [Quickstart](../quickstart) guide
 
-### Installing the Project Flogo Web UI
-Installing the Project Flogo Web UI is quite simple and requires nothing more than Docker pre-installed on your machine to fetch the Docker image.
-
 ### Fetching and starting the Web UI
-To get started with the latest version of the Flogo Web UI paste this command in a terminal window:
+To get started with the latest version of the Flogo Web UI, you have two options:
+
+* Pull the source from the [flogo-web repository](https://github.com/project-flogo/flogo-web) on GitHub (follow the instructions in the README to build and run the UI).
+* Fetch the latest Docker image by executing the following command in your terminal window:
 
 ```docker run -it -p 3303:3303 flogo/flogo-docker:latest eula-accept```
 
 ### Launching the Web UI
-To launch Flogo WebUI simply open your favorite web browser, and navigate to http://localhost:3303. You'll see our mascot Flynn there to greet you!
+To launch Flogo WebUI simply open your favorite web browser, and navigate to http://localhost:3303 (if you're using the Docker Hub version, otherwise use whatever port you specified when building and starting via source). You'll see our mascot Flynn there to greet you!
 
 ![Web UI](../../images/labs/helloworld/step1b.png)
 

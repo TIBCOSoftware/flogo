@@ -69,7 +69,7 @@ We’ll guide you through the set of steps required to build the most basic of f
 
 Before we get started there are a few prerequisites that we need to take into account:
 
-* You’ll need to have the [Flogo CLI](https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/) and `dep` installed
+* You’ll need to have the [Flogo CLI](https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/) and at least Go 1.11 installed
 * If you want to deploy using the AWS cli you'll need to install [that](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) too
 * You’ll obviously need an AWS account :)
 
@@ -79,50 +79,50 @@ Flogo apps are constructed using a JSON file called `flogo.json`. You can create
 
 ```json
 {
-  "name": "Tutorial",
+  "name": "myApp",
   "type": "flogo:app",
   "version": "0.0.1",
-  "appModel": "1.0.0",
+  "description": "",
+  "appModel": "1.1.0",
+  "imports": [
+    "github.com/project-flogo/flow",
+    "github.com/project-flogo/aws-contrib/trigger/lambda",
+    "github.com/project-flogo/contrib/activity/actreturn",
+    "github.com/project-flogo/contrib/activity/log",
+    "github.com/project-flogo/contrib/function/string"
+  ],
   "triggers": [
     {
-      "id": "start_flow_as_a_function_in_lambda",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/lambda",
-      "name": "Start Flow as a function in Lambda",
-      "description": "Simple Lambda Trigger",
-      "settings": {},
+      "id": "aws_lambda_trigger",
+      "ref": "#lambda",
+      "settings": null,
       "handlers": [
         {
-          "action": {
-            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
-            "data": {
-              "flowURI": "res://flow:lambda_flow"
-            },
-            "mappings": {
-              "input": [
-                {
-                  "mapTo": "name",
-                  "type": "assign",
-                  "value": "$.evt.name"
-                }
-              ],
-              "output": [
-                {
-                  "mapTo": "data",
-                  "type": "assign",
-                  "value": "$.greeting"
-                }
-              ]
+          "settings": null,
+          "actions": [
+            {
+              "ref": "#flow",
+              "settings": {
+                "flowURI": "res://flow:my_function"
+              },
+              "input": {
+                "name": "=$.event.name"
+              },
+              "output": {
+                "data": "=$.greeting",
+                "status": 200
+              }
             }
-          }
+          ]
         }
       ]
     }
   ],
   "resources": [
     {
-      "id": "flow:lambda_flow",
+      "id": "flow:my_function",
       "data": {
-        "name": "LambdaFlow",
+        "name": "MyFunction",
         "metadata": {
           "input": [
             {
@@ -140,40 +140,30 @@ Flogo apps are constructed using a JSON file called `flogo.json`. You can create
         "tasks": [
           {
             "id": "log_2",
-            "name": "Log Message",
-            "description": "Simple Log Activity",
+            "name": "Log",
+            "description": "Logs a message",
             "activity": {
-              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "ref": "#log",
               "input": {
-                "message": "",
-                "flowInfo": "false",
-                "addToFlow": "false"
-              },
-              "mappings": {
-                "input": [
-                  {
-                    "type": "expression",
-                    "value": "string.concat(\"Hello \", $flow.name)",
-                    "mapTo": "message"
-                  }
-                ]
+                "addDetails": false,
+                "message": "=string.concat(\"Hello \", $flow.name)"
               }
             }
           },
           {
             "id": "actreturn_3",
             "name": "Return",
-            "description": "Simple Return Activity",
+            "description": "Return Activity",
             "activity": {
-              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
-              "input": {
-                "mappings": [
-                  {
-                    "mapTo": "greeting",
-                    "type": "object",
-                    "value": {"Hello": "{{$flow.name}}"}
+              "ref": "#actreturn",
+              "settings": {
+                "mappings": {
+                  "greeting": {
+                    "mapping": {
+                      "Hello": "=$flow.name"
+                    }
                   }
-                ]
+                }
               }
             }
           }
@@ -266,14 +256,12 @@ From there, click "Test" and the execution logs will display the result
 
 And the log output
 ```
-START RequestId: 4f26990d-561d-11e8-96ca-bb9eb4465310 Version: $LATEST
-2018-05-12 19:47:31.969 INFO   [trigger-flogo-lambda] - Starting AWS Lambda Trigger
-2018/05/12 19:47:31 Starting AWS Lambda Trigger
-2018/05/12 19:47:31 Received evt: 'map[name:World]'
-2018/05/12 19:47:31 Received ctx: 'map[logStreamName:2018/05/12/[$LATEST]7f886628e07a4256b0f411b6cd3b6915 memoryLimitInMB:128 awsRequestId:4f26990d-561d-11e8-96ca-bb9eb4465310 functionName:tutorial functionVersion:$LATEST logGroupName:/aws/lambda/tutorial]'
-2018-05-12 19:47:31.969 INFO   [activity-flogo-log] - Hello World
-$flow.nameEND RequestId: 4f26990d-561d-11e8-96ca-bb9eb4465310
-REPORT RequestId: 4f26990d-561d-11e8-96ca-bb9eb4465310	Duration: 1.63 ms	Billed Duration: 100 ms 	Memory Size: 128 MB	Max Memory Used: 23 MB
+START RequestId: 2f4086f8-5721-4bf4-b0b7-94cb9d52c709 Version: $LATEST
+2019/05/13 13:13:37 Received request: 2f4086f8-5721-4bf4-b0b7-94cb9d52c709
+2019/05/13 13:13:37 Payload Type: unknown
+2019/05/13 13:13:37 Payload: 'map[name:Matt]'
+END RequestId: 2f4086f8-5721-4bf4-b0b7-94cb9d52c709
+REPORT RequestId: 2f4086f8-5721-4bf4-b0b7-94cb9d52c709	Duration: 0.76 ms	Billed Duration: 100 ms 	Memory Size: 512 MB	Max Memory Used: 30 MB
 ```
 
 As you're glancing over the results, also look at the _Duration_ and _Max Memory Used_. Isn't that one of the smallest functions you've seen?!

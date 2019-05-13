@@ -3,7 +3,7 @@ title: Flow Input/Output Params
 weight: 4320
 ---
 
-For Flogo a Flow is more inline with the concept of a function, that is, a Flow has both input and output parameters.  The concept of decoupling a trigger from a flow is a key part of supporting multiple triggers and re-use/sharing of a flow. A Flow can now operate against the data that it has defined within its declartion, it otherwords, just like a function, the scope of data that a Flow can operate against must reside within either the Flow context (or as an environment variable).
+For Flogo a Flow is more inline with the concept of a function, that is, a Flow has both input and output parameters.  The concept of decoupling a trigger from a flow is a key part of supporting multiple triggers and re-use/sharing of a flow. A Flow can now operate against the data that it has defined within its declartion, in otherwords, just like a function, the scope of data that a Flow can operate against must reside within either the Flow context (or as an environment variable).
 
 ## Setting Flow Input and Output Params
 
@@ -22,22 +22,26 @@ If you intend to perform complex object mapping choose the type 'object' for eit
 If you'd prefer to define the Flows input and output params via the application JSON, you may do so
 
 ```json
-"actions": [
-  {
+{
+  "id": "flow:my_function",
+  "data": {
+    "name": "MyFunction",
     "metadata": {
       "input": [
         {
-          "name": "ISBN",
+          "name": "name",
           "type": "string"
         }
       ],
       "output": [
         {
-          "name": "someResponse",
-          "type": "object"
+          "name": "greeting",
+          "type": "any"
         }
       ]
     }
+  }
+}
 ```
 
 ## Mapping Trigger Output and Reply
@@ -62,44 +66,31 @@ Now you can map the output of the trigger to Flow input params, and Flow output 
 If you choose to map directly within the JSON, consider the following triggers definition
 
 ```json
-  "triggers": [
+"triggers": [
     {
-      "name": "Receive HTTP Message",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
-      "description": "Simple REST Trigger",
-      "settings": {
-        "port": "9099"
-      },
-      "id": "receive_http_message",
+      "id": "aws_lambda_trigger",
+      "ref": "#lambda",
+      "name": "AWS Lambda Trigger",
+      "description": "AWS Lambda Trigger",
       "handlers": [
         {
-          "actionMappings": {
-            "input": [
-              {
-                "mapTo": "ISBN",
-                "type": 1,
-                "value": "pathParams.ISBN"
-              }
-            ],
-            "output": [
-              {
-                "mapTo": "data",
-                "type": 1,
-                "value": "someResponse"
-              }
-            ]
-          },
-          "settings": {
-            "method": "GET",
-            "path": "/:ISBN",
-            "autoIdReply": "false",
-            "useReplyHandler": "false"
-          },
-          "actionId": "my_flow"
+          "action": {
+            "ref": "#flow",
+            "settings": {
+              "flowURI": "res://flow:my_function"
+            },
+            "input": {
+              "name": "=$.event.name"
+            },
+            "output": {
+              "data": "=$.greeting",
+              "status": 200
+            }
+          }
         }
       ]
     }
   ]
 ```
 
-Note the "actionMappings" within the handler settings.
+Note the `input` and `output` objects within the handler definition.

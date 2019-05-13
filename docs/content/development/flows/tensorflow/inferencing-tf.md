@@ -3,7 +3,7 @@ title: Inferencing
 weight: 4220
 ---
 
-Before you begin with the [ML Inferencing activity](https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/inference), refer to the [Flows > TensorFlow > Getting Started](../../tensorflow/getting-started/) documentation.
+Before you begin with the [ML Inferencing activity](https://github.com/project-flogo/ml/activity/inference), refer to the [Flows > TensorFlow > Getting Started](../../tensorflow/getting-started/) documentation.
 
 ## Overview of the Inference Activity
 
@@ -78,4 +78,4 @@ map[scores:[[0.049997408 0.010411096 0.93959147]] classes:[[Jogging Sitting Upst
 
 ## Sample application
 
-Refer to the [TensorFlow samples](https://github.com/TIBCOSoftware/flogo/tree/master/samples/tensorflow)
+Refer to the [TensorFlow samples](https://github.com/project-flogo/ml/tree/master/examples)

@@ -3,12 +3,9 @@ title: Building apps with Flogo CLI
 hidden: true
 ---
 
-Project Flogo provides two different command-line interfaces and which you need depends on the task you need to execute.
+Project Flogo provides a CLI that gives you the ability to build flogo applications (flows, streams, rules, microgateway). With this tool you can, among other things, create your applications, build applications and install new extensions. This tool is great to use with Continuous Integration and Continuous Deployment tools like Jenkins and Travis-CI.
 
-* `flogo`: This CLI gives you the ability to build flows and microservices. With this tool you can, among other things, create your applications, build applications and install new extensions. This tool is great to use with Continuous Integration and Continuous Deployment tools like Jenkins and Travis-CI.
-* `flogogen`: If you’re looking to extend the functionality that Project Flogo offers out of the box, this is the tool you want to use. Flogogen generates the scafolding used by extensions (activity/trigger) developers to build new extensions.
-
-In this tutorial you will learn how to use the first of the two CLI tools
+In this tutorial you will learn how to use the flogo cli.
 
 ## What you'll need
 
@@ -31,51 +28,41 @@ Now you can copy the contents below to the newly created flogo.json file. The Fl
 
 ```json
 {
-  "name": "Tutorial",
+  "name": "SampleApp",
   "type": "flogo:app",
   "version": "0.0.1",
-  "appModel": "1.0.0",
+  "appModel": "1.1.0",
+  "description": "",
+  "imports": [
+    "github.com/project-flogo/contrib/activity/log",
+    "github.com/project-flogo/contrib/trigger/rest",
+    "github.com/project-flogo/flow"
+  ],
   "triggers": [
     {
       "id": "receive_http_message",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+      "ref": "#rest",
       "name": "Receive HTTP Message",
       "description": "Simple REST Trigger",
       "settings": {
-        "port": "9233"
+        "port": 8080
       },
       "handlers": [
         {
-          "action": {
-            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
-            "data": {
-              "flowURI": "res://flow:http_flow"
-            },
-            "mappings": {
-              "input": [
-                {
-                  "mapTo": "name",
-                  "type": "assign",
-                  "value": "$.pathParams.name"
-                }
-              ],
-              "output": [
-                {
-                  "mapTo": "data",
-                  "type": "assign",
-                  "value": "$.greeting"
-                },
-                {
-                  "mapTo": "code",
-                  "type": "literal",
-                  "value": 200
-                }
-              ]
-            }
-          },
           "settings": {
             "method": "GET",
-            "path": "/test/:name"
+            "path": "/test"
+          },
+          "action": {
+            "ref": "#flow",
+            "settings": {
+              "flowURI": "res://flow:get_name"
+            },
+            "input": {
+            },
+            "output": {
+              "code": 200
+            }
           }
         }
       ]
@@ -83,9 +70,9 @@ Now you can copy the contents below to the newly created flogo.json file. The Fl
   ],
   "resources": [
     {
-      "id": "flow:http_flow",
+      "id": "flow:get_name",
       "data": {
-        "name": "HTTPFlow",
+        "name": "GetName",
         "metadata": {
           "input": [
             {
@@ -103,48 +90,15 @@ Now you can copy the contents below to the newly created flogo.json file. The Fl
         "tasks": [
           {
             "id": "log_2",
-            "name": "Log Message",
-            "description": "Simple Log Activity",
+            "name": "Log",
+            "description": "Logs a message",
             "activity": {
-              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "ref": "#log",
               "input": {
-                "message": "",
-                "flowInfo": "false",
-                "addToFlow": "false"
-              },
-              "mappings": {
-                "input": [
-                  {
-                    "type": "expression",
-                    "value": "string.concat(\"Hello \", $flow.name)",
-                    "mapTo": "message"
-                  }
-                ]
+                "message": "Hello from Flogo",
+                "addDetails": false
               }
             }
-          },
-          {
-            "id": "actreturn_3",
-            "name": "Return",
-            "description": "Simple Return Activity",
-            "activity": {
-              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/actreturn",
-              "input": {
-                "mappings": [
-                  {
-                    "type": "expression",
-                    "value": "string.concat(\"Hello \", $flow.name)",
-                    "mapTo": "greeting"
-                  }
-                ]
-              }
-            }
-          }
-        ],
-        "links": [
-          {
-            "from": "log_2",
-            "to": "actreturn_3"
           }
         ]
       }
@@ -155,7 +109,16 @@ Now you can copy the contents below to the newly created flogo.json file. The Fl
 
 ## Step 2: Building an app
 
-To create the source code simply execute `flogo create -f flogo.json myapp`. This tells the Flogo CLI to take the `flogo.json` file and create the source for the app in a folder called `myapp`. It will also download a few Go packages that the app will need.
+To create the source code simply execute `flogo create -f flogo.json myapp`. This tells the Flogo CLI to take the `flogo.json` file and create the source for the app in a folder called `myapp`. It will also download a few Go packages that the app will need. The output will look something like:
+
+```bash
+flogo create -f /Users/mellis/Downloads/sample_app_1.json myapp
+Creating Flogo App: myapp
+Installing: github.com/project-flogo/core@latest
+Installed trigger: github.com/project-flogo/contrib/trigger/rest
+Installed action: github.com/project-flogo/flow
+Installed activity: github.com/project-flogo/contrib/activity/log
+```
 
 The next step is to build the executable and for that we need to be in the directory `myapp` (`cd myapp`). To build a flogo app from the source you can execute the command `flogo build -e`, which tells the flogo cli to build the app (and place it in a bin directory) and embed all configuration into a single executable
 
@@ -173,15 +136,21 @@ You have just built the Flogo app, so now you can test it. From the bin director
 2018-05-12 04:34:56.435 INFO   [engine] - Engine Started
 ```
 
-To test it we'll use the curl command line tool, which is installed on most Operating Systems. From a new terminal window execute the command `curl http://localhost:9233/test/flogo`. It will send an HTTP request to the app on port `9233` (which was configured in the flogo.json file). In the second terminal you will see the result of the flow (`Hello flogo`) and when you go back to the first terminal you had, you'll see there are additional lines in your window that indicate a flow has been executed. Now try it out with your own name and see what happens :)
+To test it we'll use the curl command line tool, which is installed on most Operating Systems. From a new terminal window execute the command `curl http://localhost:8080/test`. It will send an HTTP request to the app on port `8080` (which was configured in the flogo.json file). In the first terminal you will see the result of the flow (`Hello from Flogo`), you'll also see there are additional lines in your window that indicate a flow has been executed.
 
 ```bash
-2018-05-12 04:35:00.632 INFO   [trigger-flogo-rest] - Received request for id 'receive_http_message'
-2018-05-12 04:35:00.632 INFO   [engine] - Running FlowAction for URI: 'res://flow:http_flow'
-2018-05-12 04:35:00.633 INFO   [activity-flogo-log] - Hello flogo
-2018-05-12 04:35:00.633 INFO   [engine] - Flow instance [29db1cc55a96c27c280227b2d7b8be82] Completed Successfully
-2018-05-12 04:35:15.364 INFO   [trigger-flogo-rest] - Received request for id 'receive_http_message'
-2018-05-12 04:35:15.364 INFO   [engine] - Running FlowAction for URI: 'res://flow:http_flow'
-2018-05-12 04:35:15.364 INFO   [activity-flogo-log] - Hello leon
-2018-05-12 04:35:15.365 INFO   [engine] - Flow instance [2adb1cc55a96c27c280227b2d7b8be82] Completed Successfully
+2019-05-13T17:40:14.851+0200	INFO	[flogo.engine] -	Starting app [ SampleApp ] with version [ 0.0.1 ]
+2019-05-13T17:40:14.851+0200	INFO	[flogo.engine] -	Engine Starting...
+2019-05-13T17:40:14.851+0200	INFO	[flogo.engine] -	Starting Services...
+2019-05-13T17:40:14.851+0200	INFO	[flogo] -	ActionRunner Service: Started
+2019-05-13T17:40:14.851+0200	INFO	[flogo.engine] -	Started Services
+2019-05-13T17:40:14.851+0200	INFO	[flogo.engine] -	Starting Application...
+2019-05-13T17:40:14.851+0200	INFO	[flogo] -	Starting Triggers...
+2019-05-13T17:40:14.851+0200	INFO	[flogo] -	Trigger [ receive_http_message ]: Started
+2019-05-13T17:40:14.851+0200	INFO	[flogo] -	Triggers Started
+2019-05-13T17:40:14.851+0200	INFO	[flogo.engine] -	Application Started
+2019-05-13T17:40:14.851+0200	INFO	[flogo.engine] -	Engine Started
+2019-05-13T17:40:14.851+0200	INFO	[flogo] -	Listening on http://0.0.0.0:8080
+2019-05-13T17:40:33.456+0200	INFO	[flogo.activity.log] -	Hello from Flogo
+2019-05-13T17:40:33.456+0200	INFO	[flogo.flow] -	Instance [28ac8005732b92373635a219624031dd] Done
 ```

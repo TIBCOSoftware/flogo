@@ -3,12 +3,7 @@ title: Building your first activity
 hidden: true
 ---
 
-Project Flogo provides two different command-line interfaces and which you need depends on the task you need to execute.
-
-* `flogo`: This CLI gives you the ability to build flows and microservices. With this tool you can, among other things, create your applications, build applications and install new extensions. This tool is great to use with Continuous Integration and Continuous Deployment tools like Jenkins and Travis-CI.
-* `flogogen`: If you’re looking to extend the functionality that Project Flogo offers out of the box, this is the tool you want to use. Flogogen generates the scafolding used by extensions (activity/trigger) developers to build new extensions.
-
-In this tutorial you will learn how to use the `flogogen` tool.
+Project Flogo exposes a number of different extension points, in this tutorial we'll explore the activity contribution point and learn how to build a custom activity in Go.
 
 ## What you'll need
 
@@ -25,82 +20,70 @@ If you have any questions, feel free to post an [issue on GitHub](https://github
 
 ## Generate the basic framework
 
-The easiest way to start creating activities is to have the **flogogen** CLI create the basic framework for you. The flogogen CLI takes two important parameters to create the framework for activities. In this tutorial you'll build an activity that takes 2 input parameters (name and salutation) and logs that to the console. It will also return the concatenation of the two fields to you. To start you need to use flogogen to create the scaffolding:
+
+
+The easiest way to start creating activities is to clone the content of the `project-flogo/core/examples/activity`. In this tutorial you'll build an activity that takes 2 input parameters (name and salutation) and logs that to the console. It will also return the concatenation of the two fields to you. To start you should pull the example activity from flogo core:
 
 ```bash
-flogogen activity < name >
-```
-
-The parameters are:
-
-* **activity**: because you want to create an activity
-* **< name >**: the name for your new activity (in this example you'll use `HelloWorld` as the name for the activity)
-
-So to generate our scaffolding, you need to execute the command:
-
-```bash
-flogogen activity HelloWorld
-```
-
-The flogogen command will create a folder called `HelloWorld` and generate the files you need to implement your logic:
-
-```bash
-HelloWorld
-├── activity.go       <-- The implementation of your activity
-├── activity.json     <-- The metadata of your activity
-└── activity_test.go  <-- A file used to test your activity
+git clone https://github.com/project-flogo/core
+cp -R core/examples/activity/* /myNewActivity
 ```
 
 ## The metadata
 
-The first step is to update the file `activity.json`, which has the metadata for your new Flogo activity, with proper information. The metadata describes to the Flogo engine what the activity is called, what the version of the activity is and a few other things. The elements in the file are:
+The first step is to update the file `descriptor.json`, which has the metadata for your new Flogo activity, with proper information. The metadata describes to the Flogo Web UI what the activity is called, what the version of the activity is and a few other things, such as the input and output. The elements in the file are:
 
 * **name**: The name of the activity (this should match the name of the folder the activity is in, like `HelloWorld`)
 * **version**: The version of the activity (it is recommended to use [semantic versioning](https://semver.org/) for your activities) 
-* **type**: This describes to the Flogo engine what kind of contribution this is (this should be `activity` in this case)
-* **ref**: The Flogo engine is based on Go and this field is the "import" path for Go apps (generally speaking this should match your repository)
+* **type**: This describes the type of contribution this is (this should be `flogo:activity` in this case)
+* **title**: The application title to display in the web ui
+* **ref**: The Go package reference that will be used by the web ui to fetch the contribution upon installation
 * **description**: A brief description of your activity (this is displayed in the Flogo Web UI)
 * **author**: This is you!
-* **inputs**: An array of name/type pairs that describe the input to the activity
-* **outputs**: An array of name/type pairs that describe the output to the activity
+* **settings**: An array of name/type pairs that describe the activity settings. Note that activity settings are pre-compiled settings and can be used to increased performance. Settings are not fetched for every invocation
+* **input**: An array of name/type pairs that describe the input to the activity
+* **output**: An array of name/type pairs that describe the output to the activity
 
 Since you'll want to provide some inputs, you'll need to update the inputs and outputs section
 
-* The **inputs** section needs a **salutation** and **name** (both should be of type `string`)
-* The **outputs** section needs a parameter called **result** (should be of type `string`)
+* The **input** needs a **anInput** param (should be of type `string`)
+* The **output** section needs a parameter called **anOutput** (should be of type `string`)
 
 {{% notice tip %}}
 Don't forget to update the **author**, **ref**, and **description** fields, as well!
 For Flogo Web UI, add a **title** field to label and help find your activity.
 {{% /notice %}}
 
-The updated activity.json will look quite similar to the below one.
+The updated descriptor.json will look quite similar to the below one.
 
 ```json
 {
-  "name": "HelloWorld",
-  "version": "0.0.1",
+  "name": "sample-activity",
   "type": "flogo:activity",
-  "ref": "github.com/yourusername/yourrepository",
-  "description": "Say Hello World!",
-  "author": "Flogo Developer",
-  "inputs":[
+  "version": "0.0.1",
+  "title": "Sample Activity",
+  "description": "Sample Activity",
+  "homepage": "https://github.com/project-flogo/tree/master/examples/activity",
+  "settings": [
     {
-      "name": "salutation",
-      "type": "string"
-    },
-    {
-      "name": "name",
-      "type": "string"
+      "name": "aSetting",
+      "type": "string",
+      "required": true
     }
   ],
-  "outputs": [
+  "input": [
     {
-      "name": "result",
+      "name": "anInput",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "output": [
+    {
+      "name": "anOutput",
       "type": "string"
     }
   ]
-}
 ```
 
 ## The logic
@@ -109,181 +92,169 @@ For the Flogo engine to actually do something we need to update the `*.go` files
 
 * **activity.go**: which contains the actual activity implementation in go
 * **activity_test.go**: which contains unit tests for the activity
+* **metadata.go**: which contains the basic input/output/settings metadata. This is used by the engine
 
-The first step is to look at the business logic, in the **activity.go** file.
-
-As you want to log the output to the console you'll need to import a new Go package `github.com/TIBCOSoftware/flogo-lib/logger` and add a new variable called `log` to the main part of the file
+The first step is to define our input/output/setting `metadata.go`. This is used by the engine and also used when leveraging contributions using the Flogo Go Lib. This enables Go developers to leverage strongly typed objects for IDE autocompletion, etc.
 
 ```go
-var log = logger.GetLogger("activity-helloworld")
+package sample
+
+import "github.com/project-flogo/core/data/coerce"
+
+type Settings struct {
+	ASetting string `md:"aSetting,required"`
+}
+
+type Input struct {
+	AnInput string `md:"anInput,required"`
+}
+
+func (r *Input) FromMap(values map[string]interface{}) error {
+	strVal, _ := coerce.ToString(values["anInput"])
+	r.AnInput = strVal
+	return nil
+}
+
+func (r *Input) ToMap() map[string]interface{} {
+	return map[string]interface{}{
+		"anInput": r.AnInput,
+	}
+}
+
+type Output struct {
+	AnOutput string `md:"anOutput"`
+}
+
+func (o *Output) FromMap(values map[string]interface{}) error {
+	strVal, _ := coerce.ToString(values["anOutput"])
+	o.AnOutput = strVal
+	return nil
+}
+
+func (o *Output) ToMap() map[string]interface{} {
+	return map[string]interface{}{
+		"anOutput": o.AnOutput,
+	}
+}
 ```
 
-For the activity itself the only mandatory function that needs to be implemented is the `Eval()` method. In that method you'll need to add two lines of code to get the name and salutation from the process context.
+The next step is to look at the business logic, in the **activity.go** file.
 
 ```go
-name := context.GetInput("name").(string)
-salutation := context.GetInput("salutation").(string)
-```
-
-The next step is to log it to the console
-
-```go
-log.Infof("The Flogo engine says [%s] to [%s]", salutation, name)
-```
-
-And finally set the output
-
-```go
-context.SetOutput("result", "The Flogo engine says "+salutation+" to "+name)
-```
-
-All together your `activity.go` file should look something like the one below:
-
-```go
-package HelloWorld
+package sample
 
 import (
-    "github.com/TIBCOSoftware/flogo-lib/core/activity"
-    "github.com/TIBCOSoftware/flogo-lib/logger"
+	"github.com/project-flogo/core/activity"
+	"github.com/project-flogo/core/data/metadata"
 )
 
-// THIS IS ADDED
-// log is the default package logger which we'll use to log
-var log = logger.GetLogger("activity-helloworld")
-
-// MyActivity is a stub for your Activity implementation
-type MyActivity struct {
-    metadata *activity.Metadata
+func init() {
+	_ = activity.Register(&Activity{}) //activity.Register(&Activity{}, New) to create instances using factory method 'New'
 }
 
-// NewActivity creates a new activity
-func NewActivity(metadata *activity.Metadata) activity.Activity {
-    return &MyActivity{metadata: metadata}
+var activityMd = activity.ToMetadata(&Settings{}, &Input{}, &Output{})
+
+//New optional factory method, should be used if one activity instance per configuration is desired
+func New(ctx activity.InitContext) (activity.Activity, error) {
+
+	s := &Settings{}
+	err := metadata.MapToStruct(ctx.Settings(), s, true)
+	if err != nil {
+		return nil, err
+	}
+
+	ctx.Logger().Debugf("Setting: %s", s.ASetting)
+
+	act := &Activity{} //add aSetting to instance
+
+	return act, nil
 }
 
-// Metadata implements activity.Activity.Metadata
-func (a *MyActivity) Metadata() *activity.Metadata {
-    return a.metadata
+// Activity is an sample Activity that can be used as a base to create a custom activity
+type Activity struct {
 }
 
-// THIS HAS CHANGED
-// Eval implements activity.Activity.Eval
-func (a *MyActivity) Eval(context activity.Context) (done bool, err error)  {
-    // Get the activity data from the context
-    name := context.GetInput("name").(string)
-    salutation := context.GetInput("salutation").(string)
+// Metadata returns the activity's metadata
+func (a *Activity) Metadata() *activity.Metadata {
+	return activityMd
+}
 
-    // Use the log object to log the greeting
-    log.Infof("The Flogo engine says [%s] to [%s]", salutation, name)
+// Eval implements api.Activity.Eval - Logs the Message
+func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 
-    // Set the result as part of the context
-    context.SetOutput("result", "The Flogo engine says "+salutation+" to "+name)
+	input := &Input{}
+	err = ctx.GetInputObject(input)
+	if err != nil {
+		return true, err
+	}
 
-    // Signal to the Flogo engine that the activity is completed
-    return true, nil
+	ctx.Logger().Debugf("Input: %s", input.AnInput)
+
+	output := &Output{AnOutput: input.AnInput}
+	err = ctx.SetOutputObject(output)
+	if err != nil {
+		return true, err
+	}
+
+	return true, nil
 }
 ```
 
 To make sure that you can test and build the new activity, you'll need to go get (_pun intended_) a few packages
 
 ```bash
-go get github.com/TIBCOSoftware/flogo-lib/core/activity
-go get github.com/TIBCOSoftware/flogo-lib/logger
+go get github.com/project-flogo/core/activity
+go get github.com/project-flogo/core/data/coerce
+go get github.com/project-flogo/core/data/metadata
 ```
 
 ## Unit testing
 
-You've just completed the logic of the activity and, following best practice, you should have an automated way to test the activity to make sure that the it works and so that other developers can run the same tests to validate the output as well. The functions `getActivityMetadata` and `TestCreate` are default methods and the `TestEval` is the one you'll need to update. You'll want to compare the output with the expected output so you'll need to add a new import
+You've just completed the logic of the activity and, following best practice, you should have an automated way to test the activity to make sure that the it works and so that other developers can run the same tests to validate the output as well. The activity_test.go file looks like:
 
 ```go
-"github.com/stretchr/testify/assert"
-```
-
-Since the engine will still expect inputs, you'll need to hard code them into the method and execute the eval method of the activity
-
-```go
-//setup attrs
-tc.SetInput("name", "Flogo Dev")
-tc.SetInput("salutation", "Hello")
-act.Eval(tc)
-```
-
-To make sure that the fields are properly concatenated, you need to validate the output too:
-
-```go
-//check result attr
-result := tc.GetOutput("result")
-assert.Equal(t, result, "The Flogo engine says Hello to Flogo Dev")
-```
-
-The updated file will look something like the one below:
-
-```go
-package HelloWorld
+package sample
 
 import (
-	"io/ioutil"
 	"testing"
 
-	"github.com/TIBCOSoftware/flogo-contrib/action/flow/test"
-	"github.com/TIBCOSoftware/flogo-lib/core/activity"
+	"github.com/project-flogo/core/activity"
+	"github.com/project-flogo/core/support/test"
 	"github.com/stretchr/testify/assert"
 )
 
-var activityMetadata *activity.Metadata
+func TestRegister(t *testing.T) {
 
-func getActivityMetadata() *activity.Metadata {
+	ref := activity.GetRef(&Activity{})
+	act := activity.Get(ref)
 
-	if activityMetadata == nil {
-		jsonMetadataBytes, err := ioutil.ReadFile("activity.json")
-		if err != nil {
-			panic("No Json Metadata found for activity.json path")
-		}
-
-		activityMetadata = activity.NewMetadata(string(jsonMetadataBytes))
-	}
-
-	return activityMetadata
-}
-
-func TestCreate(t *testing.T) {
-
-	act := NewActivity(getActivityMetadata())
-
-	if act == nil {
-		t.Error("Activity Not Created")
-		t.Fail()
-		return
-	}
+	assert.NotNil(t, act)
 }
 
 func TestEval(t *testing.T) {
 
-	defer func() {
-		if r := recover(); r != nil {
-			t.Failed()
-			t.Errorf("panic during execution: %v", r)
-		}
-	}()
+	act := &Activity{}
+	tc := test.NewActivityContext(act.Metadata())
+	input := &Input{AnInput: "test"}
+	err := tc.SetInputObject(input)
+	assert.Nil(t, err)
 
-	act := NewActivity(getActivityMetadata())
-	tc := test.NewTestActivityContext(getActivityMetadata())
+	done, err := act.Eval(tc)
+	assert.True(t, done)
+	assert.Nil(t, err)
 
-	//setup attrs
-	tc.SetInput("name", "Leon")
-	tc.SetInput("salutation", "Hello")
-	act.Eval(tc)
-
-	//check result attr
-	result := tc.GetOutput("result")
-	assert.Equal(t, result, "The Flogo engine says Hello to Flogo Dev")
+	output := &Output{}
+	err = tc.GetOutputObject(output)
+	assert.Nil(t, err)
+	assert.Equal(t, "test", output.AnOutput)
 }
 ```
 
 In order to run the test cases you'll need to intall two more packages. One to be able to run the tests and one to be able to create assertions.
 
 ```bash
-go get github.com/TIBCOSoftware/flogo-contrib/action/flow/test
+go get github.com/project-flogo/core/activity
+go get github.com/project-flogo/core/support/test
 go get github.com/stretchr/testify/assert
 ```
 
@@ -302,7 +273,7 @@ ok      _/C_/tools/gosrc/HelloWorld     0.051s
 
 ## Use your new activity in a flow
 
-Now the only thing left to do is use the activity inside a Flogo app! You have two options, install the new activity using the Flogo CLI or via the Web UI. In any case you'll first want to publish your activity to a Git repo (the same one you've used in the `ref` field in the `activity.json`). To add the new activity to a Flogo engine and use it in a flow you can import it using the following flogo CLI command, from your flow app directory):
+Now the only thing left to do is use the activity inside a Flogo app! You have two options, install the new activity using the Flogo CLI or via the Web UI. In any case you'll first want to publish your activity to a Git repo (the same one you've used in the `ref` field in the `descriptor.json`). To add the new activity to a Flogo engine and use it in a flow you can import it using the following flogo CLI command, from your flow app directory):
 
 ```bash
 flogo install github.com/yourusername/yourrepository

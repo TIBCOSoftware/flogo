@@ -28,26 +28,21 @@ As previously stated, properties are accessible via the `$property` resolver. Co
 
 ```json
 {
-  "id": "log_1",
-  "name": "Logger",
-  "description": "Simple Log Activity",
-  "type": 1,
-  "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
-  "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-  "attributes": [
-  ],
-  "inputMappings": [
-    {
-      "type": 1,
-      "value": "$property[my_property]",
-      "mapTo": "message"
+  "id": "log_2",
+  "name": "Log",
+  "description": "Logs a message",
+  "activity": {
+    "ref": "#log",
+    "input": {
+      "addDetails": false,
+      "message": "=$property[my_property]"
     }
-  ]
+  }
 }
 ```
 
 ### Grouping of properties
-You can group related properties by using **<group1>.<group2>....<groupn>.<name>** naming convention.
+You can create an artifical grouping of related properties by using **<group1>.<group2>....<groupn>.<name>** naming convention. Note that property keys are still simply string literals, the engine does not do any grouping.
 
 ```json
 {
@@ -80,3 +75,67 @@ You can group related properties by using **<group1>.<group2>....<groupn>.<name>
   ```
 
 These properties can be accessed via $property[PURCHASE.SERVICE.DB.URL] or $property[INVENTORY.SERVICE.DB.URL]
+
+### Overriding app properties at runtime
+
+You can override app properties at runtime in two ways:
+
+#### Using JSON
+
+Define your new value for a given app prop in a json file as shown below:
+
+props.json
+{
+ "MyProp1": "This is new value",
+ "MyProp2": 20
+}
+
+Run app with the environment variable `FLOGO_APP_PROPS_OVERRIDE` set to `props.json`. For example:
+
+```terminal
+FLOGO_APP_PROPS_OVERRIDE=props.json ./MyApp
+```
+
+#### Using Key/Value pair
+
+Run app with the environment variable `FLOGO_APP_PROPS_OVERRIDE` set to the key/value pairs. For example:
+
+```terminal
+FLOGO_APP_PROPS_OVERRIDE="MyProp1=This is newvalue,MyProp2=30" ./MyApp
+```
+
+### Working with external configuration management services
+
+You can plug-in your own value resolver to resolve application property value from external configuration management services, such as, Consul, Spring Cloud Config etc. Just implement the following interface and register implementation with the runtime:
+
+```go
+// PropertyValueResolver used to resolve value from external configuration like env, file etc
+type PropertyValueResolver interface {
+	// Should return value and true if the given application property exists in the external configuration otherwise should return nil and false.
+	LookupValue(propertyName string) (interface{}, bool)
+}
+```
+
+#### Sample Resolver
+
+```go
+package sampleresolver
+
+type SamplePropertyResolver struct {
+}
+
+func init() {
+  app.RegisterPropertyValueResolver("sampleresolver", &SamplePropertyResolver{})
+}
+
+func (resolver *SamplePropertyResolver) LookupValue(propertyName string) (interface{}, bool) {
+   // Resolve property value
+  return some_value, true
+}
+```
+
+Set the `FLOGO_APP_PROPS_RESOLVERS` env var to `sampleresolver` while running application. For example:
+
+```terminal
+FLOGO_APP_PROPS_RESOLVERS=sampleresolver ./<app_binary>
+```
