@@ -16,3 +16,6 @@ List of environment variables to configure the flogo engine
 | FLOGO_RUNNER_QUEUE          | 50                        | Sets the runner queue size                |
 | FLOGO_CONFIG_PATH           | "flogo.json"              | Sets the path of the config json file     |
 | FLOGO_ENGINE_STOP_ON_ERROR  | true                      | Sets whether to stop the engine on error  |
+| FLOGO_APP_PROP_RESOLVERS | None | The property resolver to use at runtime. Refer to the documentation for [application properties](https://tibcosoftware.github.io/flogo/development/flows/property-bag/) |
+| FLOGO_SCHEMA_SUPPORT |  | |
+| FLOGO_SCHEMA_VALIDATION | None | |

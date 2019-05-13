@@ -11,20 +11,23 @@ You definitely want to store your apps in a source control system and we recomme
 ```
 ## Project Flogo .gitignore
 ## To restore all dependencies and prepare the project for build run
-## the command `flogo ensure`
+## the command `flogo imports sync`
 
 ## bin folder is constructed using flogo build
 /bin
-## pkg folder is constructed using flogo ensure
-/pkg
-## vendor folder in src is constructed using flogo ensure
-/src/*/vendor
 ```
+## using the -cv flag
+With the flogo cli you're usually on the latest tagged version of the main flogo repos. If you want to pick up the latest master branch, or a specific branch, you can use the `-cv` flag with `flogo create`. This flag will pull the specified version of the project-flogo/core when the app structure is built.
 
-## using the -flv flag
-With the flogo cli you're usually on the latest tagged version of the main flogo repos. If you want to pick up the latest master branch, or a specific branch, you can use the `-flv` flag with `flogo create`. The flag wraps the `dep` command and since dep expects go code at the root of a repo, you'll need to specify specify a package within that repo rather than the repo itself for the main flogo repositories:
+* For [flogo-lib](https://github.com/project-flogo/core) you can use `github.com/github.com/project-flogo/core@master`
 
-* For [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib) you can use `github.com/TIBCOSoftware/flogo-contrib/action/flow@master`
-* For [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib) you can use `github.com/TIBCOSoftware/flogo-lib/engine@master`
+_You can replace master with any branch/tag that you you want_
 
-_You can replace master with any branch you want_
+## update a package to a specific version
+By default, the flogo cli will use the latest tagged version of any contrib. If you'd like to pick up the latest tagged release, master or a specific tagged release use the `flogo update` command:
+
+```terminal
+flogo update github.com/project-flogo/contrib/activity/trigger/rest@master
+flogo update github.com/project-flogo/contrib/activity/trigger/rest@v1.0.0
+flogo update github.com/project-flogo/contrib/activity/trigger/rest@latest
+```

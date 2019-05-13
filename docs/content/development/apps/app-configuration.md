@@ -9,57 +9,81 @@ The *flogo.json* file is the metadata describing an application. The application
 
 ```json
 {
-  "name": "myApp",
+  "name": "SampleApp",
   "type": "flogo:app",
   "version": "0.0.1",
-  "description": "My flogo application description",
+  "appModel": "1.1.0",
+  "description": "",
+  "imports": [
+    "github.com/project-flogo/contrib/activity/log",
+    "github.com/project-flogo/contrib/trigger/rest",
+    "github.com/project-flogo/flow"
+  ],
   "triggers": [
     {
-      "id": "my_rest_trigger",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+      "id": "receive_http_message",
+      "ref": "#rest",
+      "name": "Receive HTTP Message",
+      "description": "Simple REST Trigger",
       "settings": {
-        "port": "9233"
+        "port": 8080
       },
       "handlers": [
         {
-          "actionId": "my_simple_flow",
           "settings": {
             "method": "GET",
             "path": "/test"
+          },
+          "action": {
+            "ref": "#flow",
+            "settings": {
+              "flowURI": "res://flow:get_name"
+            },
+            "input": {
+              "name": "=$.content.name"
+            },
+            "output": {
+              "code": 200,
+              "data": "=$.greeting"
+            }
           }
         }
       ]
     }
   ],
-  "actions": [
+  "resources": [
     {
-      "id": "my_simple_flow",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+      "id": "flow:get_name",
       "data": {
-        "flow": {
-          "attributes": [],
-          "rootTask": {
-            "id": 1,
-            "type": 1,
-            "tasks": [
-              {
-                "id": 2,
-                "type": 1,
-                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                "name": "log",
-                "attributes": [
-                  {
-                    "name": "message",
-                    "value": "Simple Log",
-                    "type": "string"
-                  }
-                ]
+        "name": "GetName",
+        "metadata": {
+          "input": [
+            {
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "output": [
+            {
+              "name": "greeting",
+              "type": "string"
+            }
+          ]
+        },
+        "tasks": [
+          {
+            "id": "log_2",
+            "name": "Log",
+            "description": "Logs a message",
+            "activity": {
+              "ref": "#log",
+              "input": {
+                "message": "",
+                "addDetails": false
               }
-            ],
-            "links": [
-            ]
+            }
           }
-        }
+        ]
       }
     }
   ]
@@ -70,6 +94,10 @@ The *flogo.json* file is the metadata describing an application. The application
 
 - name: The application name
 - type: The type of application. Currently the only valid value is `flogo:app`
+- version: **Your** application version
+- appModel: The version of the current app model. This should be: **"1.1.0"**
+- description: **Your** application description
+- imports: The contributions that your application will use. The `imports` array is used by the CLI include specific imports and versions in your application at build time. Use this to specify any additional contributions, such as, functions, that you'd like to leverage. The CLI will automatically pull any mentioned contribs at app create or during `flogo imports sync` command.
 
 ## Triggers
 

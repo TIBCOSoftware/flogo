@@ -8,7 +8,7 @@ home = [ "HTML", "JSON"]
 
 [params]
   # Author of the site, will be used in meta information
-  author = "retgits"
+  author = "flogo contributors"
   # Give people the opportunity to submir PRs for documentation content directly
   editURL = "https://github.com/TIBCOSoftware/flogo/edit/master/docs/content/"
   # Description of the site, will be used in meta information

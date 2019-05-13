@@ -61,7 +61,7 @@ The Google API for books is a REST service. To invoke a REST service you can add
 
 * **method**: `"GET"` (to get data from the API)
 * **uri**: `https://www.googleapis.com/books/v1/volumes` (the URL of the service you want to call)
-* **queryParams**: `{"q":"{{$flow.isbn}}"}` (this appends a query parameter called `q` with the value of the isbn to the URL)
+* **queryParams**: `{"q":"=$flow.isbn"}` (this appends a query parameter called `q` with the value of the isbn to the URL)
 
 ## Step 5: Return data
 
@@ -71,9 +71,9 @@ Now click on "* message" and type (or copy) the structure below. Finally click "
 
 ```json
 {
-  "title": "{{$activity[rest_3].result.items[0].volumeInfo.title}}",
-  "publishedDate": "{{$activity[rest_3].result.items[0].volumeInfo.publishedDate}}",
-  "description": "{{$activity[rest_3].result.items[0].volumeInfo.description}}"
+  "title": "=$activity[rest_3].result.items[0].volumeInfo.title",
+  "publishedDate": "=$activity[rest_3].result.items[0].volumeInfo.publishedDate",
+  "description": "=$activity[rest_3].result.items[0].volumeInfo.description"
 }
 ```
 
