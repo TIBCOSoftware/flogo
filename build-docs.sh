@@ -19,16 +19,15 @@ prerequisites() {
 #--- Get external docs ---
 ext_docs() {
     echo "Getting the docs for the activities and triggers"
-    git clone https://github.com/TIBCOSoftware/flogo-contrib
-    for i in `find flogo-contrib/activity -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/activities/$filename.md; done;
-    for i in `find flogo-contrib/trigger -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/triggers/$filename.md; done;
+    git clone https://github.com/project-flogo/contrib
+    for i in `find contrib/activity -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/activities/$filename.md; done;
+    for i in `find contrib/trigger -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/triggers/$filename.md; done;
+    for i in `find contrib/function -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/functions/$filename.md; done;
     rm -rf flogo-contrib
 
     echo "Getting the docs for the commandline tools"
-    curl -o docs/content/flogo-cli/flogo-cli.md https://raw.githubusercontent.com/TIBCOSoftware/flogo-cli/master/docs/flogo-cli.md
-    curl -o docs/content/flogo-cli/flogodevice-cli.md https://raw.githubusercontent.com/TIBCOSoftware/flogo-cli/master/docs/flogodevice-cli.md
-    curl -o docs/content/flogo-cli/flogogen-cli.md https://raw.githubusercontent.com/TIBCOSoftware/flogo-cli/master/docs/flogogen-cli.md
-    curl -o docs/content/flogo-cli/tools-overview.md https://raw.githubusercontent.com/TIBCOSoftware/flogo-cli/master/docs/tools-overview.md
+    curl -o docs/content/flogo-cli/flogo-cli.md https://raw.githubusercontent.com/project-flogo/cli/master/docs/commands.md
+    curl -o docs/content/flogo-cli/plugins.md https://raw.githubusercontent.com/project-flogo/cli/master/docs/plugins.md
 }
 
 #--- Update contributions page ---
