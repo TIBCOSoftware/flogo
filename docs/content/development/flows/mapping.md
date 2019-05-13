@@ -5,7 +5,7 @@ weight: 4320
 
 ## What are mappings?
 
-A mapping in Flogo can be used to assign the value of a parameter (flow input, for examle) to that of an input parameters of an activity or to the value of another flow scoped variable.
+A mapping in Flogo can be used to assign the value of a parameter (flow input, for example) to that of an input parameters of an activity or to the value of another flow scoped variable.
 
 ### Types of mappings
 
@@ -13,7 +13,7 @@ Flogo infers the mapping type based on the structure of the mapping itself. The 
 
 | Type | Description | Format |
 | --- | --- | --- |
-| literal | A literal mapping. For example, mapping the string "hello" to a string typed input. | Simply enclose your string literal in doubel quotes: \" \" |
+| literal | A literal mapping. For example, mapping the string "hello" to a string typed input. | Simply enclose your string literal in double quotes: \" \" |
 | expression | Expression mapping.  This enable using functions and expression condition in mamping | The mapping string should begin with an equals character `=` | 
 | object | Complex object. Used when a JSON-based object must be built and values assigned from other scoped properties/activity outputs. | See details below. |
 | array | Array mapping. Mapping an Array of Objects. | See details below |
@@ -26,7 +26,7 @@ Mappings are quite straightforward, for example:
 }
 ```
 
-The above mapping indicates that the value of `evt.isbn` from a trigger input should be mapped to the action input named `isbn`. Consider two additional samples, below you will find a mapping to an activity from a `$flow` scoped property, a literal mapping, as well as an object type object mapping.
+The above mapping indicates that the value of `event.isbn` from a trigger input should be mapped to the action input named `isbn`. Consider two additional samples, below you will find a mapping to an activity from a `$flow` scoped property, a literal mapping, as well as an object type object mapping.
 
 Type expression from a flow-scoped property
 
@@ -77,10 +77,37 @@ The mapper uses a string concat function `string.concat(str1, str2, str3)` and a
 
 Type array:
 
+Example 1: iterator array `$fow.store.books` and assign value to `books`
 ```json
-Mapping sample here
+{
+  "books": {
+    "mapping": {
+      "@foreach($flow.store.books)": {
+        "author": "=$loop.author",
+        "title": "=$loop.title",
+        "price": "=$loop.price"
+      }
+    }
+  }
+}
+
+```
+The above example showing how array mapping works. the `mapping` node same with `object mapper` which is used to identity an object mapping. 
+The example: Iterate `$flow.store.books` source array's author, title and price to target array `books`,  The final target books:
+```json
+{
+  "books": [
+   {
+    "author":"xxxx",
+    "titile":"xxxx",
+    "price": 33.33
+    }
+  ] 
+}
+
 ```
 
+ 
 Description of the mapping.
 
 ## Mapping Resolvers
@@ -194,57 +221,112 @@ TODO: UPDATE
 There are lots of use cases for array mapping, map entire array to another or iterator partial array to another with functions
 The array mapping value comes from a JSON format
 
+Case 1: iterator array `$fow.store.books` and assign value to `books`
+```json
+{
+  "books": {
+    "mapping": {
+      "@foreach($flow.store.books)": {
+        "author": "=$loop.author",
+        "title": "=$loop.title",
+        "price": "=$loop.price"
+      }
+    }
+  }
+}
+
+```
+Case 2: Copy original array `$fow.store.books` to target array `books`
+```json
+{
+  "books": {
+    "mapping": {
+      "@foreach($flow.store.books)": {
+        "=": "$loop"
+      }
+    }
+  }
+}
+
+```
+
+Case 3: Iterator array `$fow.store.books` and assign to primitive array `titles`
+```json
+{
+  "titles": {
+    "mapping": {
+      "@foreach($flow.store.books)": {
+        "=": "$loop.title"
+      }
+    }
+  }
+}
+
+```
+
+Case 4: Accessing parent loop data.
+```json
+{
+  "books": {
+    "mapping": {
+      "@foreach($flow.store.books, bookLoop)": {
+        "title": "=$loop.title",
+        "price": "=$loop.price",
+        "author": {
+         "@foreach($loop.author, authorLoop)": {
+            "firstName": "=$loop.firstName",
+            "lastName": "=$loop[authorLoop].lastName",
+            "bookTitle": "=$loop[bookLoop].title"
+         }
+        }
+      }
+    }
+  }
+}
+
+```
+
+Case 5: Using fixed array, same as `object mapper` 
+```json
+{
+  "store": {
+    "mapping": {
+      "store": {
+        "books": [
+          {
+            "author": "=string.concat($activity[rest].result.firstName, $activity[rest].result.lastName)",
+            "title": "Five little ducks",
+            "price": 19.99
+          },
+          {
+            "author": "=string.concat($activity[rest2].result.firstName, $activity[rest2].result.lastName)",
+            "title": "I love trucks",
+            "price": 11.99
+          }
+        ]
+      }
+    }
+  }
+}
+
+```
+
+1. Addding `@foreach(source, loopName<optional>)` to indicate doing array mapping on source data
+2. Using `$loop.xxx` to access the current loop data `xxx` is the object field name
+3. Using `$loop[loopName].xxx` to access specific loop data
+
+**Note** You can use any literal, functions, expression in array mapping.
 
 ```json
 {
-        "from": "$activity[rest_3].result.tags",
-        "to": "data.response",
-        "type": "foreach",
-        "fields": [
-            {
-                "from": "$.id",
-                "to": "$.id",
-                "type": "primitive"
-            },
-            {
-                "from": "string.concat($activity[rest_4].result.category.name, $.name)",
-                "to": "$.name",
-                "type": "primitive"
-            }
-        ]
- }
-```
-
-- **from**: Previous activity's array output field
-- **to**: current activity's input array field
-- **type**: foreach indicate iterator array element
-- **fields**: list all element field that use to iterator and assign.
-   - **from**: the value comes from
-   - **to**:  to the current element, $. indicate current element.
-   - **type**: The type either primitive or foreach. foreach mean another array mapping. nest array support without deep limitation
-
-
-If you want to only create one element of array. using NEWARRAY for from field.
-
-```
-{
-    "fields": [
-        {
-            "from": "10001",
-            "to": "$.id",
-            "type": "primitive"
-        },
-        {
-            "from": "$activity[rest].result.category.name",
-            "to": "$.name",
-            "type": "primitive"
-        }
-    ],
-    "from": "NEWARRAY",
-    "to": "data.response",
-    "type": "foreach"
+  "books": {
+    "mapping": {
+      "@foreach($flow.store.books)": {
+        "author": "=string.concat($activity[rest].result.firstName, $activity[rest].result.lastName)",
+        "title": "Five little ducks",
+        "price": 19.99
+      }
+    }
+  }
 }
 ```
-
-Note:
-You can use any literal string, functions, expression in **from** under fields node.
