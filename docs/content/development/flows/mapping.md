@@ -187,7 +187,7 @@ Most of time you want to add some custome logic to the mapping, such as concat/s
 
 ```json
 {
-  "data.description": "string.concat(\"The pet category name is: \", $activity[rest_3].result.category.name)"
+  "description": "=string.concat(\"The pet category name is: \", $activity[rest_3].result.category.name)"
 }
 ```
 
@@ -216,8 +216,6 @@ or
 
 
 ### Hanlding arrays in mappings
-TODO: UPDATE
-
 There are lots of use cases for array mapping, map entire array to another or iterator partial array to another with functions
 The array mapping value comes from a JSON format
 
