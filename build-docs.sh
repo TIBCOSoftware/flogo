@@ -20,14 +20,16 @@ prerequisites() {
 ext_docs() {
     echo "Getting the docs for the activities and triggers"
     git clone https://github.com/project-flogo/contrib
-    for i in `find contrib/activity -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/activities/$filename.md; done;
-    for i in `find contrib/trigger -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/triggers/$filename.md; done;
-    for i in `find contrib/function -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/functions/$filename.md; done;
+    for i in `find contrib/activity -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/activities/$filename.md; sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/development/webui/activities/$filename.md; done;
+    for i in `find contrib/trigger -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/triggers/$filename.md; sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/development/webui/triggers/$filename.md; done;
+    for i in `find contrib/function -name \*.md` ; do filename=$(basename $(dirname $i)); cp $i docs/content/development/webui/functions/$filename.md; sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/development/webui/functions/$filename.md; done;
     rm -rf flogo-contrib
 
     echo "Getting the docs for the commandline tools"
     curl -o docs/content/flogo-cli/flogo-cli.md https://raw.githubusercontent.com/project-flogo/cli/master/docs/commands.md
+    sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/flogo-cli/flogo-cli.md
     curl -o docs/content/flogo-cli/plugins.md https://raw.githubusercontent.com/project-flogo/cli/master/docs/plugins.md
+    sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/flogo-cli/plugins.md
 }
 
 #--- Update contributions page ---
