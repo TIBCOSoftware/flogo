@@ -157,7 +157,7 @@ See the sample below of an aggregation pipeline (for brevity, the triggers and m
 ```json
   "stages": [
     {
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/aggregate",
+      "ref": "github.com/project-flogo/stream/activity/aggregate",
       "settings": {
         "function": "sum",
         "windowType": "timeTumbling",
@@ -168,7 +168,7 @@ See the sample below of an aggregation pipeline (for brevity, the triggers and m
       }
     },
     {
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+      "ref": "github.com/project-flogo/contrib/activity/log",
       "input": {
         "message": "=$.result"
       }
@@ -194,11 +194,11 @@ Flogo Rules supports
 
 The CLI is used to build all applications that leverage the JSON-based DSL. If you’re using the Go API to build your apps, feel free to just `go build` your stuff without the flogo CLI.
 
-Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https://github.com/TIBCOSoftware/flogo-cli) repo for detail instructions and dependencies):
+Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https://github.com/project-flogo/cli) repo for detail instructions and dependencies):
 
 * Install the CLI
 ```bash
-go get -u github.com/TIBCOSoftware/flogo-cli/...
+go get -u github.com/poroject-flogo/cli/...
 ```
 
 * Create & build your app
@@ -213,14 +213,14 @@ If you're interested in building your own contribution(s), refer to the [Flogo D
 
 Are you the kind of person who would rather code, but would love to leverage the capabilities of the Flogo Ecosystem? Makes total sense, we just ❤️ to code also! We’ve exposed a number of Go APIs for leveraging the various action types, activities and triggers. Getting started is pretty easy, just follow the steps below.
 
-* Go get the latest [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib)
+* Go get the latest [flogo-lib](https://github.com/project-flogo/core)
 ```bash
-go get -u github.com/TIBCOSoftware/flogo-lib/...
+go get -u github.com/project-flogo/core/...
 ```
 
 * Optionally, if you're using any of the Flogo contributions, don't forget to get that repo, as well
 ```bash
-go get -u github.com/TIBCOSoftware/flogo-contrib/...
+go get -u github.com/project-flogo/contrib/...
 ```
 
 * Open up your favorite IDE or txt editor and start coding!
@@ -230,48 +230,66 @@ package main
 
 import (
 	"context"
+	"fmt"
 
-	"github.com/TIBCOSoftware/flogo-contrib/trigger/rest"
-	"github.com/TIBCOSoftware/flogo-lib/core/data"
-	"github.com/TIBCOSoftware/flogo-lib/engine"
-	"github.com/TIBCOSoftware/flogo-lib/flogo"
-	"github.com/TIBCOSoftware/flogo-lib/logger"
+	"github.com/project-flogo/contrib/activity/log"
+	"github.com/project-flogo/contrib/trigger/rest"
+	"github.com/project-flogo/core/activity"
+	"github.com/project-flogo/core/api"
+	"github.com/project-flogo/core/data/coerce"
+	"github.com/project-flogo/core/engine"
 )
-
-//go:generate go run $GOPATH/src/github.com/TIBCOSoftware/flogo-lib/flogo/gen/gen.go $GOPATH
 
 func main() {
 
-	// Create our Flogo app
-	app := flogo.NewApp()
+	app := myApp()
 
-	// Setup our event trigger (HTTP REST in this case).
-
-	// Listen on port 9999
-	trg := app.NewTrigger(&rest.RestTrigger{}, map[string]interface{}{"port": 9999})
-
-	// Create a Function Handler for verb: GET and URI path: /blah
-	trg.NewFuncHandler(map[string]interface{}{"method": "GET", "path": "/blah"}, HandleHttpEvent)
-
-	// Create the Flogo engine
-	e, err := flogo.NewEngine(app)
+	e, err := api.NewEngine(app)
 
 	if err != nil {
-		logger.Error(err)
+		fmt.Println("Error:", err)
 		return
 	}
 
-	// Start your engine!
 	engine.RunEngine(e)
 }
 
-// HandleHttpEvent handles events being dispatched by the function handler. 
-// All GET requests to http://localhost:9999/blah events will handled by this function
-func HandleHttpEvent(ctx context.Context, inputs map[string]*data.Attribute) (map[string]*data.Attribute, error) {
+func myApp() *api.App {
+	app := api.NewApp()
 
-	logger.Infof("#v", inputs)
+	trg := app.NewTrigger(&rest.Trigger{}, &rest.Settings{Port: 8080})
+	h, _ := trg.NewHandler(&rest.HandlerSettings{Method: "GET", Path: "/blah/:num"})
+	h.NewAction(RunActivities)
 
-	return nil, nil
+	//store in map to avoid activity instance recreation
+	logAct, _ := api.NewActivity(&log.Activity{})
+	activities = map[string]activity.Activity{"log": logAct}
+
+	return app
+}
+
+var activities map[string]activity.Activity
+
+func RunActivities(ctx context.Context, inputs map[string]interface{}) (map[string]interface{}, error) {
+
+	trgOut := &rest.Output{}
+	trgOut.FromMap(inputs)
+
+	msg, _ := coerce.ToString(trgOut.PathParams)
+	_, err := api.EvalActivity(activities["log"], &log.Input{Message: msg})
+	if err != nil {
+		return nil, err
+	}
+
+	response := make(map[string]interface{})
+
+	response["id"] = "123"
+	response["amount"] = "1"
+	response["balance"] = "500"
+	response["currency"] = "USD"
+
+	reply := &rest.Reply{Code: 200, Data: response}
+	return reply.ToMap(), nil
 }
 ```
 
@@ -284,8 +302,6 @@ go generate
 ```bash
 go build
 ```
-
-For additional examples, including how to leverage a flow that has already been built by the Web UI, refer to the [wiki](https://github.com/TIBCOSoftware/flogo/wiki/Go-App-Api-Proposal).
 
 # When to use Flogo
 
@@ -313,8 +329,8 @@ Want to contribute to Project Flogo? We've made it easy, all you need to do is f
 
 Not sure where to start? No problem, here are a few suggestions:
 
-* [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib): This repository contains all of the contributions, such as activities, triggers, etc. Perhaps there is something missing? Create a new activity or trigger or fix a bug in an existing activity or trigger.
-* Browse all of the Project Flogo repositories and look for issues tagged `kind/help-wanted` or `good first issue`
+* [flogo-contrib](https://github.com/project-flogo/contrib): This repository contains all of the standard contributions, such as activities, triggers, etc. Perhaps there is something missing? Create a new activity or trigger or fix a bug in an existing activity or trigger. Don't forget to check all of the other repositores in the [project-flogo org](https://github.com/project-flogo) on GitHub, as some contributions are large enough to have their own repo.
+* Browse all of the [Project Flogo repositories] and look for issues tagged `kind/help-wanted` or `good first issue`
 
 If you have any questions, feel free to post an issue and tag it as a question, email flogo-oss@tibco.com or chat with the team and community:
 
@@ -324,9 +340,7 @@ If you have any questions, feel free to post an issue and tag it as a question, 
 For additional details, refer to the [Contribution Guidelines](https://github.com/TIBCOSoftware/flogo/blob/master/CONTRIBUTING.md).
 
 # License 
-The top level flogo repo, consisting of flow samples & documentation, is licensed licensed under a BSD-style license. Refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE) for license text.
-
-Flogo source code in [flogo-cli](https://github.com/TIBCOSoftware/flogo-cli), [flogo-lib](https://github.com/TIBCOSoftware/flogo-lib), [flogo-contrib](https://github.com/TIBCOSoftware/flogo-contrib), [flogo-services](https://github.com/TIBCOSoftware/flogo-services), [project-flogo/stream](https://github.com/project-flogo/stream) & [project-flogo/rules](https://github.com/project-flogo/rules) are all licensed under a BSD-style license, refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE) 
+Project Flogo is licensed under a BSD-style license. Refer to [LICENSE](https://github.com/TIBCOSoftware/flogo/blob/master/LICENSE) for license text.
 
 ## Usage Guidelines
 
