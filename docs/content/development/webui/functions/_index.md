@@ -1,5 +1,5 @@
 ---
-title: Triggers
+title: Functionss
 weight: 4700
 chapter: true
 pre: "<i class=\"fas fa-desktop\" aria-hidden=\"true\"></i> "
