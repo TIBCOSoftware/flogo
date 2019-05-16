@@ -198,7 +198,7 @@ Getting started with the CLI couldn't be any easier (refer to [Flogo CLI](https:
 
 * Install the CLI
 ```bash
-go get -u github.com/poroject-flogo/cli/...
+go get -u github.com/project-flogo/cli/...
 ```
 
 * Create & build your app
