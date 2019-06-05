@@ -707,3 +707,12 @@ url = "https://github.com/yxuco/flogo-components/tree/master/activity/jsmapper"
 uploadedon = "February 8, 2019"
 author = "yxuco"
 showcase = "true"
+
+[[items]]
+name = "EMS Trigger"
+type = "trigger"
+description = "EMSTrigger"
+url = "https://github.com/mmussett/flogo-components/tree/master/trigger/ems"
+uploadedon = "June 5, 2019"
+author = "mmussett"
+showcase = "true"
