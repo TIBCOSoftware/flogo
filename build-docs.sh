@@ -30,6 +30,8 @@ ext_docs() {
     sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/flogo-cli/flogo-cli.md
     curl -o docs/content/flogo-cli/plugins.md https://raw.githubusercontent.com/project-flogo/cli/master/docs/plugins.md
     sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/flogo-cli/plugins.md
+    curl -o docs/content/flogo-cli/dev-plugin.md https://raw.githubusercontent.com/project-flogo/cli-plugins/master/devtool/README.md
+    sed -i -e 's/<!--/---/g' -e 's/-->/---/g' docs/content/flogo-cli/dev-plugin.md
 }
 
 #--- Update contributions page ---
