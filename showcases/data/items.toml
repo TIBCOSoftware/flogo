@@ -206,9 +206,9 @@ author = "iSteerApps"
 showcase = "true"
 
 [[items]]
-name = "Raise Incident on ServiceNow"
+name = "Raise an Incident on ServiceNow"
 type = "activity"
-description = "Activity to raise Incident on service Now "
+description = "Activity to raise an Incident on service Now"
 url = "https://github.com/shaliniGovindaNayak/flogo-workspace/tree/master/activity/servicenow"
 uploadedon = "sept 18, 2019"
 author = "iSteerApps"
