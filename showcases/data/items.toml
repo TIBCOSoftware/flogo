@@ -206,6 +206,15 @@ author = "iSteerApps"
 showcase = "true"
 
 [[items]]
+name = "Raise a Incident on Service now"
+type = "activity"
+description = "Activity for raising incident on service Now"
+url = "https://github.com/shaliniGovindaNayak/flogo-workspace/tree/master/activity/servicenow"
+uploadedon = "sept 18, 2019"
+author = "iSteerApps"
+showcase = "true"
+
+[[items]]
 name = "Parse CSV"
 type = "activity"
 description = "Parses a CSV string and produces an array of objects."
