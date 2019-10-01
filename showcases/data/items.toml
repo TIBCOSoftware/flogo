@@ -215,6 +215,15 @@ author = "iSteerApps"
 showcase = "true"
 
 [[items]]
+name = "Insert data Into InfluxDB"
+type = "activity"
+description = "Activity to insert data on InfluxDB"
+url = "https://github.com/shaliniGovindaNayak/flogo-workspace/tree/master/activity/influxdb"
+uploadedon = "oct 01, 2019"
+author = "iSteerApps"
+showcase = "true"
+
+[[items]]
 name = "Parse CSV"
 type = "activity"
 description = "Parses a CSV string and produces an array of objects."
