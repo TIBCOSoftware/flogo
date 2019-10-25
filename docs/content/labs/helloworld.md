@@ -93,7 +93,7 @@ An activity is the unit of work that can be leveraged within a Flow. An activity
 
 ![step 5](../../images/labs/helloworld/step5.png)
 
-A list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log Message" activity (or use the searchbar to find it) and click it to make sure it is added to the flow. As you hover over the newly added activity, a cog will appear and as you hover over that thing, a menu will appear to configure your activity. In this window you can configure the inputs of the "Log Message" activity. Click on "_a.. message_" and type (or copy/paste) `string.concat("Hello ", $flow.name)` in the box (on the right hand side of the screen).
+A list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log Message" activity (or use the searchbar to find it) and click it to make sure it is added to the flow. As you hover over the newly added activity, a cog will appear and as you hover over that thing, a menu will appear to configure your activity. In this window you can configure the inputs of the "Log Message" activity. Click on "_a.. message_" and type (or copy/paste) `string.concat("Hello ", $.pathParams.name)` in the box (on the right hand side of the screen).
 
 ## Step 6: Return data
 
@@ -101,7 +101,7 @@ To complete the app, add a `Return` activity. To add an activity click on the la
 
 ![step 6](../../images/labs/helloworld/step6.png)
 
-Hover over the newly added activity to see the cog and select **configure** to bring up the modal to configure the activity. The return activity is always the last activity in a branch and sets the values that are returned to the trigger. Click on "_123 code_" and type _200_ in the input field to set the HTTP Response code to 200. Now click on "_a.. message_" and type `string.concat("Hello ", $flow.name)` in the input field. Finally click "_Save_" to complete the mapping.
+Hover over the newly added activity to see the cog and select **configure** to bring up the modal to configure the activity. The return activity is always the last activity in a branch and sets the values that are returned to the trigger. Click on "_123 code_" and type _200_ in the input field to set the HTTP Response code to 200. Now click on "_a.. message_" and type `string.concat("Hello ", $.pathParams.name)` in the input field. Finally click "_Save_" to complete the mapping.
 
 ## Step 7: Build
 
