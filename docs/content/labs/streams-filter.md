@@ -53,7 +53,7 @@ Before you can get to define the app, you'll need to define some metadata that t
 
 ```json
 {
-    "name": "aggregator",
+    "name": "streamfilter",
     "type": "flogo:app",
     "version": "0.0.1",
     "appModel": "1.0.0",
@@ -66,7 +66,7 @@ Flogo is an event-driven framework. A trigger is the entrypoint for events. A tr
 
 * It will listen on port `9234`
 * It will have a `GET` method registered for the endpoint `/filter/:val`
-* As messages come in, it will call an action with id `simple_agg`
+* As messages come in, it will call an action with id `simple_filter`
 * The input to that action is a parameter called `input` and is _assigned_ the value of the PATH parameter `val`
 
 Since there could be multiple triggers, the triggers element is an array. In this tutorial, though, you'll only use one REST trigger
@@ -88,7 +88,7 @@ Since there could be multiple triggers, the triggers element is an array. In thi
             "path": "/filter/:val"
           },
           "action": {
-            "id": "simple_agg",
+            "id": "simple_filter",
             "mappings": {
               "input": [
                 {
@@ -114,7 +114,7 @@ An action is a generic implementation for processing the incoming event. Differe
 {
   "actions": [
     {
-      "id": "simple_agg",
+      "id": "simple_filter",
       "ref": "github.com/project-flogo/stream",
       "settings": {
         "pipelineURI": "res://pipeline:simple_filter"
@@ -132,7 +132,7 @@ The resources are the actual workhorses of the Flogo app. They define, among a t
 {
     "resources": [
     {
-      "id": "pipeline:simple_agg",
+      "id": "pipeline:simple_filter",
       "data": {
         "metadata": {
           "input": [
@@ -202,7 +202,7 @@ The complete flogo.json will look like
             "path": "/filter/:val"
           },
           "action": {
-            "id": "simple_agg",
+            "id": "simple_filter",
             "mappings": {
               "input": [
                 {
@@ -219,7 +219,7 @@ The complete flogo.json will look like
   ],
   "actions": [
     {
-      "id": "simple_agg",
+      "id": "simple_filter",
       "ref": "github.com/project-flogo/stream",
       "settings": {
         "pipelineURI": "res://pipeline:simple_filter"
