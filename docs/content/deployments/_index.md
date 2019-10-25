@@ -19,4 +19,4 @@ Flogo can be deployed to pretty much any cloud platform that exists today, wheth
 
 </div>
 
-After you're done with these samples, why not check out the other [labs](../../labs) we have for you!
+After you're done with these samples, why not check out the other [labs](../../TIBCO-LABS) we have for you!
