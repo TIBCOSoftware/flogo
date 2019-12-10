@@ -734,3 +734,12 @@ url = "https://github.com/mmussett/flogo-components/tree/master/trigger/ems"
 uploadedon = "June 5, 2019"
 author = "mmussett"
 showcase = "true"
+
+[[items]]
+name = "Apache Pulsar Activity"
+type = "activity"
+description = "This activity allows you to publish messages to an Apache Pulsar message broker"
+url = "https://github.com/mmussett/flogo-components/tree/master/activity/pulsar"
+uploadedon = "December 10, 2019"
+author = "mmussett"
+showcase = "true"
