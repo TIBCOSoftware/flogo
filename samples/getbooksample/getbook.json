@@ -90,7 +90,9 @@
                   "mapping": {
                     "q": "=$flow.isbn"
                   }
-                },
+                }
+              },
+              "settings": {
                 "method": "GET",
                 "uri": "https://www.googleapis.com/books/v1/volumes"
               }
@@ -107,9 +109,9 @@
                   "code": 200,
                   "message": {
                     "mapping": {
-                      "title": "=$activity[rest_3].result.items[0].volumeInfo.title",
-                      "publishedDate": "=$activity[rest_3].result.items[0].volumeInfo.publishedDate",
-                      "description": "=$activity[rest_3].result.items[0].volumeInfo.description"
+                      "title": "=$activity[rest_3].data.items[0].volumeInfo.title",
+                      "publishedDate": "=$activity[rest_3].data.items[0].volumeInfo.publishedDate",
+                      "description": "=$activity[rest_3].data.items[0].volumeInfo.description"
                     }
                   }
                 }
