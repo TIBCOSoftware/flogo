@@ -1,9 +1,9 @@
 ---
-title: Repeat On Error
+title: Retry On Error
 weight: 4320
 ---
 
-## What is an Repeat On Error in Flogo?
+## What is an Retry On Error in Flogo?
 
 There are certain scenarios where a user would like to retry an activity when an error is encountered. To support this, a new feature **`Retry On Error`** has been included as part of release **0.9.4**. 
 
@@ -43,7 +43,7 @@ The above activity will be retried for a maximum of three consecutive times when
 
 ### Runtime code
 
-To make all functional the runtime code must return false with retriable error, engine will retry only on retriable error.
+To make all functional the runtime code must return false with retriable error at eval method, engine will retry only on retriable error.
 
 such as:
 ```go

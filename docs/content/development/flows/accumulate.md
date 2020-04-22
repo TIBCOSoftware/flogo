@@ -3,7 +3,7 @@ title: Accumulate Activity Output for All Iterations
 weight: 4320
 ---
 
-## What is an Accumulating the Activity Output for All Iterations
+## What is an Accumulating the Activity Output
 
 When using iterate over an activity or Repeat on True, you have the option to specify if you want to cumulative data from all iterations. 
 You can do so by adding  `accumulate:true` to setting, By defaut it set to false
@@ -30,7 +30,7 @@ You can do so by adding  `accumulate:true` to setting, By defaut it set to false
 }
 ```
 
-When the Accumulate checkbox is set to Yes, the activity accumulates the data from each iteration and outputs that collective data as an array of objects, where each object contains the output from the corresponding iteration.
+When the accumulate set to true, the activity accumulates the data from each iteration and outputs that collective data as an array of objects, where each object contains the output from the corresponding iteration.
 
 So the output of the above activity `$activity[rest_3]` returns
 
