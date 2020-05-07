@@ -65,9 +65,14 @@ To add a trigger, click on the "+" icon on the left hand side of the screen and 
 
 ![step 4](../../images/labs/helloworld/step4.png)
 
-The thing you want to log comes from the HTTP request. To get that parameter into the flow, you'll need to create an Input parameter which you can do by clicking on the grey "_Input Output_" bar on your screen. For example, you can call the parameter "_name_", keep the type as "_string_" and click save.
+The thing you want to log comes from the HTTP request. To get that parameter into the flow, you'll need to create an Input parameter which you can do by clicking on the grey "_Input Output_" bar on your screen. 
 
-The response to the HTTP request will be a message and the HTTP status code, and to be able to send data back you'll need to have **Output** parameters. From the screen where you are now, select **Output** and configure two parameters:
+In the **Input** tab, you need to configure the input parameter we will use later:
+
+* **Parameter name**: name
+* **Type**: string
+
+The response to the HTTP request will be a message and the HTTP status code, and to be able to send data back you'll need to have **Output** parameters. From the screen where you are now, select the **Output** tab and configure two parameters:
 
 * **Parameter name**: code
 * **Type**: integer
@@ -77,11 +82,19 @@ Now click on the `+` sign to add a new parameter
 * **Parameter name**: message
 * **Type**: any
 
-Now it is time to configure the trigger to listen to HTTP messages. To start, click on the trigger and a new dialog will open with a bunch of options. In this dialog you'll have to provide:
+Now it is time to configure the trigger to listen to HTTP messages. To start, click on the trigger and a new dialog will open with a bunch of options in the active **Trigger settings** tab. In this dialog you'll have to provide:
 
 * **Port**: The port on which your app will listen (set this to `9233`)
 * **Method**: The HTTP method that will trigger this flow (set this to `GET`)
 * **Path**: The path that will route the messages to this flow (set this to `/test/:name`, the `:name` means that you can use that as a path parameter in your mappings).
+
+You will need to map the trigger to inputs and outputs as well. In that same dialog, select the second tab, **Map to flow inputs**. The parameter "_a.. name_" should be selected. You can see a list of trigger outputs under the text area. As you have set up earlier in "_Trigger settings_", we want to use `name` as a path parameter. Select `pathParams` in the trigger output and add `.name` or simply type `$.pathParams.name` into the text area.
+
+Once you're done mapping to flow inputs, select the next tab, **Map from flow output**. Click on "_123 code_" to map it to one of the suggested flow output also called "_123 code_". You should see `$.code` appear in the text area. Instead of selected the flow output, you can alternatively type or copy paste `$.code` directly into the text area without having to select a flow output in the suggested list.
+
+Now, still from the "_Map from flow output_" tab, select "_* data_" in the "_Trigger Response_" list on the left to map the output data. Again, you can directly type `$.message` in the text area, or select "_* message_" from the flow output list under the text area.
+
+Finally, you can click on save and close the dialog as you have successfully configured your trigger.
 
 {{% notice tip %}}
 The URL on which our microservice will listen will be `http://localhost:9233/test/:name` (the _:name_ is a parameter that you can replace with anything during runtime). If you made changes to any of the variables above, please make sure to change those in the rest of these examples.
