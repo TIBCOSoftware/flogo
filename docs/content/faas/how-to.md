@@ -190,9 +190,9 @@ This tells the flogo cli to take the flogo.json file and create the source for t
 ## Build
 The next step is to build the executable and for that we need to be in the directory `myapp`. To build a flogo app from the source that you can run on AWS Lambda we'll need to execute the command
 ```
-flogo build -e -shim start_flow_as_a_function_in_lambda
+flogo build -e --shim aws_lambda_trigger
 ```
-. This command tells the flogo cli to build the app as an embedded application (the -e option) and with a target shim (the -shim option which uses the trigger id). The AWS Lambda trigger leverages a makefile to kick off the build process, which simply builds your Flogo application using the Lambda trigger shim and zips the binary for deployment to AWS Lambda.
+. This command tells the flogo cli to build the app as an embedded application (the -e option) and with a target shim (the --shim option which uses the trigger id). The AWS Lambda trigger leverages a makefile to kick off the build process, which simply builds your Flogo application using the Lambda trigger shim and zips the binary for deployment to AWS Lambda.
 
 Once this command finishes successfully the zip file (handler.zip) will be located in your app src directory (for example /path/to/app/lambda/src/lambda/handler.zip).
 
