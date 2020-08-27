@@ -5,11 +5,15 @@
 # Last Updated: 2018-10-01
 
 #--- Variables ---
-HUGO_VERSION=0.49
-
+HUGO_VERSION=0.74.3
+HUGO_ARCH=64bit
 #--- Download and install prerequisites ---
 prerequisites() {
-    wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+    if [ `uname -m` = 'aarch64' ]; then
+            HUGO_ARCH=ARM64
+            mkdir $HOME/gopath/bin
+    fi
+    wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-${HUGO_ARCH}.tar.gz
     mkdir -p hugobin
     tar -xzvf hugo.tar.gz -C ./hugobin
     mv ./hugobin/hugo $HOME/gopath/bin
