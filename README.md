@@ -99,6 +99,7 @@ Project Flogo consists of the following sub-projects available as separate repos
 * [project-flogo/stream](https://github.com/project-flogo/stream): Flogo Streams Action
 * [project-flogo/rules](https://github.com/project-flogo/rules): Contextual, deterministic rules action
 * [project-flogo/microgateway](https://github.com/project-flogo/microgateway): Flogo Microgateway Action
+* [project-flogo/flogo-web](https://github.com/project-flogo/flogo-web): Flogo Web UI
 
 # Flogo Flows
 
