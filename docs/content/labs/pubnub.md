@@ -49,7 +49,7 @@ After that, click on "_Map to flow inputs_" to map the message from PubNub to th
 
 ## Step 5: Adding activities
 
-You’ll have to add some acvitivities to the flow for it to do something. In this demo you'll add two activities to the flow. The first activity will log the message and the second one will store the data in a file. To add an activity click on the other large `+` sign
+You’ll have to add some activities to the flow for it to do something. In this demo you'll add two activities to the flow. The first activity will log the message and the second one will store the data in a file. To add an activity click on the other large `+` sign
 
 ![step 5](../../images/labs/pubnub/step5.png)
 
