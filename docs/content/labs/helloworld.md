@@ -50,7 +50,7 @@ To create a new app, open the Flogo Web UI and from there, click "_New_" to crea
 
 In Flogo, a flow is an implementation of an action and is the primary tool to implement business logic. A flow can consist of a number of different constructs:
 
-* **Activties**: One or more activities that implement specific logic (for example write to a database, invoke a REST endpoint, etc)
+* **Activities**: One or more activities that implement specific logic (for example write to a database, invoke a REST endpoint, etc)
 * **Links**: Each activity is connected via a link (_Links can contain conditional logic to alter the path of a flow_)
 
 Flows, as previously stated in the triggers section, can exist without a trigger. Thus, flows operate very similar to functions, that is, a single flow can define its own input & output parameters. Thus, enabling a flow to be reused regardless of the trigger entrypoint To create a new flow you can click either the `+ New Flow` button at the top or the `Create a flow` button in the middle of the screen.
