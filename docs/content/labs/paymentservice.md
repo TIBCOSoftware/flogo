@@ -62,7 +62,7 @@ The URL on which our microservice will listen will be `http://localhost:9233/api
 
 ## Step 3: Add activities
 
-You’ll have to add some acvitivities to the flow for it to do something. To add an activity click on the large `+` sign
+You’ll have to add some activities to the flow for it to do something. To add an activity click on the large `+` sign
 
 ![step 3a](../../images/labs/paymentservice/step3a.png)
 

@@ -50,7 +50,7 @@ To create a new app, open the Flogo Web UI and from there, click "_New_" to crea
 
 In Flogo, a flow is an implementation of an action and is the primary tool to implement business logic. A flow can consist of a number of different constructs:
 
-* **Activties**: One or more activities that implement specific logic (for example write to a database, invoke a REST endpoint, etc)
+* **Activities**: One or more activities that implement specific logic (for example write to a database, invoke a REST endpoint, etc)
 * **Links**: Each activity is connected via a link (_Links can contain conditional logic to alter the path of a flow_)
 
 Flows, as previously stated in the triggers section, can exist without a trigger. Thus, flows operate very similar to functions, that is, a single flow can define its own input & output parameters. Thus, enabling a flow to be reused regardless of the trigger entrypoint To create a new flow you can click either the `+ New Flow` button at the top or the `Create a flow` button in the middle of the screen.
@@ -102,7 +102,7 @@ The URL on which our microservice will listen will be `http://localhost:9233/tes
 
 ## Step 5: Adding activities
 
-An activity is the unit of work that can be leveraged within a Flow. An activity can be any number of things and can be compared to a simple function in Go or any other procedural language, that is, an activity accepts input params and will return one or more objects on return, both input & output params are defined by the activity metadata. You’ll have to add some acvitivities to the flow for it to do something. To add an activity click on the large `+` sign
+An activity is the unit of work that can be leveraged within a Flow. An activity can be any number of things and can be compared to a simple function in Go or any other procedural language, that is, an activity accepts input params and will return one or more objects on return, both input & output params are defined by the activity metadata. You’ll have to add some activities to the flow for it to do something. To add an activity click on the large `+` sign
 
 ![step 5](../../images/labs/helloworld/step5.png)
 

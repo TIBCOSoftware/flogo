@@ -47,7 +47,7 @@ After that, click on "_Map to flow outputs_" to map the output parameters you cr
 
 ## Step 3: Add activities
 
-You’ll have to add some acvitivities to the flow for it to do something. To add an activity click on the large `+` sign
+You’ll have to add some activities to the flow for it to do something. To add an activity click on the large `+` sign
 
 ![step 3a](../../images/labs/aws-iot/step3a.png)
 

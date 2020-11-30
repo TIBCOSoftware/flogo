@@ -36,7 +36,7 @@ Click "_save_" to make sure everything is, well…, saved. You can click the lit
 
 ## Step 3: Add activities
 
-An activity is the unit of work that can be leveraged within a Flow. An activity can be any number of things and can be compared to a simple function in Go or any other procedural language, that is, an activity accepts input params and will return one or more objects on return, both input & output params are defined by the activity metadata. You’ll have to add some acvitivities to the flow for it to do something. To add an activity click on the large `+` sign
+An activity is the unit of work that can be leveraged within a Flow. An activity can be any number of things and can be compared to a simple function in Go or any other procedural language, that is, an activity accepts input params and will return one or more objects on return, both input & output params are defined by the activity metadata. You’ll have to add some activities to the flow for it to do something. To add an activity click on the large `+` sign
 
 ![step 3a](../../images/labs/timers/step3a.png)
 
