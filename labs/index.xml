@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Labs on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/labs/</link>
+    <description>Recent content in Labs on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/labs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS IoT</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/aws-iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/aws-iot/</guid>
+      <description>A device shadow is a digital representation in the cloud that stores and retrieves current state information for a device. You can get and set the state of a device over MQTT or HTTP, even if the device isn&amp;rsquo;t connected to the Internet.
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo Web UI</description>
+    </item>
+    
+    <item>
+      <title>Bookstore</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/bookstore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/bookstore/</guid>
+      <description>Who doesn&amp;rsquo;t like a good book? But what if you really, really need to get some information about a book first? In that case you build a Flogo app that uses the Google APIs to get book information!
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo Web UI</description>
+    </item>
+    
+    <item>
+      <title>Building apps with Flogo CLI</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/flogo-cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/flogo-cli/</guid>
+      <description>Project Flogo provides a CLI that gives you the ability to build flogo applications (flows, streams, rules, microgateway). With this tool you can, among other things, create your applications, build applications and install new extensions. This tool is great to use with Continuous Integration and Continuous Deployment tools like Jenkins and Travis-CI.
+In this tutorial you will learn how to use the flogo cli.
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI.</description>
+    </item>
+    
+    <item>
+      <title>Building Flogo apps for Lambda</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/flogo-lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/flogo-lambda/</guid>
+      <description>Serverless is all around us and perhaps the fastest growing market for compute. Flogo has first class support for AWS Lambda. So you can infinitely scale your ultralight functions and scale back to zero when not in use with AWS Lambda’s NoOps and seamless scaling capabilities.
+We’ll guide you through the set of steps required to build the most basic of functions for deployment to AWS Lambda. The flow you’ll build will be the function you deploy.</description>
+    </item>
+    
+    <item>
+      <title>Building your first activity</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/building-activities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/building-activities/</guid>
+      <description>Project Flogo exposes a number of different extension points, in this tutorial we&amp;rsquo;ll explore the activity contribution point and learn how to build a custom activity in Go.
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI
+Need help If you have any questions, feel free to post an issue on GitHub and tag it as a question or chat with the team and community:</description>
+    </item>
+    
+    <item>
+      <title>Building your first trigger</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/building-triggers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/building-triggers/</guid>
+      <description>Project Flogo provides two different command-line interfaces and which you need depends on the task you need to execute.
+ flogo: This CLI gives you the ability to build flows and microservices. With this tool you can, among other things, create your applications, build applications and install new extensions. This tool is great to use with Continuous Integration and Continuous Deployment tools like Jenkins and Travis-CI. flogogen: If you’re looking to extend the functionality that Project Flogo offers out of the box, this is the tool you want to use.</description>
+    </item>
+    
+    <item>
+      <title>Cheesecake Service</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/cheesecake-service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/cheesecake-service/</guid>
+      <description>Project Flogo offers multiple ways to build apps:
+ Web UI: You can develop flows using a zero code Web UI, which allows you to graphically build your microservices; JSON DSL: You can also build an app using a sophisticated, but elegant, JSON DSL (the Web UI uses this internally as well!); Go API: You can use the Go API to use Flogo as a Librry in your Go app!  In this tutorial you will learn how to use Flogo as a Library and to build a Go app while leveraging the Flogo engine.</description>
+    </item>
+    
+    <item>
+      <title>Cloud Deployments: Cloud Foundry</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/cloudfoundry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/cloudfoundry/</guid>
+      <description>Cloud Foundry is an open-source platform as a service (PaaS) that provides you with a choice of clouds, developer frameworks, and application services.
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI
+Cloud Foundry If you want to run Flogo apps in a Cloud Foundry environment, you have two options:</description>
+    </item>
+    
+    <item>
+      <title>Cloud Deployments: Docker</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/docker/</guid>
+      <description>Flogo apps are ultralight so building docker images is not only really easy, because it can embed all dependencies it can also run inside of super small docker containers.
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI
+Using flogo Out of the box, Flogo has the option to build a docker container from the app.</description>
+    </item>
+    
+    <item>
+      <title>Continuously testing Flogo activities</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/cicd-for-activities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/cicd-for-activities/</guid>
+      <description>Depending on where you store the source code and how publicly you want to have the code available you have a few options to continuously testing Flogo activities. In this tutorial you&amp;rsquo;ll look at Jenkins when using a local git server and Travis-CI for activities on GitHub
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI</description>
+    </item>
+    
+    <item>
+      <title>Flogo and SAM</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/flogo-and-sam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/flogo-and-sam/</guid>
+      <description>The AWS Serverless Application Model (AWS SAM) helps you to define serverless applications in simple and clean syntax. You can use the SAM CLI to manage Serverless applications written with AWS Serverless Application Model (SAM). SAM CLI can be used to test functions locally, start a local API Gateway from a SAM template, validate a SAM template, fetch logs, generate sample payloads for various event sources, and generate a SAM project in your favorite Lambda Runtime.</description>
+    </item>
+    
+    <item>
+      <title>Invoice Service</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/invoiceservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/invoiceservice/</guid>
+      <description>Let&amp;rsquo;s build an invoiceservice! In this tutorial we&amp;rsquo;ll walk you through building an app with several community-driven activities and talks to other services as well. The lab also covers Input/Output mappings, Invoking a REST service and Complex object mapping.
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo Web UI</description>
+    </item>
+    
+    <item>
+      <title>IoT Apps</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/iot-howto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/iot-howto/</guid>
+      <description>Flogo can run almost anywhere. From the largest clouds, to the smallest of devices and everything in between. Take this lab to get yourself familiar with how to develop apps for IoT devices using the Flogo CLI.
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI
+Need help If you have any questions, feel free to post an issue on GitHub and tag it as a question or chat with the team and community:</description>
+    </item>
+    
+    <item>
+      <title>IoT Apps: BeagleBone</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/beaglebone-iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/beaglebone-iot/</guid>
+      <description>Flogo can run almost anywhere. From the largest clouds, to the smallest of devices and everything in between. Take this lab to get yourself familiar with how to develop apps for IoT devices using the Flogo CLI. Let&amp;rsquo;s look at building for BeagleBone!
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI</description>
+    </item>
+    
+    <item>
+      <title>IoT Apps: Intel Edison</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/edison-iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/edison-iot/</guid>
+      <description>Flogo can run almost anywhere. From the largest clouds, to the smallest of devices and everything in between. Take this lab to get yourself familiar with how to develop apps for IoT devices using the Flogo CLI. Let&amp;rsquo;s look at building for Intel Edison!
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI</description>
+    </item>
+    
+    <item>
+      <title>IoT Apps: Raspberry Pi</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/raspberry-iot-cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/raspberry-iot-cli/</guid>
+      <description>Flogo can run almost anywhere. From the largest clouds, to the smallest of devices and everything in between. Take this lab to get yourself familiar with how to develop apps for IoT devices using the Flogo CLI. Let&amp;rsquo;s look at building for Raspberry Pi!
+What you&amp;rsquo;ll need Flogo CLI This demo makes use of the Flogo CLI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo CLI</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/kubernetes/</guid>
+      <description>Kubernetes is probably the most wellknown container orchestration platform out there, with a ton of companies building and hosting their own specific version or making use of of one. In this demo you explore how to run Flogo apps on Kubernetes. The demo will walk you through deploying two apps:
+ An invoice service which gets details on the invoice you specify in the URL A payment service which gets details on the expected payment date for the invoice (The invoice service will make use of the payment service to display all data)  What you&amp;rsquo;ll need The demo needs a working Kubernetes cluster.</description>
+    </item>
+    
+    <item>
+      <title>My First App: Hello World</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/helloworld/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/helloworld/</guid>
+      <description>Like with every programming language, a &amp;ldquo;Hello World&amp;rdquo; project gets you started with some basic fundamentals and Project Flogo really isn&amp;rsquo;t that different. This lab will get you started with the Flogo Web UI and building a simple flow.
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI. To make it easy to get started the Flogo Web UI is packaged up as a docker image which you can get from [docker hub](docker hub.</description>
+    </item>
+    
+    <item>
+      <title>My First App: Timers</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/timers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/timers/</guid>
+      <description>Timers are great to schedule stuff, and a great way to learn new technology! Use this lab to get familiar with some of the concepts of Flogo!
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI. To make it easy to get started the Flogo Web UI is packaged up as a docker image which you can get from docker hub. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo Web UI.</description>
+    </item>
+    
+    <item>
+      <title>Payment Service</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/paymentservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/paymentservice/</guid>
+      <description>The payment service is a service that uses a few communiy-driven activities to build out a Flogo microservice to generate a date when payment is expected. The lab also covers Input/Output mappings and Complex object mapping.
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI. If you don&amp;rsquo;t have that one running yet, please check out Getting Started with the Flogo Web UI</description>
+    </item>
+    
+    <item>
+      <title>PubNub</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/pubnub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/pubnub/</guid>
+      <description>Building microservices is awesome, having them talk to each other is even more awesome! But in today&amp;rsquo;s world, you can&amp;rsquo;t be too careful when it comes to sending sensitive data across the wire. In this demo you explore how to build a simple microservice to receive the messages from PubNub and write that data to a file.
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/raspberry-iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/raspberry-iot/</guid>
+      <description>A Raspberry Pi is probably one of the most well-known small single-board computers built to promote the teaching of basic computer science, and increasingly used for cool IoT projects. Flogo runs perfectly on these small devices, and in this lab you&amp;rsquo;ll build a sample to read and write data to the GPIO pins of the device
+What you&amp;rsquo;ll need The Flogo Web UI This demo makes use of the Flogo Web UI.</description>
+    </item>
+    
+    <item>
+      <title>Serverless Framework</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/serverless/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/serverless/</guid>
+      <description>Building serverless apps is awesome! As a developer you don&amp;rsquo;t have to worry about provisioning or maintaining servers, and you only have to create the code that you need to power your next business idea! Deploying such apps is made super easy by the team at Serverless Framework.With the Serverless Framework, you can configure which events should trigger it, where to deploy it and what kind of resources it is allowed to use without going into the AWS console.</description>
+    </item>
+    
+    <item>
+      <title>Streams: Aggregate</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/streams-aggregate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/streams-aggregate/</guid>
+      <description>Project Flogo is an ultra-light, Go-based open source ecosystem for building event-driven apps. It provides a bunch of capabilities to build those apps, like:
+ Integration Flows: Application Integration process engine with conditional branching and a visual development environment Stream Processing: a simple pipeline-based stream processing action with event joining capabilities across multiple triggers &amp;amp; aggregation over time windows Contextual Decisioning: Declarative Rules for Real-time Contextual Decisions  In this tutorial you will learn how to use the Stream Processing capability in Flogo</description>
+    </item>
+    
+    <item>
+      <title>Streams: Counter</title>
+      <link>https://tibcosoftware.github.io/flogo/labs/streams-filter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/labs/streams-filter/</guid>
+      <description>Project Flogo is an ultra-light, Go-based open source ecosystem for building event-driven apps. It provides a bunch of capabilities to build those apps, like:
+ Integration Flows: Application Integration process engine with conditional branching and a visual development environment Stream Processing: a simple pipeline-based stream processing action with event joining capabilities across multiple triggers &amp;amp; aggregation over time windows Contextual Decisioning: Declarative Rules for Real-time Contextual Decisions  In this tutorial you will learn how to use the Stream Processing capability in Flogo</description>
+    </item>
+    
+  </channel>
+</rss>

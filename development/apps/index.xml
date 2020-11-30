@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apps on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/development/apps/</link>
+    <description>Recent content in Apps on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/development/apps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>App structure</title>
+      <link>https://tibcosoftware.github.io/flogo/development/apps/app-structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/apps/app-structure/</guid>
+      <description>Every Flogo app has the same basic structure and files for an application.
+myApp/ ├── flogo.json └── src ├── go.mod ├── go.sum ├── imports.go ├── main.go files The most important files are
+ flogo.json : flogo project application configuration descriptor file imports.go : contains go imports for contributions (activities, triggers, models and functions) used by the application main.go : main file for the engine.  directories The most important directories are</description>
+    </item>
+    
+    <item>
+      <title>App Model</title>
+      <link>https://tibcosoftware.github.io/flogo/development/apps/app-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/apps/app-configuration/</guid>
+      <description>Flogo Application Model The flogo.json file is the metadata describing an application. The application dictates the dependencies to be used during compile time and can also be embeded into the compiled binary.
+{ &amp;#34;name&amp;#34;: &amp;#34;SampleApp&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;flogo:app&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;0.0.1&amp;#34;, &amp;#34;appModel&amp;#34;: &amp;#34;1.1.0&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;imports&amp;#34;: [ &amp;#34;github.com/project-flogo/contrib/activity/log&amp;#34;, &amp;#34;github.com/project-flogo/contrib/trigger/rest&amp;#34;, &amp;#34;github.com/project-flogo/flow&amp;#34; ], &amp;#34;triggers&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;receive_http_message&amp;#34;, &amp;#34;ref&amp;#34;: &amp;#34;#rest&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Receive HTTP Message&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;Simple REST Trigger&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;port&amp;#34;: 8080 }, &amp;#34;handlers&amp;#34;: [ { &amp;#34;settings&amp;#34;: { &amp;#34;method&amp;#34;: &amp;#34;GET&amp;#34;, &amp;#34;path&amp;#34;: &amp;#34;/test&amp;#34; }, &amp;#34;action&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;#flow&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;flowURI&amp;#34;: &amp;#34;res://flow:get_name&amp;#34; }, &amp;#34;input&amp;#34;: { &amp;#34;name&amp;#34;: &amp;#34;=$.</description>
+    </item>
+    
+    <item>
+      <title>Application Configuration Provider</title>
+      <link>https://tibcosoftware.github.io/flogo/development/apps/application-configuration-provider/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/apps/application-configuration-provider/</guid>
+      <description>Unless you want to provide the application configuration (for example: flogo.json) in a different way or format you should not worry about this feature.
+We have provided an extension mechanism for you to override the default way of providing the application configuration if needed.
+Topics  Default behavior Embedded configuration Custom configuration  Default behavior Out of the box, the default behavior will be as follows:
+ Configuration will be passed to the engine in the JSON format Default path for the JSON file will be in the same directory as the application&amp;rsquo;s binary Default name for the JSON file will be &amp;ldquo;flogo.</description>
+    </item>
+    
+    <item>
+      <title>Best practices for app development</title>
+      <link>https://tibcosoftware.github.io/flogo/development/apps/best-practices-app-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/apps/best-practices-app-development/</guid>
+      <description>There are a few best practices that we recommend when developing apps and functions using Flogo.
+.gitignore You definitely want to store your apps in a source control system and we recommend the the below template for your .gitignore for Flogo apps
+## Project Flogo .gitignore ## To restore all dependencies and prepare the project for build run ## the command `flogo imports sync` ## bin folder is constructed using flogo build /bin using the -cv flag With the flogo cli you&amp;rsquo;re usually on the latest tagged version of the main flogo repos.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functionss on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/development/webui/functions/</link>
+    <description>Recent content in Functionss on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/development/webui/functions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coerce</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/functions/coerce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/functions/coerce/</guid>
+      <description>Data Coerce Functions This function package enables you to coerce data from one type to another.
+Valid data types in Flogo include:
+   Type Description     any Any data type.   string A string   int A standard int   int32 A 32 bit integer   int64 A 64 bit integer   float32 A 32 bit float   float64 A 64 bit float   bool A boolean (true   object A flogo object.</description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/functions/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/functions/http/</guid>
+      <description>HTTP Functions This function package exposes http related related utility functions.
+reqCookieToParams() Converts the &amp;lsquo;Cookie&amp;rsquo; request header value string to Params object.
+Example http.reqCookieToParams($.headers[&amp;quot;Cookie&amp;quot;]) =&amp;gt; { &amp;quot;cookie1&amp;quot;:&amp;quot;value1&amp;quot;, &amp;quot;cookie2&amp;quot;:&amp;quot;value2&amp;quot; }
+Input    Arg Type Description     cookies string The string from the &amp;lsquo;Cookie&amp;rsquo; request header    Output    Type Description     params A string map of cookie name to value    reqCookieFromParams() Converts a Params object to a string suitable for setting &amp;lsquo;Cookie&amp;rsquo; request header value.</description>
+    </item>
+    
+    <item>
+      <title>JSON</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/functions/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/functions/json/</guid>
+      <description>JSON Functions This function package exposes common json functions.
+path() Apply a JSON path to an object.
+Input Args    Arg Type Description     path string The JSON path.   object any The object to apply the JSON path to.    Output    Arg Type Description     returnType any The result of the JSON path.    </description>
+    </item>
+    
+    <item>
+      <title>Number</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/functions/number/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/functions/number/</guid>
+      <description>Number Functions This function package exposes common number related functions.
+random() Generates a random number.
+Input Args    Arg Type Description     limit int The maximum number value.    Output    Arg Type Description     returnType int A non-negative pseudo-random number.    </description>
+    </item>
+    
+    <item>
+      <title>String</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/functions/string/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/functions/string/</guid>
+      <description>String Functions This function package exposes common string related functions.
+concat() Concatenate a set of strings.
+Input Args    Arg Type Description     str string Strings to concatinate    Output    Arg Type Description     returnType string A concatinated string.    equals() Check if two strings are equal
+Input Args    Arg Type Description     str1 string String to be compared   str2 string String to be compared    Output    Arg Type Description     returnType bool True if the strings are equal, otherwise false.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/functions/utils/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/functions/utils/</guid>
+      <description>Utils Functions This package adds a set of functions that can be used in Flogo versions &amp;gt;= 0.9.0.
+Functions    Name Decription Sample     decodestring Decodestring returns the string represented by the base 64 encoded input string. utils.decodestring(&amp;quot;SGVsbG8gV29ybGQ=&amp;quot;)   encodestring Encodestring returns a base 64 encoded copy of the input string. utils.encodestring(&amp;ldquo;Hello World&amp;rdquo;)   uuid UUID generates a random UUID according to RFC 4122.</description>
+    </item>
+    
+  </channel>
+</rss>

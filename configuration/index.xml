@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/configuration/</link>
+    <description>Recent content in Configuration on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Environment variables</title>
+      <link>https://tibcosoftware.github.io/flogo/configuration/environment-vars/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/configuration/environment-vars/</guid>
+      <description>List of environment variables to configure the flogo engine
+   Environment name Default value Info     FLOGO_LOG_DTFORMAT &amp;ldquo;2006-01-02 15:04:05.000&amp;rdquo; Sets the log date and time format   FLOGO_LOG_LEVEL &amp;ldquo;INFO&amp;rdquo; Sets the log level   FLOGO_RUNNER_TYPE &amp;ldquo;POOLED&amp;rdquo; Sets the type of the runner   FLOGO_RUNNER_WORKERS 5 Sets the number of workers   FLOGO_RUNNER_QUEUE 50 Sets the runner queue size   FLOGO_CONFIG_PATH &amp;ldquo;flogo.</description>
+    </item>
+    
+  </channel>
+</rss>

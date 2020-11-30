@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activities on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/development/webui/activities/</link>
+    <description>Recent content in Activities on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/development/webui/activities/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reply</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/actreply/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/actreply/</guid>
+      <description>Reply This activity allows you to reply to a trigger invocation and map output values. After replying to the trigger, this activity will allow the action to continue further.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/actreply Configuration Settings:    Name Type Description     mappings object Set of mappings to execute when the activity runs    Example The below example allows you to configure the activity to reply and set the output values to literals &amp;ldquo;name&amp;rdquo; (a string) and 2 (an integer).</description>
+    </item>
+    
+    <item>
+      <title>Return</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/actreturn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/actreturn/</guid>
+      <description>Return This activity allows you to reply to a trigger invocation and map output values. After replying to the trigger, the flow ends (this will be the last actvity in your flow).
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/actreturn Configuration Settings:    Name Type Description     mappings object Set of mappings to execute when the activity runs    Example The below example allows you to configure the activity to reply and set the output values to literals &amp;ldquo;name&amp;rdquo; (a string) and 2 (an integer).</description>
+    </item>
+    
+    <item>
+      <title>Channel</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/channel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/channel/</guid>
+      <description>Channel This activity allows you to put a data on a named channel in the flogo engine. Channels are essentially an internal communication channel in the engine.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/channel Configuration Input:    Name Type Description     channel string The name of channel to use - REQUIRED   data any The data to put on the channel    </description>
+    </item>
+    
+    <item>
+      <title>Counter</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/counter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/counter/</guid>
+      <description>Counter This activity allows you to use a global counter.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/counter Configuration Settings:    Name Type Description     counterName string The name of the counter - REQUIRED   op string The counter operation, &amp;lsquo;get&amp;rsquo; is the default operation    Output:    Name Type Description     value int The result of the counter operation    Examples Increment The below example increments a &amp;lsquo;messages&amp;rsquo; counter:</description>
+    </item>
+    
+    <item>
+      <title>Error</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/error/</guid>
+      <description>Error This activity allows you to cause an explicit error in the flow (throw an error).
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/error Configuration Input:    Name Type Description     message string The error message   data any The error data    Configuration Examples The below example throws a simple error with a message:
+{ &amp;#34;id&amp;#34;: &amp;#34;throw_error&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Throw Error&amp;#34;, &amp;#34;activity&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;github.</description>
+    </item>
+    
+    <item>
+      <title>Log</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/log/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/log/</guid>
+      <description>Log This activity allows you to write log messages.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/log Configuration Input:    Name Type Description     message string The message to log   addDetails bool Append contextual execution information to the log message   usePrint bool Use Print to stdout instead of the built-in Logger. The built-in logger may not be compatible with some cloud environments.    Examples The below example logs a message &amp;lsquo;test message&amp;rsquo;:</description>
+    </item>
+    
+    <item>
+      <title>No-Op</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/noop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/noop/</guid>
+      <description>No-Op This activity is a simple No-Op that can be used for testing.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/noop Examples Configuration of a No-Op activity
+{ &amp;#34;id&amp;#34;: &amp;#34;noop&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;NoOp&amp;#34;, &amp;#34;activity&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;github.com/project-flogo/contrib/activity/noop&amp;#34; } } </description>
+    </item>
+    
+    <item>
+      <title>XML2JSON</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/xml2json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/xml2json/</guid>
+      <description>Log This activity allows you to convert XML data to JSON object.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/xml2json Configuration Input:    Name Type Description     xmlData string The XML data to be converted    Output:    Name Type Description     jsonObject object The JSON object    Examples The below example logs a message &amp;lsquo;test message&amp;rsquo;:
+{ &amp;#34;id&amp;#34;: &amp;#34;xml2json_activity&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;XML2JSON Activity&amp;#34;, &amp;#34;activity&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;github.</description>
+    </item>
+    
+    <item>
+      <title>AppData</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/appdata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/appdata/</guid>
+      <description>AppData This activity allows you to set and get global App attributes.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/appdata Configuration Settings:    Name Type Description     name string The name of the shared attribute - REQUIRED   op string The operation (get or set), &amp;lsquo;get&amp;rsquo; is the default   type string The data type of the shared value, default is &amp;lsquo;any&amp;rsquo;    Input:    Name Type Description     value object The value of the shared attribute    Output:    Name Type Description     value object The value of the shared attribute    Examples Get Get the value of the &amp;lsquo;myAttr&amp;rsquo; attribute:</description>
+    </item>
+    
+    <item>
+      <title>JSExec</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/jsexec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/jsexec/</guid>
+      <description>Javascript Execution Activity The jsexec activity evaluates a javascript script along with provided parameters and returns the result in the outputs.
+Flogo CLI flogo install github.com/project-flogo/contrib/activity/jsexec Configuration Settings:    Name Type Description     script string The javascript code to evaluate    Input:    Name Type Description     parameters object Key/value pairs representing parameters to evaluate within the context of the script    Output:    Name Type Description     error bool Flag indicating if there was an error executing the script   errorMessage string The error message   result object The result object from the javascript code    Microgateway Usage A sample service definition is:</description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/kafka/</guid>
+      <description>Kafka Activity This activity publishes messages on a topic in a Kafka cluster.
+Flogo CLI flogo install github.com/project-flogo/contrib/activity/kafka Configuration Settings:    Name Type Description     brokerUrls string The brokers of the Kafka cluster to connect to - REQUIRED   topic string The Kafka topic on which to place the message - REQUIRED   user string If connecting to a SASL enabled port, the user id to use for authentication   password string If connecting to a SASL enabled port, the password to use for authentication   trustStore string If connecting to a TLS secured port, the directory containing the certificates representing the trust chain for the connection.</description>
+    </item>
+    
+    <item>
+      <title>Mapper</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/mapper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/mapper/</guid>
+      <description>Mapper This activity allows you to map values to the working attribute set of an action.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/mapper Configuration Settings:    Name Type Description     mappings object Set of mappings to execute    Example The below example allows you to configure the activity to map the output &amp;lsquo;value&amp;rsquo; of activity &amp;lsquo;myActivity&amp;rsquo; to FlowAttr1
+{ &amp;#34;id&amp;#34;: &amp;#34;mapper&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Mapper&amp;#34;, &amp;#34;activity&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;github.</description>
+    </item>
+    
+    <item>
+      <title>SQL Query</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/sqlquery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/sqlquery/</guid>
+      <description>SQLQuery Database Activity This activity provides your flogo application execute database queries.
+Installation flogo install github.com/project-flogo/activity/sqlquery Configuration Settings:    Name Type Description     dbType string The type of database (mysql, oracle, postgres, sqlite, sqlserver) - REQUIRED   driverName string The database driver name - REQUIRED   dataSourceName string The database DataSource name - REQUIRED   maxOpenConnections int Max open connections (default is unlimited)   maxIdleConnections int Max idle connections (default is 2)   query string The SQL select query - REQUIRED   disablePrepared bool Disable prepared statement usage   labeledResults bool Return results labeled by column name    Input:    Name Type Description     params map The query parameters    Output:    Name Type Description     columnNames array The names of the result columns   results array The results    Examples Query Simple query that gets all items with ID less than 10, retrieves all the columns.</description>
+    </item>
+    
+    <item>
+      <title>UpdObject</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/updobject/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/updobject/</guid>
+      <description>UpdObject This activity allows update an existing object&amp;rsquo;s values.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/updobject Configuration Input:    Name Type Description     object object The object to update   values object The keys/properties and values to update or add    Example Update the passthru object&amp;rsquo;s foo value:
+{ &amp;#34;id&amp;#34;: &amp;#34;updflowpassthru&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Update Flow Passthru&amp;#34;, &amp;#34;activity&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;github.com/project-flogo/contrib/activity/updobject&amp;#34;, &amp;#34;input&amp;#34;: { &amp;#34;object&amp;#34;: &amp;#34;=$flow.passthru&amp;#34;, &amp;#34;values&amp;#34;: {&amp;#34;foo&amp;#34;: &amp;#34;bar&amp;#34;} } } } </description>
+    </item>
+    
+    <item>
+      <title>REST</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/rest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/rest/</guid>
+      <description>REST This activity allows you to invoke a REST service.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/rest Configuration Settings:    Name Type Description     method string The HTTP method to invoke (Allowed values are GET, POST, PUT, DELETE, and PATCH) - REQUIRED   uri string The URI of the service to invoke - REQUIRED   headers params The HTTP header parameters   proxy string The address of the proxy server to be used   timeout int The request timeout in seconds   sslConfig object SSL configuration    sslConfig Object:    Property Type Description     skipVerify bool Skip SSL validation, defaults to true   useSystemCert bool Use the systems root certificate file, defaults to true   caFile string The path to PEM encoded root certificates file   certFile string The path to PEM encoded client certificate   keyFile string The path to PEM encoded client key    Note: used if URI is https</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/api/</guid>
+      <description>Gateway with Javascript This recipe is a gateway which runs some javascript.
+Installation  Install Go  Setup git clone https://github.com/project-flogo/contrib/activity/jsexec cd jsexec/examples/microgateway/api Testing Start the gateway:
+go run example.go Run the following command:
+curl http://localhost:9096/calculate&amp;#34; You should see the following like response:
+{&amp;#34;sum&amp;#34;:3} </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/json/</guid>
+      <description>Gateway with Javascript This recipe is a gateway which runs some javascript.
+Installation  Install Go Install the Flogo CLI  Setup git clone https://github.com/project-flogo/jsexec cd jsexec/examples/microgateway/json Testing Create the gateway:
+flogo create -f flogo.json cd MyProxy flogo build Start the gateway:
+bin/MyProxy Run the following command:
+curl http://localhost:9096/calculate&amp;#34; You should see the following like response:
+{&amp;#34;sum&amp;#34;:3} </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/activities/runaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/activities/runaction/</guid>
+      <description>RunAction This activity allows you to run flogo actions.
+Installation Flogo CLI flogo install github.com/project-flogo/contrib/activity/runaction Configuration Settings    Name Type Description     actionRef string The &amp;lsquo;ref&amp;rsquo; to the action to be run   actionSettings object The settings of the action    Input The inputs for this activity should be the inputs for the action you are running
+Output    Name Type Description     output object The output of the action.</description>
+    </item>
+    
+  </channel>
+</rss>

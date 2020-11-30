@@ -1,0 +1,3604 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="Project Flogo - Docs and Tutorials">
+<meta name="author" content="flogo contributors">
+
+    <link rel="shortcut icon" href="http://www.flogo.io/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <title>Inferencing :: Project Flogo - Docs and Tutorials</title>
+    
+    
+    <link href="/flogo/css/nucleus.css?1606757902" rel="stylesheet" type="text/css">
+    <link href="/flogo/css/fontawesome-all.min.css?1606757902" rel="stylesheet" type="text/css">
+    <link href="/flogo/css/hybrid.css?1606757902" rel="stylesheet" type="text/css">
+    <link href="/flogo/css/featherlight.min.css?1606757902" rel="stylesheet" type="text/css">
+    <link href="/flogo/css/perfect-scrollbar.min.css?1606757902" rel="stylesheet" type="text/css">
+    <link href="/flogo/css/auto-complete.css?1606757902" rel="stylesheet" type="text/css">
+    <link href="/flogo/css/theme.css?1606757902" rel="stylesheet" type="text/css">
+    <link href="/flogo/css/hugo-theme.css?1606757902" rel="stylesheet" type="text/css">
+    
+      <link href="/flogo/css/theme-blue.css?1606757902" rel="stylesheet" type="text/css">
+    
+
+    <script src="/flogo/js/jquery-2.x.min.js?1606757902"></script>
+
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5BNWTHP');</script>
+    
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/flogo/development/flows/tensorflow/inferencing-tf/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 387.7 238.7" style="enable-background:new 0 0 387.7 238.7;" xml:space="preserve">
+    <svg id="link">
+            <a xlink:href="https://tibcosoftware.github.io/flogo">
+            <style type="text/css">
+                .st0 {
+                    fill: #3FBFBB;
+                }
+        
+                .st1 {
+                    fill: #CEECE9;
+                }
+        
+                .st2 {
+                    fill: #99D9D5;
+                }
+        
+                .st3 {
+                    fill: #BDE6E3;
+                }
+        
+                .st4 {
+                    fill: #DFF2F0;
+                }
+        
+                .st5 {
+                    fill: #EAD7C5;
+                }
+        
+                .st6 {
+                    fill: #FBEB34;
+                }
+        
+                .st7 {
+                    fill: #FFCF2B;
+                }
+        
+                .st8 {
+                    fill: none;
+                }
+        
+                .st9 {
+                    fill: #F7323F;
+                }
+        
+                .st10 {
+                    fill: #FBB475;
+                }
+        
+                .st11 {
+                    fill: #FFFFFF;
+                }
+        
+                .st12 {
+                    fill: #DBD9D6;
+                }
+        
+                .st13 {
+                    fill: #2E2A25;
+                }
+        
+                .st14 {
+                    fill: #7B2E00;
+                }
+            </style>
+            <g>
+                <g>
+                    <path class="st0" d="M274.3,227.3c-0.4-0.2-39.8-13.6-39.8-13.6s-3.4-0.4-1.6,3.7c0.9,2,2.5,3.9,4.1,5.5c-1.9-1.2-3.8-2.3-5.4-3.3
+               c1.2,2.9,3.6,5.6,4,6.2c0.5,0.7,13.6,9.5,17,11.6c3.4,2.1,6.3,1.3,7.2,0.6c0.8-0.6,0-1.4-0.2-1.5c-0.3-0.2-4.9-2.8-4.9-2.8
+               s-0.5-0.2-6.5-3.9c4.9,2.1,10.8,4.6,13.4,5.6c4.8,1.8,8,1.2,8.9,0.3c0.9-1-0.3-1.7-0.6-1.9c-0.4-0.2-1.9-0.8-1.9-0.8
+               s-3-1.1-21.3-9.1c22,9,29.5,8.4,30.1,6.2C277.3,227.9,274.7,227.5,274.3,227.3z" />
+                    <g>
+                        <path class="st1" d="M214.8,184.7c0,0,21.3-40.3,29.2-72.2c12.9-52,10-79.1,12.5-79.5c2.7-0.2,8.1,1.6,12,13.1
+                   c4,11.6,3.4,34.1-3,57.3C262.4,114.7,250.3,148,214.8,184.7z" />
+                        <path class="st0" d="M212.2,184.7c0,0,37.9-42.3,72.3-102.5c19.8-34.6,37.3-70.5,39.3-73.4c1.9-3,10.1-18.3,14.6,0.2
+                   c13.3,54.2-39.9,115.2-62.6,134.7C244.5,170.5,212.2,184.7,212.2,184.7z" />
+                        <path class="st2" d="M211.9,183.1c0,0,32.1-9.4,82.7-52.5c29.1-24.8,50.1-48.5,61.2-58.9c3.2-3,15-13.2,13.1,4.9
+                   c-5.6,53.1-73.9,87.9-100.8,98.1C231.2,188.8,211.9,183.1,211.9,183.1z" />
+                        <path class="st3" d="M226.9,184.5c0,0,27.1-2.4,49.6-12c29.6-12.7,81.7-43.7,86.9-38.7c3.1,3-0.6,15.9-17.5,27.7
+                   C307.2,188.4,237.4,193.9,226.9,184.5z" />
+                        <path class="st4" d="M219.4,180.6c0,0,2.6,7.1,26.1,8c32.2,1.2,92.3-8.7,95.1-2.1c1.7,4-6.7,14.4-26.9,18.7
+                   C267.6,215.2,225.5,193.3,219.4,180.6z" />
+                    </g>
+                    <path class="st5" d="M206.7,214.8c-3-2.4-14.1-39-17.7-48.1l-77.4-5.7c36.1,3,36.6,22.9,59.8,51.7h0.1
+               c10.4,14.7,24.2,19.3,41,19.3c11.9,0,18-2.6,27.4-8.5C232.7,222.4,214,220.7,206.7,214.8z" />
+                    <path class="st6" d="M240.3,193.4c-2.4-3.2-5.4-6.3-8.9-9.2c-2-1.6-4-3-6.1-4.2c-1.8-2.8-3-6.2-3.5-9.6
+               c-1.1-7.7-4.1-14.7-8.6-20.6c-9.1-13-24.2-21.5-41.3-21.5c-20,0-32.1,13-40.2,30c2.8,0.7,0.3,0.1,3.1,0.9
+               c19.1,5.4,36,12.8,52.5,23c-4.1,9.3,3.2,24.7,16.4,35.3c7.3,5.9,18.2,8.5,25.4,8.7c10.6,0.3,19.3-4.3,21-8.4
+               C249.5,209.5,248.1,203.8,240.3,193.4z" />
+                    <path class="st7" d="M205.4,140.9c-7.5-6.7-17.1-11.2-27.7-12.4c6.8-3.5,13.3-6.8,13.4-6.9c0.3-0.2,2.2-0.7,1.6-2.5
+               c-0.7-1.8-6.5-1.6-22.3,7.8c13.1-8.3,15.2-9.5,15.2-9.5s1.1-0.6,1.4-0.8c0.3-0.2,1.1-0.9,0.3-1.7c-0.8-0.8-3.3-1-6.7,1
+               c-1.9,1.1-6.1,3.7-9.6,5.9c4.2-3.6,4.5-3.9,4.5-3.9s3.3-2.6,3.4-2.8c0.2-0.2,0.7-0.9,0-1.3c-0.7-0.5-3-0.9-5.4,1.1
+               c-2.4,2-12.8,13-13.5,14.7c-11.7,1-30.2,12.8-28.5,28.7c2.8,0.7,0.8,0.2,3.5,1c0,0,12,4,14.8,5.3l7.3,2.9c-0.6-2.1-1-6.2-0.9-8.5
+               c0.1-4.1,6.9-19.2,22.7-22.1c1.9-0.2,3.8-0.3,5.8-0.3C192.3,136.6,199.2,138.1,205.4,140.9z" />
+                    <path class="st7" d="M222.3,177.6c-0.1,9-2.8,17.4-7.4,24.4c-3.5,5.3-8.1,9.9-13.4,13.4c0.8,0.7,1.6,1.5,2.4,2.3
+               c4.9-4,9.1-9,12.2-14.6c4-7.2,6.3-15.5,6.3-24.4C222.3,178.3,222.3,178,222.3,177.6z" />
+                    <path class="st8" d="M195.4,207.8c-0.2-0.1-0.4-0.3-0.5-0.4c0.1,0.1,0.2,0.3,0.3,0.4C195.3,207.7,195.3,207.8,195.4,207.8z"
+                    />
+                    <path class="st10" d="M170.2,174.6c0,0,7.3-11.1,13.6-12.7c6.2-1.6,9.8-1.3,13.2,2.8s3.8,11,3.1,14.8c-4-1-7.1-2.4-11-2.6
+               c-3.9-0.2-17.5,0.3-17.5,0.3L170.2,174.6z" />
+                    <path class="st11" d="M138,157.8c-3.8,3.8-10,3.7-13.8-0.2c-3.8-3.8-3.7-10,0.2-13.8c3.8-3.8,10-3.7,13.8,0.2
+               C141.9,147.9,141.9,154,138,157.8" />
+                    <path class="st12" d="M126.4,142.4c1.3-0.7,2.7-1.2,4.1-1.3c0,0-6.2,0.8-7.1,7.5c-0.9,6.7,5.6,11.7,8,11.9
+               c-2.6,0.1-5.2-0.9-7.2-2.9c-3.8-3.8-3.7-10,0.2-13.8C125,143.3,125.7,142.8,126.4,142.4" />
+                    <path class="st13" d="M138.6,149.6c0.9,2.6-0.5,5.4-3.1,6.3c-2.6,0.9-5.4-0.5-6.3-3.1c-0.9-2.6,0.5-5.4,3.1-6.3
+               C134.9,145.6,137.7,147,138.6,149.6" />
+                    <path class="st11" d="M137.3,149.7c0.3,0.9-0.2,1.8-1,2.1c-0.9,0.3-1.8-0.2-2.1-1c-0.3-0.9,0.2-1.8,1-2.1
+               C136.1,148.3,137,148.8,137.3,149.7" />
+                    <path class="st14" d="M178.7,188.3l-17-12.1l-56.9-15.7c-0.9-0.2-1.5,0.8-1,1.5l0,0c22.3,4.4,34.4,12.4,48.2,23.8
+               C156.5,190.2,168.8,193.6,178.7,188.3z" />
+                    <path class="st9" d="M188.2,178.5c-0.5-4.4-3.8,1.4-18-5.8c-0.7-0.4-2-1.1-2-1.1c0,0-19.3-8.6-34.8-13c-2.6-0.7-5.2-1.4-7.8-2.1
+               c-15.2-3.7-31.2-5.7-47.6-5.7c-25.8,0-50.5,4.9-73.2,13.7c17.1-4.7,35.2-7.3,53.8-7.3c22.1,0,43.4,3.6,63.3,10.2
+               c2.8,0.9,5.6,1.9,8.3,3c9.5,3.6,18.2,6.9,29.5,14.5c0.4,0.3,2.8,2,7.9,4.4c1.5,0.7,5.8,1.3,9.4-0.3
+               C182.9,186.5,188.7,183.1,188.2,178.5z" />
+                    <path class="st11" d="M181.4,172.5c-6.1,6.1-16.1,6.1-22.3,0c-6.1-6.1-6.1-16.1,0-22.3c6.1-6.1,16.1-6.1,22.3,0
+               C187.5,156.4,187.5,166.4,181.4,172.5" />
+                    <path class="st12" d="M155,157.4c0.6-2.3,1.7-4.4,3.2-6.2c0,0-6.1,8.1,0.6,16.8c6.7,8.6,19.9,6.7,22.8,4.1c-2.9,3.1-7,5-11.5,5
+               c-8.7,0-15.7-7-15.7-15.7C154.5,160,154.7,158.7,155,157.4" />
+                    <path class="st14" d="M177.5,182.6c-4.5,2.4-12.9,1.4-17.6,0.7c-3.1-0.4-8.2-3.4-11.3-5c0,0.4,8.3,6.9,8.8,7.3
+               c1.2,0.9,4.1,1.8,7.1,1.9c3.9,0,7.8-0.1,16.5-4.8C182.2,181.9,181.7,180.5,177.5,182.6z" />
+                    <path class="st13" d="M182.2,159.3c1.5,4.3-0.9,9-5.2,10.5c-4.3,1.5-9-0.9-10.5-5.2c-1.5-4.3,0.9-9,5.2-10.5
+               C176,152.7,180.7,155,182.2,159.3" />
+                    <path class="st11" d="M180,159.4c0.5,1.4-0.3,3-1.7,3.5c-1.4,0.5-3-0.3-3.5-1.7c-0.5-1.4,0.3-3,1.7-3.5S179.6,158,180,159.4"
+                    />
+                </g>
+                <g>
+                    <path class="st0" d="M357,30.4v6.1h-0.9v-6.1h-2.4v-0.9h5.8v0.9H357z" />
+                    <path class="st0" d="M366.6,30.7l-2.1,5.7h-0.9l-2.1-5.7l-0.1,5.8h-0.9l0.2-7h1.3l2.1,5.7l2.1-5.7h1.2l0.2,7h-1L366.6,30.7z"
+                    />
+                </g>
+            </g>
+            </a>
+    </svg>
+</svg>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/flogo/js/lunr.min.js?1606757902"></script>
+<script type="text/javascript" src="/flogo/js/auto-complete.js?1606757902"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/flogo\/';
+    
+</script>
+<script type="text/javascript" src="/flogo/js/search.js?1606757902"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/introduction/">
+          <i class="fas fa-home" aria-hidden="true"></i> Introduction
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/getting-started/" title="Getting started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/getting-started/">
+          <i class="fas fa-play-circle" aria-hidden="true"></i> Getting started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/getting-started/quickstart/" title="Quickstart" class="dd-item ">
+        <a href="/flogo/getting-started/quickstart/">
+        <i class="fas fa-bolt" aria-hidden="true"></i> Quickstart
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/getting-started/getting-started-webui/" title="Flogo Web UI" class="dd-item ">
+        <a href="/flogo/getting-started/getting-started-webui/">
+        <i class="fas fa-desktop" aria-hidden="true"></i> Flogo Web UI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/getting-started/getting-started-cli/" title="Flogo CLI" class="dd-item ">
+        <a href="/flogo/getting-started/getting-started-cli/">
+        <i class="fas fa-terminal" aria-hidden="true"></i> Flogo CLI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/labs/" title="Labs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/labs/">
+          <i class="fas fa-flask" aria-hidden="true"></i> Labs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+             
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/configuration/">
+          <i class="fas fa-wrench" aria-hidden="true"></i> Configuration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/configuration/environment-vars/" title="Environment variables" class="dd-item ">
+        <a href="/flogo/configuration/environment-vars/">
+        <i class="fas fa-cog" aria-hidden="true"></i> Environment variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/" title="Development" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/flogo/development/">
+          <i class="fas fa-code" aria-hidden="true"></i> Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/apps/" title="Apps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/development/apps/">
+          <i class="fas fa-code" aria-hidden="true"></i> Apps
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/apps/app-structure/" title="App structure" class="dd-item ">
+        <a href="/flogo/development/apps/app-structure/">
+        App structure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/apps/app-configuration/" title="App Model" class="dd-item ">
+        <a href="/flogo/development/apps/app-configuration/">
+        App Model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/apps/application-configuration-provider/" title="Application Configuration Provider" class="dd-item ">
+        <a href="/flogo/development/apps/application-configuration-provider/">
+        Application Configuration Provider
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/apps/best-practices-app-development/" title="Best practices for app development" class="dd-item ">
+        <a href="/flogo/development/apps/best-practices-app-development/">
+        Best practices for app development
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/flows/" title="Flows" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/flogo/development/flows/">
+          <i class="fas fa-map" aria-hidden="true"></i> Flows
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/flows/tensorflow/" title="TensorFlow" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/flogo/development/flows/tensorflow/">
+          TensorFlow
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/tensorflow/getting-started/" title="Getting Started" class="dd-item ">
+        <a href="/flogo/development/flows/tensorflow/getting-started/">
+        Getting Started
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/tensorflow/inferencing-tf/" title="Inferencing" class="dd-item active">
+        <a href="/flogo/development/flows/tensorflow/inferencing-tf/">
+        Inferencing
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/accumulate/" title="Accumulate Activity Output for All Iterations" class="dd-item ">
+        <a href="/flogo/development/flows/accumulate/">
+        Accumulate Activity Output for All Iterations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/app-events/" title="App Audit Events" class="dd-item ">
+        <a href="/flogo/development/flows/app-events/">
+        App Audit Events
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/property-bag/" title="App Properties" class="dd-item ">
+        <a href="/flogo/development/flows/property-bag/">
+        App Properties
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/io-parameters/" title="Flow Input/Output Params" class="dd-item ">
+        <a href="/flogo/development/flows/io-parameters/">
+        Flow Input/Output Params
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/iterators/" title="Iterator" class="dd-item ">
+        <a href="/flogo/development/flows/iterators/">
+        Iterator
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/mapping/" title="Mappings" class="dd-item ">
+        <a href="/flogo/development/flows/mapping/">
+        Mappings
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/dowhile/" title="Repeat on True(dowhile)" class="dd-item ">
+        <a href="/flogo/development/flows/dowhile/">
+        Repeat on True(dowhile)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/flows/retryonerror/" title="Retry On Error" class="dd-item ">
+        <a href="/flogo/development/flows/retryonerror/">
+        Retry On Error
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/webui/" title="Web UI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/development/webui/">
+          <i class="fas fa-desktop" aria-hidden="true"></i> Web UI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/webui/activities/" title="Activities" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/development/webui/activities/">
+          <i class="fas fa-desktop" aria-hidden="true"></i> Activities
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/actreply/" title="Reply" class="dd-item ">
+        <a href="/flogo/development/webui/activities/actreply/">
+        Reply
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/actreturn/" title="Return" class="dd-item ">
+        <a href="/flogo/development/webui/activities/actreturn/">
+        Return
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/channel/" title="Channel" class="dd-item ">
+        <a href="/flogo/development/webui/activities/channel/">
+        Channel
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/counter/" title="Counter" class="dd-item ">
+        <a href="/flogo/development/webui/activities/counter/">
+        Counter
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/error/" title="Error" class="dd-item ">
+        <a href="/flogo/development/webui/activities/error/">
+        Error
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/log/" title="Log" class="dd-item ">
+        <a href="/flogo/development/webui/activities/log/">
+        Log
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/noop/" title="No-Op" class="dd-item ">
+        <a href="/flogo/development/webui/activities/noop/">
+        No-Op
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/xml2json/" title="XML2JSON" class="dd-item ">
+        <a href="/flogo/development/webui/activities/xml2json/">
+        XML2JSON
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/appdata/" title="AppData" class="dd-item ">
+        <a href="/flogo/development/webui/activities/appdata/">
+        AppData
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/jsexec/" title="JSExec" class="dd-item ">
+        <a href="/flogo/development/webui/activities/jsexec/">
+        JSExec
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/kafka/" title="Kafka" class="dd-item ">
+        <a href="/flogo/development/webui/activities/kafka/">
+        Kafka
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/mapper/" title="Mapper" class="dd-item ">
+        <a href="/flogo/development/webui/activities/mapper/">
+        Mapper
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/sqlquery/" title="SQL Query" class="dd-item ">
+        <a href="/flogo/development/webui/activities/sqlquery/">
+        SQL Query
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/updobject/" title="UpdObject" class="dd-item ">
+        <a href="/flogo/development/webui/activities/updobject/">
+        UpdObject
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/rest/" title="REST" class="dd-item ">
+        <a href="/flogo/development/webui/activities/rest/">
+        REST
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/api/" title="" class="dd-item ">
+        <a href="/flogo/development/webui/activities/api/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/json/" title="" class="dd-item ">
+        <a href="/flogo/development/webui/activities/json/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/activities/runaction/" title="" class="dd-item ">
+        <a href="/flogo/development/webui/activities/runaction/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/webui/functions/" title="Functionss" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/development/webui/functions/">
+          <i class="fas fa-desktop" aria-hidden="true"></i> Functionss
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/functions/coerce/" title="Coerce" class="dd-item ">
+        <a href="/flogo/development/webui/functions/coerce/">
+        Coerce
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/functions/http/" title="HTTP" class="dd-item ">
+        <a href="/flogo/development/webui/functions/http/">
+        HTTP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/functions/json/" title="JSON" class="dd-item ">
+        <a href="/flogo/development/webui/functions/json/">
+        JSON
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/functions/number/" title="Number" class="dd-item ">
+        <a href="/flogo/development/webui/functions/number/">
+        Number
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/functions/string/" title="String" class="dd-item ">
+        <a href="/flogo/development/webui/functions/string/">
+        String
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/functions/utils/" title="" class="dd-item ">
+        <a href="/flogo/development/webui/functions/utils/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/development/webui/triggers/" title="Triggers" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/development/webui/triggers/">
+          <i class="fas fa-desktop" aria-hidden="true"></i> Triggers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/cli/" title="CLI" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/cli/">
+        CLI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/kafka/" title="Kafka" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/kafka/">
+        Kafka
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/tcpudp/" title="TCP/UDP" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/tcpudp/">
+        TCP/UDP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/app/" title="APP" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/app/">
+        APP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/channel/" title="Channel" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/channel/">
+        Channel
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/loadtester/" title="LoadTester" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/loadtester/">
+        LoadTester
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/rest/" title="REST" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/rest/">
+        REST
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/timer/" title="Timer" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/timer/">
+        Timer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/multi/" title="" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/multi/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/development/webui/triggers/single/" title="" class="dd-item ">
+        <a href="/flogo/development/webui/triggers/single/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/flogo-cli/" title="Flogo CLI Tools" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/flogo-cli/">
+          <i class="fas fa-terminal" aria-hidden="true"></i> Flogo CLI Tools
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/flogo-cli/flogo-cli/" title="flogo" class="dd-item ">
+        <a href="/flogo/flogo-cli/flogo-cli/">
+        <i class="fa fa-terminal" aria-hidden="true"></i> flogo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/flogo-cli/plugins/" title="plugins" class="dd-item ">
+        <a href="/flogo/flogo-cli/plugins/">
+        <i class="fa fa-terminal" aria-hidden="true"></i> plugins
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/flogo-cli/dev-plugin/" title="" class="dd-item ">
+        <a href="/flogo/flogo-cli/dev-plugin/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/deployments/" title="Cloud Deployments" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/deployments/">
+          <i class="fas fa-cloud" aria-hidden="true"></i> Cloud Deployments
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/iot/" title="IoT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/iot/">
+          <i class="fas fa-rss" aria-hidden="true"></i> IoT
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/faas/" title="FaaS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/faas/">
+          <i class="fas fa-filter" aria-hidden="true"></i> FaaS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/faas/how-to/" title="Flogo and Lambda" class="dd-item ">
+        <a href="/flogo/faas/how-to/">
+        Flogo and Lambda
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/contributing/" title="Contribute" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/contributing/">
+          <i class="fas fa-user-plus" aria-hidden="true"></i> Contribute
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/contributing/contributing/" title="Contributing to Project Flogo" class="dd-item ">
+        <a href="/flogo/contributing/contributing/">
+        Contributing to Project Flogo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/contributing/contribute-to-docs/" title="Building the docs website" class="dd-item ">
+        <a href="/flogo/contributing/contribute-to-docs/">
+        Building the docs website
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/flogo/contributing/contribute-to-showcase/" title="Contributing to the Showcase" class="dd-item ">
+        <a href="/flogo/contributing/contribute-to-showcase/">
+        Contributing to the Showcase
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/flogo/glossary/" title="Glossary" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/flogo/glossary/">
+          <i class="fas fa-book" aria-hidden="true"></i> Glossary
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/tibcosoftware/flogo"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://community.tibco.com/products/project-flogo"><i class='fas fa-comments'></i> Community</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://tibcosoftware.github.io/flogo/showcases"><i class='fas fa-plug'></i> Showcase</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/flogo" data-icon="octicon-star" data-show-count="true" aria-label="Star TIBCOSoftware/tci-webintegrator on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/TIBCOSoftware/flogo/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork TIBCOSoftware/tci-webintegrator on GitHub">Fork</a>
+
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<div>The icons on this website are made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/TIBCOSoftware/flogo/edit/master/docs/content/development/flows/tensorflow/inferencing-tf.md" target="blank">
+                      <i class="fas fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/flogo/'></a> > <a href='/flogo/development/'>Development</a> > <a href='/flogo/development/flows/'>Flows</a> > <a href='/flogo/development/flows/tensorflow/'>TensorFlow</a> > Inferencing
+          
+         
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview-of-the-inference-activity">Overview of the Inference Activity</a></li>
+    <li><a href="#inputs">Inputs</a>
+      <ul>
+        <li><a href="#model">model</a></li>
+        <li><a href="#features">features</a></li>
+        <li><a href="#framework">framework</a></li>
+        <li><a href="#tag-default-serve-and-sigdefname-default-serving_default">tag (default: “serve”) and sigDefName (default: “serving_default”)</a></li>
+      </ul>
+    </li>
+    <li><a href="#outputs">Outputs</a></li>
+    <li><a href="#sample-application">Sample application</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Inferencing</h1>
+          
+
+        
+
+
+<p>Before you begin with the <a href="https://github.com/project-flogo/ml/activity/inference">ML Inferencing activity</a>, refer to the <a href="../../tensorflow/getting-started/">Flows &gt; TensorFlow &gt; Getting Started</a> documentation.</p>
+<h2 id="overview-of-the-inference-activity">Overview of the Inference Activity</h2>
+<p>The inference activity was built to support the concept of plugable frameworks, however the only supported framework is currently <strong>TensorFlow</strong>. The activity leverages the Golang API from TensorFlow. You don&rsquo;t need Python or anything other than the TensorFlow dynamic library installed on your dev &amp; target machine.</p>
+<h2 id="inputs">Inputs</h2>
+<h3 id="model">model</h3>
+<p>The “model” input to the activity should be either of the following:</p>
+<ul>
+<li>An archive (zip) of the TensorFlow model</li>
+<li>A directory containing the exported protobuf and check point files</li>
+</ul>
+<p>The activity has been tested with the exported model from the <a href="https://www.tensorflow.org/api_docs/python/tf/estimator/Exporter">tf.estimator.Exporter.export</a> operation as well as manually built models exported with the <a href="https://www.tensorflow.org/api_docs/python/tf/saved_model">tf.saved_model</a> module. After export, optionally zip the file, where the saved_model.pb file is located at the root of the archive.</p>
+<p>The SavedModel format contained in the protobuf includes metadata (interpret this as an instruction manual) on how to use the model.  The below inputs and outputs are which parts of the metadata to use to connect to this model.</p>
+<h3 id="features">features</h3>
+<p>The data to be passed into the SavedModel are defined in “features”. This is an array of maps and should match the following format.  For estimators an example of “features” is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;inputs&#34;</span>,
+    <span style="color:#f92672">&#34;data&#34;</span>:{
+         <span style="color:#f92672">&#34;z-axis-q75&#34;</span>: <span style="color:#ae81ff">4.140586</span>,
+         <span style="color:#f92672">&#34;y-axis-q75&#34;</span>: <span style="color:#ae81ff">4.140586</span>
+    }
+}
+]
+</code></pre></div><p>And, for manually build models with multiple inputs “features” would be something like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;X1&#34;</span>,
+    <span style="color:#f92672">&#34;data&#34;</span>:[
+        [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>],
+        [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>],
+        [<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>]
+     ]
+},
+{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;X2&#34;</span>,
+    <span style="color:#f92672">&#34;data&#34;</span>:[
+        [<span style="color:#ae81ff">0.1</span>,<span style="color:#ae81ff">0.2</span>,<span style="color:#ae81ff">0.3</span>],
+        [<span style="color:#ae81ff">0.4</span>,<span style="color:#ae81ff">0.5</span>,<span style="color:#ae81ff">0.6</span>],
+        [<span style="color:#ae81ff">0.7</span>,<span style="color:#ae81ff">0.8</span>,<span style="color:#ae81ff">0.9</span>]
+     ]
+}
+]
+</code></pre></div><h3 id="framework">framework</h3>
+<p>The deep learning framework to use for inferencing. Currently the only supported value is: <strong>Tensorflow</strong></p>
+<h3 id="tag-default-serve-and-sigdefname-default-serving_default">tag (default: “serve”) and sigDefName (default: “serving_default”)</h3>
+<p>A TensorFlow model consists of a complex graph (network) of mathematical operations that can contain many moving parts.  Another way to consider this is that a model consists of connected “computers” that each have a purpose.   To use the model we have to know which computer/part of the model to use.  “tag” is used to identify within the model metadata which part of the model to use.  Once we have selected the “computer” to use we then need to know which “ports” to use.  “sigDefName” is used within the model metadata to properly connect Flogo to the model.  These Inputs into the inference activity default to the standard values used by TensorFlow.</p>
+<h2 id="outputs">Outputs</h2>
+<p>The output is an object and can contain multiple outputs. For example, for a classification model, the scores and classifications will be held in a map:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">scores</span>:[[<span style="color:#ae81ff">0.049997408</span> <span style="color:#ae81ff">0.010411096</span> <span style="color:#ae81ff">0.93959147</span>]] <span style="color:#a6e22e">classes</span>:[[<span style="color:#a6e22e">Jogging</span> <span style="color:#a6e22e">Sitting</span> <span style="color:#a6e22e">Upstairs</span>]]]
+</code></pre></div><h2 id="sample-application">Sample application</h2>
+<p>Refer to the <a href="https://github.com/project-flogo/ml/tree/master/examples">TensorFlow samples</a></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+</div> 
+
+
+</div>
+
+<div id="navigation">
+
+
+
+
+
+
+    
+        
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+            
+            
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+            
+
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+            
+            
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+            
+            
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+            
+            
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+            
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+            
+
+
+    
+        
+    
+    
+
+        
+        
+        
+
+        
+
+
+        
+
+
+
+
+</div>
+
+</section>
+
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+<div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+<script src="/flogo/js/clipboard.min.js?1606757903"></script>
+<script src="/flogo/js/perfect-scrollbar.min.js?1606757903"></script>
+<script src="/flogo/js/perfect-scrollbar.jquery.min.js?1606757903"></script>
+<script src="/flogo/js/jquery.sticky.js?1606757903"></script>
+<script src="/flogo/js/html5shiv-printshiv.min.js?1606757903"></script>
+<script src="/flogo/js/highlight.pack.js?1606757903"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/flogo/js/modernizr.custom.71422.js?1606757903"></script>
+<script src="/flogo/js/learn.js?1606757903"></script>
+<script src="/flogo/js/hugo-learn.js?1606757903"></script>
+
+<link href="/flogo/mermaid/mermaid.css?1606757903" type="text/css" rel="stylesheet" />
+<script src="/flogo/mermaid/mermaid.js?1606757903"></script>
+<script>
+mermaid.initialize({ startOnLoad: true });
+</script>
+
+
+</body>
+</html>
+

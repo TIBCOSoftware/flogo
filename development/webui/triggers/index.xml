@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Triggers on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/</link>
+    <description>Recent content in Triggers on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/development/webui/triggers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CLI</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/cli/</guid>
+      <description>CLI Trigger This trigger provides your flogo application the ability to run as a CLI app, that is, accept input via the CLI &amp;amp; run once till completion and return the results to stdout.
+Installation flogo install github.com/project-flogo/trigger/cli Configuration Settings:    Name Type Description     singleCmd bool Indicates that this CLI runs only one command/handler   usage string The usage details of the CLI   long string The description of the CLI    Handler Settings:    Name Type Description     flags array List of flags   usage string The usage details of the command   short string A short description of the command   long string The description of the command    Output:    Name Type Description     args array An array of the command line arguments   flags map A map of the command line flags    Reply:    Name Type Description     data any The data that the command outputs    Flags There is simple support for defining flags for a command.</description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/kafka/</guid>
+      <description>Kafka Trigger This trigger subscribes to a topic on Kafka cluster and listens for the messages.
+Flogo CLI flogo install github.com/project-flogo/contrib/trigger/kafka Configuration Setting :    Name Type Description     brokerUrls string The brokers of the Kafka cluster to connect to - REQUIRED   user string If connecting to a SASL enabled port, the userid to use for authentication   password string If connecting to a SASL enabled port, the password to use for authentication   trustStore string If connecting to a TLS secured port, the directory containing the certificates representing the trust chain for the connection.</description>
+    </item>
+    
+    <item>
+      <title>TCP/UDP</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/tcpudp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/tcpudp/</guid>
+      <description>TCP/UDP Trigger This trigger reads/writes data using TCI/UDP networks.
+Flogo CLI flogo install github.com/project-flogo/contrib/trigger/tcpudp Configuration Setting :    Name Type Description     network string Network type. Supported types: tcp,tcp4,tcp6,udp,udp4,udp6 - REQUIRED   host string Host IP or DNS resolvable name   port string Port to listen on - REQUIRED   delimiter string Delimiter for read and write. If not set, trigger will read data until EOF   timeout integer Read and Write timeout in milliseconds.</description>
+    </item>
+    
+    <item>
+      <title>APP</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/app/</guid>
+      <description>App Trigger This trigger provides your flogo application the ability to start an action on the Lifecycle events of the application. The handler associated with the STARTUP event gets invoked before all other triggers have been started. The handler associated with the SHUTDOWN event gets invoked after all other triggers have been stopped.
+Installation flogo install github.com/project-flogo/contrib/trigger/app Configuration Handler Settings:    Name Type Description     lifecycle string The lifecycle event (ie.</description>
+    </item>
+    
+    <item>
+      <title>Channel</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/channel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/channel/</guid>
+      <description>Channel Trigger This trigger provides your flogo application the ability to start an action via a named engine channel
+Installation flogo install github.com/project-flogo/contrib/trigger/channel Configuration Handler Settings:    Name Type Description     channel string The internal engine channel - REQUIRED    Output:    Name Type Description     data any The data pulled from the channel    Example Configurations Triggers are configured via the triggers.</description>
+    </item>
+    
+    <item>
+      <title>LoadTester</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/loadtester/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/loadtester/</guid>
+      <description>LoadTester Trigger This trigger provides your flogo application the ability to run simple load test on a specified action
+Implementation based off go-wrk.
+Installation flogo install github.com/project-flogo/contrib/trigger/loadtester Configuration Settings:    Name Type Description     startDelay int The start delay of the test in seconds, default: 30   duration int The duration of the test in seconds, default: 60   concurrency int The level of concurrency, default: 5   data any Optional data to pass along to the action   handler string The named handler to test, defaults to the first handler    Output:    Name Type Description     data any The data from the settings to pass along    Example Configuration Test Flow Configure the Trigger to load test the &amp;lsquo;flow:testflow&amp;rsquo;</description>
+    </item>
+    
+    <item>
+      <title>REST</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/rest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/rest/</guid>
+      <description>REST Trigger This trigger provides your flogo application the ability to start an action via REST over HTTP
+Installation flogo install github.com/project-flogo/contrib/trigger/rest Configuration Settings:    Name Type Description     port int The port to listen on - REQUIRED   enableTLS bool Enable TLS on the server   certFile string The path to PEM encoded server certificate   keyFile string The path to PEM encoded server key    Handler Settings:    Name Type Description     method string The HTTP method (ie.</description>
+    </item>
+    
+    <item>
+      <title>Timer</title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/timer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/timer/</guid>
+      <description>Timer Trigger This trigger provides your flogo application the ability to schedule an action
+Installation flogo install github.com/project-flogo/contrib/trigger/timer Configuration Handler Settings:    Name Type Description     startDelay string The start delay (ex. 1m, 1h, etc.), immediate if not specified   repeatInterval string The repeat interval (ex. 1m, 1h, etc.), doesn&amp;rsquo;t repeat if not specified    Example Configurations Triggers are configured via the triggers.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/multi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/multi/</guid>
+      <description>Multi-Command Example This example shows how to configure the CLI trigger to run as a cli with multiple commands. Help and version commands are automatically generated for multi-command CLIs.
+To build and run cli example and execute
+flogo create -f flogo-multi-cli.json cd cli flogo build --shim cli ./bin/cli Configuration { &amp;#34;triggers&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;cli&amp;#34;, &amp;#34;ref&amp;#34;: &amp;#34;#cli&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;simple&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;Simple CLI Utility&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;usage&amp;#34;:&amp;#34;&amp;lt;command&amp;gt;&amp;#34;, &amp;#34;long&amp;#34;:&amp;#34;A simple cli using flogo&amp;#34; }, &amp;#34;handlers&amp;#34;: [ { &amp;#34;name&amp;#34;:&amp;#34;test1&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;usage&amp;#34;:&amp;#34;[flags] [args]&amp;#34;, &amp;#34;short&amp;#34;: &amp;#34;test command&amp;#34;, &amp;#34;long&amp;#34;: &amp;#34;the test command&amp;#34;, &amp;#34;flags&amp;#34;: [ &amp;#34;flag1||defaultValue||the first value flag&amp;#34;, &amp;#34;flag2||false||the first bool flag&amp;#34; ] }, &amp;#34;action&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;#flow&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;flowURI&amp;#34;: &amp;#34;res://flow:command1&amp;#34; }, &amp;#34;input&amp;#34; :{ &amp;#34;flags&amp;#34;:&amp;#34;=$.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tibcosoftware.github.io/flogo/development/webui/triggers/single/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/webui/triggers/single/</guid>
+      <description>Single Command Example This example shows how to configure the CLI trigger to run as a single command. It assumes that there is one handler, which runs by default.
+To build and run cli example and execute
+flogo create -f flogo-single-cli.json cd cli flogo build --shim cli ./bin/cli Configuration { &amp;#34;triggers&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;cli&amp;#34;, &amp;#34;ref&amp;#34;: &amp;#34;#cli&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;simple&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;Simple CLI Utility&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;singleCmd&amp;#34;: true }, &amp;#34;handlers&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;test1&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;usage&amp;#34;: &amp;#34;[flags] [args]&amp;#34;, &amp;#34;short&amp;#34;: &amp;#34;test command&amp;#34;, &amp;#34;long&amp;#34;: &amp;#34;the test command&amp;#34;, &amp;#34;flags&amp;#34;: [ &amp;#34;flag1||||the first value flag&amp;#34;, &amp;#34;flag2||false||the first bool flag&amp;#34; ] }, &amp;#34;action&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;#flow&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;flowURI&amp;#34;: &amp;#34;res://flow:command1&amp;#34; }, &amp;#34;input&amp;#34;: { &amp;#34;flags&amp;#34;: &amp;#34;=$.</description>
+    </item>
+    
+  </channel>
+</rss>

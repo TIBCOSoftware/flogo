@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flows on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/development/flows/</link>
+    <description>Recent content in Flows on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/development/flows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Accumulate Activity Output for All Iterations</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/accumulate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/accumulate/</guid>
+      <description>What is an Accumulating the Activity Output When using iterate over an activity or Repeat on True, you have the option to specify if you want to cumulative data from all iterations. You can do so by adding accumulate:true to setting, By defaut it set to false
+{ &amp;#34;id&amp;#34;: &amp;#34;rest_3&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;REST Invoke&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;Invokes a REST Service&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;condition&amp;#34;: &amp;#34;$activity[RESTInvoke].data.username == \&amp;#34;Bret\&amp;#34; &amp;amp;&amp;amp; $iteration[index]&amp;lt;1&amp;#34;, &amp;#34;delay&amp;#34;: 2000, &amp;#34;accumulate&amp;#34;: true }, &amp;#34;type&amp;#34;: &amp;#34;doWhile&amp;#34;, &amp;#34;activity&amp;#34;: { &amp;#34;ref&amp;#34;: &amp;#34;#rest&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;method&amp;#34;: &amp;#34;GET&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;https://jsonplaceholder.</description>
+    </item>
+    
+    <item>
+      <title>App Audit Events</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/app-events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/app-events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>App Properties</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/property-bag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/property-bag/</guid>
+      <description>In Flogo, the concept of an application-level property bag is made available to flow developers that want to reuse properties across different flows, within the same application for trigger settings or as input to activities. Properties are exposed via the $property resolver and made available to the scopes defined in the mappings documentation.
+Flow configuration Properties are defined within the root of the application json, as shown below via the properties element.</description>
+    </item>
+    
+    <item>
+      <title>Flow Input/Output Params</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/io-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/io-parameters/</guid>
+      <description>For Flogo a Flow is more inline with the concept of a function, that is, a Flow has both input and output parameters. The concept of decoupling a trigger from a flow is a key part of supporting multiple triggers and re-use/sharing of a flow. A Flow can now operate against the data that it has defined within its declartion, in otherwords, just like a function, the scope of data that a Flow can operate against must reside within either the Flow context (or as an environment variable).</description>
+    </item>
+    
+    <item>
+      <title>Iterator</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/iterators/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/iterators/</guid>
+      <description>What is an iterator in Flogo? The iterator construct in Flogo enables the iteration of a single activity. The configuration elements are associated with that activity. In Flogo, you can iterate only over a single activity. The iterator acts much like a foreach loop in any procedural language. If you need to iterate over multiple activity calls, simply place an iterator on a subflow.
+Flow configuration Iterators are associated with an activity.</description>
+    </item>
+    
+    <item>
+      <title>Mappings</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/mapping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/mapping/</guid>
+      <description>What are mappings? A mapping in Flogo can be used to assign the value of a parameter (flow input, for example) to that of an input parameters of an activity or to the value of another flow scoped variable.
+Types of mappings Flogo infers the mapping type based on the structure of the mapping itself. The following list details the specifics around each mapping type.
+   Type Description Format     literal A literal mapping.</description>
+    </item>
+    
+    <item>
+      <title>Repeat on True(dowhile)</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/dowhile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/dowhile/</guid>
+      <description>What is an Repeat on True(doWhile) in Flogo? The current iterator feature allows a user to repeat an activity on a fixed number of times by configuring the iterate property. However, there are are certain scenarios where a user would like to repeat an activity based on the output of the current activity or previous activties. To support this, a new feature Repeat on true has been included as part of release 0.</description>
+    </item>
+    
+    <item>
+      <title>Retry On Error</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/retryonerror/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/retryonerror/</guid>
+      <description>What is an Retry On Error in Flogo? There are certain scenarios where a user would like to retry an activity when an error is encountered. To support this, a new feature Retry On Error has been included as part of release 0.9.4.
+For this feature to function two areas need to be have configured:
+ Flow configuration Runtime Code  Flow configuration For an activity to be configured with Retry on error, a new node &amp;quot;retryOnError&amp;quot; must be added to the settings of the activity.</description>
+    </item>
+    
+  </channel>
+</rss>

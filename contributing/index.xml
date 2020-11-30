@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contribute on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/contributing/</link>
+    <description>Recent content in Contribute on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/contributing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contributing to Project Flogo</title>
+      <link>https://tibcosoftware.github.io/flogo/contributing/contributing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/contributing/contributing/</guid>
+      <description>Are you interested in contributing to Project Flogo? If so, this doc was created specifically for you! If you’re not ready to start contributing code, no problem, feel free to check out the documentation issues and begin by helping enhance the documentation!
+Detailed instructions on contributing to the documentation and sharing your projects via the showcase can be found in our documentation, here:
+https://tibcosoftware.github.io/flogo/contributing/
+If you’re ready and interested to make code contributions, we’ve tried to make the process as easy as possible.</description>
+    </item>
+    
+    <item>
+      <title>Building the docs website</title>
+      <link>https://tibcosoftware.github.io/flogo/contributing/contribute-to-docs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/contributing/contribute-to-docs/</guid>
+      <description>If you want to contribute to the documentation, that is awesome! Your help is very much appreciated, but please do keep in mind the instructions below.
+Prerequisites These documentation pages are built with Hugo and we do make some assumptions:
+ You have Git 2.5 or greater installed on your machine. You have a GitHub account. Signing up for GitHub is free. You have Hugo installed on your machine.  In Hugo, pages are the core of your site.</description>
+    </item>
+    
+    <item>
+      <title>Contributing to the Showcase</title>
+      <link>https://tibcosoftware.github.io/flogo/contributing/contribute-to-showcase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/contributing/contribute-to-showcase/</guid>
+      <description>Have an activity, trigger or app that you want to share with the Flogo comunity? That&amp;rsquo;s awesome! To contribute to the showcase follow the steps below.
+Folders The showcase is located at the root of the flogo repo and is structured as follows.
+showcases ├── data │ ├── items.toml &amp;lt;-- the showcase data file  Adding your contribution After you&amp;rsquo;ve forked the flogo repo and cloned it to your local machine, open showcases/data/items.</description>
+    </item>
+    
+  </channel>
+</rss>

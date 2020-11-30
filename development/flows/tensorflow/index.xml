@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TensorFlow on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/development/flows/tensorflow/</link>
+    <description>Recent content in TensorFlow on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/development/flows/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/tensorflow/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/tensorflow/getting-started/</guid>
+      <description>First and foremost, Flogo supports inferencing TensorFlow models, it does not support training of models using incoming data. The training should be performed in Python and the SavedModel format exported for inferencing at runtime in Flogo.
+Before you can begin inferencing TensorFlow models within your Flogo Flows, you’ll need to consider a few requirements.
+Pre-requisites The TensorFlow dynamic lib must be installed on both your development machine, as well as the target machine/device.</description>
+    </item>
+    
+    <item>
+      <title>Inferencing</title>
+      <link>https://tibcosoftware.github.io/flogo/development/flows/tensorflow/inferencing-tf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/development/flows/tensorflow/inferencing-tf/</guid>
+      <description>Before you begin with the ML Inferencing activity, refer to the Flows &amp;gt; TensorFlow &amp;gt; Getting Started documentation.
+Overview of the Inference Activity The inference activity was built to support the concept of plugable frameworks, however the only supported framework is currently TensorFlow. The activity leverages the Golang API from TensorFlow. You don&amp;rsquo;t need Python or anything other than the TensorFlow dynamic library installed on your dev &amp;amp; target machine.</description>
+    </item>
+    
+  </channel>
+</rss>

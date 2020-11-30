@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/getting-started/</link>
+    <description>Recent content in Getting started on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quickstart</title>
+      <link>https://tibcosoftware.github.io/flogo/getting-started/quickstart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/getting-started/quickstart/</guid>
+      <description>We think it is awesome that you want to get started with Project Flogo! To get started you don&amp;rsquo;t even need to install anything other than Docker!
+  Timers are great to schedule stuff, and a great way to learn new technology! Use this lab to get familiar with some of the concepts of Flogo!      Hello World! This lab will walk you through building your first API with Project Flogo    After you&amp;rsquo;re done with these samples, why not check out the other labs we have for you!</description>
+    </item>
+    
+    <item>
+      <title>Flogo Web UI</title>
+      <link>https://tibcosoftware.github.io/flogo/getting-started/getting-started-webui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/getting-started/getting-started-webui/</guid>
+      <description>Getting Started For an overview of how to get started, check out the Quickstart guide
+Fetching and starting the Web UI To get started with the latest version of the Flogo Web UI, you have two options:
+ Pull the source from the flogo-web repository on GitHub (follow the instructions in the README to build and run the UI). Fetch the latest Docker image by executing the following command in your terminal window:  docker run -it -p 3303:3303 flogo/flogo-docker:latest eula-accept</description>
+    </item>
+    
+    <item>
+      <title>Flogo CLI</title>
+      <link>https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/</guid>
+      <description>Before you get started Before you can get started with the cli tools you need to make sure you have the Go programming language installed.
+Installing the cli tools Now that you&amp;rsquo;ve installed the Go programming language there are a few commands you can run to install the cli and make developing with the cli tools even easier
+ First you&amp;rsquo;ll need to go get flogo by running go get -u github.</description>
+    </item>
+    
+  </channel>
+</rss>

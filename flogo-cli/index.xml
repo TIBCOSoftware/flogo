@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flogo CLI Tools on Project Flogo - Docs and Tutorials</title>
+    <link>https://tibcosoftware.github.io/flogo/flogo-cli/</link>
+    <description>Recent content in Flogo CLI Tools on Project Flogo - Docs and Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://tibcosoftware.github.io/flogo/flogo-cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>flogo</title>
+      <link>https://tibcosoftware.github.io/flogo/flogo-cli/flogo-cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/flogo-cli/flogo-cli/</guid>
+      <description>Commands  build - Build the flogo application create - Create a flogo application project help - Help about any command imports - Manage project dependency imports install - Install a flogo contribution/dependency list - List installed flogo contributions plugin - Manage CLI plugins update - Update an application contribution/dependency  Global Flags  --verbose verbose output build This command is used to build the application.
+Usage: flogo build [flags] Flags: -e, --embed embed configuration in binary -f, --file string specify a flogo.</description>
+    </item>
+    
+    <item>
+      <title>plugins</title>
+      <link>https://tibcosoftware.github.io/flogo/flogo-cli/plugins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/flogo-cli/plugins/</guid>
+      <description>Plugins The Flogo CLI has support for plugins. These plugins can be used to extend the Flogo CLI command.
+Creating a CLI plugin First lets setup the go project:
+# Create a directory for your plugin project $ mkdir myplugin # Go to the directory $ cd myplugin # Initialize the Go module information $ go mod init github.com/myuser/myplugin # Edit/Create the plugin code $ vi myplugin.go Next lets create the code for our simple plugin:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tibcosoftware.github.io/flogo/flogo-cli/dev-plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tibcosoftware.github.io/flogo/flogo-cli/dev-plugin/</guid>
+      <description>FLOGO CLI PLUGIN Installation Prerequisites Flogo ClI version v0.9.0 or above
+###Install the Plugin To install this plugin
+flogo plugin install github.com/project-flogo/cli-plugins/devtool ##Usage You can create a generate a sample Trigger/Activity/Action using the plugin:
+flogo dev gen-activity myActivity or
+flogo dev gen-trigger You can also use this plugin to create descriptor JSON from the metadata. In same location as your metadata.go enter the following command
+flogo dev sync-metadata </description>
+    </item>
+    
+  </channel>
+</rss>

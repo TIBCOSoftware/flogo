@@ -1,0 +1,242 @@
+.fg-section__showcase{
+    padding: 90px 0;
+    text-align: center;
+}
+
+.fg-section__showcase h1{
+    font-size: 48px;
+}
+
+.fg-section__showcase h3{
+    font-weight: 300;
+    color: #b6b6b6;
+}
+
+.cards-container {
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin: auto;
+}
+
+.subtitle {
+    color: #727272;
+    font-size: 0.85em;
+    line-height: 1.43;
+    margin: 0;
+    display: inline-block;
+}
+
+.card-main {
+    width: 320px;
+    height: 160px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #dedede;
+    padding: 16px;
+    color: #262626;
+    display: inline-block;
+    margin: 10px 5px 0 5px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.card-main:hover, .card-main:focus {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border: solid 1px #e0e0e0;
+}
+
+.card-main:hover .card-footer__btn, .card-main:focus .card-footer__btn {
+    display: initial;
+}
+
+.card-main.card-main--activity {
+    border-top: 4px solid #36bfbb;
+}
+
+.card-main.card-main--trigger {
+    border-top: 4px solid #4e7ead;
+}
+
+.card-main.card-main--app {
+    border-top: 4px solid #899bcf;
+}
+
+.card-header__label, .card-header__title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card-section__para {
+    height: 34px;
+    font-size: 12px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card-header__label {
+    border-radius: 25px;
+    margin-right: 1em;
+}
+
+.card-main--app .card-header__label {
+    background: #899bcf;
+}
+
+.card-main--activity .card-header__label {
+    background: #36bfbb;
+}
+
+.card-main--trigger .card-header__label {
+    background: #79b8dc;
+}
+
+.card-title {
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 0.25em;
+}
+
+.card-icon {
+    fill: #b6b6b6;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 0.65em;
+}
+
+.card-label__img {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+}
+
+.card-footer {
+    height: 44px;
+    position: relative;
+}
+
+.card-footer .subtitle{
+    position: absolute;
+    bottom: 0;
+}
+
+.card-footer__btn {
+    width: 124px;
+    height: 44px;
+    padding: 0;
+    float: right;
+    display: none;
+}
+.badge .card-label__img{
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+.badge.activity .card-label__img{
+    fill: #36bfbb;
+    stroke: #36bfbb;
+}
+.badge.trigger .card-label__img{
+    fill: #79b8dc;
+    stroke: #79b8dc;
+}
+.badge.app .card-label__img{
+    fill: #899bcf;
+    stroke: #899bcf;
+}
+.badge.activity.selected .card-label__img ,.badge.trigger.selected .card-label__img,.badge.app.selected .card-label__img {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+}
+@media only screen and (min-width: 710px) and (max-width: 1199px) {
+    .cards-container {
+        width: 663px;
+        text-align: left;
+    }
+    .filters-container{
+        width: 663px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .cards-container {
+        width: 996px;
+        text-align: left;
+    }
+    .filters-container{
+        width: 996px;
+    }
+}
+footer {
+    text-align: center;
+}
+.filters-container{
+    margin: auto;
+    padding: 0 5px;
+    margin-top: 30px;
+}
+.labels-container,.search-container{
+    width: 50%;
+    display: inline-block;
+}
+.search-container .form-control {
+    display: inline-block;
+    height: 35px;
+    border-radius: 0;
+    width: 294px;
+    padding-left: 40px;
+}
+.search-container{
+    text-align: right;
+}
+.filters-container .badge{
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #dedede;
+    color: inherit;
+    padding: 3px 15px;
+    border-radius: 16px;
+    margin-right: 16px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 62px;
+}
+.search-container .glyphicon-search{
+    left: 28px;
+    font-size: 16px;
+    top: 4px;
+    font-weight: 300;
+}
+.filters-container .badge:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border: solid 1px #e0e0e0;
+}
+.badge.selected{
+    border: solid 1px #dedede;
+    color: #ffffff;
+}
+.all.selected {
+    background-color: #008dc6;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+.activity.selected {
+    background-color: #36bfbb;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.trigger.selected {
+    background-color: #79b8dc;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.app.selected {
+    background-color: #899bcf;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+}
