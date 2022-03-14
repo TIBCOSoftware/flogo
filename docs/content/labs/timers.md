@@ -21,7 +21,7 @@ To create a new app, open the Flogo Web UI and from there, click "_New_" to crea
 
 ## Step 2: Add a trigger
 
-Flogo is an event-driven framework. A trigger is the entrypoint for events to, as the name implies, trigger the functionality of your app. A trigger can be a subscriber on an MQTT topic, Kafka topic, HTTP REST interface or a specific IoT sensor. The trigger is responsible for accepting the incoming event and invoking one or more defined actions (flows).
+Flogo is an event-driven framework. A trigger is the entrypoint for events to trigger the functionality of your app. A trigger can be a subscriber on an MQTT topic, Kafka topic, HTTP REST interface or a specific IoT sensor. The trigger is responsible for accepting the incoming event and invoking one or more defined actions (flows).
 
 In this case you want to start with a `Timer`. To add a trigger, click on the "+" icon on the left hand side of the screen and select the `Timer` trigger.
 
@@ -40,7 +40,7 @@ An activity is the unit of work that can be leveraged within a Flow. An activity
 
 ![step 3a](../../images/labs/timers/step3a.png)
 
-A list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log Message" activity (or use the searchbar to find it) and click it to make sure it is added to the flow. As you hover over the newly added activity, a ellipsis (...) will appear, click this and a menu will appear with options to configure or delete your activity. Click the gear icon to configure your activity. In this window you can configure the inputs of the "Log Message" activity. Click on "_a.. message_" and type `Hello World` in the box (on the right hand side of the screen).
+A list with all the activities the Flogo Web UI knows about will appear. From the list you can pick the "Log" activity (or use the searchbar to find it) and click it to make sure it is added to the flow. As you hover over the newly added activity, a ellipsis (...) will appear, click this and a menu will appear with options to configure or delete your activity. Click the gear icon to configure your activity. In this window you can configure the inputs of the "Log Message" activity. Click on "_a.. message_" and type `Hello World` in the box (on the right hand side of the screen).
 
 ![step 3b](../../images/labs/timers/step3b.png)
 
