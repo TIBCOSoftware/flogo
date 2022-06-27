@@ -73,7 +73,7 @@ While also exposing a common set of contributions via activities and triggers. F
 
 # Flogo Repos
 
-Project Flogo consists of the following sub-projects available as separate repos:
+Project Flogo consists of the following sub-projects available as separate repos under a seperated GitHub Org:
 
 * [project-flogo/flogo-cli](https://github.com/project-flogo/cli):  Command line tools for building Flogo apps & extensions
 * [project-flogo/flogo-core](https://github.com/project-flogo/core): The core Flogo library 
