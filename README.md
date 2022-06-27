@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#project-flogo-ecosystem">Ecosystem</a> | <a href="#flogo-core">Core</a> | <a href="#flogo-flows">Flows</a> | <a href="#flogo-streams">Streams</a> | <a href="#flogo-rules">Flogo Rules</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-to-use-flogo">When to use Flogo</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
+  <a href="#project-flogo-ecosystem">Ecosystem</a> | <a href="#flogo-repos">Repos</a> | <a href="#flogo-core">Core</a> | <a href="#flogo-flows">Flows</a> | <a href="#flogo-streams">Streams</a> | <a href="#flogo-rules">Flogo Rules</a> | <a href="#golang-api">Go Developers</a> | <a href="#when-to-use-flogo">When to use Flogo</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a>
 </p>
 
 <br/>
@@ -71,6 +71,18 @@ The concept is simple, an event is just that, an event, how it’s processed is 
 
 While also exposing a common set of contributions via activities and triggers. For example, all available triggers can be leveraged to dispatch events to any action implementation, that is, flows for application integration, streams for stream processing, rules for contextual rule processing, etc.
 
+# Flogo Repos
+
+Project Flogo consists of the following sub-projects available as separate repos:
+
+* [project-flogo/flogo-cli](https://github.com/project-flogo/cli):  Command line tools for building Flogo apps & extensions
+* [project-flogo/flogo-core](https://github.com/project-flogo/core): The core Flogo library 
+* [project-flogo/flogo-contrib](https://github.com/project-flogo/contrib): Flogo contributions/extensions
+* [project-flogo/stream](https://github.com/project-flogo/stream): Flogo Streams Action
+* [project-flogo/rules](https://github.com/project-flogo/rules): Contextual, deterministic rules action
+* [project-flogo/microgateway](https://github.com/project-flogo/microgateway): Flogo Microgateway Action
+* [project-flogo/flogo-web](https://github.com/project-flogo/flogo-web): Flogo Web UI
+
 # Flogo Core
 
 Flogo Core is an event-driven app framework used to develop apps for the cloud & IoT edge. It can also be thought of as a lightweight *app kernel* used by open source & commercial solutions.
@@ -89,25 +101,12 @@ Flogo Core exposes three principal contribution interfaces that enable developer
 * **Activity Interface** a common interface for exposing common application logic in a reusable manner. Think of this as a function, such as write to database, publish to Kafka, etc that can be used by all Flogo apps.
 * **Action Interface** a common interface for processing events. Actions contain the specific capability logic, such as integration, stream processing, rule processing, etc. Actions have a great deal of flexibility in how they’re developed and how developers leverage actions within their overall applications. For example, flows and streams expose JSON-based DSLs & Go APIs for maximum developer flexibility.
 
-# Repos
-
-Project Flogo consists of the following sub-projects available as separate repos:
-
-* [flogo-cli](https://github.com/project-flogo/cli):  Command line tools for building Flogo apps & extensions
-* [flogo-core](https://github.com/project-flogo/core): The core Flogo library 
-* [flogo-contrib](https://github.com/project-flogo/contrib): Flogo contributions/extensions
-* [project-flogo/stream](https://github.com/project-flogo/stream): Flogo Streams Action
-* [project-flogo/rules](https://github.com/project-flogo/rules): Contextual, deterministic rules action
-* [project-flogo/microgateway](https://github.com/project-flogo/microgateway): Flogo Microgateway Action
-* [project-flogo/flogo-web](https://github.com/project-flogo/flogo-web): Flogo Web UI
-
 # Flogo Flows
 
 Flogo Flows provides application integration capabilities and includes the following key highlights.
 
 🌈 **Painless development** Visual modeler with step-back debugging capabilities & elegant DSL<br/>
 ⚙️ **Ultra-light process engine** for conditional flow control
-
 
 ## Getting Started
 
