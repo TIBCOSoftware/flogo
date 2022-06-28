@@ -10,7 +10,7 @@ For an overview of how to get started, check out the [Quickstart](../quickstart)
 ### Fetching and starting the Web UI
 To get started with the latest version of the Flogo Web UI, you have two options:
 
-* Pull the source from the [flogo-web repository](https://github.com/project-flogo/flogo-web) on GitHub (follow the instructions in the README to build and run the UI).
+* Pull the source from the [project-flogo/flogo-web repository](https://github.com/project-flogo/flogo-web) on GitHub (follow the instructions in the README to build and run the UI).
 * Fetch the latest Docker image by executing the following command in your terminal window:
 
 ```docker run -it -p 3303:3303 flogo/flogo-docker:latest eula-accept```
