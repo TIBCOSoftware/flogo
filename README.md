@@ -213,14 +213,21 @@ If you're interested in building your own contribution(s), refer to the [Flogo D
 
 Are you the kind of person who would rather code, but would love to leverage the capabilities of the Flogo Ecosystem? Makes total sense, we just ❤️ to code also! We’ve exposed a number of Go APIs for leveraging the various action types, activities and triggers. Getting started is pretty easy, just follow the steps below.
 
-* Go get the latest [flogo-lib](https://github.com/project-flogo/core)
+* Create your new project dir and init your module
+```base
+mkdir test
+cd test
+go mod init example.com/m
+```
+
+* Go get the latest [flogo core](https://github.com/project-flogo/core)
 ```bash
-go get -u github.com/project-flogo/core/...
+go get github.com/project-flogo/core
 ```
 
 * Optionally, if you're using any of the Flogo contributions, don't forget to get that repo, as well
 ```bash
-go get -u github.com/project-flogo/contrib/...
+go get github.com/project-flogo/contrib/...
 ```
 
 * Open up your favorite IDE or txt editor and start coding!
@@ -291,6 +298,11 @@ func RunActivities(ctx context.Context, inputs map[string]interface{}) (map[stri
 	reply := &rest.Reply{Code: 200, Data: response}
 	return reply.ToMap(), nil
 }
+```
+
+* Don't forget to tidy your dependencies
+```bash
+go mod tidy
 ```
 
 * Before we can build the app, let's generate the metadata for the triggers
