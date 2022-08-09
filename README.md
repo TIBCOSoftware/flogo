@@ -227,7 +227,7 @@ go get github.com/project-flogo/core
 
 * Optionally, if you're using any of the Flogo contributions, don't forget to get that repo, as well
 ```bash
-go get github.com/project-flogo/contrib/...
+go get github.com/project-flogo/contrib
 ```
 
 * Open up your favorite IDE or txt editor and start coding!
