@@ -121,7 +121,7 @@ We've made getting started with Flogo Flows as easy as possible. The current set
 
 If your background is in or you prefer to develop your apps using zero-coding environments, then read on, because we’ve got something special for you.
 
-Flows Web UI is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](http://flogo.io). The Docker image contains the Flows Web UI along with all required components to begin developing, testing and building deployable artifacts right from your web browser.
+Flows Web UI is available via [Docker Hub](https://hub.docker.com/r/flogo/flogo-docker) or [Flogo.io](https://www.flogo.io). The Docker image contains the Flows Web UI along with all required components to begin developing, testing and building deployable artifacts right from your web browser.
 
 To report any issues with the Issue tracker on this project.
 
@@ -356,4 +356,4 @@ Project Flogo is licensed under a BSD-style license. Refer to [LICENSE](https://
 
 ## Usage Guidelines
 
-We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines](http://flogo.io/brand-guidelines) when referencing the use of Project Flogo within your project(s) and don't forget to let others know you're using Project Flogo by proudly displaying one of the following badges or the Flynn logo, found in the [branding](branding) folder of this project.
+We’re excited that you’re using Project Flogo to power your project(s). Please adhere to the [usage guidelines](https://www.flogo.io/brand-guidelines) when referencing the use of Project Flogo within your project(s) and don't forget to let others know you're using Project Flogo by proudly displaying one of the following badges or the Flynn logo, found in the [branding](branding) folder of this project.
